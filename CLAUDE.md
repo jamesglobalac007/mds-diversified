@@ -1,5 +1,48 @@
 # mds-diversified — Project Context
 
+## ⛔ FILE PATH RULES — READ THIS FIRST
+
+James works from two machines. ALL projects live under `~/MDS/` on both:
+
+| Machine | Username | Full path |
+|---------|----------|-----------|
+| Mac mini (work) | `jamesglobal` | `/Users/jamesglobal/MDS/` |
+| Mac laptop (home) | `tiffanydrake` | `/Users/tiffanydrake/MDS/` |
+
+**Always use `~/MDS/` in commands** — this resolves correctly on both machines.
+
+- **This repo:** `~/MDS/mds-diversified`
+- **Git commands:** always `cd ~/MDS/mds-diversified && git pull` (or push)
+- **New projects:** always under `~/MDS/<project-name>`
+
+### BANNED PATHS — NEVER reference or suggest:
+
+- ❌ `~/Dropbox/` — not used
+- ❌ `~/Desktop/` — not used
+- ❌ `~/Documents/` — not used
+- ❌ `~/Downloads/` — not used
+- ❌ Any path that is NOT under `~/MDS/`
+
+If you don't know the exact folder name for a project, **ask James** — do not guess.
+
+---
+
+## All MDS Projects (as of 2026-04-10)
+
+| Folder | GitHub Repo |
+|--------|-------------|
+| `~/MDS/mds-diversified` | https://github.com/jamesglobalac007/mds-diversified.git |
+| `~/MDS/conversations` | https://github.com/jamesglobalac007/mds-conversations.git |
+| `~/MDS/deal-vault` | https://github.com/jamesglobalac007/deal-vault.git |
+| `~/MDS/LC-AI-Portal` | https://github.com/jamesglobalac007/LC-AI-Portal.git |
+| `~/MDS/Manson--Invest` | https://github.com/jamesglobalac007/Manson--Invest.git |
+| `~/MDS/radius-ndis-sda-platform` | https://github.com/jamesglobalac007/radius-ndis-sda-platform.git |
+| `~/MDS/tracknow-portal` | https://github.com/jamesglobalac007/tracknow-portal.git |
+| `~/MDS/tracknow-site` | https://github.com/jamesglobalac007/tracknow-site.git |
+| `~/MDS/_dropbox-backup` | *(not a git repo — local backup only)* |
+
+---
+
 ## Live Portal
 https://mds-diversified.onrender.com
 
