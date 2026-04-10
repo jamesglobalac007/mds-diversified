@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" width="720" height="200">
+  <defs>
+    <linearGradient id="tileGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B8BD9"/>
+      <stop offset="100%" stop-color="#1F5A91"/>
+    </linearGradient>
+    <style>
+      .word-primary { font-family: 'Helvetica Neue', 'Arial', sans-serif; font-weight: 800; letter-spacing: -1px; fill: #1F2937; }
+      .word-secondary { font-family: 'Helvetica Neue', 'Arial', sans-serif; font-weight: 300; letter-spacing: 0.5px; fill: #1F2937; }
+      .tag { font-family: 'Helvetica Neue', 'Arial', sans-serif; font-weight: 500; letter-spacing: 2.5px; fill: #6B7280; font-size: 15px; }
+      .mark-letters { font-family: 'Helvetica Neue', 'Arial', sans-serif; font-weight: 800; fill: #FFFFFF; letter-spacing: -1.5px; }
+    </style>
+  </defs>
+
+  <!-- Blue rounded square monogram tile -->
+  <g transform="translate(20,20)">
+    <rect x="0" y="0" width="160" height="160" rx="24" ry="24" fill="url(#tileGrad)"/>
+
+    <!-- AI node accent: three dots connected (top-right corner) representing diversification / network -->
+    <g opacity="0.55" stroke="#FFFFFF" stroke-width="1.5" fill="#FFFFFF">
+      <line x1="118" y1="22" x2="138" y2="34" stroke-linecap="round"/>
+      <line x1="138" y1="34" x2="128" y2="54" stroke-linecap="round"/>
+      <line x1="118" y1="22" x2="128" y2="54" stroke-linecap="round"/>
+      <circle cx="118" cy="22" r="3.5"/>
+      <circle cx="138" cy="34" r="3.5"/>
+      <circle cx="128" cy="54" r="3.5"/>
+    </g>
+
+    <!-- MDS letters centered in tile -->
+    <text class="mark-letters" x="80" y="108" text-anchor="middle" font-size="58">MDS</text>
+  </g>
+
+  <!-- Wordmark to the right -->
+  <g transform="translate(210,0)">
+    <text class="word-primary" x="0" y="108" font-size="56">MDS</text>
+    <text class="word-secondary" x="135" y="108" font-size="56">Diversified</text>
+    <!-- Thin accent line under the wordmark -->
+    <line x1="2" y1="122" x2="470" y2="122" stroke="#2E75B6" stroke-width="2"/>
+    <!-- Tagline -->
+    <text class="tag" x="2" y="148">AI  ·  AUTOMATION  ·  CONSULTING</text>
+  </g>
+</svg>
