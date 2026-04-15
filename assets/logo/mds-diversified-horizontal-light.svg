@@ -7,7 +7,7 @@
     <style>
       .word-primary   { font-family: 'Helvetica Neue', 'Arial', sans-serif; font-weight: 800; letter-spacing: -1px;  fill: #ffffff; }
       .word-secondary { font-family: 'Helvetica Neue', 'Arial', sans-serif; font-weight: 300; letter-spacing: 0.5px; fill: #ffffff; }
-      .tag            { font-family: 'Helvetica Neue', 'Arial', sans-serif; font-weight: 500; letter-spacing: 2.5px; fill: #00d4ff; font-size: 15px; }
+      .tag            { font-family: 'Helvetica Neue', 'Arial', sans-serif; font-weight: 600; letter-spacing: 3px;   fill: #00d4ff; font-size: 22px; }
       .mark-letters   { font-family: 'Helvetica Neue', 'Arial', sans-serif; font-weight: 800; fill: #ffffff; letter-spacing: -1.5px; }
     </style>
   </defs>
@@ -31,6 +31,6 @@
     <text class="word-primary" x="0" y="108" font-size="56">MDS</text>
     <text class="word-secondary" x="135" y="108" font-size="56">Diversified</text>
     <line x1="2" y1="122" x2="470" y2="122" stroke="#00d4ff" stroke-width="2" opacity="0.6"/>
-    <text class="tag" x="2" y="148">AI  ·  AUTOMATION  ·  CONSULTING</text>
+    <text class="tag" x="2" y="152">AI  ·  AUTOMATION  ·  CONSULTING</text>
   </g>
 </svg>
