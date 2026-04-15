@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MDS Diversified | From Website to Revenue. One Partner.</title>
-    <meta name="description" content="We upgrade your website, build your bespoke client portal, and power your sales and marketing with AI. You own every piece — your data never leaves your hands. Australian AI consultancy.">
-    <meta name="keywords" content="AI consultancy Australia, bespoke client portals, business automation, sales and marketing AI, MDS Diversified">
+    <meta name="description" content="Bottlenecks in your business? We build the fix. Websites, client portals, workflow automation, SOPs, AI assistants and custom tools for Australian small and medium businesses. You own every piece.">
+    <meta name="keywords" content="AI consultancy Australia, workflow automation, SOPs, client portals, business automation, custom AI tools, small medium business, MDS Diversified">
     <meta name="author" content="MDS Diversified">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="MDS Diversified | From Website to Revenue. One Partner.">
-    <meta property="og:description" content="We build the growth engine. You own every piece. Bespoke websites, client portals, marketing and sales systems for Australian businesses.">
+    <meta property="og:description" content="Bottlenecks in your business? We build the fix. Growth engine, client portals, workflow automation, SOPs, AI assistants and custom tools. You own every piece.">
     <meta property="og:image" content="assets/logo/mds-diversified-square-400.png">
     <meta property="og:url" content="https://mds-diversified.onrender.com">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MDS Diversified | From Website to Revenue. One Partner.">
-    <meta name="twitter:description" content="We build the growth engine. You own every piece.">
+    <meta name="twitter:description" content="We build the fix for your business bottlenecks — growth engine, portals, automation, SOPs, AI tools. You own every piece.">
     <meta name="twitter:image" content="assets/logo/mds-diversified-square-400.png">
 
     <!-- Favicon -->
@@ -1081,6 +1081,54 @@
         .ind-icon svg { stroke: var(--accent-blue); }
         .contact-icon svg { stroke: var(--accent-blue); }
 
+        /* --- Capability cards (Beyond the Engine) --- */
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+        .capability-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 28px 24px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .capability-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .capability-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        .capability-card:hover::before { opacity: 1; }
+        .capability-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .capability-card p {
+            color: var(--text-secondary);
+            line-height: 1.65;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        @media (max-width: 900px) {
+            .capabilities-grid { grid-template-columns: 1fr; }
+        }
+
         /* --- NEW: Stage cards (Growth Engine) --- */
         .engine-intro {
             display: grid;
@@ -1296,6 +1344,7 @@
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#engine">Growth Engine</a></li>
+                <li><a href="#beyond">Beyond the Engine</a></li>
                 <li><a href="#ownership">Ownership</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#about">About</a></li>
@@ -1520,6 +1569,46 @@
                         <span class="case-stage">Stage 04</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beyond the Engine — broader capabilities for SMBs -->
+    <section id="beyond">
+        <div class="section-container">
+            <div class="section-label">Beyond the Engine</div>
+            <h2 class="section-title">Got a bottleneck in your business? <span class="gradient-text">We probably build the fix.</span></h2>
+            <p class="section-subtitle">
+                The Growth Engine is our flagship — but we're not just a sales and marketing shop. If a process in your business is slow, manual, or error-prone, there's usually an AI-powered fix. Here's where we help small and medium businesses every week.
+            </p>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <h3>Workflow Automation</h3>
+                    <p>Replace the manual copy-paste between your tools. Email → CRM → Invoicing → Follow-up, done for you so your team stops retyping the same thing.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>SOPs &amp; Process Design</h3>
+                    <p>Turn tribal knowledge into written SOPs and the automations that run them. Your business keeps shipping when someone's away or a new hire starts.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Client &amp; Staff Portals</h3>
+                    <p>Custom dashboards your team uses every day. Built around your exact workflow — no off-the-shelf compromises, no paying for features you'll never touch.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Document Automation</h3>
+                    <p>Contracts, quotes, reports, onboarding packs — generated from one form in seconds, not hours. Every document on-brand, every field filled right.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>AI Assistants for Your Team</h3>
+                    <p>Custom GPTs and chatbots trained on your docs and playbooks. Answer customer questions instantly, onboard staff faster, and capture institutional knowledge.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Integration Glue</h3>
+                    <p>Got tools that don't talk to each other? We connect them with invisible middleware so data flows automatically and nobody has to play go-between.</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:48px;">
+                <a href="#contact" style="display:inline-block;background:linear-gradient(135deg,var(--accent-blue),var(--accent-green));color:#000;font-weight:700;padding:14px 32px;border-radius:10px;text-decoration:none;font-size:0.95rem;letter-spacing:0.3px;">Not sure what you need? Book a 20-min scoping call →</a>
             </div>
         </div>
     </section>
