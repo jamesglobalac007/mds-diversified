@@ -3,7 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MDS Diversified | AI Consultancy Australia — Money Doesn't Sleep</title>
+    <title>MDS Diversified | From Website to Revenue. One Partner.</title>
+    <meta name="description" content="We upgrade your website, build your bespoke client portal, and power your sales and marketing with AI. You own every piece — your data never leaves your hands. Australian AI consultancy.">
+    <meta name="keywords" content="AI consultancy Australia, bespoke client portals, business automation, sales and marketing AI, MDS Diversified">
+    <meta name="author" content="MDS Diversified">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MDS Diversified | From Website to Revenue. One Partner.">
+    <meta property="og:description" content="We build the growth engine. You own every piece. Bespoke websites, client portals, marketing and sales systems for Australian businesses.">
+    <meta property="og:image" content="assets/logo/mds-diversified-square-400.png">
+    <meta property="og:url" content="https://mds-diversified.onrender.com">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MDS Diversified | From Website to Revenue. One Partner.">
+    <meta name="twitter:description" content="We build the growth engine. You own every piece.">
+    <meta name="twitter:image" content="assets/logo/mds-diversified-square-400.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo/mds-diversified-monogram.png">
+    <link rel="apple-touch-icon" href="assets/logo/mds-diversified-square-400.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -990,6 +1011,249 @@
                 flex-direction: column;
             }
         }
+
+        /* --- NEW: Logo --- */
+        .logo-img {
+            height: 48px;
+            width: auto;
+            display: block;
+        }
+        @media (max-width: 480px) {
+            .logo-img { height: 40px; }
+        }
+        /* Override stat-number sizing — original was for short tokens like "24/7" */
+        .stat-number {
+            font-size: 1.35rem !important;
+            line-height: 1.2;
+        }
+        .stat-item {
+            padding: 22px 18px !important;
+        }
+
+        /* --- NEW: SVG icons inside existing containers --- */
+        .service-icon svg,
+        .contact-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke-width: 2;
+        }
+        .ind-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke-width: 1.75;
+            margin: 0 auto;
+            display: block;
+        }
+        .service-icon.blue svg { stroke: var(--accent-blue); }
+        .service-icon.green svg { stroke: var(--accent-green); }
+        .service-icon.purple svg { stroke: var(--accent-purple); }
+        .service-icon.orange {
+            background: rgba(255, 165, 0, 0.1);
+            border: 1px solid rgba(255, 165, 0, 0.2);
+        }
+        .service-icon.orange svg { stroke: #ffa500; }
+        .ind-icon svg { stroke: var(--accent-blue); }
+        .contact-icon svg { stroke: var(--accent-blue); }
+
+        /* --- NEW: Stage cards (Growth Engine) --- */
+        .engine-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            align-items: start;
+        }
+        .engine-intro-tagline {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        .engine-intro-tagline strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        .stages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .stage-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 32px 26px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .stage-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .stage-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        .stage-card:hover::before { opacity: 1; }
+        .stage-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+        .stage-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .stage-card > p {
+            color: var(--text-secondary);
+            line-height: 1.65;
+            font-size: 0.9rem;
+            margin-bottom: 18px;
+        }
+        .stage-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .stage-card li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .stage-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: 700;
+        }
+        @media (max-width: 968px) {
+            .stages-grid { grid-template-columns: repeat(2, 1fr); }
+            .engine-intro { grid-template-columns: 1fr; gap: 30px; }
+        }
+        @media (max-width: 480px) {
+            .stages-grid { grid-template-columns: 1fr; }
+        }
+
+        /* --- NEW: Trust pillars (You Own It) --- */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .trust-pillar {
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 255, 136, 0.15);
+            border-radius: 16px;
+            padding: 36px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+        .trust-pillar:hover {
+            border-color: rgba(0, 255, 136, 0.35);
+            transform: translateY(-3px);
+        }
+        .trust-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        .trust-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--accent-green);
+            stroke-width: 2;
+        }
+        .trust-pillar h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .trust-pillar p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+        @media (max-width: 968px) {
+            .trust-grid { grid-template-columns: 1fr; }
+        }
+
+        /* --- NEW: Case studies --- */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .case-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 30px 28px;
+            transition: all 0.4s ease;
+        }
+        .case-card:hover {
+            border-color: rgba(0, 212, 255, 0.25);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        .case-industry {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .case-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .case-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 18px;
+        }
+        .case-stages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .case-stage {
+            padding: 4px 10px;
+            background: rgba(0, 212, 255, 0.08);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 20px;
+            font-size: 0.7rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+        @media (max-width: 968px) {
+            .cases-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .cases-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -1001,15 +1265,15 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">
-                <span>MDS</span> <span>Diversified</span>
-            </div>
+            <a href="#" class="logo" aria-label="MDS Diversified">
+                <img src="assets/logo/mds-diversified-horizontal-light.svg" alt="MDS Diversified" class="logo-img">
+            </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#industries">Industries</a></li>
-                <li><a href="#process">How It Works</a></li>
+                <li><a href="#engine">Growth Engine</a></li>
+                <li><a href="#ownership">Ownership</a></li>
+                <li><a href="#work">Work</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+                <li><a href="#contact" class="nav-cta">Book a Call</a></li>
             </ul>
             <div class="nav-toggle" id="navToggle" onclick="document.getElementById('navLinks').classList.toggle('active')">
                 <span></span>
@@ -1027,84 +1291,207 @@
                 Money Doesn't Sleep — Neither Should Your Business
             </div>
             <h1>
-                Smarter Operations.<br>
-                <span class="gradient-text">Greater Returns.</span>
+                From Website to Revenue.<br>
+                <span class="gradient-text">One Partner.</span>
             </h1>
             <p>
-                MDS Diversified helps businesses across Australia harness the power of artificial intelligence to streamline operations, cut costs, and unlock new revenue streams. From real estate to fund management — we deliver AI that works while you sleep.
+                We upgrade your website, build your bespoke client portal, and power your sales and marketing with AI. You own every piece — your data never leaves your hands.
             </p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">Book a Consultation &#8594;</a>
-                <a href="#services" class="btn-secondary">Explore Services</a>
+                <a href="#contact" class="btn-primary">Book a Discovery Call &#8594;</a>
+                <a href="#engine" class="btn-secondary">See the Engine</a>
             </div>
         </div>
     </section>
 
-    <!-- Stats Bar -->
+    <!-- Trust Strip -->
     <div class="stats-bar">
         <div class="stats-grid">
             <div class="stat-item">
-                <div class="stat-number">AI</div>
-                <div class="stat-label">Driven Solutions</div>
+                <div class="stat-number">Sales-First</div>
+                <div class="stat-label">Built by a salesman, not just engineers</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">Automated Operations</div>
+                <div class="stat-number">AI-Powered</div>
+                <div class="stat-label">Every build uses AI where it counts</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Bespoke Built</div>
+                <div class="stat-number">100% Bespoke</div>
+                <div class="stat-label">Never templated, never off-the-shelf</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">ROI</div>
-                <div class="stat-label">Focused Delivery</div>
+                <div class="stat-number">You Own It</div>
+                <div class="stat-label">Your data, your portal, your asset</div>
             </div>
         </div>
     </div>
 
-    <!-- Services Section -->
-    <section id="services">
+    <!-- The Growth Engine -->
+    <section id="engine">
         <div class="section-container">
-            <div class="section-label">What We Do</div>
-            <h2 class="section-title">Our Services</h2>
+            <div class="section-label">The MDS Growth Engine</div>
+            <div class="engine-intro">
+                <h2 class="section-title">One Engine.<br>Four Stages.<br>Your Way.</h2>
+                <p class="engine-intro-tagline">
+                    Most clients <strong>start at Stage 1</strong> and grow through the engine at their own pace. You pick the stages you want — we build what fits. Each stage is bespoke. Nothing is off-the-shelf.
+                </p>
+            </div>
+            <div class="stages-grid">
+                <div class="stage-card reveal">
+                    <div class="service-icon blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <div class="stage-number">STAGE 01</div>
+                    <h3>Website Upgrade</h3>
+                    <p>Your shopfront. Modernised, fast, and built to convert.</p>
+                    <ul>
+                        <li>Fresh, modern design</li>
+                        <li>Mobile-first build</li>
+                        <li>AI-assisted copy</li>
+                        <li>Conversion-focused</li>
+                    </ul>
+                </div>
+                <div class="stage-card reveal">
+                    <div class="service-icon green">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                    </div>
+                    <div class="stage-number">STAGE 02</div>
+                    <h3>Bespoke Client Portal</h3>
+                    <p>The engine room. One place for prospects, clients, and your marketing hub.</p>
+                    <ul>
+                        <li>Prospect + client CRM</li>
+                        <li>Marketing hub built-in</li>
+                        <li>Dashboards for your business</li>
+                        <li>Fully bespoke, fully yours</li>
+                    </ul>
+                </div>
+                <div class="stage-card reveal">
+                    <div class="service-icon purple">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+                    </div>
+                    <div class="stage-number">STAGE 03</div>
+                    <h3>Marketing Engine</h3>
+                    <p>Turn your portal into a growth machine. Campaigns that run from the hub you already own.</p>
+                    <ul>
+                        <li>Email + social campaigns</li>
+                        <li>AI content generation</li>
+                        <li>Lead magnets + landers</li>
+                        <li>Performance tracking</li>
+                    </ul>
+                </div>
+                <div class="stage-card reveal">
+                    <div class="service-icon orange">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <div class="stage-number">STAGE 04</div>
+                    <h3>Sales Conversion</h3>
+                    <p>The close. We help you turn the leads coming in into paying customers.</p>
+                    <ul>
+                        <li>Lead scoring + routing</li>
+                        <li>Follow-up automation</li>
+                        <li>Sales process design</li>
+                        <li>Conversion coaching</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- You Own It -->
+    <section id="ownership" style="background: var(--bg-secondary);">
+        <div class="section-container">
+            <div class="section-label">Built Different</div>
+            <h2 class="section-title">We Build. <span class="gradient-text">You Own.</span></h2>
             <p class="section-subtitle">
-                We deliver tailored AI solutions that drive real business outcomes — from strategy and automation through to fully custom-built platforms.
+                Most AI agencies want to host your data and lock you in. We don't. Everything we build is yours — keys, code, customers, and all.
             </p>
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <div class="service-icon blue">&#x1F9E0;</div>
-                    <h3>AI Consultancy</h3>
-                    <p>
-                        Strategic guidance on adopting AI across your business. We assess your operations, identify opportunities, and build a clear roadmap to implementation.
-                    </p>
-                    <div class="service-tags">
-                        <span class="service-tag">Strategy</span>
-                        <span class="service-tag">Roadmapping</span>
-                        <span class="service-tag">AI Readiness</span>
+            <div class="trust-grid">
+                <div class="trust-pillar reveal">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h4>Your Data Stays Yours</h4>
+                    <p>Nothing routes through us. Nothing lives on our servers. Your customer data never leaves your control — full stop.</p>
+                </div>
+                <div class="trust-pillar reveal">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+                    </div>
+                    <h4>Your Portal Is Your Asset</h4>
+                    <p>We build it, you keep it. No subscription traps, no SaaS lock-in. If we part ways tomorrow, your business keeps running.</p>
+                </div>
+                <div class="trust-pillar reveal">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/></svg>
+                    </div>
+                    <h4>Full Handover, Day One</h4>
+                    <p>You get the keys, the code, and the confidence to run it yourself. We stay on only if you want us to.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies / Work -->
+    <section id="work">
+        <div class="section-container">
+            <div class="section-label">Proof</div>
+            <h2 class="section-title">The Engine in Motion</h2>
+            <p class="section-subtitle">
+                A selection of bespoke builds delivered across property, finance, transport, and NDIS housing. Each started at a different stage of the engine.
+            </p>
+            <div class="cases-grid">
+                <div class="case-card reveal">
+                    <div class="case-industry">Funds Management</div>
+                    <h3>Manson Invest</h3>
+                    <p>Investor-facing portal for a private property investment firm — showcasing opportunities, tracking investor interest, and streamlining onboarding.</p>
+                    <div class="case-stages">
+                        <span class="case-stage">Stage 01</span>
+                        <span class="case-stage">Stage 02</span>
                     </div>
                 </div>
-                <div class="service-card reveal">
-                    <div class="service-icon green">&#x26A1;</div>
-                    <h3>Business Automation</h3>
-                    <p>
-                        Eliminate repetitive tasks and bottlenecks with intelligent automation. We design workflows that save time, reduce errors, and free your team to focus on growth.
-                    </p>
-                    <div class="service-tags">
-                        <span class="service-tag">Workflows</span>
-                        <span class="service-tag">Integration</span>
-                        <span class="service-tag">Efficiency</span>
+                <div class="case-card reveal">
+                    <div class="case-industry">NDIS Housing</div>
+                    <h3>Radius NDIS SDA Platform</h3>
+                    <p>A purpose-built platform for Specialist Disability Accommodation — matching properties with tenants and managing provider workflows.</p>
+                    <div class="case-stages">
+                        <span class="case-stage">Stage 01</span>
+                        <span class="case-stage">Stage 02</span>
                     </div>
                 </div>
-                <div class="service-card reveal">
-                    <div class="service-icon purple">&#x1F4BB;</div>
-                    <h3>Bespoke Portals</h3>
-                    <p>
-                        Custom-built web portals designed for your specific needs — client dashboards, internal tools, data platforms, and more. Fully branded and tailored to your business.
-                    </p>
-                    <div class="service-tags">
-                        <span class="service-tag">Custom Build</span>
-                        <span class="service-tag">Dashboards</span>
-                        <span class="service-tag">Client Portals</span>
+                <div class="case-card reveal">
+                    <div class="case-industry">Transport &amp; Logistics</div>
+                    <h3>TrackNow</h3>
+                    <p>A transport-sector portal and marketing site — giving operators a clean client-facing front end plus internal tracking tools.</p>
+                    <div class="case-stages">
+                        <span class="case-stage">Stage 01</span>
+                        <span class="case-stage">Stage 02</span>
+                    </div>
+                </div>
+                <div class="case-card reveal">
+                    <div class="case-industry">AI Consultancy</div>
+                    <h3>LC-AI Portal</h3>
+                    <p>Custom AI-powered client portal — purpose-built for a consultancy to manage prospects, clients, and deliverables in one place.</p>
+                    <div class="case-stages">
+                        <span class="case-stage">Stage 02</span>
+                        <span class="case-stage">Stage 03</span>
+                    </div>
+                </div>
+                <div class="case-card reveal">
+                    <div class="case-industry">Real Estate Lending</div>
+                    <h3>Deal Vault</h3>
+                    <p>Deal tracking and pipeline platform for a lending business — keeping every opportunity visible, scored, and moving forward.</p>
+                    <div class="case-stages">
+                        <span class="case-stage">Stage 02</span>
+                    </div>
+                </div>
+                <div class="case-card reveal">
+                    <div class="case-industry">Sales &amp; Comms</div>
+                    <h3>Conversations</h3>
+                    <p>A sales and communications hub — unifying prospect conversations, follow-ups, and conversion tracking under one bespoke roof.</p>
+                    <div class="case-stages">
+                        <span class="case-stage">Stage 02</span>
+                        <span class="case-stage">Stage 03</span>
+                        <span class="case-stage">Stage 04</span>
                     </div>
                 </div>
             </div>
@@ -1121,37 +1508,37 @@
             </p>
             <div class="industries-grid">
                 <div class="industry-card reveal">
-                    <div class="ind-icon">&#x1F3E0;</div>
+                    <div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
                     <h4>Real Estate</h4>
                     <p>CRM automation, lead scoring, property matching</p>
                 </div>
                 <div class="industry-card reveal">
-                    <div class="ind-icon">&#x1F69A;</div>
+                    <div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
                     <h4>Transport</h4>
                     <p>Route optimisation, fleet management, logistics AI</p>
                 </div>
                 <div class="industry-card reveal">
-                    <div class="ind-icon">&#x1F3E6;</div>
+                    <div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="5 6 12 3 19 6"/><line x1="4" y1="10" x2="4" y2="21"/><line x1="20" y1="10" x2="20" y2="21"/><line x1="8" y1="14" x2="8" y2="17"/><line x1="12" y1="14" x2="12" y2="17"/><line x1="16" y1="14" x2="16" y2="17"/></svg></div>
                     <h4>Real Estate Lending</h4>
                     <p>Loan processing, risk assessment, compliance automation</p>
                 </div>
                 <div class="industry-card reveal">
-                    <div class="ind-icon">&#x1F4B0;</div>
+                    <div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
                     <h4>Mortgage Broking</h4>
                     <p>Client portals, document automation, pipeline tracking</p>
                 </div>
                 <div class="industry-card reveal">
-                    <div class="ind-icon">&#x1F3D7;</div>
+                    <div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M6 20V8l6-4 6 4v12"/><path d="M10 20v-6h4v6"/></svg></div>
                     <h4>Property Development</h4>
                     <p>Feasibility analysis, project dashboards, investor reporting</p>
                 </div>
                 <div class="industry-card reveal">
-                    <div class="ind-icon">&#x1F4C8;</div>
+                    <div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
                     <h4>Funds Management</h4>
                     <p>Portfolio dashboards, investor comms, compliance tracking</p>
                 </div>
                 <div class="industry-card reveal">
-                    <div class="ind-icon">&#x1F511;</div>
+                    <div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
                     <h4>NDIS Housing</h4>
                     <p>Tenant matching, compliance tracking, provider portals</p>
                 </div>
@@ -1180,31 +1567,31 @@
     <!-- How It Works -->
     <section id="process">
         <div class="section-container">
-            <div class="section-label">Our Process</div>
-            <h2 class="section-title">How It Works</h2>
+            <div class="section-label">How We Work</div>
+            <h2 class="section-title">From Call to Handover</h2>
             <p class="section-subtitle">
-                A straightforward four-step process from initial conversation to measurable results.
+                A simple four-step path from first chat to a fully built, fully owned asset.
             </p>
             <div class="process-grid">
                 <div class="process-step reveal">
                     <div class="step-number">01</div>
-                    <h4>Discovery</h4>
-                    <p>We learn about your business, challenges, and goals in a free initial consultation.</p>
+                    <h4>Discovery Call</h4>
+                    <p>A free 30-minute call to understand your business, your sales process, and where you're losing time and revenue.</p>
                 </div>
                 <div class="process-step reveal">
                     <div class="step-number">02</div>
-                    <h4>Strategy</h4>
-                    <p>We identify the highest-impact AI opportunities and create a tailored action plan.</p>
+                    <h4>Scope &amp; Plan</h4>
+                    <p>We map which stage of the engine fits where you are. Clear scope. Fixed price. No surprise invoices.</p>
                 </div>
                 <div class="process-step reveal">
                     <div class="step-number">03</div>
-                    <h4>Build</h4>
-                    <p>Our team designs, develops, and deploys your solution with full transparency.</p>
+                    <h4>Build &amp; Iterate</h4>
+                    <p>We design, develop, and deploy in full view — with regular check-ins so it shapes around your business as we go.</p>
                 </div>
                 <div class="process-step reveal">
                     <div class="step-number">04</div>
-                    <h4>Scale</h4>
-                    <p>We measure results, optimise performance, and help you scale what works.</p>
+                    <h4>Handover &amp; Grow</h4>
+                    <p>You get the keys, the code, and a clean handover. We stay on for the next stage of the engine — only if you want us to.</p>
                 </div>
             </div>
         </div>
@@ -1213,49 +1600,53 @@
     <!-- About Section -->
     <section id="about">
         <div class="section-container">
-            <div class="section-label">About Us</div>
+            <div class="section-label">About</div>
             <h2 class="section-title">Why MDS Diversified</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>AI expertise with a business-first mindset</h3>
+                    <h3>Sales-first. AI-powered. Built for businesses that want to grow — not just be impressed.</h3>
                     <p>
-                        MDS Diversified — Money Doesn't Sleep — was founded on a simple belief: AI should work for your business around the clock, not the other way around. We cut through the hype and focus on delivering real, measurable value across Australia's eastern seaboard and beyond.
+                        MDS Diversified was founded by a salesperson, not an engineer. That matters. We don't build technology for technology's sake — we build the systems that actually win you customers and keep them.
                     </p>
                     <p>
-                        From real estate agencies in Melbourne to fund managers in Sydney, we've helped businesses across VIC, QLD, and NSW automate operations, build client-facing portals, and develop full AI strategies that drive revenue and cut costs.
+                        That sales-first lens shapes every project: a website that converts, a portal that makes selling easier, marketing that fills the pipeline, and conversion help that turns leads into paying clients. AI sits inside all of it — quiet, useful, and always working in your favour.
+                    </p>
+                    <p>
+                        We've delivered bespoke builds across property, NDIS housing, transport, lending, and funds management — for businesses in VIC, QLD, NSW, and beyond. And in every single one, the client owns what we built. Always.
                     </p>
                     <div class="about-features">
                         <div class="about-feature">
                             <div class="check">&#10003;</div>
-                            <span>Increase revenue through smarter operations</span>
+                            <span>Sales-first thinking, baked into every build</span>
                         </div>
                         <div class="about-feature">
                             <div class="check">&#10003;</div>
-                            <span>Reduce costs with targeted automation</span>
+                            <span>AI used where it earns its keep — not as decoration</span>
                         </div>
                         <div class="about-feature">
                             <div class="check">&#10003;</div>
-                            <span>Bespoke solutions — never off-the-shelf</span>
+                            <span>You own the asset. We never hold your data.</span>
                         </div>
                         <div class="about-feature">
                             <div class="check">&#10003;</div>
-                            <span>Ongoing support and optimisation</span>
+                            <span>Bespoke per business — no templates, no SaaS lock-in</span>
                         </div>
                     </div>
                 </div>
                 <div class="about-visual">
                     <div class="about-card">
                         <div class="code-block">
-                            <span class="code-line"><span class="code-comment">// MDS Diversified Engine</span></span>
-                            <span class="code-line"><span class="code-keyword">const</span> <span class="code-function">transform</span> = <span class="code-bracket">(</span>business<span class="code-bracket">)</span> => <span class="code-bracket">{</span></span>
-                            <span class="code-line">&nbsp;&nbsp;<span class="code-keyword">const</span> strategy = <span class="code-function">analyse</span><span class="code-bracket">(</span>business<span class="code-bracket">)</span>;</span>
-                            <span class="code-line">&nbsp;&nbsp;<span class="code-keyword">const</span> automation = <span class="code-function">build</span><span class="code-bracket">(</span>strategy<span class="code-bracket">)</span>;</span>
-                            <span class="code-line">&nbsp;&nbsp;<span class="code-keyword">const</span> results = <span class="code-function">deploy</span><span class="code-bracket">(</span>automation<span class="code-bracket">)</span>;</span>
+                            <span class="code-line"><span class="code-comment">// The MDS Growth Engine</span></span>
+                            <span class="code-line"><span class="code-keyword">const</span> <span class="code-function">build</span> = <span class="code-bracket">(</span>business<span class="code-bracket">)</span> => <span class="code-bracket">{</span></span>
+                            <span class="code-line">&nbsp;&nbsp;<span class="code-keyword">const</span> website = <span class="code-function">upgrade</span><span class="code-bracket">(</span>business<span class="code-bracket">)</span>;</span>
+                            <span class="code-line">&nbsp;&nbsp;<span class="code-keyword">const</span> portal&nbsp;&nbsp;= <span class="code-function">bespoke</span><span class="code-bracket">(</span>website<span class="code-bracket">)</span>;</span>
+                            <span class="code-line">&nbsp;&nbsp;<span class="code-keyword">const</span> growth&nbsp;= <span class="code-function">activate</span><span class="code-bracket">(</span>portal<span class="code-bracket">)</span>;</span>
+                            <span class="code-line">&nbsp;&nbsp;<span class="code-keyword">const</span> revenue = <span class="code-function">convert</span><span class="code-bracket">(</span>growth<span class="code-bracket">)</span>;</span>
                             <span class="code-line">&nbsp;&nbsp;</span>
                             <span class="code-line">&nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-bracket">{</span></span>
-                            <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;revenue: <span class="code-string">"increased"</span>,</span>
-                            <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;costs: <span class="code-string">"reduced"</span>,</span>
-                            <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;operations: <span class="code-string">"optimised"</span></span>
+                            <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;ownership: <span class="code-string">"yours"</span>,</span>
+                            <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;data: <span class="code-string">"yours"</span>,</span>
+                            <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;customers: <span class="code-string">"yours"</span></span>
                             <span class="code-line">&nbsp;&nbsp;<span class="code-bracket">}</span>;</span>
                             <span class="code-line"><span class="code-bracket">}</span>;</span>
                         </div>
@@ -1271,33 +1662,39 @@
             <div class="section-label">Get Started</div>
             <h2 class="section-title">Let's Talk</h2>
             <p class="section-subtitle">
-                Ready to explore what AI can do for your business? Get in touch and we'll set up a free discovery call.
+                Book a free 30-minute discovery call. We'll map where you are, where you want to go, and which stage of the engine fits.
             </p>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>Contact Details</h3>
+                    <h3>Direct Contact</h3>
                     <p>
-                        We'd love to hear from you. Reach out directly or fill in the form and we'll get back to you within 24 hours.
+                        Prefer to skip the form? Email James directly — replies within 24 hours, usually much sooner.
                     </p>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <div class="contact-icon">&#9993;</div>
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </div>
                             <div>
                                 <div class="contact-item-label">Email</div>
                                 <div class="contact-item-value">
-                                    <a href="mailto:jamesglobalac007@gmail.com">jamesglobalac007@gmail.com</a>
+                                    <a href="mailto:james@mdsdiversified.ai?subject=Discovery%20Call%20Enquiry">james@mdsdiversified.ai</a>
                                 </div>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <div class="contact-icon">&#127760;</div>
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
                             <div>
-                                <div class="contact-item-label">Location</div>
-                                <div class="contact-item-value">VIC, QLD, NSW — Australia</div>
+                                <div class="contact-item-label">Coverage</div>
+                                <div class="contact-item-value">VIC, QLD, NSW — and remote across AUS</div>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <div class="contact-icon">&#9201;</div>
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            </div>
                             <div>
                                 <div class="contact-item-label">Response Time</div>
                                 <div class="contact-item-value">Within 24 hours</div>
@@ -1305,36 +1702,37 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" onsubmit="handleSubmit(event)">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="handleSubmit(event)">
                     <div class="form-row">
                         <div class="form-group">
                             <label>Your Name</label>
-                            <input type="text" placeholder="John Smith" required>
+                            <input type="text" name="name" placeholder="John Smith" required>
                         </div>
                         <div class="form-group">
                             <label>Company</label>
-                            <input type="text" placeholder="Your Company Ltd">
+                            <input type="text" name="company" placeholder="Your Company Ltd">
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Email Address</label>
-                        <input type="email" placeholder="john@company.com" required>
+                        <input type="email" name="email" placeholder="john@company.com" required>
                     </div>
                     <div class="form-group">
-                        <label>What are you interested in?</label>
-                        <select required>
-                            <option value="" disabled selected>Select a service</option>
-                            <option value="consultancy">AI Consultancy</option>
-                            <option value="automation">Business Automation</option>
-                            <option value="portal">Bespoke Portal</option>
-                            <option value="other">Other / Not Sure</option>
+                        <label>Which stage of the engine fits?</label>
+                        <select name="stage" required>
+                            <option value="" disabled selected>Select a stage</option>
+                            <option value="stage-1-website">Stage 01 — Website Upgrade</option>
+                            <option value="stage-2-portal">Stage 02 — Bespoke Client Portal</option>
+                            <option value="stage-3-marketing">Stage 03 — Marketing Engine</option>
+                            <option value="stage-4-sales">Stage 04 — Sales Conversion</option>
+                            <option value="not-sure">Not sure yet — let's chat</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Tell us about your project</label>
-                        <textarea placeholder="What challenges are you facing? What are you hoping to achieve?"></textarea>
+                        <label>Tell us about your business</label>
+                        <textarea name="message" placeholder="What are you working on? What's not working today? What would success look like?"></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">Send Enquiry &#8594;</button>
+                    <button type="submit" class="submit-btn">Book Discovery Call &#8594;</button>
                 </form>
             </div>
         </div>
@@ -1344,10 +1742,12 @@
     <footer>
         <div class="footer-container">
             <div class="footer-text">
-                &copy; 2026 MDS Diversified. All rights reserved.
+                &copy; 2026 MDS Diversified &middot; <a href="mailto:james@mdsdiversified.ai" style="color: var(--text-muted); text-decoration: none;">james@mdsdiversified.ai</a>
             </div>
             <div class="footer-links">
-                <a href="#services">Services</a>
+                <a href="#engine">Growth Engine</a>
+                <a href="#ownership">Ownership</a>
+                <a href="#work">Work</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -1367,24 +1767,65 @@
 
         reveals.forEach(el => observer.observe(el));
 
-        // Form handler
+        // Form handler — submits to Formspree, falls back to mailto if not configured
         function handleSubmit(e) {
+            const form = e.target;
+            const btn = form.querySelector('.submit-btn');
+            const action = form.getAttribute('action') || '';
+
+            // If Formspree isn't wired up yet, fall back to a pre-filled mailto
+            if (action.includes('YOUR_FORM_ID')) {
+                e.preventDefault();
+                const data = new FormData(form);
+                const subject = encodeURIComponent('Discovery Call — ' + (data.get('name') || 'New enquiry'));
+                const body = encodeURIComponent(
+                    'Name: ' + (data.get('name') || '') + '\n' +
+                    'Company: ' + (data.get('company') || '') + '\n' +
+                    'Email: ' + (data.get('email') || '') + '\n' +
+                    'Stage of interest: ' + (data.get('stage') || '') + '\n\n' +
+                    (data.get('message') || '')
+                );
+                window.location.href = 'mailto:james@mdsdiversified.ai?subject=' + subject + '&body=' + body;
+                return;
+            }
+
+            // Real Formspree submit
             e.preventDefault();
-            const btn = e.target.querySelector('.submit-btn');
-            btn.textContent = 'Sent! We\'ll be in touch.';
-            btn.style.background = 'linear-gradient(135deg, #00ff88, #00d4ff)';
-            setTimeout(() => {
-                btn.textContent = 'Send Enquiry \u2192';
-                btn.style.background = '';
-                e.target.reset();
-            }, 3000);
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            fetch(action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    btn.textContent = 'Sent! We\'ll be in touch within 24h.';
+                    btn.style.background = 'linear-gradient(135deg, #00ff88, #00d4ff)';
+                    form.reset();
+                } else {
+                    btn.textContent = 'Something went wrong — please email james@mdsdiversified.ai';
+                    btn.style.background = '#ff4d4d';
+                }
+                setTimeout(() => {
+                    btn.textContent = 'Book Discovery Call \u2192';
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 5000);
+            }).catch(() => {
+                btn.textContent = 'Network error — please email james@mdsdiversified.ai';
+                btn.style.background = '#ff4d4d';
+                btn.disabled = false;
+            });
         }
 
         // Smooth scroll for nav links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth' });
                     document.getElementById('navLinks').classList.remove('active');
