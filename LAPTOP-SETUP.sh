@@ -13,10 +13,11 @@ echo ""
 mkdir -p ~/MDS
 cd ~/MDS
 
-# List of all repos to clone
+# List of all repos to clone.
+# Format: "URL"  OR  "URL|custom-folder-name"  (pipe separator to avoid clashing with https://)
 repos=(
   "https://github.com/jamesglobalac007/mds-diversified.git"
-  "https://github.com/jamesglobalac007/mds-conversations.git:conversations"
+  "https://github.com/jamesglobalac007/mds-conversations.git|conversations"
   "https://github.com/jamesglobalac007/deal-vault.git"
   "https://github.com/jamesglobalac007/LC-AI-Portal.git"
   "https://github.com/jamesglobalac007/Manson--Invest.git"
@@ -26,10 +27,10 @@ repos=(
 )
 
 for entry in "${repos[@]}"; do
-  # Handle custom folder names (url:foldername)
-  if [[ "$entry" == *":"* ]]; then
-    url="${entry%%:*}"
-    folder="${entry##*:}"
+  # Handle custom folder names (url|foldername). Pipe separator avoids the colon-in-URL bug.
+  if [[ "$entry" == *"|"* ]]; then
+    url="${entry%%|*}"
+    folder="${entry##*|}"
   else
     # Extract folder name from URL (strip .git)
     folder=$(basename "$entry" .git)
@@ -46,8 +47,20 @@ for entry in "${repos[@]}"; do
   echo ""
 done
 
+echo "=== Syncing parent ~/MDS/CLAUDE.md ==="
+CANONICAL=~/MDS/mds-diversified/admin/MDS-parent-CLAUDE.md
+if [ -f "$CANONICAL" ]; then
+  cp "$CANONICAL" ~/MDS/CLAUDE.md
+  echo "[OK] Updated ~/MDS/CLAUDE.md from canonical source"
+else
+  echo "[SKIP] Canonical file not found at $CANONICAL — pull mds-diversified first"
+fi
+echo ""
+
 echo "=== Done! ==="
 echo ""
 echo "Your ~/MDS/ folder now contains:"
 ls -1 ~/MDS/
+echo ""
+echo "Entry point: cd ~/MDS && claude — then say 'work on <project name>'"
 echo ""
