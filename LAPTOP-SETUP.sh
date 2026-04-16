@@ -22,6 +22,7 @@ repos=(
   "https://github.com/jamesglobalac007/LC-AI-Portal.git"
   "https://github.com/jamesglobalac007/Manson--Invest.git"
   "https://github.com/jamesglobalac007/radius-ndis-sda-platform.git"
+  "https://github.com/jamesglobalac007/sb-empire-portal.git"
   "https://github.com/jamesglobalac007/tracknow-portal.git"
   "https://github.com/jamesglobalac007/tracknow-site.git"
 )
