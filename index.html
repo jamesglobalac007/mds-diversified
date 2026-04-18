@@ -313,6 +313,34 @@
             letter-spacing: 0.2px;
         }
 
+        /* Hero ethos line — speed / delivery / delight reinforcement before CTA */
+        .hero-ethos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 28px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            animation: fadeInUp 0.8s ease 0.28s both;
+        }
+        .hero-ethos span {
+            color: var(--text-primary);
+            position: relative;
+            padding-left: 14px;
+        }
+        .hero-ethos span::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+        }
+
         .btn-primary {
             padding: 16px 36px;
             background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
@@ -1467,7 +1495,7 @@
         <div class="hero-container">
             <div class="hero-badge">
                 <span class="pulse"></span>
-                Immediate Results · 48-Hour Turnaround
+                28-Hour Design · 48-Hour Turnaround
             </div>
             <h1>
                 Introduce AI.<br>
@@ -1485,6 +1513,16 @@
                 <span class="hero-chip">Custom Websites</span>
                 <span class="hero-chip">Sales &amp; Marketing Automation</span>
             </div>
+
+            <!-- Ethos line — reinforces speed / delivery / delight right
+                 before the CTA, so the visitor's last read before clicking
+                 is 'this agency cares about the outcome, not just the build'. -->
+            <div class="hero-ethos">
+                <span>Speed.</span>
+                <span>Delivery.</span>
+                <span>Delighted Customers.</span>
+            </div>
+
             <div class="hero-buttons">
                 <a href="#contact" class="btn-primary">Book a Discovery Call &#8594;</a>
                 <a href="#engine" class="btn-secondary">See the Engine</a>
