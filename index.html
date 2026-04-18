@@ -294,6 +294,25 @@
             flex-wrap: wrap;
         }
 
+        /* --- Hero 'what we do' chip row --- */
+        .hero-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 32px;
+            animation: fadeInUp 0.8s ease 0.25s both;
+        }
+        .hero-chip {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            padding: 6px 14px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            background: rgba(0, 212, 255, 0.04);
+            border-radius: 999px;
+            letter-spacing: 0.2px;
+        }
+
         .btn-primary {
             padding: 16px 36px;
             background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
@@ -1455,8 +1474,17 @@
                 <span class="gradient-text">Grow the Business.</span>
             </h1>
             <p>
-                Bespoke websites, portals, and AI — built around the real problem slowing your business down. End-to-end. Owned by you. Your data never leaves your hands.
+                We integrate AI into your business — through bespoke websites, portals, and automations built around the real problem slowing you down. End-to-end. Owned by you. Your data never leaves your hands.
             </p>
+
+            <!-- Quick 'what we do' chip row — tells the visitor in one glance
+                 what kind of work we deliver, so the hero stops being abstract. -->
+            <div class="hero-chips">
+                <span class="hero-chip">AI Integration</span>
+                <span class="hero-chip">Bespoke Portals</span>
+                <span class="hero-chip">Custom Websites</span>
+                <span class="hero-chip">Sales &amp; Marketing Automation</span>
+            </div>
             <div class="hero-buttons">
                 <a href="#contact" class="btn-primary">Book a Discovery Call &#8594;</a>
                 <a href="#engine" class="btn-secondary">See the Engine</a>
