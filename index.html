@@ -1129,6 +1129,38 @@
             .capabilities-grid { grid-template-columns: 1fr; }
         }
 
+        /* --- The Approach commitment banner --- */
+        .outcome-commitment {
+            margin-top: 60px;
+            text-align: center;
+            padding: 40px 30px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.04), rgba(0, 255, 170, 0.04));
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 20px;
+        }
+        .outcome-commitment-line {
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        .outcome-commitment-sub {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+        .outcome-commitment-sub strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        @media (max-width: 900px) {
+            #approach .capabilities-grid { grid-template-columns: 1fr !important; }
+        }
+
         /* --- NEW: Stage cards (Growth Engine) --- */
         .engine-intro {
             display: grid;
@@ -1467,6 +1499,48 @@
                         <li>Sales process design</li>
                         <li>Conversion coaching</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The MDS Approach — how we actually integrate AI into a business.
+         Narrow focus on problems, ripple efficiency, delight-led. Closes
+         with the 'we don't rest until it's done' commitment line. -->
+    <section id="approach">
+        <div class="section-container">
+            <div class="section-label">The MDS Approach</div>
+            <h2 class="section-title">AI is broad. <span class="gradient-text">Our focus is narrow.</span></h2>
+            <p class="section-subtitle">
+                25+ years of real business experience, pointed directly at AI. We don't sell tech — we find the problem slowing your business down, fix it end-to-end, and the rest of the business lifts with it. More revenue. Lower costs. Time back. Sharper decisions. That's the ripple.
+            </p>
+            <div class="capabilities-grid" style="grid-template-columns:repeat(4,1fr);">
+                <div class="capability-card reveal">
+                    <h3>Find the Problem</h3>
+                    <p>Discovery-led. We listen first, build later. Most agencies pitch tech; we pitch the bottleneck. The right problem is worth 10x the wrong solution.</p>
+                </div>
+                <div class="capability-card reveal">
+                    <h3>Fix It Properly</h3>
+                    <p>End-to-end. No half-measures, no Zapier duct-tape. The fix holds under pressure — portals, automations, AI where it earns its keep. Built to last.</p>
+                </div>
+                <div class="capability-card reveal">
+                    <h3>Everything Lifts</h3>
+                    <p>Ripple effect. One bottleneck gone means revenue climbs, costs drop, hours come back, and leaders get thinking time for the decisions that actually matter.</p>
+                </div>
+                <div class="capability-card reveal">
+                    <h3>Delight the Customer</h3>
+                    <p>Not done until you are. We don't rest until the job is finished — properly. Every build aims for the moment the client says "that's exactly what I needed."</p>
+                </div>
+            </div>
+
+            <!-- Closing commitment — deliberately plain, no icons, no gimmicks.
+                 This is the sentence the client remembers after the discovery call. -->
+            <div class="outcome-commitment">
+                <div class="outcome-commitment-line">
+                    We don't rest until the job is done.
+                </div>
+                <div class="outcome-commitment-sub">
+                    High-quality product. Maximum impact. <strong>Built for your business. Owned by you.</strong>
                 </div>
             </div>
         </div>
