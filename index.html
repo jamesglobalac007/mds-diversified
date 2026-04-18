@@ -1129,6 +1129,33 @@
             .capabilities-grid { grid-template-columns: 1fr; }
         }
 
+        /* --- Time-value pull-quote (Approach section) --- */
+        .time-callout {
+            margin: 50px auto 30px;
+            max-width: 760px;
+            padding: 26px 28px;
+            border-left: 3px solid var(--accent-blue);
+            background: rgba(0, 212, 255, 0.03);
+            border-radius: 0 12px 12px 0;
+        }
+        .time-callout-question {
+            font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+            margin-bottom: 10px;
+            line-height: 1.25;
+        }
+        .time-callout-answer {
+            font-size: 0.98rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .time-callout-answer strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
         /* --- The Approach commitment banner --- */
         .outcome-commitment {
             margin-top: 60px;
@@ -1514,6 +1541,16 @@
             <p class="section-subtitle">
                 25+ years of real business experience, pointed directly at AI. We don't sell tech — we find the problem slowing your business down, fix it end-to-end, and the rest of the business lifts with it. More revenue. Lower costs. Time back. Sharper decisions. That's the ripple.
             </p>
+
+            <!-- Time-value pull-quote — the question that reframes AI as
+                 compounding ROI rather than a software purchase. -->
+            <div class="time-callout">
+                <div class="time-callout-question">What's an hour of your time worth?</div>
+                <div class="time-callout-answer">
+                    Every hour we hand back goes into <strong>strategy, direction, and the decisions only you can make</strong>. That compounds — week after week, quarter after quarter. It's the real ROI of AI done properly.
+                </div>
+            </div>
+
             <div class="capabilities-grid" style="grid-template-columns:repeat(3,1fr);">
                 <div class="capability-card reveal">
                     <h3>Find the Problem</h3>
