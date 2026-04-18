@@ -1235,16 +1235,16 @@
 
         /* --- NEW: Stage cards (Growth Engine) --- */
         .engine-intro {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 60px;
-            align-items: start;
+            max-width: 820px;
+            margin: 0 auto 60px;
+            text-align: center;
         }
         .engine-intro-tagline {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--text-secondary);
-            line-height: 1.8;
+            line-height: 1.75;
+            max-width: 680px;
+            margin: 20px auto 0;
         }
         .engine-intro-tagline strong {
             color: var(--text-primary);
@@ -1320,7 +1320,7 @@
         }
         @media (max-width: 968px) {
             .stages-grid { grid-template-columns: repeat(2, 1fr); }
-            .engine-intro { grid-template-columns: 1fr; gap: 30px; }
+            .engine-intro { margin-bottom: 40px; }
         }
         @media (max-width: 480px) {
             .stages-grid { grid-template-columns: 1fr; }
