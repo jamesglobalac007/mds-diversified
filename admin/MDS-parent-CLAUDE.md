@@ -73,6 +73,38 @@ If the instruction is ambiguous (e.g., "tracknow" alone), ask which one before d
 - Never use Dropbox, iCloud, or Desktop as a transfer path.
 - This parent `CLAUDE.md` is synced by running `~/MDS/mds-diversified/LAPTOP-SETUP.sh` on either machine — the script copies the canonical version from the mds-diversified repo into `~/MDS/CLAUDE.md`.
 
+## 🚨 AUTO-PUSH RULE — non-negotiable
+
+**Claude MUST automatically commit and push every change to GitHub, without being asked.**
+
+James works from two machines (Mac laptop + Mac mini) and pulls changes on whichever one he's using next. If changes sit uncommitted or unpushed on one machine, the other machine has no idea they exist. This is the #1 source of "where did that fix go?" lost time.
+
+### What this means in practice
+
+1. **After every meaningful code/content change**, Claude must immediately:
+   - `git add` the modified files (specific files, not `git add -A` blanket)
+   - `git commit` with a clear message explaining WHY (not just what)
+   - `git push origin <branch>` — usually `main`
+
+2. **James never has to say "push" or "commit" or "save to GitHub"** — it is the default behavior after every change. He should only ever say "don't push yet" if he wants to pause it.
+
+3. **At the end of every session**, before saying anything like "done" or "handing back", Claude must run `git status` in every active MDS repo touched during the session and push anything dangling. If any repo has staged/unstaged/unpushed changes, push them or explicitly flag them with a reason they're being held back.
+
+4. **If a push fails** (pre-commit hook error, conflict, network), surface it immediately in plain language. Never leave James thinking something was pushed when it wasn't.
+
+5. **Multi-file/multi-repo sessions**: run the end-of-session check across *every* MDS project, not just the one being actively worked on. Git-add + commit + push each repo that has changes.
+
+### Why this rule exists
+
+James asked for it 19 April 2026 after the S&B Empire DocuSeal integration session — several commits tonight would have been stranded on the laptop without explicit "push" commands. This rule makes sync automatic.
+
+### What NOT to do
+
+- Don't ask "do you want me to push?" — just push.
+- Don't commit files that contain secrets (API keys, passwords, credit card details). If a secret got into the codebase, flag it and remove it instead of pushing.
+- Don't `git add -A` blindly — be specific about what's being committed so noise (temp files, IDE settings, Desktop scratch files) doesn't land in the repo.
+- Don't skip the push if the commit succeeds but the push fails — retry or surface the error.
+
 ---
 
 ## 🔑 Common references
