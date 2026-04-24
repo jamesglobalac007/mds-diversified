@@ -113,7 +113,7 @@ Every MDS portal ships with off-site encrypted GitHub backups running every 2 ho
 
 **Per-portal setup:**
 
-1. **Server code** — copy the `_offsiteEncrypt` / `runOffsiteBackup` block from `~/MDS/tracknow-portal/server.js`. Uses AES-256-GCM, pushes envelopes to a dedicated `<slug>-backups` private GitHub repo every 2h + on boot.
+1. **Server code** — copy the `_offsiteEncrypt` / `runOffsiteBackup` / `_offsitePruneOldBackups` block from `~/MDS/tracknow-portal/server.js`. Uses AES-256-GCM, pushes envelopes to a dedicated `<slug>-backups` private GitHub repo every 2h + on boot. **Critical: payload includes both `files` (text) AND `blobs` (base64 bytes from any on-disk upload directory — `invoices/`, `content-library/`, etc). Without `blobs`, uploaded PDFs / images / HTML files are NOT recoverable even though their records are.** Retention: prune to last 50 snapshots per push so the repo stays bounded.
 2. **Backup repo** — create `jamesglobalac007/<portal-slug>-backups`, private. The server code writes `encrypted/data.<stamp>.json.enc` files + a manifest.
 3. **Render env vars** — set `BACKUP_ENCRYPTION_KEY` (generate with `openssl rand -base64 32`), `BACKUP_GITHUB_TOKEN` (PAT with contents:write on the backup repo), `BACKUP_GITHUB_REPO`.
 4. **NordPass recovery kit** — one Secure Note per portal titled `<portal-slug> — backup recovery kit` with the encryption key + a 4-line info block (Render URL, backup repo URL, live portal URL, restore command). Without this, losing Render account access = permanent data loss.
