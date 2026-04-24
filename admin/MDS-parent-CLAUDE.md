@@ -107,6 +107,22 @@ Any new portal that ships without these is guaranteed to burn a day of James's t
 
 ---
 
+## 💾 Portal backup + recovery (mandatory before any client uses a new portal)
+
+Every MDS portal ships with off-site encrypted GitHub backups running every 2 hours + on every boot. Non-negotiable — without this, a disk corruption or accidental delete = permanent data loss.
+
+**Per-portal setup:**
+
+1. **Server code** — copy the `_offsiteEncrypt` / `runOffsiteBackup` block from `~/MDS/tracknow-portal/server.js`. Uses AES-256-GCM, pushes envelopes to a dedicated `<slug>-backups` private GitHub repo every 2h + on boot.
+2. **Backup repo** — create `jamesglobalac007/<portal-slug>-backups`, private. The server code writes `encrypted/data.<stamp>.json.enc` files + a manifest.
+3. **Render env vars** — set `BACKUP_ENCRYPTION_KEY` (generate with `openssl rand -base64 32`), `BACKUP_GITHUB_TOKEN` (PAT with contents:write on the backup repo), `BACKUP_GITHUB_REPO`.
+4. **NordPass recovery kit** — one Secure Note per portal titled `<portal-slug> — backup recovery kit` with the encryption key + a 4-line info block (Render URL, backup repo URL, live portal URL, restore command). Without this, losing Render account access = permanent data loss.
+5. **Test restore** — before declaring the portal production-ready, download a sample `.enc` file and decrypt it locally using `~/MDS/_backup-test/decrypt_backup.py`. If the decrypt doesn't produce valid JSON, the pipeline isn't done.
+
+Full procedure in `~/.claude/projects/-Users-jamesglobal/memory/feedback_portal_backup_template.md`.
+
+---
+
 ## 🔑 Common references
 
 - **GitHub username:** `jamesglobalac007`
