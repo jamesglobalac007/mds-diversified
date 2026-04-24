@@ -103,6 +103,8 @@ Plus an admin `/api/admin/user-state?email=…` diagnostic endpoint that returns
 
 Any new portal that ships without these is guaranteed to burn a day of James's time the first time a client has trouble logging in.
 
+**Audit methodology — two passes, not one.** The 14-item checklist above catches SECURITY bugs (bypass / leak / corrupt state). It does NOT catch flow-UX bugs like "the reset flow sets the password but doesn't log you in, so you land on the login page and Chrome autofills a stale password and login fails." Every auth audit also needs a JOURNEY pass: for each flow (login / reset-link / change-password / 2FA enrol / logout), write the expected exit state, then prove the code delivers it. Test in a Chrome profile with saved passwords ON, not incognito. See `~/.claude/projects/-Users-jamesglobal/memory/feedback_audit_journey_testing.md` for the full checklist.
+
 ---
 
 ## 🔑 Common references
