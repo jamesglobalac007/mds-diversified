@@ -36,6 +36,7 @@ If you don't know the exact folder name for a project, **ask James** — do not 
 | "manson invest" | `Manson--Invest` | `~/MDS/Manson--Invest/` | `jamesglobalac007/Manson--Invest` | https://manson-invest.onrender.com |
 | "radius" / "NDIS" / "SDA" | `radius-ndis-sda-platform` | `~/MDS/radius-ndis-sda-platform/` | `jamesglobalac007/radius-ndis-sda-platform` | https://radius-ndis-sda-platform.onrender.com |
 | "sb" / "s&b empire" / "sb empire portal" | `sb-empire-portal` | `~/MDS/sb-empire-portal/` | `jamesglobalac007/sb-empire-portal` | https://sb-empire-portal.onrender.com |
+| "mds invoices" / "invoice portal" / "mds billing" | `mds-invoices` | `~/MDS/mds-invoices/` | `jamesglobalac007/mds-invoices` | *(deploy on Render pending)* |
 | "tracknow site" / "the tracknow site" | `tracknow-site` | `~/MDS/tracknow-site/` | `jamesglobalac007/tracknow-site` | https://tracknow-site.onrender.com |
 | "tracknow portal" / "the portal" | `tracknow-portal` | `~/MDS/tracknow-portal/` | `jamesglobalac007/tracknow-portal` | https://tracknow-portal.onrender.com |
 | "tracknow portal sync" | `tracknow-portal-sync` | *(no local folder — Render-only service)* | *(n/a)* | https://tracknow-portal-sync.onrender.com |
@@ -73,37 +74,34 @@ If the instruction is ambiguous (e.g., "tracknow" alone), ask which one before d
 - Never use Dropbox, iCloud, or Desktop as a transfer path.
 - This parent `CLAUDE.md` is synced by running `~/MDS/mds-diversified/LAPTOP-SETUP.sh` on either machine — the script copies the canonical version from the mds-diversified repo into `~/MDS/CLAUDE.md`.
 
-## 🚨 AUTO-PUSH RULE — non-negotiable
+---
 
-**Claude MUST automatically commit and push every change to GitHub, without being asked.**
+## 🔐 Portal auth template (mandatory for ALL new portals)
 
-James works from two machines (Mac laptop + Mac mini) and pulls changes on whichever one he's using next. If changes sit uncommitted or unpushed on one machine, the other machine has no idea they exist. This is the #1 source of "where did that fix go?" lost time.
+Before scaffolding any new portal for a client, read
+`~/.claude/projects/-Users-jamesglobal/memory/feedback_portal_auth_template.md`
+and `feedback_long_sessions_default.md`.
 
-### What this means in practice
+TL;DR — 14 non-negotiables earned from a full day of login bugs on 24 Apr 2026:
 
-1. **After every meaningful code/content change**, Claude must immediately:
-   - `git add` the modified files (specific files, not `git add -A` blanket)
-   - `git commit` with a clear message explaining WHY (not just what)
-   - `git push origin <branch>` — usually `main`
+1. **Session TTL 30 days** by default (override via `SESSION_HOURS` env var). Rolling — refresh on every `/api/*` call.
+2. **Token in `localStorage`**, never `sessionStorage`. Must survive tab close.
+3. **No plaintext passwords on disk.** Admin reset hashes to bcrypt IMMEDIATELY. Plaintext only in the HTTP response.
+4. **Trim email + password server-side** on every auth endpoint — login, change-password, admin-reset, reset-link, 2fa-disable.
+5. **`force2FA: false` for non-admin seed users.** Admin role keeps 2FA; clients / managers don't need it.
+6. **Symmetric self-heal on boot** — upgrade AND unconditional-downgrade for non-admin roles. Not "only on transition".
+7. **Generate Reset Link** as the PRIMARY admin reset path; Temp Password is a fallback.
+8. **Reset-link flow clears `force2FA` + `totpEnabled`** for non-admins on consumption.
+9. **Admin `/api/admin/reset-2fa` revokes trusted devices too** (lost-phone scenario).
+10. **`/api/2fa/disable`** needs rate limit + trim + trust-revoke on success.
+11. **Anti-wipe guard on `/api/data`** — refuse to replace non-empty server arrays with empty/missing incoming ones.
+12. **Auth middleware rejects orphan sessions** (session exists, user record gone — kill the session, return 401).
+13. **Catch-up clamp in auth middleware** — re-clamp `full` scope to `enrollment` if `force2FA` flipped on post-login.
+14. **Rate-limit maps pruned** every 10 min so memory doesn't grow unbounded over time.
 
-2. **James never has to say "push" or "commit" or "save to GitHub"** — it is the default behavior after every change. He should only ever say "don't push yet" if he wants to pause it.
+Plus an admin `/api/admin/user-state?email=…` diagnostic endpoint that returns all auth flags (never the passHash itself) + recent audit entries. Use this as the FIRST step when anyone reports a login issue — don't just reset, look at the flags first.
 
-3. **At the end of every session**, before saying anything like "done" or "handing back", Claude must run `git status` in every active MDS repo touched during the session and push anything dangling. If any repo has staged/unstaged/unpushed changes, push them or explicitly flag them with a reason they're being held back.
-
-4. **If a push fails** (pre-commit hook error, conflict, network), surface it immediately in plain language. Never leave James thinking something was pushed when it wasn't.
-
-5. **Multi-file/multi-repo sessions**: run the end-of-session check across *every* MDS project, not just the one being actively worked on. Git-add + commit + push each repo that has changes.
-
-### Why this rule exists
-
-James asked for it 19 April 2026 after the S&B Empire DocuSeal integration session — several commits tonight would have been stranded on the laptop without explicit "push" commands. This rule makes sync automatic.
-
-### What NOT to do
-
-- Don't ask "do you want me to push?" — just push.
-- Don't commit files that contain secrets (API keys, passwords, credit card details). If a secret got into the codebase, flag it and remove it instead of pushing.
-- Don't `git add -A` blindly — be specific about what's being committed so noise (temp files, IDE settings, Desktop scratch files) doesn't land in the repo.
-- Don't skip the push if the commit succeeds but the push fails — retry or surface the error.
+Any new portal that ships without these is guaranteed to burn a day of James's time the first time a client has trouble logging in.
 
 ---
 
