@@ -36,10 +36,11 @@ If you don't know the exact folder name for a project, **ask James** — do not 
 | "manson invest" | `Manson--Invest` | `~/MDS/Manson--Invest/` | `jamesglobalac007/Manson--Invest` | https://manson-invest.onrender.com |
 | "radius" / "NDIS" / "SDA" | `radius-ndis-sda-platform` | `~/MDS/radius-ndis-sda-platform/` | `jamesglobalac007/radius-ndis-sda-platform` | https://radius-ndis-sda-platform.onrender.com |
 | "sb" / "s&b empire" / "sb empire portal" | `sb-empire-portal` | `~/MDS/sb-empire-portal/` | `jamesglobalac007/sb-empire-portal` | https://sb-empire-portal.onrender.com |
+| "sbp sandbox" / "sb empire test" / "sb empire sandbox" | `sandbox-sb-empire` | `~/MDS/sandbox-sb-empire/` | `jamesglobalac007/sandbox-sb-empire` | https://sandbox-sb-empire.onrender.com (test twin of sb-empire-portal) |
 | "mds invoices" / "invoice portal" / "mds billing" | `mds-invoices` | `~/MDS/mds-invoices/` | `jamesglobalac007/mds-invoices` | *(deploy on Render pending)* |
 | "tracknow site" / "the tracknow site" | `tracknow-site` | `~/MDS/tracknow-site/` | `jamesglobalac007/tracknow-site` | https://tracknow-site.onrender.com |
 | "tracknow portal" / "the portal" | `tracknow-portal` | `~/MDS/tracknow-portal/` | `jamesglobalac007/tracknow-portal` | https://tracknow-portal.onrender.com |
-| "tracknow portal sync" | `tracknow-portal-sync` | *(no local folder — Render-only service)* | *(n/a)* | https://tracknow-portal-sync.onrender.com |
+| "tracknow sandbox" / "tracknow test" / "sandbox tracknow" | `sandbox-tracknow` | `~/MDS/sandbox-tracknow/` | `jamesglobalac007/sandbox-tracknow` | https://sandbox-tracknow.onrender.com (test twin of tracknow-portal) |
 
 ### CRITICAL — TrackNow disambiguation
 
@@ -73,6 +74,147 @@ If the instruction is ambiguous (e.g., "tracknow" alone), ask which one before d
 - Never store project files outside `~/MDS/{project}/`.
 - Never use Dropbox, iCloud, or Desktop as a transfer path.
 - This parent `CLAUDE.md` is synced by running `~/MDS/mds-diversified/LAPTOP-SETUP.sh` on either machine — the script copies the canonical version from the mds-diversified repo into `~/MDS/CLAUDE.md`.
+
+---
+
+## 🧪 Live + Test twin rule (HARD RULE — EVERY customer portal, day one)
+
+**Every new portal that a customer will use must ship with its
+sandbox twin from day one — before first customer access.** No "add
+it later." No "just a small portal." No exceptions.
+
+All edits, bug fixes, and experiments go through the sandbox first.
+Only changes that pass the health check get promoted to live.
+
+### Daily rhythm (mandatory for every customer-live portal)
+
+1. **In business hours (8am–8pm AEST):** no edits land on live. If a
+   bug surfaces or the customer asks for a change, investigate and
+   iterate in the sandbox. Do NOT push to live mid-session.
+2. **End-of-day customer check-in:** "How's the portal going? Any
+   issues or edits to queue?" Collect the list. Tell them: *"All
+   edits go in tonight from 8pm — portal will be updated by the time
+   you log in tomorrow."*
+3. **After 8pm (or weekends):** push each queued change to the
+   sandbox, run the health check, promote to live only if it passes.
+4. **Customer logs in next morning** to a stable, updated portal.
+
+### Bootstrap sequence for every new portal (day zero)
+
+1. Create `<slug>` GitHub repo (live) + `sandbox-<slug-root>` (test)
+2. Create `<slug>` Render service (live) + `sandbox-<slug-root>`
+   Render service (test) — separate disks, NODE_ENV=test on sandbox,
+   no `BACKUP_*` vars on sandbox
+3. Apply auth template to both (`feedback_portal_auth_template.md`)
+4. Apply backup template to LIVE only — sandbox never runs backups
+5. Then build features, always through sandbox first
+
+### The 3-layer verification check (run EVERY edit)
+
+Every change through the sandbox-first pipeline must pass this
+gauntlet before promoting to live:
+
+- **Layer 1 — automated schema/surface diff**
+  `python3 ~/MDS/_sandbox-health-check/health_check.py`
+  Catches silent schema changes, route breaks, memory spikes. Green
+  report required.
+
+- **Layer 2a — manual click-through (James)**
+  Navigate the sandbox, confirm the edit does what it should, confirm
+  nothing else broke. Mandatory on every edit. Claude MUST remind
+  James to run this after each sandbox push.
+
+- **Layer 2b — automated smoke test**
+  Phase 2 — Playwright. Not yet built. Add next week.
+
+- **Layer 3 — visual pixel diff**
+  Skip unless portal has 10+ customers. Overkill at low customer
+  count.
+
+**No edit promotes to live without passing Layer 1 + 2a minimum.**
+Details in `feedback_sandbox_edit_verification_layers.md`.
+
+**Naming pattern (visually distinct, typo-proof):**
+- Live: `<slug>` — e.g. `sb-empire-portal`
+- Test: `sandbox-<slug-root>` — e.g. `sandbox-sb-empire`
+
+The word `sandbox` up front means any autocomplete, dashboard list, or
+directory name visibly separates the two. Impossible to mistype
+`sb-empire-portal` and hit the test environment.
+
+**Test env isolation:**
+- No `BACKUP_*` env vars on the test Render service (test doesn't
+  write to the live backup repo)
+- `NODE_ENV=test` disables all outbound email / SMS / webhook calls
+- Separate admin login (e.g. `test@mdsdiversified.ai`)
+- Big orange TEST ENVIRONMENT banner across every page
+- Admin button: "Pull latest snapshot from live" — re-seed test with
+  a decrypted copy of the latest live backup
+
+**Daily workflow:**
+- Business hours: customer uses live, we iterate on test
+- End of day: ask customer for the day's issues/requests, queue them
+- 8pm+: push each queued change to test → health check vs live → if
+  pass, promote same change to live
+- Customer logs in next morning to a stable, updated portal
+
+**Health check compares test vs live on:**
+- Route inventory, HTTP status codes, `/api/data` schema, Render
+  memory profile, boot time, key-page renders
+
+Full doctrine in
+`~/.claude/projects/-Users-jamesglobal/memory/feedback_portal_live_and_test_twin_rule.md`
+
+Scope as of 24 Apr 2026:
+- `sb-empire-portal` ↔ `sandbox-sb-empire` ← being built now
+- `tracknow-portal` ↔ `sandbox-tracknow` ← next
+- Every future portal that goes live with a real customer
+
+---
+
+## 🕗 Production deploy window (HARD RULE — customer-live portals only)
+
+**No pushes before 8pm AEST weekdays to any portal with active paying
+customers on it.**
+
+### Portals this rule currently applies to (as of 24 Apr 2026)
+
+- ✅ `sb-empire-portal` — Mark Speelmeyer using it daily. Disruption
+  during business hours has already caused a near-data-loss incident.
+  8pm AEST deploy window enforced.
+
+### Portals currently exempt (push anytime for now)
+
+- `tracknow-portal` — still iterating hard on fixes. James reviews each
+  push case-by-case. Reassess and add to the rule once fixes stabilise
+  and client usage is steady.
+- All non-customer portals: `mds-diversified`, `conversations`,
+  `deal-vault`, `LC-AI-Portal`, `Manson--Invest`,
+  `radius-ndis-sda-platform`, `mds-invoices`, `tracknow-site`.
+
+**When a portal crosses into "active daily use by a paying customer"
+status** — move it up to the "rule applies" list.
+
+### The rule itself
+
+Every deploy briefly restarts Render (~30 sec) and any in-flight save
+during that window can fail. James lived through this 24 Apr 2026 when
+a Mark-Speelmeyer mid-session deploy nearly burned real partial-payment
+entries.
+
+1. **Routine edits / bug fixes / new features** — batch them up during
+   the day, push after **8pm AEST** weekdays, or any time on weekends.
+2. **Customer-blocking critical bug** (portal down, can't log in, data
+   loss in progress) — push immediately BUT phone/text the affected
+   customer 60 sec beforehand so they can pause.
+3. **All other "urgent" requests from a client mid-business-day** —
+   queue, tell client the fix lands tonight or first thing tomorrow.
+4. **Test environment** (when set up for each portal) has no deploy
+   window — push to it any time. That's the whole point.
+
+Works with — not against — the `feedback_portal_auth_template.md`,
+`feedback_portal_backup_template.md`, and test-env patterns: the safer
+each portal is per-change, the more comfortable the after-hours rhythm.
 
 ---
 
