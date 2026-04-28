@@ -58,10 +58,20 @@ else
 fi
 echo ""
 
+echo "=== Syncing parent ~/MDS/AGENTS.md ==="
+CANONICAL=~/MDS/mds-diversified/admin/MDS-parent-AGENTS.md
+if [ -f "$CANONICAL" ]; then
+  cp "$CANONICAL" ~/MDS/AGENTS.md
+  echo "[OK] Updated ~/MDS/AGENTS.md from canonical source"
+else
+  echo "[SKIP] Canonical file not found at $CANONICAL — pull mds-diversified first"
+fi
+echo ""
+
 echo "=== Done! ==="
 echo ""
 echo "Your ~/MDS/ folder now contains:"
 ls -1 ~/MDS/
 echo ""
-echo "Entry point: cd ~/MDS && claude — then say 'work on <project name>'"
+echo "Entry point: cd ~/MDS && claude or codex — then say 'work on <project name>'"
 echo ""
