@@ -54,6 +54,17 @@ Ask James only when proceeding could affect the wrong project, wrong client, wro
 
 Do not repeatedly apologize. Do not repeatedly say "I won't assume" when the answer can be found locally. Use judgement, verify from files, and move the work forward.
 
+## Simplicity and Time Rule
+
+James values simplicity, consistency, and time management over clever or complex systems.
+
+- Default to the simplest reliable workflow: 1 + 1 = 2.
+- Keep files, folders, approvals, and automations in predictable places.
+- Avoid adding tools, steps, dashboards, abstractions, or integrations unless they clearly save time.
+- Prefer one source of truth, one approval path, and one clean handoff.
+- If a workflow starts creating extra admin, simplify it before scaling it.
+- Explain the chosen flow briefly in plain language so James can trust and repeat it.
+
 ## GitHub Sync Workflow
 
 GitHub is the source of truth between the Mac mini and Mac laptop.
