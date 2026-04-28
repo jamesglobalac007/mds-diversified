@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MDS Diversified | From Website to Revenue. One Partner.</title>
-    <meta name="description" content="Bottlenecks in your business? We build the fix. Websites, client portals, workflow automation, SOPs, AI assistants and custom tools for Australian small and medium businesses. You own every piece.">
+    <title>MDS Diversified | AI Systems, Portals & Growth Infrastructure</title>
+    <meta name="description" content="MDS Diversified builds practical AI systems, client portals, websites, workflow automation and sales infrastructure for Australian businesses. Built around your bottleneck. Owned by you.">
     <meta name="keywords" content="AI consultancy Australia, workflow automation, SOPs, client portals, business automation, custom AI tools, small medium business, MDS Diversified">
     <meta name="author" content="MDS Diversified">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="MDS Diversified | From Website to Revenue. One Partner.">
-    <meta property="og:description" content="Bottlenecks in your business? We build the fix. Growth engine, client portals, workflow automation, SOPs, AI assistants and custom tools. You own every piece.">
+    <meta property="og:title" content="MDS Diversified | AI Systems, Portals & Growth Infrastructure">
+    <meta property="og:description" content="Practical AI systems, client portals, websites, workflow automation and sales infrastructure for Australian businesses. Built around your bottleneck. Owned by you.">
     <meta property="og:image" content="assets/logo/mds-diversified-square-400.png">
     <meta property="og:url" content="https://mds-diversified.onrender.com">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="MDS Diversified | From Website to Revenue. One Partner.">
-    <meta name="twitter:description" content="We build the fix for your business bottlenecks — growth engine, portals, automation, SOPs, AI tools. You own every piece.">
+    <meta name="twitter:title" content="MDS Diversified | AI Systems, Portals & Growth Infrastructure">
+    <meta name="twitter:description" content="Practical AI systems, client portals, websites, workflow automation and sales infrastructure. Built around your bottleneck. Owned by you.">
     <meta name="twitter:image" content="assets/logo/mds-diversified-square-400.png">
 
     <!-- Favicon -->
@@ -156,13 +156,13 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 35px;
+            gap: clamp(16px, 2vw, 28px);
         }
 
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.86rem;
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
@@ -188,7 +188,7 @@
         }
 
         .nav-cta {
-            padding: 10px 24px;
+            padding: 10px 20px;
             background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
             color: white !important;
             border-radius: 8px;
@@ -421,6 +421,55 @@
             font-size: 0.85rem;
             color: var(--text-muted);
             margin-top: 6px;
+        }
+
+        .diagnostic-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 42px;
+        }
+        .diagnostic-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 26px 22px;
+            min-height: 210px;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .diagnostic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+        }
+        .diagnostic-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 212, 255, 0.22);
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
+        }
+        .diagnostic-kicker {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .diagnostic-card h3 {
+            font-size: 1.05rem;
+            line-height: 1.35;
+            margin-bottom: 10px;
+        }
+        .diagnostic-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
         }
 
         /* Section styling */
@@ -1066,6 +1115,10 @@
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .diagnostic-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 480px) {
@@ -1082,6 +1135,10 @@
             }
 
             .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .diagnostic-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1525,8 +1582,8 @@
                 <img src="assets/logo/mds-diversified-horizontal-light.svg" alt="MDS Diversified" class="logo-img">
             </a>
             <ul class="nav-links" id="navLinks">
+                <li><a href="#diagnostic">When to Call</a></li>
                 <li><a href="#engine">Growth Engine</a></li>
-                <li><a href="#beyond">Beyond the Engine</a></li>
                 <li><a href="#ownership">Ownership</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#about">About</a></li>
@@ -1545,32 +1602,33 @@
         <div class="hero-container">
             <div class="hero-badge">
                 <span class="pulse"></span>
-                Customer-Focused · Solution-Driven
+                Practical AI · Built Around Your Business
             </div>
             <h1>
-                Introduce AI.<br>
-                <span class="gradient-text">Turbocharge Your Business.</span>
+                Build the AI systems<br>
+                <span class="gradient-text">your business actually needs.</span>
             </h1>
             <p>
-                We uncover what's really holding your business back — then introduce AI and build whatever it takes to drive it forward. End-to-end. Owned by you. Your data never leaves your hands.
+                MDS finds the bottleneck slowing your sales, admin, clients or delivery — then builds the website, portal, automation or AI workflow that removes it. End-to-end. Owned by you. Practical from day one.
             </p>
 
             <!-- Quick 'what we do' chip row — tells the visitor in one glance
                  what kind of work we deliver, so the hero stops being abstract. -->
             <div class="hero-chips">
-                <span class="hero-chip">AI Integration</span>
-                <span class="hero-chip">Bespoke Portals</span>
-                <span class="hero-chip">Custom Websites</span>
-                <span class="hero-chip">Sales &amp; Marketing Automation</span>
+                <span class="hero-chip">Websites that convert</span>
+                <span class="hero-chip">Client &amp; staff portals</span>
+                <span class="hero-chip">Workflow automation</span>
+                <span class="hero-chip">AI assistants</span>
+                <span class="hero-chip">Sales follow-up systems</span>
             </div>
 
             <!-- Ethos line — reinforces speed / delivery / delight right
                  before the CTA, so the visitor's last read before clicking
                  is 'this agency cares about the outcome, not just the build'. -->
             <div class="hero-ethos">
-                <span>Speed.</span>
-                <span>Delivery.</span>
-                <span>Delighted Customers.</span>
+                <span>Sales-led.</span>
+                <span>Ops-aware.</span>
+                <span>Built to be owned.</span>
             </div>
 
             <div class="hero-buttons">
@@ -1586,10 +1644,10 @@
     <div class="thesis-strip">
         <div class="thesis-inner">
             <div class="thesis-line">
-                After 25+ years building businesses, one truth stands: <span class="gradient-text">sales is what moves the needle.</span>
+                After 25+ years building businesses, one truth stands: <span class="gradient-text">AI only matters when it moves the business.</span>
             </div>
             <div class="thesis-sub">
-                So we find the problem slowing yours, fix it end-to-end, and the rest of the business lifts with it.
+                Better systems should create clearer sales, faster admin, cleaner handovers, stronger client experiences, and more time for the decisions only you can make.
             </div>
         </div>
     </div>
@@ -1599,15 +1657,15 @@
         <div class="stats-grid">
             <div class="stat-item">
                 <div class="stat-number">Sales-Led</div>
-                <div class="stat-label">Built by proven sales operators, not just engineers</div>
+                <div class="stat-label">Commercial thinking before technical build</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">AI-Powered</div>
-                <div class="stat-label">Every build uses AI where it counts</div>
+                <div class="stat-number">Ops-Aware</div>
+                <div class="stat-label">Built around how the business really runs</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">100% Bespoke</div>
-                <div class="stat-label">Never templated, never off-the-shelf</div>
+                <div class="stat-number">Bespoke</div>
+                <div class="stat-label">No template pretending to fit your workflow</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">You Own It</div>
@@ -1616,14 +1674,46 @@
         </div>
     </div>
 
+    <section id="diagnostic">
+        <div class="section-container">
+            <div class="section-label">When to Call MDS</div>
+            <h2 class="section-title">You do not need "an AI project". <span class="gradient-text">You need the drag removed.</span></h2>
+            <p class="section-subtitle">
+                The best projects usually start with a plain business frustration. If one of these sounds familiar, there is probably a practical system worth building.
+            </p>
+            <div class="diagnostic-grid">
+                <div class="diagnostic-card reveal">
+                    <div class="diagnostic-kicker">Sales</div>
+                    <h3>Leads arrive, then slowly leak away.</h3>
+                    <p>Enquiries, callbacks, proposals and follow-ups live in too many places. MDS turns the messy middle into a visible sales pipeline.</p>
+                </div>
+                <div class="diagnostic-card reveal">
+                    <div class="diagnostic-kicker">Admin</div>
+                    <h3>Your team keeps retyping the same work.</h3>
+                    <p>Forms, emails, documents, spreadsheets and CRMs should not need a person in the middle every time. We automate the repeatable parts.</p>
+                </div>
+                <div class="diagnostic-card reveal">
+                    <div class="diagnostic-kicker">Clients</div>
+                    <h3>The service is good, but the experience looks clunky.</h3>
+                    <p>A sharper website, client portal or handover flow can make the business feel as capable on the outside as it already is behind the scenes.</p>
+                </div>
+                <div class="diagnostic-card reveal">
+                    <div class="diagnostic-kicker">Growth</div>
+                    <h3>You are ready to scale, but the systems are not.</h3>
+                    <p>Before you add more leads, staff or clients, we make the operating base cleaner, faster and easier to manage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- The Growth Engine -->
     <section id="engine">
         <div class="section-container">
             <div class="section-label">The MDS Growth Engine</div>
             <div class="engine-intro">
-                <h2 class="section-title">One Engine.<br>Four Stages.<br>Your Way.</h2>
+                <h2 class="section-title">One Partner.<br>Four Practical Build Paths.<br>Your Way.</h2>
                 <p class="engine-intro-tagline">
-                    We don't take on small jobs. MDS solves the <strong>large problems and bottlenecks</strong> that hold real growth back — every piece we build is part of a <strong>bigger puzzle</strong>. Website and portal are the foundation; Stages 3 and 4 are where the business <strong>pushes harder and moves faster</strong>. As we build, we fix and upgrade everything else that needs it along the way. Most clients start at Stage 1 and grow at their own pace.
+                    MDS works best when there is a real business bottleneck to solve. Sometimes the first move is a sharper website. Sometimes it is a portal, an automation layer, or a sales engine. The point is not the stage — it is building the next system that gives the business momentum.
                 </p>
             </div>
             <div class="stages-grid">
@@ -1633,11 +1723,11 @@
                     </div>
                     <div class="stage-number">STAGE 01</div>
                     <h3>Website Upgrade</h3>
-                    <p>Your shopfront. Modernised, fast, and built to convert.</p>
+                    <p>Your first trust signal. Clear, fast, modern and built to turn interest into action.</p>
                     <ul>
                         <li>Fresh, modern design</li>
                         <li>Mobile-first build</li>
-                        <li>AI-assisted copy</li>
+                        <li>Sharper offer + positioning</li>
                         <li>Conversion-focused</li>
                     </ul>
                 </div>
@@ -1647,11 +1737,11 @@
                     </div>
                     <div class="stage-number">STAGE 02</div>
                     <h3>Bespoke Client Portal</h3>
-                    <p>The engine room. One place for prospects, clients, and your marketing hub.</p>
+                    <p>The operating hub. One place for prospects, clients, staff workflows and the data that matters.</p>
                     <ul>
                         <li>Prospect + client CRM</li>
-                        <li>Marketing hub built-in</li>
-                        <li>Dashboards for your business</li>
+                        <li>Client + staff workflows</li>
+                        <li>Live dashboards and reports</li>
                         <li>Fully bespoke, fully yours</li>
                     </ul>
                 </div>
@@ -1661,11 +1751,11 @@
                     </div>
                     <div class="stage-number">STAGE 03</div>
                     <h3>Marketing Engine</h3>
-                    <p>Turn your portal into a growth machine. Campaigns that run from the hub you already own.</p>
+                    <p>Campaigns, content, landing pages and reporting connected to the systems you already use.</p>
                     <ul>
                         <li>Email + social campaigns</li>
                         <li>AI content generation</li>
-                        <li>Lead magnets + landers</li>
+                        <li>Lead magnets + landing pages</li>
                         <li>Performance tracking</li>
                     </ul>
                 </div>
@@ -1675,7 +1765,7 @@
                     </div>
                     <div class="stage-number">STAGE 04</div>
                     <h3>Sales Conversion</h3>
-                    <p>The close. We help you turn the leads coming in into paying customers.</p>
+                    <p>The commercial layer. Make sure good leads are followed up, prioritised and converted.</p>
                     <ul>
                         <li>Lead scoring + routing</li>
                         <li>Follow-up automation</li>
@@ -1694,7 +1784,7 @@
                 <div class="stage-teaser-label">Stage 05 &amp; Beyond</div>
                 <div class="stage-teaser-title">The Next Move. <span class="gradient-text">Coming with you.</span></div>
                 <div class="stage-teaser-body">
-                    Stage 4 isn't the finish line — it's the starting line. Once the engine's humming, the conversation shifts to <strong>scale, new markets, ongoing AI evolution, and the second venture</strong>. We stay on as long as there's another problem worth solving.
+                    Once the core systems are working, the conversation shifts to <strong>scale, new markets, ongoing AI evolution, and the next venture</strong>. We stay useful for as long as there is another meaningful problem to solve.
                 </div>
             </div>
         </div>
@@ -1706,9 +1796,9 @@
     <section id="approach">
         <div class="section-container">
             <div class="section-label">The MDS Approach</div>
-            <h2 class="section-title">AI is broad. <span class="gradient-text">Our focus is narrow.</span></h2>
+            <h2 class="section-title">AI is broad. <span class="gradient-text">The useful part is specific.</span></h2>
             <p class="section-subtitle">
-                25+ years of real business experience, pointed directly at AI. We don't sell tech — we find the problem slowing your business down, fix it end-to-end, and the rest of the business lifts with it. More revenue. Lower costs. Time back. Sharper decisions. That's the ripple.
+                25+ years of real business experience, pointed directly at the work that slows companies down. We do not sell AI as theatre. We find the process, sales gap or client experience that needs lifting, then build the system that makes it better.
             </p>
 
             <!-- Time-value pull-quote — the question that reframes AI as
@@ -1716,18 +1806,18 @@
             <div class="time-callout">
                 <div class="time-callout-question">What's an hour of your time worth?</div>
                 <div class="time-callout-answer">
-                    Every hour we hand back goes into <strong>strategy, direction, and the decisions only you can make</strong>. That compounds — week after week, quarter after quarter. It's the real ROI of AI done properly.
+                    Every hour handed back can go into <strong>strategy, direction, sales and the decisions only you can make</strong>. That compounds — week after week, quarter after quarter. It is the real ROI of AI done properly.
                 </div>
             </div>
 
             <div class="capabilities-grid" style="grid-template-columns:repeat(3,1fr);">
                 <div class="capability-card reveal">
                     <h3>Find the Problem</h3>
-                    <p>Discovery-led. We listen first, build later. Most agencies pitch tech; we pitch the bottleneck. The right problem is worth 10x the wrong solution.</p>
+                    <p>Discovery-led. We listen first, build later. Most agencies pitch tools; we isolate the bottleneck. The right problem is worth more than a flashy solution.</p>
                 </div>
                 <div class="capability-card reveal">
                     <h3>Fix It Meticulously</h3>
-                    <p>End-to-end — and every detail upgraded along the way. No half-measures, no duct-tape, no stone left unturned. The fix doesn't just stick; the business around it lifts with it.</p>
+                    <p>End-to-end, with the details upgraded along the way. The goal is not just a working build; it is a cleaner, stronger way for the business to operate.</p>
                 </div>
                 <div class="capability-card reveal">
                     <h3>Perception &amp; Execution</h3>
@@ -1743,7 +1833,7 @@
                     We don't rest until the customer is <span class="gradient-text">delighted</span>.
                 </div>
                 <div class="outcome-commitment-sub">
-                    Every build aims for the moment the client says <em>"that's exactly what I needed."</em> High-quality product. Maximum impact. <strong>Built for your business. Owned by you.</strong>
+                    Every build aims for the moment the client says <em>"that's exactly what I needed."</em> High-quality product. Measurable impact. <strong>Built for your business. Owned by you.</strong>
                 </div>
             </div>
         </div>
@@ -1755,7 +1845,7 @@
             <div class="section-label">Built Different</div>
             <h2 class="section-title">We Build. <span class="gradient-text">You Own.</span></h2>
             <p class="section-subtitle">
-                Most AI agencies want to host your data and lock you in. We don't. Everything we build is yours — keys, code, customers, and all.
+                We build practical business infrastructure, not a dependency trap. Everything we build is designed so you can understand it, use it, and keep control of it.
             </p>
             <div class="trust-grid">
                 <div class="trust-pillar reveal">
@@ -1763,21 +1853,21 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </div>
                     <h4>Your Data Stays Yours</h4>
-                    <p>Nothing routes through us. Nothing lives on our servers. Your customer data never leaves your control — full stop.</p>
+                    <p>Systems are configured around your accounts and your business. Customer data stays under your control, with handover and access made clear.</p>
                 </div>
                 <div class="trust-pillar reveal">
                     <div class="trust-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
                     </div>
                     <h4>Your Portal Is Your Asset</h4>
-                    <p>We build it, you keep it. No subscription traps, no SaaS lock-in. If we part ways tomorrow, your business keeps running.</p>
+                    <p>We build it, you keep it. No template dependency, no vague black box. If we part ways tomorrow, your business keeps running.</p>
                 </div>
                 <div class="trust-pillar reveal">
                     <div class="trust-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/></svg>
                     </div>
                     <h4>Full Handover, Day One</h4>
-                    <p>You get the keys, the code, and the confidence to run it yourself. We stay on only if you want us to.</p>
+                    <p>You get the keys, the code where relevant, and the confidence to run it. We stay on only where ongoing support adds value.</p>
                 </div>
             </div>
         </div>
@@ -2090,13 +2180,13 @@
             <div class="section-label">Get Started</div>
             <h2 class="section-title">Let's Talk</h2>
             <p class="section-subtitle">
-                Book a free 30-minute discovery call. We'll map where you are, where you want to go, and which stage of the engine fits.
+                Book a free 30-minute discovery call. We'll map the bottleneck, the business impact, and the most sensible first build.
             </p>
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Direct Contact</h3>
                     <p>
-                        Prefer to skip the form? Email James directly — replies within 24 hours, usually much sooner.
+                        Prefer to skip the form? Email James directly with the business problem, the current workflow, and what a better outcome would look like.
                     </p>
                     <div class="contact-details">
                         <div class="contact-item">
@@ -2146,19 +2236,20 @@
                         <input type="email" name="email" placeholder="john@company.com" required>
                     </div>
                     <div class="form-group">
-                        <label>Which stage of the engine fits?</label>
+                        <label>What needs fixing first?</label>
                         <select name="stage" required>
-                            <option value="" disabled selected>Select a stage</option>
-                            <option value="stage-1-website">Stage 01 — Website Upgrade</option>
-                            <option value="stage-2-portal">Stage 02 — Bespoke Client Portal</option>
-                            <option value="stage-3-marketing">Stage 03 — Marketing Engine</option>
-                            <option value="stage-4-sales">Stage 04 — Sales Conversion</option>
-                            <option value="not-sure">Not sure yet — let's chat</option>
+                            <option value="" disabled selected>Select the closest fit</option>
+                            <option value="website-positioning">Website, positioning or lead conversion</option>
+                            <option value="portal-dashboard">Client portal, staff portal or dashboard</option>
+                            <option value="workflow-automation">Workflow automation or document generation</option>
+                            <option value="ai-assistant">AI assistant, knowledge base or internal tool</option>
+                            <option value="sales-follow-up">Sales pipeline, follow-up or marketing engine</option>
+                            <option value="not-sure">Not sure yet — let's map it</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Tell us about your business</label>
-                        <textarea name="message" placeholder="What are you working on? What's not working today? What would success look like?"></textarea>
+                        <label>Tell us where the drag is</label>
+                        <textarea name="message" placeholder="What is slow, manual, messy, leaking revenue, or making the business look smaller than it is?"></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Book Discovery Call &#8594;</button>
                 </form>
@@ -2216,7 +2307,7 @@
                     'Name: ' + (data.get('name') || '') + '\n' +
                     'Company: ' + (data.get('company') || '') + '\n' +
                     'Email: ' + (data.get('email') || '') + '\n' +
-                    'Stage of interest: ' + (data.get('stage') || '') + '\n\n' +
+                    'What needs fixing first: ' + (data.get('stage') || '') + '\n\n' +
                     (data.get('message') || '')
                 );
                 window.location.href = 'mailto:james@mdsdiversified.ai?subject=' + subject + '&body=' + body;
