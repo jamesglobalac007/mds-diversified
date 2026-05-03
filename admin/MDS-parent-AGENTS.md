@@ -66,6 +66,19 @@ James values simplicity, consistency, and time management over clever or complex
 - If a workflow starts creating extra admin, simplify it before scaling it.
 - Explain the chosen flow briefly in plain language so James can trust and repeat it.
 
+## Client Content Workflow
+
+When creating marketing content for a known client, use both systems:
+
+- Save the content source files under `~/MDS/mds-content/clients/<client-slug>/`.
+- Update the relevant Google Sheet approval/scheduling workflow with the useful path or share link.
+- For normal posts, use `posts/drafts/`, then move to `approved/`, `scheduled/`, or `published/` as the work progresses.
+- For videos, use `videos/drafts/` and the matching status folders.
+- For social profile work, including profile pictures, cover images, bios, and platform setup notes, use `social-profiles/`.
+- For profile pictures specifically, use `social-profiles/profile-pictures/`.
+
+Local Mac file paths are for internal tracking only. If the client, Make, Metricool, or a Google Sheet needs to open an asset, also create or use a shareable Google Drive/hosted link.
+
 ## GitHub Sync Workflow
 
 GitHub is the source of truth between the Mac mini and Mac laptop.
