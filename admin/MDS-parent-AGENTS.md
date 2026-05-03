@@ -30,6 +30,7 @@ Before acting, resolve the project from this registry, from `~/MDS/CLAUDE.md`, o
 | "sb", "s&b empire", "sb empire portal" | `sb-empire-portal` | `~/MDS/sb-empire-portal/` | `jamesglobalac007/sb-empire-portal` | https://sb-empire-portal.onrender.com |
 | "sbp sandbox", "sb empire test", "sb empire sandbox" | `sandbox-sb-empire` | `~/MDS/sandbox-sb-empire/` | `jamesglobalac007/sandbox-sb-empire` | https://sandbox-sb-empire.onrender.com |
 | "mds invoices", "invoice portal", "mds billing" | `mds-invoices` | `~/MDS/mds-invoices/` | `jamesglobalac007/mds-invoices` | pending Render deploy |
+| "mds content", "content library", "client content", "social profiles", "profile pics" | `mds-content` | `~/MDS/mds-content/` | `jamesglobalac007/mds-content` | none |
 | "tracknow site", "tracknow website", "website" | `tracknow-site` | `~/MDS/tracknow-site/` | `jamesglobalac007/tracknow-site` | https://tracknow-site.onrender.com |
 | "tracknow portal", "portal", "dashboard", "client login" | `tracknow-portal` | `~/MDS/tracknow-portal/` | `jamesglobalac007/tracknow-portal` | https://tracknow-portal.onrender.com |
 | "tracknow sandbox", "tracknow test", "sandbox tracknow" | `sandbox-tracknow` | `~/MDS/sandbox-tracknow/` | `jamesglobalac007/sandbox-tracknow` | https://sandbox-tracknow.onrender.com |
