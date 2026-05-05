@@ -33,6 +33,7 @@
           <li>Explain the outcome you want, not only the exact wording.</li>
         </ul>
       </div>
+      <!-- Form integration point: replace YOUR_FORM_ID with the live form endpoint. -->
       <form class="lead-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-fallback-subject="MDS Revision Request">
         <label>Page / section<input type="text" name="page_section" placeholder="Homepage hero, About section, LinkedIn profile..." required></label>
         <label>Requested change<textarea name="requested_change" placeholder="What needs to change?" required></textarea></label>
@@ -40,7 +41,7 @@
         <label>Screenshot links<textarea name="screenshots" placeholder="Paste Google Drive, Dropbox, Loom or screenshot links"></textarea></label>
         <label>Notes<textarea name="notes" placeholder="Anything else we should know?"></textarea></label>
         <button class="button primary full" type="submit">Send Revision Request</button>
-        <p class="form-note">Form integration point: replace `YOUR_FORM_ID` with the live endpoint.</p>
+        <p class="form-note">This opens a pre-filled email until the direct form connection is switched on.</p>
       </form>
     </section>
   </main>
