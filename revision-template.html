@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revision Template | MDS Diversified</title>
+  <meta name="description" content="Submit clear website, landing page, profile or marketing revisions to MDS Diversified.">
+  <link rel="icon" type="image/png" href="assets/logo/mds-diversified-monogram.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/logo/mds-diversified-horizontal-navy.png" alt="MDS Diversified"></a>
+    <nav class="site-nav open"><a href="index.html">Home</a><a href="client-onboarding.html">Client onboarding</a></nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Client Delivery</p>
+      <h1>Revision request template</h1>
+      <p>Use this format so feedback is clear, easy to action and less likely to create back-and-forth.</p>
+    </section>
+    <section class="content-shell two-column">
+      <div class="note-panel">
+        <h2>Best format</h2>
+        <ul class="check-list">
+          <li>One request per item.</li>
+          <li>Include the page or section.</li>
+          <li>Add screenshots where useful.</li>
+          <li>Mark priority as low, medium or high.</li>
+          <li>Explain the outcome you want, not only the exact wording.</li>
+        </ul>
+      </div>
+      <form class="lead-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-fallback-subject="MDS Revision Request">
+        <label>Page / section<input type="text" name="page_section" placeholder="Homepage hero, About section, LinkedIn profile..." required></label>
+        <label>Requested change<textarea name="requested_change" placeholder="What needs to change?" required></textarea></label>
+        <label>Priority<select name="priority" required><option value="">Select priority</option><option>High</option><option>Medium</option><option>Low</option></select></label>
+        <label>Screenshot links<textarea name="screenshots" placeholder="Paste Google Drive, Dropbox, Loom or screenshot links"></textarea></label>
+        <label>Notes<textarea name="notes" placeholder="Anything else we should know?"></textarea></label>
+        <button class="button primary full" type="submit">Send Revision Request</button>
+        <p class="form-note">Form integration point: replace `YOUR_FORM_ID` with the live endpoint.</p>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer"><div><img src="assets/logo/mds-diversified-horizontal-light.svg" alt="MDS Diversified"><p>Structured revisions. Faster implementation.</p></div></footer>
+  <script src="assets/site.js"></script>
+</body>
+</html>
