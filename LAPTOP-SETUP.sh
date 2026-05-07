@@ -25,6 +25,8 @@ repos=(
   "https://github.com/jamesglobalac007/sb-empire-portal.git"
   "https://github.com/jamesglobalac007/tracknow-portal.git"
   "https://github.com/jamesglobalac007/tracknow-site.git"
+  "https://github.com/jamesglobalac007/mds-social-hub.git|social-hub"
+  "https://github.com/jamesglobalac007/mds-content.git"
 )
 
 for entry in "${repos[@]}"; do
