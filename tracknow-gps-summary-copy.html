@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrackNow GPS Initial Transaction Summary</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 32px;
+      color: #1f2933;
+      background: #f7f9fb;
+    }
+
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #d8dee6;
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin: 0 0 18px;
+      color: #102a43;
+    }
+
+    button {
+      appearance: none;
+      border: 0;
+      border-radius: 6px;
+      background: #0b63ce;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 10px 14px;
+      cursor: pointer;
+      margin-bottom: 18px;
+    }
+
+    button:hover {
+      background: #084d9b;
+    }
+
+    .status {
+      display: inline-block;
+      margin-left: 12px;
+      color: #0f7b3f;
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      margin: 0 0 16px;
+      font-size: 15px;
+    }
+
+    th {
+      background: #102a43;
+      color: #ffffff;
+      text-align: left;
+      padding: 10px;
+      border: 1px solid #102a43;
+    }
+
+    td {
+      padding: 10px;
+      border: 1px solid #c9d2dc;
+      vertical-align: top;
+    }
+
+    td:last-child {
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.45;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <button type="button" id="copyButton">Copy table for Outlook</button>
+    <span class="status" id="status" aria-live="polite"></span>
+
+    <section id="emailContent">
+      <h1>TrackNow GPS Initial Transaction Summary</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Summary Item</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Trucks with GPS trackers</td>
+            <td>16 vehicles</td>
+          </tr>
+          <tr>
+            <td>Current estimated average cost</td>
+            <td>$36.50 per vehicle / month</td>
+          </tr>
+          <tr>
+            <td>Current estimated annual cost</td>
+            <td>$7,008 per year</td>
+          </tr>
+          <tr>
+            <td>TrackNow hardware offer</td>
+            <td>16 GPS trackers valued at $3,184 - free of charge</td>
+          </tr>
+          <tr>
+            <td>TrackNow software offer</td>
+            <td>$22 per vehicle / month</td>
+          </tr>
+          <tr>
+            <td>TrackNow annual software cost</td>
+            <td>$4,224 per year</td>
+          </tr>
+          <tr>
+            <td>Estimated annual saving</td>
+            <td>$2,784 per year</td>
+          </tr>
+          <tr>
+            <td>Estimated software saving</td>
+            <td>39.7%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>In short:</strong> TrackNow can provide the 16 GPS trackers free of charge, valued at $3,184, and reduce the annual software cost by approximately $2,784 per year.</p>
+    </section>
+  </main>
+
+  <script>
+    const copyButton = document.getElementById("copyButton");
+    const status = document.getElementById("status");
+    const emailContent = document.getElementById("emailContent");
+
+    function getPlainText() {
+      return [
+        "TrackNow GPS Initial Transaction Summary",
+        "",
+        "Summary Item\tAmount",
+        "Trucks with GPS trackers\t16 vehicles",
+        "Current estimated average cost\t$36.50 per vehicle / month",
+        "Current estimated annual cost\t$7,008 per year",
+        "TrackNow hardware offer\t16 GPS trackers valued at $3,184 - free of charge",
+        "TrackNow software offer\t$22 per vehicle / month",
+        "TrackNow annual software cost\t$4,224 per year",
+        "Estimated annual saving\t$2,784 per year",
+        "Estimated software saving\t39.7%",
+        "",
+        "In short: TrackNow can provide the 16 GPS trackers free of charge, valued at $3,184, and reduce the annual software cost by approximately $2,784 per year."
+      ].join("\n");
+    }
+
+    copyButton.addEventListener("click", async () => {
+      const html = emailContent.outerHTML;
+      const plainText = getPlainText();
+
+      try {
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            "text/html": new Blob([html], { type: "text/html" }),
+            "text/plain": new Blob([plainText], { type: "text/plain" })
+          })
+        ]);
+        status.textContent = "Copied";
+      } catch (error) {
+        const range = document.createRange();
+        range.selectNode(emailContent);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        document.execCommand("copy");
+        selection.removeAllRanges();
+        status.textContent = "Copied";
+      }
+    });
+  </script>
+</body>
+</html>

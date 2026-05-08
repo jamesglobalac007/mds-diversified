@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrackNow GPS Truck and Trailer Summary</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 32px;
+      color: #1f2933;
+      background: #f7f9fb;
+    }
+
+    .wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #d8dee6;
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin: 0 0 18px;
+      color: #102a43;
+    }
+
+    button {
+      appearance: none;
+      border: 0;
+      border-radius: 6px;
+      background: #0b63ce;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 10px 14px;
+      cursor: pointer;
+      margin-bottom: 18px;
+    }
+
+    button:hover {
+      background: #084d9b;
+    }
+
+    .status {
+      display: inline-block;
+      margin-left: 12px;
+      color: #0f7b3f;
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      margin: 0 0 16px;
+      font-size: 15px;
+    }
+
+    th {
+      background: #102a43;
+      color: #ffffff;
+      text-align: left;
+      padding: 10px;
+      border: 1px solid #102a43;
+    }
+
+    td {
+      padding: 10px;
+      border: 1px solid #c9d2dc;
+      vertical-align: top;
+    }
+
+    td:last-child {
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.45;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <button type="button" id="copyButton">Copy table for Outlook</button>
+    <span class="status" id="status" aria-live="polite"></span>
+
+    <section id="emailContent">
+      <h1>TrackNow GPS Truck and Trailer Summary</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Summary Item</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Assets requiring GPS</td>
+            <td>5 trucks + 5 trailers = 10 assets</td>
+          </tr>
+          <tr>
+            <td>Current supplier option</td>
+            <td>$13 per asset / month for lower technology device with video option</td>
+          </tr>
+          <tr>
+            <td>Indicative market rate used for comparison</td>
+            <td>$25 per asset / month</td>
+          </tr>
+          <tr>
+            <td>Estimated market annual cost</td>
+            <td>$3,000 per year</td>
+          </tr>
+          <tr>
+            <td>TrackNow hardware offer</td>
+            <td>Latest top-of-line GPS devices supplied free of charge</td>
+          </tr>
+          <tr>
+            <td>TrackNow software offer</td>
+            <td>$18 per asset / month, month-to-month</td>
+          </tr>
+          <tr>
+            <td>Longer contract option</td>
+            <td>Available if required, with pricing to be provided</td>
+          </tr>
+          <tr>
+            <td>TrackNow annual software cost</td>
+            <td>$2,160 per year</td>
+          </tr>
+          <tr>
+            <td>Estimated saving vs market rate</td>
+            <td>$840 per year</td>
+          </tr>
+          <tr>
+            <td>Estimated saving percentage vs market rate</td>
+            <td>28%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>In short:</strong> TrackNow can provide latest top-of-line GPS devices free of charge for the 5 trucks and 5 trailers, with software at $18 per asset per month. Compared with an indicative market rate of $25 per asset per month, this represents an estimated saving of $840 per year.</p>
+    </section>
+  </main>
+
+  <script>
+    const copyButton = document.getElementById("copyButton");
+    const status = document.getElementById("status");
+    const emailContent = document.getElementById("emailContent");
+
+    function getPlainText() {
+      return [
+        "TrackNow GPS Truck and Trailer Summary",
+        "",
+        "Summary Item\tAmount",
+        "Assets requiring GPS\t5 trucks + 5 trailers = 10 assets",
+        "Current supplier option\t$13 per asset / month for lower technology device with video option",
+        "Indicative market rate used for comparison\t$25 per asset / month",
+        "Estimated market annual cost\t$3,000 per year",
+        "TrackNow hardware offer\tLatest top-of-line GPS devices supplied free of charge",
+        "TrackNow software offer\t$18 per asset / month, month-to-month",
+        "Longer contract option\tAvailable if required, with pricing to be provided",
+        "TrackNow annual software cost\t$2,160 per year",
+        "Estimated saving vs market rate\t$840 per year",
+        "Estimated saving percentage vs market rate\t28%",
+        "",
+        "In short: TrackNow can provide latest top-of-line GPS devices free of charge for the 5 trucks and 5 trailers, with software at $18 per asset per month. Compared with an indicative market rate of $25 per asset per month, this represents an estimated saving of $840 per year."
+      ].join("\n");
+    }
+
+    copyButton.addEventListener("click", async () => {
+      const html = emailContent.outerHTML;
+      const plainText = getPlainText();
+
+      try {
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            "text/html": new Blob([html], { type: "text/html" }),
+            "text/plain": new Blob([plainText], { type: "text/plain" })
+          })
+        ]);
+        status.textContent = "Copied";
+      } catch (error) {
+        const range = document.createRange();
+        range.selectNode(emailContent);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        document.execCommand("copy");
+        selection.removeAllRanges();
+        status.textContent = "Copied";
+      }
+    });
+  </script>
+</body>
+</html>
