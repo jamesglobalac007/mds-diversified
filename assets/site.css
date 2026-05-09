@@ -529,12 +529,14 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   color: rgba(255,255,255,0.85);
 }
 .always-word {
-  margin: 0 0 32px;
-  font-size: clamp(8rem, 24vw, 24rem);
+  margin: 0;
+  font-size: clamp(3rem, 9vw, 9rem);
   font-weight: 900;
-  letter-spacing: -0.08em;
-  line-height: 0.82;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
   color: white;
+  text-transform: uppercase;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.45);
 }
 .always-sub {
   margin: 0 auto;
