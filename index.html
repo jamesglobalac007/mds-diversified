@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=10">
+  <link rel="stylesheet" href="assets/site.css?v=11">
 </head>
 <body>
   <header class="site-header">
@@ -40,10 +40,6 @@
     <section class="hero-section">
       <div class="hero-copy">
         <h1>Marketing that attracts. Sales that convert.</h1>
-        <div class="cta-row">
-          <a class="button primary" href="#contact">Book Strategy Call</a>
-          <a class="button secondary" href="#marketing">See how it works</a>
-        </div>
       </div>
       <a class="hero-scroll" href="#marketing" aria-label="Scroll to next section">
         <span></span>
@@ -69,46 +65,17 @@
     </section>
 
     <section class="contact-block contact-portal" id="contact">
-      <div class="contact-inner">
+      <div class="contact-inner contact-inner-stack">
         <div class="contact-copy">
           <p class="contact-eyebrow">Get started</p>
           <h2>Are you in?</h2>
-          <p class="contact-lede">Tell us about the business. James replies personally.</p>
-          <div class="contact-links">
-            <a href="mailto:james@mdsdiversified.ai?subject=Strategy%20Call%20Request">Email James to book a strategy call</a>
-            <a href="mailto:james@mdsdiversified.ai">james@mdsdiversified.ai</a>
+          <p class="contact-lede">Pick what you need. James replies personally.</p>
+          <div class="contact-options">
+            <a class="contact-option" href="mailto:james@mdsdiversified.ai?subject=Need%20help%20with%20marketing">Need help with marketing</a>
+            <a class="contact-option" href="mailto:james@mdsdiversified.ai?subject=Need%20help%20with%20sales">Need help with sales</a>
+            <a class="contact-option" href="mailto:james@mdsdiversified.ai?subject=Need%20help%20with%20both">Need help with both</a>
           </div>
         </div>
-        <form class="lead-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-fallback-subject="MDS Strategy Call Enquiry">
-          <label>
-            Name
-            <input type="text" name="name" placeholder="Your name" required>
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" placeholder="you@business.com" required>
-          </label>
-          <label>
-            Business website
-            <input type="url" name="website" placeholder="https://">
-          </label>
-          <label>
-            What do you need first?
-            <select name="priority" required>
-              <option value="">Select one</option>
-              <option>Marketing — leads coming in</option>
-              <option>Sales — closing more of what's there</option>
-              <option>Both — full setup</option>
-              <option>Not sure yet</option>
-            </select>
-          </label>
-          <label>
-            Notes
-            <textarea name="message" placeholder="Tell us about the business"></textarea>
-          </label>
-          <button class="button primary full" type="submit">Send Enquiry</button>
-          <p class="form-note">Replies come from James directly.</p>
-        </form>
       </div>
     </section>
   </main>
