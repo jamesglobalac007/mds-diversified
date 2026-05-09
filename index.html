@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=14">
+  <link rel="stylesheet" href="assets/site.css?v=15">
 </head>
 <body>
   <header class="site-header">
@@ -74,9 +74,12 @@
             <button type="button" class="contact-option" data-topic="Sales">Need help with sales</button>
             <button type="button" class="contact-option" data-topic="Both">Need help with both</button>
           </div>
-          <form class="enquiry-form" id="enquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-fallback-subject="MDS Enquiry" hidden>
+          <form class="enquiry-form" id="enquiry-form" action="https://formsubmit.co/ajax/james@mdsdiversified.ai" method="POST" hidden>
             <p class="enquiry-tag" data-enquiry-tag>You picked: <strong></strong></p>
             <input type="hidden" name="topic" data-enquiry-topic value="">
+            <input type="hidden" name="_subject" data-enquiry-subject value="MDS enquiry">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
             <label>
               Name
               <input type="text" name="name" placeholder="Your name" required>
@@ -96,6 +99,10 @@
             <button class="button primary full" type="submit">Send</button>
             <p class="form-note">Replies come from James directly.</p>
           </form>
+          <div class="enquiry-success" id="enquiry-success" hidden>
+            <h3>Thanks — got it.</h3>
+            <p>James will be in touch on the number you gave us.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -114,6 +121,6 @@
     </nav>
   </footer>
 
-  <script src="assets/site.js?v=2"></script>
+  <script src="assets/site.js?v=3"></script>
 </body>
 </html>

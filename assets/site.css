@@ -808,6 +808,29 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   text-align: left;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.32);
 }
+.enquiry-form[hidden] { display: none; }
+.enquiry-success {
+  background: white;
+  color: var(--ink);
+  border-radius: 22px;
+  padding: clamp(28px, 4vw, 40px);
+  width: 100%;
+  max-width: 520px;
+  margin: 28px auto 0;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.32);
+}
+.enquiry-success[hidden] { display: none; }
+.enquiry-success h3 {
+  margin: 0 0 8px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.enquiry-success p {
+  margin: 0;
+  color: var(--muted);
+}
 .enquiry-tag {
   margin: 0 0 4px;
   font-size: 0.82rem;
