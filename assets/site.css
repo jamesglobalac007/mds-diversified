@@ -510,25 +510,17 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   overflow: hidden;
   isolation: isolate;
   padding: clamp(110px, 14vw, 180px) clamp(20px, 6vw, 80px);
-  background: #050510;
+  background:
+    linear-gradient(rgba(5, 5, 16, 0.55), rgba(5, 5, 16, 0.75)),
+    url('images/always-on.jpg?v=1') center/cover no-repeat;
+  background-color: #050510;
   color: white;
   text-align: center;
   display: grid;
   align-content: center;
   min-height: clamp(520px, 75vh, 760px);
 }
-.always-on::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(700px 700px at 50% 50%, rgba(94, 92, 230, 0.32), transparent 65%),
-    radial-gradient(500px 500px at 70% 60%, rgba(255, 45, 146, 0.22), transparent 65%),
-    radial-gradient(500px 500px at 30% 40%, rgba(48, 213, 200, 0.26), transparent 65%);
-  filter: blur(20px);
-  z-index: -1;
-  animation: hero-drift 24s ease-in-out infinite alternate;
-}
+.always-on::before { display: none; }
 .always-inner { max-width: 1200px; margin: 0 auto; }
 .always-eyebrow {
   margin: 0 0 18px;
