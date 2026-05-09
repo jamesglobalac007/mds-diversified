@@ -126,39 +126,25 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   text-align: center;
   padding: clamp(120px, 14vw, 200px) clamp(20px, 6vw, 80px) clamp(80px, 10vw, 140px);
   background:
-    radial-gradient(1200px 720px at 18% 18%, rgba(94, 92, 230, 0.65), transparent 55%),
-    radial-gradient(1100px 700px at 82% 12%, rgba(255, 55, 95, 0.50), transparent 55%),
-    radial-gradient(900px 580px at 78% 96%, rgba(48, 213, 200, 0.55), transparent 55%),
-    radial-gradient(820px 520px at 16% 104%, rgba(255, 159, 10, 0.42), transparent 55%),
-    radial-gradient(700px 520px at 50% 55%, rgba(191, 90, 242, 0.42), transparent 60%),
-    linear-gradient(135deg, #050510 0%, #0c0824 45%, #150a35 100%);
+    linear-gradient(rgba(5, 5, 16, 0.78), rgba(5, 5, 16, 0.92)),
+    url('images/hero.jpg') center/cover no-repeat;
+  background-color: #050510;
   color: white;
 }
 .hero-section::before {
   content: "";
   position: absolute;
-  inset: -8%;
+  inset: 0;
   background:
-    radial-gradient(420px 420px at 30% 35%, rgba(94, 92, 230, 0.55), transparent 60%),
-    radial-gradient(360px 360px at 70% 60%, rgba(255, 45, 146, 0.45), transparent 60%),
-    radial-gradient(380px 380px at 60% 30%, rgba(48, 213, 200, 0.40), transparent 60%);
-  filter: blur(40px);
+    radial-gradient(900px 720px at 18% 22%, rgba(94, 92, 230, 0.55), transparent 60%),
+    radial-gradient(820px 680px at 82% 14%, rgba(255, 45, 146, 0.42), transparent 60%),
+    radial-gradient(680px 560px at 78% 92%, rgba(48, 213, 200, 0.45), transparent 60%),
+    radial-gradient(620px 520px at 16% 96%, rgba(255, 159, 10, 0.32), transparent 60%),
+    radial-gradient(560px 480px at 50% 55%, rgba(191, 90, 242, 0.34), transparent 65%);
+  filter: blur(28px);
   animation: hero-drift 22s ease-in-out infinite alternate;
   pointer-events: none;
   z-index: -1;
-}
-.hero-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 64px 64px;
-  pointer-events: none;
-  z-index: -1;
-  mask-image: radial-gradient(900px 600px at 50% 50%, rgba(0,0,0,0.55), transparent 75%);
-  -webkit-mask-image: radial-gradient(900px 600px at 50% 50%, rgba(0,0,0,0.55), transparent 75%);
 }
 @keyframes hero-drift {
   0%   { transform: translate3d(-2%, -2%, 0) scale(1); }
@@ -381,20 +367,46 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
 .scene-cta-dark { background: var(--ink); color: var(--green); }
 .scene-cta-dark:hover { background: #000; }
 
-/* Scene 01 — Marketing (cobalt blue, with photo backdrop) */
+/* Scene 01 — Marketing — dark mesh, cool palette, photo whisper */
 .scene-marketing {
   background:
-    linear-gradient(135deg, rgba(10, 43, 181, 0.84) 0%, rgba(29, 63, 255, 0.76) 50%, rgba(94, 92, 230, 0.86) 100%),
-    url('images/marketing.jpg') center/cover no-repeat fixed;
-  background-color: #0a2bb5;
+    linear-gradient(rgba(5, 5, 16, 0.86), rgba(5, 5, 16, 0.94)),
+    url('images/marketing.jpg') center/cover no-repeat;
+  background-color: #050510;
+}
+.scene-marketing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(700px 600px at 18% 25%, rgba(94, 92, 230, 0.55), transparent 60%),
+    radial-gradient(560px 480px at 82% 75%, rgba(48, 213, 200, 0.36), transparent 65%),
+    radial-gradient(560px 480px at 60% 35%, rgba(10, 132, 255, 0.40), transparent 60%);
+  filter: blur(22px);
+  z-index: -1;
+  animation: hero-drift 26s ease-in-out infinite alternate;
+  pointer-events: none;
 }
 
-/* Scene 02 — Sales (magenta/pink, with relay-race photo, flipped layout) */
+/* Scene 02 — Sales — dark mesh, warm palette, relay photo whisper, flipped */
 .scene-sales {
   background:
-    linear-gradient(135deg, rgba(107, 0, 48, 0.82) 0%, rgba(194, 24, 91, 0.72) 40%, rgba(255, 45, 146, 0.82) 100%),
-    url('images/sales-relay.jpg') center/cover no-repeat fixed;
-  background-color: #c2185b;
+    linear-gradient(rgba(5, 5, 16, 0.86), rgba(5, 5, 16, 0.94)),
+    url('images/sales-relay.jpg') center/cover no-repeat;
+  background-color: #050510;
+}
+.scene-sales::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(700px 600px at 82% 25%, rgba(255, 45, 146, 0.55), transparent 60%),
+    radial-gradient(560px 480px at 18% 75%, rgba(255, 159, 10, 0.36), transparent 65%),
+    radial-gradient(560px 480px at 50% 45%, rgba(191, 90, 242, 0.36), transparent 60%);
+  filter: blur(22px);
+  z-index: -1;
+  animation: hero-drift 28s ease-in-out infinite alternate;
+  pointer-events: none;
 }
 .scene-sales .scene-inner { grid-template-columns: 1.4fr 0.85fr; }
 .scene-sales .scene-num { order: 2; text-align: right; justify-self: end; }
@@ -634,12 +646,23 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
 .contact-block {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
   padding: clamp(100px, 12vw, 160px) clamp(20px, 6vw, 80px);
-  background:
-    radial-gradient(900px 600px at 12% 12%, rgba(255,255,255,0.20), transparent 60%),
-    radial-gradient(900px 600px at 88% 88%, rgba(94, 92, 230, 0.40), transparent 60%),
-    linear-gradient(135deg, #ff9f0a 0%, #ff2d92 50%, #bf5af2 100%);
+  background: #050510;
   color: white;
+}
+.contact-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(800px 600px at 14% 22%, rgba(255, 159, 10, 0.40), transparent 60%),
+    radial-gradient(800px 600px at 86% 80%, rgba(255, 45, 146, 0.42), transparent 60%),
+    radial-gradient(560px 480px at 55% 50%, rgba(191, 90, 242, 0.36), transparent 65%);
+  filter: blur(22px);
+  z-index: -1;
+  animation: hero-drift 30s ease-in-out infinite alternate;
+  pointer-events: none;
 }
 .contact-inner {
   max-width: 1280px;
