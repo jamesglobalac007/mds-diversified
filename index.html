@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=11">
+  <link rel="stylesheet" href="assets/site.css?v=12">
 </head>
 <body>
   <header class="site-header">
@@ -69,12 +69,33 @@
         <div class="contact-copy">
           <p class="contact-eyebrow">Get started</p>
           <h2>Are you in?</h2>
-          <p class="contact-lede">Pick what you need. James replies personally.</p>
           <div class="contact-options">
-            <a class="contact-option" href="mailto:james@mdsdiversified.ai?subject=Need%20help%20with%20marketing">Need help with marketing</a>
-            <a class="contact-option" href="mailto:james@mdsdiversified.ai?subject=Need%20help%20with%20sales">Need help with sales</a>
-            <a class="contact-option" href="mailto:james@mdsdiversified.ai?subject=Need%20help%20with%20both">Need help with both</a>
+            <button type="button" class="contact-option" data-topic="Marketing">Need help with marketing</button>
+            <button type="button" class="contact-option" data-topic="Sales">Need help with sales</button>
+            <button type="button" class="contact-option" data-topic="Both">Need help with both</button>
           </div>
+          <form class="enquiry-form" id="enquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-fallback-subject="MDS Enquiry" hidden>
+            <p class="enquiry-tag" data-enquiry-tag>You picked: <strong></strong></p>
+            <input type="hidden" name="topic" data-enquiry-topic value="">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" required>
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@business.com" required>
+            </label>
+            <label>
+              Mobile
+              <input type="tel" name="mobile" placeholder="04xx xxx xxx" required>
+            </label>
+            <label>
+              When are you free for a call?
+              <input type="text" name="when" placeholder="e.g. Tue/Thu mornings AEST" required>
+            </label>
+            <button class="button primary full" type="submit">Send</button>
+            <p class="form-note">Replies come from James directly.</p>
+          </form>
         </div>
       </div>
     </section>
@@ -93,6 +114,6 @@
     </nav>
   </footer>
 
-  <script src="assets/site.js"></script>
+  <script src="assets/site.js?v=2"></script>
 </body>
 </html>
