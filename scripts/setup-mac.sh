@@ -58,6 +58,16 @@ else
   echo "[3] SKIP  install-mds-sync.sh not found — install LaunchAgents later"
 fi
 
+# 3b. Install TrackNow post monitor LaunchAgent (6pm weekdays)
+MONITOR_SRC="$HOME/MDS/mds-diversified/scripts/com.mds.tracknow-monitor.plist"
+MONITOR_DEST="$HOME/Library/LaunchAgents/com.mds.tracknow-monitor.plist"
+if [ -f "$MONITOR_SRC" ]; then
+  sed "s|__HOME__|$HOME|g" "$MONITOR_SRC" > "$MONITOR_DEST"
+  launchctl unload "$MONITOR_DEST" 2>/dev/null || true
+  launchctl load "$MONITOR_DEST" 2>/dev/null
+  echo "[3b] OK  TrackNow post monitor armed (runs 6pm AEST weekdays)"
+fi
+
 # 4. Manual reminders
 cat <<'EOF'
 
