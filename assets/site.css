@@ -388,6 +388,37 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   pointer-events: none;
 }
 
+/* Spotlight variant — full-bleed image, single big line, no overlay-by-overlay clutter */
+.scene-spotlight {
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  padding: clamp(80px, 10vw, 160px) clamp(20px, 6vw, 80px);
+}
+.scene-spotlight.scene-marketing {
+  background:
+    linear-gradient(rgba(5, 5, 16, 0.45), rgba(5, 5, 16, 0.65)),
+    url('images/marketing.jpg?v=2') center/cover no-repeat;
+}
+.scene-spotlight::before { display: none; }
+.spotlight-inner {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 1;
+}
+.spotlight-line {
+  font-size: clamp(2.6rem, 7.5vw, 6.4rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  color: white;
+  margin: 0;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.45);
+}
+
 /* Scene 02 — Sales — dark mesh, warm palette, relay photo whisper, flipped */
 .scene-sales {
   background:
