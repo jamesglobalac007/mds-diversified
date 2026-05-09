@@ -402,6 +402,11 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
     linear-gradient(rgba(5, 5, 16, 0.45), rgba(5, 5, 16, 0.65)),
     url('images/marketing.jpg?v=2') center/cover no-repeat;
 }
+.scene-spotlight.scene-sales {
+  background:
+    linear-gradient(rgba(5, 5, 16, 0.45), rgba(5, 5, 16, 0.65)),
+    url('images/sales-relay.jpg?v=2') center/cover no-repeat;
+}
 .scene-spotlight::before { display: none; }
 .spotlight-inner {
   width: 100%;
