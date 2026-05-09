@@ -124,7 +124,7 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   align-content: center;
   justify-items: center;
   text-align: center;
-  padding: clamp(120px, 14vw, 200px) clamp(20px, 6vw, 80px) clamp(80px, 10vw, 140px);
+  padding: clamp(80px, 9vw, 140px) clamp(20px, 6vw, 80px) clamp(120px, 14vw, 200px);
   background:
     linear-gradient(rgba(5, 5, 16, 0.50), rgba(5, 5, 16, 0.70)),
     url('images/hero.jpg') center/cover no-repeat;
