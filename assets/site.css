@@ -126,7 +126,7 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   text-align: center;
   padding: clamp(120px, 14vw, 200px) clamp(20px, 6vw, 80px) clamp(80px, 10vw, 140px);
   background:
-    linear-gradient(rgba(5, 5, 16, 0.78), rgba(5, 5, 16, 0.92)),
+    linear-gradient(rgba(5, 5, 16, 0.50), rgba(5, 5, 16, 0.70)),
     url('images/hero.jpg') center/cover no-repeat;
   background-color: #050510;
   color: white;
