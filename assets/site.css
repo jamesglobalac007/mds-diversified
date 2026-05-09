@@ -179,7 +179,7 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   color: rgba(255,255,255,0.86);
   font-size: clamp(1.15rem, 1.85vw, 1.55rem);
   max-width: 760px;
-  margin: 22px auto 0;
+  margin: 10px auto 0;
   line-height: 1.45;
 }
 
