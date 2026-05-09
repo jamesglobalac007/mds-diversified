@@ -136,11 +136,9 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(900px 720px at 18% 22%, rgba(94, 92, 230, 0.55), transparent 60%),
-    radial-gradient(820px 680px at 82% 14%, rgba(255, 45, 146, 0.42), transparent 60%),
-    radial-gradient(680px 560px at 78% 92%, rgba(48, 213, 200, 0.45), transparent 60%),
-    radial-gradient(620px 520px at 16% 96%, rgba(255, 159, 10, 0.32), transparent 60%),
-    radial-gradient(560px 480px at 50% 55%, rgba(191, 90, 242, 0.34), transparent 65%);
+    radial-gradient(900px 720px at 18% 22%, rgba(10, 132, 255, 0.45), transparent 60%),
+    radial-gradient(680px 560px at 78% 92%, rgba(48, 213, 200, 0.40), transparent 60%),
+    radial-gradient(620px 520px at 16% 96%, rgba(255, 159, 10, 0.28), transparent 60%);
   filter: blur(28px);
   animation: hero-drift 22s ease-in-out infinite alternate;
   pointer-events: none;
