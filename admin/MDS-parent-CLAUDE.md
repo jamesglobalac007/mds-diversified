@@ -265,6 +265,47 @@ Full procedure in `~/.claude/projects/-Users-jamesglobal/memory/feedback_portal_
 
 ---
 
+## 🖼️ Social image workflow — when James asks for an image
+
+**When James asks for any social media / marketing image (e.g. *"find me a transport fleet image"*, *"need a plant hire shot"*, *"get me an Aussie outback truck"*) — DO NOT default to web search or generating one inline. Use the dedicated tool:**
+
+```bash
+python3 ~/MDS/mds-diversified/scripts/find-images.py "<category or freeform query>" [--client <slug>]
+```
+
+This pulls 6 candidates each from Unsplash + Pexels (12 total real photos) and opens an HTML preview in the browser. Default client is `tracknow`.
+
+### Predefined categories (each returns AU-tuned results)
+
+`transport fleet` · `road train` · `plant hire` · `civil construction` · `tradie vans` · `mining services` · `refrigerated transport` · `fleet manager` · `warehouse logistics` · `highway truck`
+
+Anything not in the list is sent freeform to both APIs. Edit the `CATEGORIES` dict in `find-images.py` to add new presets.
+
+### Folder structure (per client, dated)
+
+- **Source candidates:** `~/MDS/tracknow-site/social-assets/_raw/_candidates/<client>/<timestamp>_<category>/`
+- **Picked / final raw images:** `~/MDS/tracknow-site/social-assets/_raw/<client>/YYYY-MM-DD/`
+- **Branded social cards (committed to repo):** `~/MDS/tracknow-site/social-assets/YYYY-MM-DD/`
+
+### Fallback to AI generation
+
+If stock doesn't deliver (no Aussie feel, wrong vehicle type, etc.), open Gemini chat (https://gemini.google.com — covered by James's Google AI Pro / Flow sub) with a descriptive prompt. James drags the result straight into the dated `_raw/<client>/<date>/` folder. Then we proceed.
+
+**Don't pay for AI generation APIs unless James opts in** — Gemini and ChatGPT subscriptions cover the chat UI for free; their respective APIs are separately billed.
+
+### Repeatable prompt → action mapping for Claude
+
+| User says | Claude runs |
+|-----------|-------------|
+| *"find me a [category] image"* | `find-images.py "<category>"` |
+| *"image for [client]: [thing]"* | `find-images.py "<thing>" --client <client-slug>` |
+| *"none of the stock works"* | Provide a Gemini prompt + open `gemini.google.com` |
+| *"that one's the winner — file [N]"* | Move from `_candidates/` into `_raw/<client>/<date>/`, ask if they want it branded |
+
+Full doctrine in `~/MDS/mds-diversified/scripts/IMAGE-WORKFLOW.md`.
+
+---
+
 ## 🔑 Common references
 
 - **GitHub username:** `jamesglobalac007`
