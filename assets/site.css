@@ -935,6 +935,26 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   justify-content: center;
   gap: 20px;
 }
+/* Photo variant — vertical product image positioned right, text on left */
+.apple-mockup--photo .apple-mockup-screen {
+  background:
+    url('images/launch-hero.png') right center / contain no-repeat,
+    linear-gradient(135deg, #ece7df 0%, #d8d3cb 100%);
+  padding-right: clamp(140px, 18vw, 260px);
+  min-height: clamp(300px, 32vw, 460px);
+}
+/* On mobile the screen is too narrow for side-by-side; stack image below */
+@media (max-width: 640px) {
+  .apple-mockup--photo .apple-mockup-screen {
+    background:
+      url('images/launch-hero.png') right bottom / auto 56% no-repeat,
+      linear-gradient(180deg, #ece7df 0%, #d8d3cb 100%);
+    padding-right: 38%;
+    padding-bottom: clamp(36px, 6vw, 56px);
+    min-height: clamp(360px, 88vw, 460px);
+  }
+}
+
 /* Warm mesh variant for the Lift card */
 .apple-mockup--warm .apple-mockup-screen {
   background:
