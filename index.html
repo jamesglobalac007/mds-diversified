@@ -41,48 +41,12 @@
       <div class="hero-copy">
         <h1>Marketing that <span class="grad-text grad-blue">attracts</span>. Sales that <span class="grad-text grad-green">convert</span>.</h1>
       </div>
-      <a class="hero-scroll" href="#marketing" aria-label="Scroll to next section">
+      <a class="hero-scroll" href="#launch" aria-label="Scroll to next section">
         <span></span>
       </a>
     </section>
 
-    <section class="scene scene-marketing scene-spotlight" id="marketing">
-      <div class="spotlight-inner">
-        <svg class="scene-vis vis-radar" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-          <circle class="vis-radar-ring r1" cx="100" cy="100" r="20" />
-          <circle class="vis-radar-ring r2" cx="100" cy="100" r="20" />
-          <circle class="vis-radar-ring r3" cx="100" cy="100" r="20" />
-          <circle class="vis-radar-core" cx="100" cy="100" r="7" />
-        </svg>
-        <h2 class="spotlight-line">Marketing done right turns data into <span class="grad-text grad-cyan">diamonds</span>.</h2>
-      </div>
-    </section>
-
-    <section class="scene scene-sales scene-spotlight" id="sales">
-      <div class="spotlight-inner">
-        <svg class="scene-vis vis-handoff" viewBox="0 0 200 100" aria-hidden="true" focusable="false">
-          <defs>
-            <linearGradient id="vis-handoff-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ff9f0a" />
-              <stop offset="50%" stop-color="#ff6b35" />
-              <stop offset="100%" stop-color="#ff2d92" />
-            </linearGradient>
-          </defs>
-          <path class="vis-handoff-track" d="M 20 75 Q 100 -10 180 75" />
-          <path class="vis-handoff-progress" d="M 20 75 Q 100 -10 180 75" />
-          <circle class="vis-handoff-end" cx="180" cy="75" r="7" />
-        </svg>
-        <h2 class="spotlight-line">Sales done right turns leads into <span class="grad-text grad-amber">deals</span>.</h2>
-      </div>
-    </section>
-
-    <section class="always-on" aria-label="Always on">
-      <div class="always-inner">
-        <h2 class="always-word">We are <span class="grad-text grad-aurora">always on</span>.</h2>
-      </div>
-    </section>
-
-    <section class="apple-card apple-card--light" aria-label="Launch — website">
+    <section class="apple-card apple-card--light" id="launch" aria-label="Launch — website">
       <div class="apple-card-inner">
         <div class="apple-card-copy">
           <p class="apple-card-eyebrow">Launch</p>
@@ -90,7 +54,7 @@
           <p class="apple-card-subhead">Custom marketing site built around what your sales team actually needs. Hosted, secured, live.</p>
           <div class="apple-card-cta-row">
             <button type="button" class="apple-card-cta apple-card-cta--primary" data-topic="Launch package">Get Launch from $5,000</button>
-            <a class="apple-card-cta apple-card-cta--ghost" href="#packages">What's included <span aria-hidden="true">›</span></a>
+            <a class="apple-card-cta apple-card-cta--ghost" href="#monthly">See ongoing content <span aria-hidden="true">›</span></a>
           </div>
         </div>
         <div class="apple-card-stage">
@@ -107,60 +71,74 @@
       </div>
     </section>
 
-    <section class="packages" id="packages" aria-label="Packages">
-      <div class="packages-inner">
-        <p class="packages-eyebrow">Packages</p>
-        <h2 class="packages-title">Pick your level. <span class="grad-text grad-blue">Pay once.</span> Or <span class="grad-text grad-amber">pay monthly.</span></h2>
-
-        <div class="packages-group">
-          <p class="packages-group-label">One-off setup</p>
-          <div class="packages-grid">
-            <article class="package-card">
-              <p class="package-tag">Setup</p>
-              <h3 class="package-name">Launch</h3>
-              <p class="package-price"><span class="package-price-amount">$5,000</span><span class="package-price-suffix">one-off</span></p>
-              <p class="package-blurb">Get found.</p>
-              <ul class="package-list">
-                <li>Custom marketing website</li>
-                <li>On-brand copy and design</li>
-                <li>Hosted, secured, live</li>
-              </ul>
-              <button type="button" class="package-cta" data-topic="Launch package">Get Launch</button>
-            </article>
-
-            <article class="package-card package-card--popular">
-              <span class="package-pill">Most popular</span>
-              <p class="package-tag">Setup</p>
-              <h3 class="package-name">Lift</h3>
-              <p class="package-price"><span class="package-price-amount grad-text grad-aurora">$7,500</span><span class="package-price-suffix">one-off</span></p>
-              <p class="package-blurb">Get found, get followed.</p>
-              <ul class="package-list">
-                <li>Everything in Launch</li>
-                <li>Social channels set up (LinkedIn / FB / Instagram / Google Business)</li>
-                <li>Branded profile + cover assets</li>
-                <li>First-month posting calendar</li>
-              </ul>
-              <button type="button" class="package-cta package-cta--primary" data-topic="Lift package">Get Lift</button>
-            </article>
-
-            <article class="package-card">
-              <p class="package-tag">Setup</p>
-              <h3 class="package-name">Scale</h3>
-              <p class="package-price"><span class="package-price-amount">$9,500</span><span class="package-price-suffix">one-off</span></p>
-              <p class="package-blurb">Get found, followed, closed.</p>
-              <ul class="package-list">
-                <li>Everything in Lift</li>
-                <li>Lead capture + auto follow-up sequence</li>
-                <li>Sales pipeline + scripts</li>
-                <li>Founder-led monthly review</li>
-              </ul>
-              <button type="button" class="package-cta" data-topic="Scale package">Get Scale</button>
-            </article>
+    <section class="apple-card apple-card--light apple-card--mirror" id="lift" aria-label="Lift — website + socials">
+      <div class="apple-card-inner">
+        <div class="apple-card-copy">
+          <p class="apple-card-eyebrow">Lift <span class="apple-card-eyebrow-flag">Most popular</span></p>
+          <h2 class="apple-card-headline">Get your brand in <span class="grad-text grad-aurora">front of people</span>.</h2>
+          <p class="apple-card-subhead">Everything in Launch, plus social channels set up across LinkedIn, Facebook, Instagram and Google Business — branded profile and cover assets, and your first month's posting calendar.</p>
+          <div class="apple-card-cta-row">
+            <button type="button" class="apple-card-cta apple-card-cta--primary" data-topic="Lift package">Get Lift from $7,500</button>
+            <a class="apple-card-cta apple-card-cta--ghost" href="#monthly">See ongoing content <span aria-hidden="true">›</span></a>
           </div>
         </div>
+        <div class="apple-card-stage">
+          <div class="apple-mockup apple-mockup--browser apple-mockup--warm">
+            <div class="apple-mockup-chrome">
+              <span class="apple-mockup-dots"><i></i><i></i><i></i></span>
+              <span class="apple-mockup-url">yourbrand.com.au</span>
+            </div>
+            <div class="apple-mockup-screen">
+              <h3 class="apple-mockup-h">Show up <span class="grad-text grad-amber">everywhere</span>.</h3>
+              <ul class="apple-mockup-channels" aria-hidden="true">
+                <li>LinkedIn</li>
+                <li>Facebook</li>
+                <li>Instagram</li>
+                <li>Google</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section class="apple-card apple-card--light" id="scale" aria-label="Scale — website + socials + sales conversion">
+      <div class="apple-card-inner">
+        <div class="apple-card-copy">
+          <p class="apple-card-eyebrow">Scale</p>
+          <h2 class="apple-card-headline">Find them. Follow up. <span class="grad-text grad-green">Close the deal</span>.</h2>
+          <p class="apple-card-subhead">Everything in Lift, plus a lead-capture system, automated follow-up sequence, sales pipeline and call scripts, and a founder-led monthly review.</p>
+          <div class="apple-card-cta-row">
+            <button type="button" class="apple-card-cta apple-card-cta--primary" data-topic="Scale package">Get Scale from $9,500</button>
+            <a class="apple-card-cta apple-card-cta--ghost" href="#monthly">See ongoing content <span aria-hidden="true">›</span></a>
+          </div>
+        </div>
+        <div class="apple-card-stage">
+          <div class="apple-mockup apple-mockup--browser apple-mockup--cool">
+            <div class="apple-mockup-chrome">
+              <span class="apple-mockup-dots"><i></i><i></i><i></i></span>
+              <span class="apple-mockup-url">yourbrand.com.au</span>
+            </div>
+            <div class="apple-mockup-screen">
+              <p class="apple-mockup-stat"><strong>+3.2&times;</strong> qualified leads</p>
+              <h3 class="apple-mockup-h">Leads that <span class="grad-text grad-blue">convert</span>.</h3>
+              <ul class="apple-mockup-channels" aria-hidden="true">
+                <li>Capture</li>
+                <li>Follow-up</li>
+                <li>Pipeline</li>
+                <li>Close</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="packages" id="monthly" aria-label="Ongoing content">
+      <div class="packages-inner">
+        <p class="packages-eyebrow">Monthly content</p>
+        <h2 class="packages-title">Show up <span class="grad-text grad-aurora">like clockwork</span>.</h2>
         <div class="packages-group">
-          <p class="packages-group-label">Ongoing content</p>
           <div class="packages-grid">
             <article class="package-card">
               <p class="package-tag">Monthly</p>
@@ -206,6 +184,12 @@
             </article>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="always-on" aria-label="Always on">
+      <div class="always-inner">
+        <h2 class="always-word">We are <span class="grad-text grad-aurora">always on</span>.</h2>
       </div>
     </section>
 
