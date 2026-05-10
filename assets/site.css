@@ -967,6 +967,16 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
     white;
 }
 
+/* Scale photo variant — CRM dashboard screenshot as bg */
+.apple-mockup--scale-photo .apple-mockup-screen {
+  background:
+    url('images/scale-hero.png') center / cover no-repeat,
+    #f5f5f7;
+  min-height: clamp(320px, 36vw, 480px);
+  padding: 0;
+  display: block;
+}
+
 /* Lift photo variant — real estate marketing post as bg, social tiles BELOW */
 .apple-mockup--lift-photo .apple-mockup-screen {
   background:
