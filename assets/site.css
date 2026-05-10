@@ -441,6 +441,84 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   margin: 0;
 }
 
+/* ----- SCENE VISUALIZATIONS ----- */
+.scene-vis {
+  display: block;
+  margin: 0 auto clamp(28px, 4vw, 48px);
+  height: auto;
+  overflow: visible;
+}
+
+/* Marketing radar — concentric pulses outward, cool palette */
+.vis-radar { width: clamp(120px, 12vw, 180px); }
+.vis-radar-ring {
+  fill: none;
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation: vis-radar-pulse 3.6s ease-out infinite;
+}
+.vis-radar-ring.r1 { stroke: var(--blue); animation-delay: 0s; }
+.vis-radar-ring.r2 { stroke: var(--cyan); animation-delay: 1.2s; }
+.vis-radar-ring.r3 { stroke: var(--teal); animation-delay: 2.4s; }
+.vis-radar-core {
+  fill: var(--blue);
+  filter: drop-shadow(0 0 14px rgba(10, 132, 255, 0.55));
+}
+@keyframes vis-radar-pulse {
+  0%   { transform: scale(0.4); opacity: 0; stroke-width: 3; }
+  20%  { opacity: 1; }
+  100% { transform: scale(4.2); opacity: 0; stroke-width: 0.6; }
+}
+
+/* Sales handoff — arc draws in from left, dot lands on the right */
+.vis-handoff { width: clamp(160px, 16vw, 220px); }
+.vis-handoff-track {
+  fill: none;
+  stroke: rgba(12, 13, 16, 0.10);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+.vis-handoff-progress {
+  fill: none;
+  stroke: url(#vis-handoff-grad);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-dasharray: 240;
+  stroke-dashoffset: 240;
+  animation: vis-handoff-draw 3.6s ease-in-out infinite;
+}
+.vis-handoff-end {
+  fill: var(--pink);
+  filter: drop-shadow(0 0 12px rgba(255, 45, 146, 0.6));
+  opacity: 0;
+  animation: vis-handoff-arrive 3.6s ease-in-out infinite;
+}
+@keyframes vis-handoff-draw {
+  0%   { stroke-dashoffset: 240; }
+  60%  { stroke-dashoffset: 0; }
+  85%  { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -240; }
+}
+@keyframes vis-handoff-arrive {
+  0%, 55% { opacity: 0; }
+  65%     { opacity: 1; }
+  85%     { opacity: 1; }
+  100%    { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vis-radar-ring,
+  .vis-handoff-progress,
+  .vis-handoff-end {
+    animation: none;
+  }
+  .vis-radar-ring { opacity: 0.55; transform: scale(2.4); }
+  .vis-handoff-progress { stroke-dashoffset: 0; }
+  .vis-handoff-end { opacity: 1; }
+}
+
 /* Scene 02 — Sales — dark mesh, warm palette, relay photo whisper, flipped */
 .scene-sales {
   background:

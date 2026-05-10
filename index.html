@@ -48,12 +48,30 @@
 
     <section class="scene scene-marketing scene-spotlight" id="marketing">
       <div class="spotlight-inner">
+        <svg class="scene-vis vis-radar" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+          <circle class="vis-radar-ring r1" cx="100" cy="100" r="20" />
+          <circle class="vis-radar-ring r2" cx="100" cy="100" r="20" />
+          <circle class="vis-radar-ring r3" cx="100" cy="100" r="20" />
+          <circle class="vis-radar-core" cx="100" cy="100" r="7" />
+        </svg>
         <h2 class="spotlight-line">Marketing done right turns data into <span class="grad-text grad-cyan">diamonds</span>.</h2>
       </div>
     </section>
 
     <section class="scene scene-sales scene-spotlight" id="sales">
       <div class="spotlight-inner">
+        <svg class="scene-vis vis-handoff" viewBox="0 0 200 100" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="vis-handoff-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ff9f0a" />
+              <stop offset="50%" stop-color="#ff6b35" />
+              <stop offset="100%" stop-color="#ff2d92" />
+            </linearGradient>
+          </defs>
+          <path class="vis-handoff-track" d="M 20 75 Q 100 -10 180 75" />
+          <path class="vis-handoff-progress" d="M 20 75 Q 100 -10 180 75" />
+          <circle class="vis-handoff-end" cx="180" cy="75" r="7" />
+        </svg>
         <h2 class="spotlight-line">Sales done right turns leads into <span class="grad-text grad-amber">deals</span>.</h2>
       </div>
     </section>
