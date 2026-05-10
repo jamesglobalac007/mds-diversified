@@ -813,7 +813,7 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
 }
 .apple-card-tile--launch .apple-tile-visual img {
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center 70%;
 }
 
 /* Lift tile — zoom into the LEFT half of the post so the house dominates
@@ -866,6 +866,8 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
 .apple-card-copy { max-width: 560px; }
 .apple-card-eyebrow {
   display: inline-block;
+  align-self: flex-start;
+  width: fit-content;
   margin: 0 0 22px;
   font-size: 0.78rem;
   font-weight: 800;
