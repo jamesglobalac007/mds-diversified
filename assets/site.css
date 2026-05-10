@@ -1843,19 +1843,27 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
 /* ----- FOOTER ----- */
 .site-footer {
   display: flex;
-  justify-content: space-between;
-  gap: 28px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
   padding: 44px clamp(20px, 6vw, 80px);
   background: #050510;
   color: white;
-  align-items: center;
   border-top: 1px solid rgba(255,255,255,0.06);
+}
+.site-footer > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 .site-footer img { width: 170px; }
 .site-footer .footer-logo { width: 220px; filter: none; }
-.site-footer p { margin: 12px 0 0; max-width: 440px; color: rgba(255,255,255,0.6); font-size: 0.92rem; }
+.site-footer p { margin: 12px auto 0; max-width: 440px; color: rgba(255,255,255,0.6); font-size: 0.92rem; }
 .site-footer .footer-regions {
-  margin: 14px 0 0;
+  margin: 14px auto 0;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -1871,7 +1879,7 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.78);
+  color: white;
 }
 @media (max-width: 760px) {
   .site-regions { display: none; }
