@@ -964,6 +964,29 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
     radial-gradient(520px 420px at 30% 30%, rgba(191, 90, 242, 0.32), transparent 60%),
     white;
 }
+
+/* Lift photo variant — real estate marketing post as bg, social tiles overlaid */
+.apple-mockup--lift-photo .apple-mockup-screen {
+  background:
+    url('images/lift-hero.png') center / cover no-repeat,
+    #ffffff;
+  min-height: clamp(320px, 36vw, 480px);
+  padding: clamp(28px, 3.5vw, 56px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0;
+}
+.apple-mockup--lift-photo .social-tiles {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(12, 13, 16, 0.06);
+  box-shadow: 0 12px 28px rgba(12, 13, 16, 0.10);
+  align-self: flex-end;
+}
 /* Cool mesh variant for the Scale card */
 .apple-mockup--cool .apple-mockup-screen {
   background:
