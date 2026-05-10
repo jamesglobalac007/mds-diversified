@@ -850,8 +850,8 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   background: #fafafb;
 }
 .apple-card-tile--scale .apple-tile-visual {
-  aspect-ratio: 3 / 2;
-  background: #fafafb;
+  aspect-ratio: 19 / 12;
+  background: #ffffff;
   overflow: hidden;
 }
 .apple-card-tile--scale .apple-tile-visual img {
