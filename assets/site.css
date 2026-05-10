@@ -572,7 +572,7 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
 }
 .always-sub {
   margin: clamp(20px, 2.4vw, 32px) auto 0;
-  max-width: 720px;
+  max-width: 1180px;
   font-size: clamp(1.05rem, 1.4vw, 1.3rem);
   color: rgba(255,255,255,0.78);
   line-height: 1.45;
@@ -1849,6 +1849,28 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
 .site-footer img { width: 170px; }
 .site-footer .footer-logo { width: 220px; filter: none; }
 .site-footer p { margin: 12px 0 0; max-width: 440px; color: rgba(255,255,255,0.6); font-size: 0.92rem; }
+.site-footer .footer-regions {
+  margin: 14px 0 0;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+}
+/* Regions tag in the header — between the logo and the nav */
+.site-regions {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.78);
+}
+@media (max-width: 760px) {
+  .site-regions { display: none; }
+}
 .site-footer nav { display: flex; flex-wrap: wrap; gap: 22px; }
 .site-footer a { color: rgba(255,255,255,0.7); text-decoration: none; font-weight: 700; font-size: 0.92rem; transition: color 0.18s ease; }
 .site-footer a:hover { color: var(--green); }
