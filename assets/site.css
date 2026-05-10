@@ -940,6 +940,7 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   background:
     url('images/launch-hero.png') right center / contain no-repeat,
     linear-gradient(135deg, #ece7df 0%, #d8d3cb 100%);
+  padding-left: clamp(20px, 2.5vw, 40px);
   padding-right: clamp(140px, 18vw, 260px);
   min-height: clamp(300px, 32vw, 460px);
 }
