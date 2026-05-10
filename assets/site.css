@@ -849,7 +849,7 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   background: white;
 }
 .apple-card-tile--scale .apple-tile-visual {
-  aspect-ratio: 19 / 12;
+  aspect-ratio: 3 / 2;
   background: white;
   overflow: hidden;
 }
