@@ -832,8 +832,15 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   border-top: 1px solid var(--line);
 }
 
-/* Scale tile — CRM dashboard: cover the visual area, anchor to top so
-   stats + sidebar nav stay readable; no grey letterbox. */
+/* Scale tile — CRM dashboard. Tile background matches the dashboard
+   image's cream so the header and tile bottom blend seamlessly with
+   the image (no white-vs-cream colour seam). */
+.apple-card-tile--scale {
+  background: #fafafb;
+}
+.apple-card-tile--scale .apple-tile-visual {
+  background: #fafafb;
+}
 .apple-card-tile--scale .apple-tile-visual img {
   object-fit: cover;
   object-position: center top;
