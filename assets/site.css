@@ -816,11 +816,17 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   object-position: center 35%;
 }
 
-/* Lift tile — push focus to the LEFT half of the post so the house dominates
-   over the marketing copy on the right */
+/* Lift tile — zoom into the LEFT half of the post so the house dominates
+   over the marketing copy on the right. Scale + transform-origin pulls
+   the focus onto the home, cropping more of the right-side text. */
+.apple-card-tile--lift .apple-tile-visual {
+  overflow: hidden;
+}
 .apple-card-tile--lift .apple-tile-visual img {
   object-fit: cover;
-  object-position: 18% center;
+  object-position: 0% center;
+  transform: scale(1.45);
+  transform-origin: 22% center;
 }
 .apple-tile-share {
   background: white;
