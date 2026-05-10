@@ -772,20 +772,20 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
 
 .apple-tile-text {
   text-align: center;
-  padding: clamp(36px, 4vw, 56px) clamp(24px, 3vw, 40px) clamp(8px, 1vw, 16px);
+  padding: clamp(28px, 3vw, 40px) clamp(20px, 2.4vw, 32px) clamp(6px, 0.8vw, 12px);
 }
 .apple-tile-eyebrow {
-  font-size: 0.74rem;
+  font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  margin: 0 0 12px;
+  margin: 0 0 8px;
 }
 .apple-tile-headline {
-  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
   line-height: 1.04;
   color: var(--ink);
   margin: 0;
@@ -816,17 +816,17 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   object-position: center 70%;
 }
 
-/* Lift tile — zoom into the LEFT half of the post so the house dominates
-   over the marketing copy on the right. Scale + transform-origin pulls
-   the focus onto the home, cropping more of the right-side text. */
+/* Lift tile — show the full real-estate post (house + marketing copy)
+   without cropping the right side. Use contain so the whole post fits;
+   pad a touch so the post sits centred without touching the tile edges. */
 .apple-card-tile--lift .apple-tile-visual {
   overflow: hidden;
+  background: #f5f0e8;
 }
 .apple-card-tile--lift .apple-tile-visual img {
-  object-fit: cover;
-  object-position: 0% center;
-  transform: scale(1.45);
-  transform-origin: 22% center;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
 }
 .apple-tile-share {
   background: white;
@@ -838,10 +838,10 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   border-top: 1px solid var(--line);
 }
 
-/* Scale tile — CRM dashboard. The image file has its own cream padding
-   around the dashboard chrome — that padding was leaking into the
-   visual area as visible gaps. Scale the image up ~115% so the
-   internal cream borders crop out and the dashboard fills the tile. */
+/* Scale tile — CRM dashboard. Show the full dashboard (sidebar nav,
+   stats, charts, contacts) using contain so nothing crops; tile and
+   visual both tinted cream to match the dashboard's own backdrop so
+   there's no white-vs-cream seam around the image. */
 .apple-card-tile--scale {
   background: #fafafb;
 }
@@ -850,10 +850,9 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   overflow: hidden;
 }
 .apple-card-tile--scale .apple-tile-visual img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  transform: scale(1.18);
-  transform-origin: center;
+  transform: none;
 }
 
 /* Mobile: stack copy tile above image tile */
