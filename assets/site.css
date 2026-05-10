@@ -832,18 +832,22 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   border-top: 1px solid var(--line);
 }
 
-/* Scale tile — CRM dashboard. Tile background matches the dashboard
-   image's cream so the header and tile bottom blend seamlessly with
-   the image (no white-vs-cream colour seam). */
+/* Scale tile — CRM dashboard. The image file has its own cream padding
+   around the dashboard chrome — that padding was leaking into the
+   visual area as visible gaps. Scale the image up ~115% so the
+   internal cream borders crop out and the dashboard fills the tile. */
 .apple-card-tile--scale {
   background: #fafafb;
 }
 .apple-card-tile--scale .apple-tile-visual {
   background: #fafafb;
+  overflow: hidden;
 }
 .apple-card-tile--scale .apple-tile-visual img {
   object-fit: cover;
-  object-position: center top;
+  object-position: center;
+  transform: scale(1.18);
+  transform-origin: center;
 }
 
 /* Mobile: stack copy tile above image tile */
