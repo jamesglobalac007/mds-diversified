@@ -787,14 +787,13 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   margin: 0;
 }
 
-/* Visual area — fills the remaining tile height */
+/* Visual area — fixed aspect for consistency across all tiles */
 .apple-tile-visual {
-  flex: 1;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  min-height: clamp(220px, 24vw, 380px);
+  position: relative;
 }
 .apple-tile-visual img {
   width: 100%;
@@ -803,21 +802,19 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   display: block;
 }
 
-/* Launch tile — vertical car, contain on cream gradient */
+/* Launch tile — vertical car shot: contain inside cream gradient */
 .apple-card-tile--launch .apple-tile-visual {
   background: linear-gradient(135deg, #ece7df 0%, #d8d3cb 100%);
 }
 .apple-card-tile--launch .apple-tile-visual img {
   object-fit: contain;
-  object-position: center bottom;
+  object-position: center;
 }
 
-/* Lift tile — cover the post photo, share row below */
-.apple-card-tile--lift .apple-tile-visual {
-  min-height: clamp(260px, 28vw, 400px);
-}
+/* Lift tile — cover the marketing-post image */
 .apple-card-tile--lift .apple-tile-visual img {
   object-fit: cover;
+  object-position: center;
 }
 .apple-tile-share {
   background: white;
@@ -829,10 +826,15 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   border-top: 1px solid var(--line);
 }
 
-/* Scale tile — dashboard wide image */
+/* Scale tile — CRM dashboard: contain on light backdrop so the whole
+   dashboard (sidebar, charts, lead-count stats, top contacts) is visible
+   instead of cropped. Keeps the same 4:3 visual area as the other tiles. */
+.apple-card-tile--scale .apple-tile-visual {
+  background: #fafafb;
+}
 .apple-card-tile--scale .apple-tile-visual img {
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center;
 }
 
 /* Mobile: stack copy tile above image tile */
