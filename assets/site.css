@@ -1843,33 +1843,26 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
 /* ----- FOOTER ----- */
 .site-footer {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 14px;
-  padding: 44px clamp(20px, 6vw, 80px);
+  gap: 24px;
+  padding: 28px clamp(20px, 6vw, 80px);
   background: #050510;
   color: white;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
-.site-footer > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.site-footer img { width: 170px; }
-.site-footer .footer-logo { width: 220px; filter: none; }
-.site-footer p { margin: 12px auto 0; max-width: 440px; color: rgba(255,255,255,0.6); font-size: 0.92rem; }
+.site-footer .footer-brand { flex: 1; display: flex; align-items: center; }
+.site-footer .footer-logo { width: 220px; filter: none; display: block; }
 .site-footer .footer-regions {
-  margin: 14px auto 0;
+  flex: 0 0 auto;
+  margin: 0;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.85);
+  color: white;
+  text-align: center;
 }
+.site-footer .footer-spacer { flex: 1; }
 /* Regions tag in the header — between the logo and the nav */
 .site-regions {
   margin: 0;
