@@ -817,14 +817,16 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
 }
 
 /* Lift tile — show the full real-estate post (house + marketing copy)
-   without cropping the right side. Use contain so the whole post fits;
-   pad a touch so the post sits centred without touching the tile edges. */
+   without cropping. Match visual aspect to the image's natural ratio
+   (1.19) so the post fills the area edge-to-edge without letterbox
+   bars on the sides. */
 .apple-card-tile--lift .apple-tile-visual {
+  aspect-ratio: 6 / 5;
   overflow: hidden;
   background: #f5f0e8;
 }
 .apple-card-tile--lift .apple-tile-visual img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   transform: none;
 }
