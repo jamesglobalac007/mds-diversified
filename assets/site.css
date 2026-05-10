@@ -855,7 +855,7 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
 .apple-card-tile--scale .apple-tile-visual img {
   object-fit: cover;
   object-position: center;
-  transform: scale(1.12);
+  transform: scale(1.25);
   transform-origin: center;
 }
 
