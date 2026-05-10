@@ -11,18 +11,20 @@ if (enquiryForm) {
   const topicInput = enquiryForm.querySelector('[data-enquiry-topic]');
   const subjectInput = enquiryForm.querySelector('[data-enquiry-subject]');
   const tagStrong = enquiryForm.querySelector('[data-enquiry-tag] strong');
-  document.querySelectorAll('.contact-option[data-topic]').forEach((btn) => {
+  document.querySelectorAll('[data-topic]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const topic = btn.dataset.topic;
+      const tagText = btn.classList.contains('contact-option') ? btn.textContent.trim() : `Interested in: ${topic}`;
       topicInput.value = topic;
-      tagStrong.textContent = btn.textContent.trim();
-      if (subjectInput) subjectInput.value = `MDS enquiry — Need help with ${topic.toLowerCase()}`;
+      tagStrong.textContent = tagText;
+      if (subjectInput) subjectInput.value = `MDS enquiry — ${topic}`;
       if (enquirySuccess) enquirySuccess.hidden = true;
       enquiryForm.hidden = false;
       enquiryForm.reset();
       topicInput.value = topic;
-      if (subjectInput) subjectInput.value = `MDS enquiry — Need help with ${topic.toLowerCase()}`;
-      tagStrong.textContent = btn.textContent.trim();
+      if (subjectInput) subjectInput.value = `MDS enquiry — ${topic}`;
+      tagStrong.textContent = tagText;
+      // Only highlight the contact-option pills (not package CTAs)
       document.querySelectorAll('.contact-option[data-topic]').forEach((b) => b.classList.toggle('is-active', b === btn));
       enquiryForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
       const firstField = enquiryForm.querySelector('input[name="name"]');
