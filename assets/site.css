@@ -1031,6 +1031,172 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   border-radius: 999px;
 }
 
+/* ----- Social platform tiles (Lift mockup) ----- */
+.social-tiles {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.social-tile {
+  width: clamp(48px, 5.4vw, 62px);
+  height: clamp(48px, 5.4vw, 62px);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 1.35rem;
+  line-height: 1;
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+.social-tile svg { width: 60%; height: 60%; color: white; }
+.social-tile span { transform: translateY(-1px); }
+.social-tile--linkedin { background: #0A66C2; font-family: Arial, Helvetica, sans-serif; }
+.social-tile--linkedin span { font-style: italic; transform: translateY(-1px); }
+.social-tile--facebook { background: #1877F2; font-family: Arial, Helvetica, sans-serif; font-size: 1.6rem; }
+.social-tile--instagram {
+  background:
+    radial-gradient(circle at 28% 105%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+.social-tile--tiktok { background: #000; }
+.social-tile--youtube { background: #ff0000; }
+
+/* ----- CRM panel (Scale mockup) ----- */
+.apple-mockup--crm .apple-mockup-screen {
+  background:
+    radial-gradient(620px 480px at 18% 18%, rgba(94, 92, 230, 0.42), transparent 60%),
+    radial-gradient(620px 500px at 86% 82%, rgba(48, 213, 200, 0.42), transparent 60%),
+    radial-gradient(560px 460px at 60% 50%, rgba(10, 132, 255, 0.32), transparent 60%),
+    white;
+}
+.crm-panel {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(12, 13, 16, 0.08);
+  border-radius: 14px;
+  padding: 14px 14px 6px;
+  box-shadow: 0 16px 36px rgba(12, 13, 16, 0.10);
+  margin-top: 4px;
+}
+.crm-panel-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 6px 12px;
+  border-bottom: 1px solid rgba(12, 13, 16, 0.06);
+}
+.crm-pulse {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--green);
+  box-shadow: 0 0 0 0 rgba(30, 215, 96, 0.6);
+  animation: crm-pulse 1.8s ease-out infinite;
+  flex-shrink: 0;
+}
+@keyframes crm-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(30, 215, 96, 0.6); }
+  70%  { box-shadow: 0 0 0 12px rgba(30, 215, 96, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(30, 215, 96, 0); }
+}
+.crm-panel-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+  flex: 1;
+}
+.crm-panel-count {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+.crm-leads {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.crm-lead {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 6px;
+  border-bottom: 1px solid rgba(12, 13, 16, 0.05);
+}
+.crm-lead:last-child { border-bottom: 0; }
+.crm-lead.is-new { animation: crm-flash 2.2s ease-out 0.4s 1; }
+@keyframes crm-flash {
+  0%   { background: rgba(30, 215, 96, 0.18); }
+  100% { background: transparent; }
+}
+.crm-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: var(--avatar-color, var(--blue));
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.crm-avatar[data-color="pink"]   { background: var(--pink); }
+.crm-avatar[data-color="orange"] { background: var(--orange); }
+.crm-avatar[data-color="teal"]   { background: var(--teal); }
+.crm-avatar[data-color="indigo"] { background: var(--indigo); }
+.crm-lead-name {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
+  min-width: 0;
+}
+.crm-lead-name small {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-top: 2px;
+  letter-spacing: 0;
+}
+.crm-status {
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+.crm-status--new  { background: rgba(30, 215, 96, 0.16); color: #0d4f2c; }
+.crm-status--hot  { background: rgba(255, 45, 146, 0.14); color: #9c1758; }
+.crm-status--warm { background: rgba(255, 159, 10, 0.16); color: #8a4a05; }
+.crm-time {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  min-width: 28px;
+  text-align: right;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crm-pulse { animation: none; box-shadow: 0 0 0 0 rgba(30,215,96,0); }
+  .crm-lead.is-new { animation: none; }
+}
+
 @media (max-width: 900px) {
   .apple-card-inner {
     grid-template-columns: 1fr;

@@ -82,7 +82,7 @@
         <div class="apple-card-copy">
           <p class="apple-card-eyebrow">Lift <span class="apple-card-eyebrow-flag">Most popular</span></p>
           <h2 class="apple-card-headline">Get your brand in <span class="grad-text grad-aurora">front of people</span>.</h2>
-          <p class="apple-card-subhead">Everything in Launch, plus social channels set up across LinkedIn, Facebook, Instagram and Google Business — branded profile and cover assets, and your first month's posting calendar.</p>
+          <p class="apple-card-subhead">Everything in Launch, plus social channels set up across LinkedIn, Facebook, Instagram, TikTok and YouTube — branded profile and cover assets, and your first month's posting calendar.</p>
           <div class="apple-card-cta-row">
             <button type="button" class="apple-card-cta apple-card-cta--primary" data-topic="Lift package">Get Lift from $7,500</button>
             <a class="apple-card-cta apple-card-cta--ghost" href="#monthly">See ongoing content <span aria-hidden="true">›</span></a>
@@ -95,12 +95,20 @@
               <span class="apple-mockup-url">yourbrand.com.au</span>
             </div>
             <div class="apple-mockup-screen">
+              <p class="apple-mockup-eyebrow">Now showing</p>
               <h3 class="apple-mockup-h">Show up <span class="grad-text grad-amber">everywhere</span>.</h3>
-              <ul class="apple-mockup-channels" aria-hidden="true">
-                <li>LinkedIn</li>
-                <li>Facebook</li>
-                <li>Instagram</li>
-                <li>Google</li>
+              <ul class="social-tiles" aria-label="Channels">
+                <li class="social-tile social-tile--linkedin" aria-label="LinkedIn"><span>in</span></li>
+                <li class="social-tile social-tile--facebook" aria-label="Facebook"><span>f</span></li>
+                <li class="social-tile social-tile--instagram" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></svg>
+                </li>
+                <li class="social-tile social-tile--tiktok" aria-label="TikTok">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v10.5a2.5 2.5 0 1 1-2.5-2.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M14 3c.4 2.4 2.2 4 4.6 4.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+                </li>
+                <li class="social-tile social-tile--youtube" aria-label="YouTube">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="9.5,7.5 17,12 9.5,16.5" fill="currentColor"/></svg>
+                </li>
               </ul>
             </div>
           </div>
@@ -120,20 +128,41 @@
           </div>
         </div>
         <div class="apple-card-stage">
-          <div class="apple-mockup apple-mockup--browser apple-mockup--cool">
+          <div class="apple-mockup apple-mockup--browser apple-mockup--crm">
             <div class="apple-mockup-chrome">
               <span class="apple-mockup-dots"><i></i><i></i><i></i></span>
-              <span class="apple-mockup-url">yourbrand.com.au</span>
+              <span class="apple-mockup-url">yourbrand.com.au / pipeline</span>
             </div>
             <div class="apple-mockup-screen">
-              <p class="apple-mockup-stat"><strong>+3.2&times;</strong> qualified leads</p>
+              <p class="apple-mockup-eyebrow">Live pipeline</p>
               <h3 class="apple-mockup-h">Leads that <span class="grad-text grad-blue">convert</span>.</h3>
-              <ul class="apple-mockup-channels" aria-hidden="true">
-                <li>Capture</li>
-                <li>Follow-up</li>
-                <li>Pipeline</li>
-                <li>Close</li>
-              </ul>
+              <div class="crm-panel" aria-label="New lead activity">
+                <div class="crm-panel-head">
+                  <span class="crm-pulse" aria-hidden="true"></span>
+                  <span class="crm-panel-title">New lead just in</span>
+                  <span class="crm-panel-count">3 today</span>
+                </div>
+                <ul class="crm-leads">
+                  <li class="crm-lead is-new">
+                    <span class="crm-avatar" data-color="pink">PS</span>
+                    <span class="crm-lead-name">Priya Sahay<small>Cobalt Labs</small></span>
+                    <span class="crm-status crm-status--new">New</span>
+                    <span class="crm-time">12s</span>
+                  </li>
+                  <li class="crm-lead">
+                    <span class="crm-avatar" data-color="orange">TW</span>
+                    <span class="crm-lead-name">Tom Wright<small>Northgate</small></span>
+                    <span class="crm-status crm-status--hot">Hot</span>
+                    <span class="crm-time">8m</span>
+                  </li>
+                  <li class="crm-lead">
+                    <span class="crm-avatar" data-color="teal">SC</span>
+                    <span class="crm-lead-name">Sarah Chen<small>Acme &amp; Co</small></span>
+                    <span class="crm-status crm-status--warm">Warm</span>
+                    <span class="crm-time">22m</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
