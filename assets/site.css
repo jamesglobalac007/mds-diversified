@@ -806,10 +806,12 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   display: block;
 }
 
-/* Launch tile — vertical car: cover the full visual area, position so the
-   car body stays prominent (some empty ceiling crops out, no grey gutters) */
+/* Launch tile — vertical car shot. Cover the 4:3 visual area so no cream
+   backdrop shows; bias position toward the lower half of the image so
+   the car body + wheels stay prominent (empty ceiling crops out). */
 .apple-card-tile--launch .apple-tile-visual {
-  background: linear-gradient(135deg, #ece7df 0%, #d8d3cb 100%);
+  aspect-ratio: 4 / 3;
+  background: #efe9df;
 }
 .apple-card-tile--launch .apple-tile-visual img {
   object-fit: cover;
