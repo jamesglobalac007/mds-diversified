@@ -1375,16 +1375,16 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
 }
 .packages-eyebrow {
   display: inline-block;
-  margin: 0 0 22px;
-  font-size: 0.78rem;
+  margin: 0 0 28px;
+  font-size: clamp(0.95rem, 1.1vw, 1.1rem);
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
-  color: var(--ink);
-  padding: 8px 16px;
+  color: white;
+  padding: 14px 26px;
   border-radius: 999px;
-  background: rgba(12, 13, 16, 0.06);
-  border: 1px solid rgba(12, 13, 16, 0.08);
+  background: var(--ink);
+  border: 1px solid var(--ink);
 }
 .packages-title {
   font-size: clamp(2.2rem, 5vw, 4rem);
