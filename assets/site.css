@@ -1753,14 +1753,15 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   align-items: center;
 }
 .contact-eyebrow {
-  font-size: 0.78rem !important;
+  font-size: clamp(1.6rem, 3.6vw, 3.2rem) !important;
   font-weight: 900 !important;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  margin-bottom: 26px !important;
-  opacity: 0.78;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  margin-bottom: clamp(20px, 2vw, 32px) !important;
+  opacity: 1;
   white-space: normal;
   color: var(--ink) !important;
+  line-height: 1.05;
 }
 .contact-copy h2 {
   color: var(--ink);
