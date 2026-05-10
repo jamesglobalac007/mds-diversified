@@ -1553,6 +1553,7 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   font-size: 0.98rem;
   cursor: pointer;
   margin-top: auto;
+  text-decoration: none;
   transition: transform 0.18s ease, background 0.2s ease, color 0.2s ease;
 }
 .package-cta:hover {
