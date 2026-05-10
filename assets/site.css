@@ -706,40 +706,13 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
 /* ----- APPLE-STYLE PRODUCT CARDS ----- */
 .apple-card {
   position: relative;
-  overflow: hidden;
   isolation: isolate;
-  padding: clamp(80px, 8vw, 140px) clamp(20px, 6vw, 80px);
-  background: white;
+  padding: clamp(10px, 1.4vw, 18px) clamp(12px, 2vw, 28px);
+  background: var(--soft);
   color: var(--ink);
 }
-.apple-card--light {
-  background: white;
-}
-/* Soft color glow that "lifts" the focal object */
-.apple-card--light::after {
-  content: "";
-  position: absolute;
-  right: -10%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 70%;
-  max-width: 900px;
-  aspect-ratio: 1;
-  background:
-    radial-gradient(closest-side, rgba(10, 132, 255, 0.18), transparent 70%),
-    radial-gradient(closest-side at 30% 70%, rgba(48, 213, 200, 0.16), transparent 70%);
-  filter: blur(20px);
-  pointer-events: none;
-  z-index: -1;
-}
-/* Mirror the glow when the focal object is on the LEFT */
-.apple-card--mirror::after {
-  right: auto;
-  left: -10%;
-  background:
-    radial-gradient(closest-side, rgba(255, 159, 10, 0.20), transparent 70%),
-    radial-gradient(closest-side at 70% 30%, rgba(255, 45, 146, 0.18), transparent 70%);
-}
+.apple-card--light { background: var(--soft); }
+.apple-card--dark  { background: var(--soft); }
 .apple-card--dark {
   background: #050510;
   color: white;
@@ -763,6 +736,28 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   align-items: center;
   max-width: 1280px;
   margin: 0 auto;
+  background: white;
+  border-radius: clamp(20px, 2.4vw, 32px);
+  padding: clamp(48px, 6vw, 96px) clamp(36px, 5vw, 80px);
+  box-shadow: 0 18px 50px rgba(12, 13, 16, 0.06);
+  overflow: hidden;
+  isolation: isolate;
+  position: relative;
+}
+.apple-card--dark .apple-card-inner {
+  background: #050510;
+  color: white;
+}
+.apple-card--dark .apple-card-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(640px 520px at 12% 18%, rgba(94, 92, 230, 0.40), transparent 55%),
+    radial-gradient(620px 500px at 88% 82%, rgba(255, 45, 146, 0.32), transparent 55%);
+  animation: hero-drift 28s ease-in-out infinite alternate;
 }
 @media (min-width: 901px) {
   .apple-card--mirror .apple-card-inner {
@@ -1272,22 +1267,10 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
 /* ----- PACKAGES ----- */
 .packages {
   position: relative;
-  overflow: hidden;
   isolation: isolate;
-  padding: clamp(100px, 12vw, 180px) clamp(20px, 6vw, 80px);
-  background: white;
+  padding: clamp(60px, 8vw, 120px) clamp(12px, 2vw, 28px) clamp(80px, 9vw, 140px);
+  background: var(--soft);
   color: var(--ink);
-}
-.packages::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(620px 500px at 8% 12%, rgba(94, 92, 230, 0.20), transparent 55%),
-    radial-gradient(640px 520px at 92% 88%, rgba(255, 159, 10, 0.22), transparent 55%);
-  animation: hero-drift 32s ease-in-out infinite alternate;
 }
 .packages-inner {
   max-width: 1280px;
