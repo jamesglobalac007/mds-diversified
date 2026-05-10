@@ -1512,9 +1512,10 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   list-style: none;
   padding: 0;
   margin: 0 0 32px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
-  flex: 1;
+  align-content: flex-start;
 }
 .package-list li {
   position: relative;
@@ -1551,6 +1552,7 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   font-weight: 750;
   font-size: 0.98rem;
   cursor: pointer;
+  margin-top: auto;
   transition: transform 0.18s ease, background 0.2s ease, color 0.2s ease;
 }
 .package-cta:hover {
