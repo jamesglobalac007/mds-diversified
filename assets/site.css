@@ -840,21 +840,23 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   border-top: 1px solid var(--line);
 }
 
-/* Scale tile — CRM dashboard. Show the full dashboard (sidebar nav,
-   stats, charts, contacts) using contain so nothing crops; tile and
-   visual both tinted cream to match the dashboard's own backdrop so
-   there's no white-vs-cream seam around the image. */
+/* Scale tile — CRM dashboard. Match visual aspect to the image's
+   natural 3:2, then scale up ~12% to crop the internal cream padding
+   that's baked around the dashboard chrome inside the image file.
+   Result: dashboard fills the area edge-to-edge, no cream outline. */
 .apple-card-tile--scale {
   background: #fafafb;
 }
 .apple-card-tile--scale .apple-tile-visual {
+  aspect-ratio: 3 / 2;
   background: #fafafb;
   overflow: hidden;
 }
 .apple-card-tile--scale .apple-tile-visual img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
-  transform: none;
+  transform: scale(1.12);
+  transform-origin: center;
 }
 
 /* Mobile: stack copy tile above image tile */
