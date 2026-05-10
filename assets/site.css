@@ -756,10 +756,10 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   position: relative;
 }
 
-/* Copy tile — text content centered vertically */
+/* Copy tile — text content top-aligned to match right tile's top eyebrow */
 .apple-card-tile--copy {
-  padding: clamp(40px, 5vw, 80px) clamp(32px, 4vw, 64px);
-  justify-content: center;
+  padding: clamp(36px, 4vw, 56px) clamp(32px, 4vw, 64px) clamp(40px, 5vw, 80px);
+  justify-content: flex-start;
 }
 .apple-card-tile--copy .apple-card-copy { max-width: 100%; }
 
