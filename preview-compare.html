@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MDS — Mobile vs Desktop preview</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; overflow: hidden;
+    font-family: Inter, system-ui, sans-serif; background: #0c0d10; color: white; }
+  .topbar { display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 16px; background: #050510; font-size: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .topbar strong { font-weight: 700; }
+  .topbar .controls { display: flex; gap: 8px; align-items: center; }
+  .topbar input { width: 320px; padding: 6px 10px; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.06);
+    color: white; font: inherit; font-size: 12px; }
+  .topbar button { padding: 6px 12px; border-radius: 8px; border: 0;
+    background: white; color: #0c0d10; font: inherit; font-size: 12px;
+    font-weight: 700; cursor: pointer; }
+  .stage { display: grid; grid-template-columns: 420px 1fr; gap: 16px;
+    padding: 16px; height: calc(100% - 41px); align-items: stretch; }
+  .panel { display: flex; flex-direction: column; min-width: 0; }
+  .label { font-size: 10px; font-weight: 800; letter-spacing: 0.18em;
+    text-transform: uppercase; color: rgba(255,255,255,0.6); margin: 0 0 8px; }
+  .frame { background: white; border-radius: 14px; overflow: hidden;
+    flex: 1; display: flex; align-items: flex-start; justify-content: center;
+    border: 1px solid rgba(255,255,255,0.10); }
+  /* Mobile pane: real size */
+  .mobile .frame iframe { width: 390px; height: 100%; border: 0; display: block; }
+  /* Desktop pane: render at 1440 wide, scale down to fit panel */
+  .desktop .frame { background: white; padding: 0; align-items: stretch; }
+  .desktop .frame iframe { width: 1440px; height: 1000px; border: 0; display: block;
+    transform-origin: top left; }
+  /* Hide some MDS UI we don't want in the comparison (none for now) */
+</style>
+</head>
+<body>
+<div class="topbar">
+  <strong>MDS Preview · Mobile vs Desktop</strong>
+  <div class="controls">
+    <span style="opacity:.7">URL</span>
+    <input id="url" value="/" />
+    <button id="reload">Reload both</button>
+  </div>
+</div>
+<div class="stage">
+  <div class="panel mobile">
+    <p class="label">Mobile · 390 × view</p>
+    <div class="frame"><iframe id="mobileFrame" src="/"></iframe></div>
+  </div>
+  <div class="panel desktop">
+    <p class="label">Desktop · 1440 → scaled</p>
+    <div class="frame"><iframe id="desktopFrame" src="/"></iframe></div>
+  </div>
+</div>
+<script>
+  // Scale desktop iframe to fit its panel width
+  function fitDesktop() {
+    const panel = document.querySelector('.desktop .frame');
+    const iframe = document.getElementById('desktopFrame');
+    const panelW = panel.clientWidth;
+    const panelH = panel.clientHeight;
+    const iframeW = 1440;
+    const iframeH = 1000;
+    const scale = Math.min(panelW / iframeW, panelH / iframeH);
+    iframe.style.transform = `scale(${scale})`;
+    iframe.style.width = iframeW + 'px';
+    iframe.style.height = iframeH + 'px';
+  }
+  fitDesktop();
+  window.addEventListener('resize', fitDesktop);
+
+  document.getElementById('reload').addEventListener('click', () => {
+    const url = document.getElementById('url').value || '/';
+    document.getElementById('mobileFrame').src = url + '?t=' + Date.now();
+    document.getElementById('desktopFrame').src = url + '?t=' + Date.now();
+    setTimeout(fitDesktop, 100);
+  });
+</script>
+</body>
+</html>
