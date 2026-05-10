@@ -571,11 +571,15 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.45);
 }
 .always-sub {
-  margin: 0 auto;
+  margin: clamp(20px, 2.4vw, 32px) auto 0;
   max-width: 720px;
-  font-size: clamp(1.1rem, 1.55vw, 1.4rem);
+  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
   color: rgba(255,255,255,0.78);
   line-height: 1.45;
+}
+.always-sub strong {
+  color: white;
+  font-weight: 800;
 }
 
 /* ----- PROCESS STRIP ----- */
@@ -802,19 +806,21 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   display: block;
 }
 
-/* Launch tile — vertical car shot: contain inside cream gradient */
+/* Launch tile — vertical car: cover the full visual area, position so the
+   car body stays prominent (some empty ceiling crops out, no grey gutters) */
 .apple-card-tile--launch .apple-tile-visual {
   background: linear-gradient(135deg, #ece7df 0%, #d8d3cb 100%);
 }
 .apple-card-tile--launch .apple-tile-visual img {
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
+  object-position: center 35%;
 }
 
-/* Lift tile — cover the marketing-post image */
+/* Lift tile — push focus to the LEFT half of the post so the house dominates
+   over the marketing copy on the right */
 .apple-card-tile--lift .apple-tile-visual img {
   object-fit: cover;
-  object-position: center;
+  object-position: 18% center;
 }
 .apple-tile-share {
   background: white;
@@ -826,15 +832,11 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   border-top: 1px solid var(--line);
 }
 
-/* Scale tile — CRM dashboard: contain on light backdrop so the whole
-   dashboard (sidebar, charts, lead-count stats, top contacts) is visible
-   instead of cropped. Keeps the same 4:3 visual area as the other tiles. */
-.apple-card-tile--scale .apple-tile-visual {
-  background: #fafafb;
-}
+/* Scale tile — CRM dashboard: cover the visual area, anchor to top so
+   stats + sidebar nav stay readable; no grey letterbox. */
 .apple-card-tile--scale .apple-tile-visual img {
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
+  object-position: center top;
 }
 
 /* Mobile: stack copy tile above image tile */
@@ -1579,6 +1581,25 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   width: 100%;
   max-width: 480px;
   margin-top: 12px;
+}
+/* Horizontal 3-up layout for the contact CTAs (used on the home page now
+   that "Are you in?" was removed and the buttons are the headline). */
+.contact-options--horizontal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 1080px;
+  margin-top: clamp(20px, 2.4vw, 32px);
+}
+.contact-options--horizontal .contact-option {
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  padding: 22px 26px;
+  min-height: 64px;
+}
+@media (max-width: 760px) {
+  .contact-options--horizontal {
+    grid-template-columns: 1fr;
+  }
 }
 .contact-option {
   color: white;
