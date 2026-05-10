@@ -173,7 +173,7 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   font-size: clamp(3rem, 9vw, 8rem);
   font-weight: 800;
   letter-spacing: -0.04em;
-  line-height: 0.94;
+  line-height: 1.02;
   margin-bottom: 30px;
   max-width: 1200px;
 }
