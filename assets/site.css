@@ -125,7 +125,10 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   justify-items: center;
   text-align: center;
   padding: clamp(40px, 6vw, 100px) clamp(20px, 6vw, 80px) clamp(120px, 14vw, 200px);
-  background: white;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.96)),
+    url('images/hero.jpg') center/cover no-repeat;
+  background-color: white;
   color: var(--ink);
 }
 .hero-section::before {
@@ -524,7 +527,10 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   overflow: hidden;
   isolation: isolate;
   padding: clamp(110px, 14vw, 180px) clamp(20px, 6vw, 80px);
-  background: #050510;
+  background:
+    linear-gradient(rgba(5, 5, 16, 0.86), rgba(5, 5, 16, 0.94)),
+    url('images/always-on.jpg') center/cover no-repeat;
+  background-color: #050510;
   color: white;
   text-align: center;
   display: grid;
