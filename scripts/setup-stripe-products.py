@@ -53,7 +53,7 @@ def find_product_by_name(name: str):
 
 
 def find_price(product_id: str, amount_cents: int, recurring: str | None):
-    """Find an existing matching price on the product, or None."""
+    """Find an existing matching tax-exclusive price on the product, or None."""
     for price in stripe.Price.list(product=product_id, active=True, limit=100).auto_paging_iter():
         if price.unit_amount != amount_cents:
             continue
@@ -61,17 +61,20 @@ def find_price(product_id: str, amount_cents: int, recurring: str | None):
             continue
         if not recurring and price.recurring:
             continue
+        # Only match prices with explicit GST-exclusive tax behaviour.
+        # Old non-tax prices are skipped so the new tax-enabled run replaces them.
+        if price.tax_behavior != "exclusive":
+            continue
         return price
     return None
 
 
 def find_payment_link(price_id: str):
-    """Find an existing payment link for a given price, or None."""
+    """Find an existing tax-enabled payment link for a given price, or None."""
     for link in stripe.PaymentLink.list(active=True, limit=100).auto_paging_iter():
-        for li in link.line_items.list(limit=10).data if hasattr(link, "line_items") else []:
-            if li.price.id == price_id:
-                return link
-        # Fallback: list line items separately (PaymentLink list doesn't expand line_items by default)
+        # Only match links with automatic_tax enabled — old non-tax links are skipped.
+        if not (link.automatic_tax and link.automatic_tax.enabled):
+            continue
         items = stripe.PaymentLink.list_line_items(link.id, limit=10)
         if any(li.price.id == price_id for li in items.data):
             return link
@@ -89,21 +92,23 @@ def main() -> None:
             description=blurb,
         )
 
-        # Price
+        # Price (tax-exclusive — Stripe Tax adds 10% GST on top at checkout)
         price_kwargs = {
             "product": prod.id,
             "unit_amount": amount_cents,
             "currency": CURRENCY,
+            "tax_behavior": "exclusive",
         }
         if recurring:
             price_kwargs["recurring"] = {"interval": recurring}
 
         price = find_price(prod.id, amount_cents, recurring) or stripe.Price.create(**price_kwargs)
 
-        # Payment Link
+        # Payment Link (automatic_tax on — Stripe Tax computes GST per customer location)
         link = find_payment_link(price.id) or stripe.PaymentLink.create(
             line_items=[{"price": price.id, "quantity": 1}],
             after_completion={"type": "hosted_confirmation"},
+            automatic_tax={"enabled": True},
         )
 
         results.append((name, dollars, recurring or "one-off", link.url))
