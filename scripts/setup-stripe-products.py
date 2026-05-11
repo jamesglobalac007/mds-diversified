@@ -6,6 +6,13 @@ Run with the saved Stripe secret key from ~/.mds/credentials.json.
 Idempotent — looks up existing products by name and reuses, won't
 create duplicates if re-run.
 
+Modes:
+    python3 setup-stripe-products.py            # TEST mode (default)
+    python3 setup-stripe-products.py --live     # LIVE mode
+
+LIVE mode uses ~/.mds/credentials.json["stripe_secret_key_live"].
+TEST mode uses ~/.mds/credentials.json["stripe_secret_key"].
+
 Output: prints a table mapping each tier to its Payment Link URL,
 ready to paste into the package card CTAs.
 """
@@ -19,7 +26,10 @@ from pathlib import Path
 import stripe
 
 CREDS = Path.home() / ".mds" / "credentials.json"
-stripe.api_key = json.load(open(CREDS))["stripe_secret_key"]
+LIVE = "--live" in sys.argv
+KEY_NAME = "stripe_secret_key_live" if LIVE else "stripe_secret_key"
+stripe.api_key = json.load(open(CREDS))[KEY_NAME]
+print(f"\n>>> Running in {'LIVE' if LIVE else 'TEST'} mode (key: {stripe.api_key[:8]}...)\n")
 
 # (name, blurb, amount in dollars, recurring? AUD)
 TIERS = [
