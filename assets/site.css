@@ -1504,6 +1504,16 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   font-weight: 600;
   color: var(--muted);
 }
+.package-price-tax {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: var(--surface-alt, rgba(12, 13, 16, 0.06));
+  padding: 4px 8px;
+  border-radius: 999px;
+}
 .package-blurb {
   font-size: 1.05rem;
   font-weight: 600;
