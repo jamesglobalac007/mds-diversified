@@ -187,9 +187,9 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
 }
 .hero-tagline {
   color: var(--ink-soft);
-  font-size: clamp(1.05rem, 1.45vw, 1.35rem);
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
   font-weight: 500;
-  max-width: 720px;
+  max-width: 1200px;
   margin: 18px auto 0;
   line-height: 1.5;
   letter-spacing: -0.005em;
