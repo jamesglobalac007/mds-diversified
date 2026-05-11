@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mds-diversified.onrender.com/sitemap.xml

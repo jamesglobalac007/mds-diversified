@@ -22,10 +22,58 @@
   <meta name="twitter:image" content="https://mds-diversified.onrender.com/assets/images/hero.jpg">
   <link rel="icon" type="image/png" href="assets/logo/mds-diversified-monogram.png">
   <link rel="apple-touch-icon" href="assets/logo/mds-diversified-square-400.png">
+  <link rel="canonical" href="https://mds-diversified.onrender.com/">
+  <!-- Structured data: ProfessionalService + FAQ for Google rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://mds-diversified.onrender.com/#org",
+        "name": "MDS Diversified",
+        "legalName": "MDS Diversified Pty Ltd",
+        "url": "https://mds-diversified.onrender.com",
+        "logo": "https://mds-diversified.onrender.com/assets/logo/mds-diversified-monogram.png",
+        "image": "https://mds-diversified.onrender.com/assets/logo/mds-diversified-horizontal-stripe.png",
+        "description": "Marketing and sales setup, done for you. Custom marketing websites, branded social channels, lead capture, sales pipeline support, and ongoing content delivery.",
+        "telephone": "+61406718007",
+        "email": "sales@mdsdiversified.ai",
+        "priceRange": "$350-$9500",
+        "address": {"@type": "PostalAddress", "addressCountry": "AU"},
+        "areaServed": [
+          {"@type": "Country", "name": "Australia"},
+          {"@type": "Country", "name": "United Arab Emirates"},
+          {"@type": "Country", "name": "United States"}
+        ],
+        "taxID": "ABN 48 668 195 819",
+        "currenciesAccepted": "AUD"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "What if I'm not happy with the work?", "acceptedAnswer": {"@type": "Answer", "text": "If we haven't started yet, full refund within 7 days of purchase. Once work has begun we keep iterating until you sign off — at no extra cost. Monthly plans cancel any time at the end of the current billed month."}},
+          {"@type": "Question", "name": "I already have a website. Do I need a new one?", "acceptedAnswer": {"@type": "Answer", "text": "Maybe not. The Launch package replaces an existing site; otherwise we audit yours first and recommend the most cost-effective path."}},
+          {"@type": "Question", "name": "How long does the build take?", "acceptedAnswer": {"@type": "Answer", "text": "Build starts within 48 hours of payment. Launch typically goes live in around two weeks. Lift takes two to three weeks. Scale takes three to four weeks."}},
+          {"@type": "Question", "name": "Can I cancel my monthly content plan any time?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Cancel from your Stripe customer portal in one click. Cancellation takes effect at the end of the current billed month."}},
+          {"@type": "Question", "name": "What's included in sales pipeline support?", "acceptedAnswer": {"@type": "Answer", "text": "Lead capture form, automated follow-up email and SMS sequence, integration with your existing CRM, call scripts, and a founder-led monthly pipeline review."}},
+          {"@type": "Question", "name": "Are your invoices GST-compliant?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every Stripe receipt itemises the 10% GST separately. Stripe Tax adds GST automatically at checkout."}},
+          {"@type": "Question", "name": "Do you work with international clients?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — Australia, UAE, and the United States. Pricing is in AUD; Stripe converts at checkout for international cards."}}
+        ]
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=37">
+  <link rel="stylesheet" href="assets/site.css?v=38">
+  <!-- Cal.com embed loader (popup booking modal for "Book Strategy Call") -->
+  <script>
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "Cal");
+  Cal("init", "strategy-call", { origin: "https://app.cal.com" });
+  Cal.ns["strategy-call"]("ui", { theme: "light", styles: { branding: { brandColor: "#0a84ff" } }, hideEventTypeDetails: false, layout: "month_view" });
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -37,7 +85,7 @@
       <span></span><span></span><span></span>
     </button>
     <nav class="site-nav" data-menu>
-      <a href="#contact" class="nav-cta" data-topic="Strategy Call">Book Strategy Call</a>
+      <button type="button" class="nav-cta" data-cal-namespace="strategy-call" data-cal-link="mdsdiversified/strategy-call" data-cal-config='{"layout":"month_view","theme":"light"}'>Book Strategy Call</button>
     </nav>
   </header>
 
@@ -192,6 +240,34 @@
               <p class="package-fineprint"><a href="terms.html#scope">What's included and what's not &rarr;</a></p>
             </article>
           </div>
+
+          <details class="package-compare">
+            <summary>Compare what's included &rarr;</summary>
+            <div class="package-compare-table-wrap">
+              <table class="package-compare-table">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Launch<br><span class="package-compare-price">$5,000</span></th>
+                    <th scope="col" class="package-compare-popular">Lift<br><span class="package-compare-price">$7,500</span></th>
+                    <th scope="col">Scale<br><span class="package-compare-price">$9,500</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Custom marketing website</th><td>&check;</td><td>&check;</td><td>&check;</td></tr>
+                  <tr><th scope="row">On-brand copy &amp; design</th><td>&check;</td><td>&check;</td><td>&check;</td></tr>
+                  <tr><th scope="row">Launch guidance &amp; hosting handover</th><td>&check;</td><td>&check;</td><td>&check;</td></tr>
+                  <tr><th scope="row">Social channels set up (LI, FB, IG, TikTok, YouTube)</th><td>&mdash;</td><td>&check;</td><td>&check;</td></tr>
+                  <tr><th scope="row">Branded profile &amp; cover assets</th><td>&mdash;</td><td>&check;</td><td>&check;</td></tr>
+                  <tr><th scope="row">First-month posting calendar</th><td>&mdash;</td><td>&check;</td><td>&check;</td></tr>
+                  <tr><th scope="row">Lead capture form &amp; automated follow-up</th><td>&mdash;</td><td>&mdash;</td><td>&check;</td></tr>
+                  <tr><th scope="row">Sales pipeline support &amp; CRM setup</th><td>&mdash;</td><td>&mdash;</td><td>&check;</td></tr>
+                  <tr><th scope="row">Sales scripts tailored to your audience</th><td>&mdash;</td><td>&mdash;</td><td>&check;</td></tr>
+                  <tr><th scope="row">Founder-led monthly review</th><td>&mdash;</td><td>&mdash;</td><td>&check;</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
         </div>
 
         <div class="packages-group" id="monthly">
@@ -337,11 +413,6 @@
           <summary>Do you work with international clients?</summary>
           <p>Yes — Australia, UAE, and the United States. Pricing on the site is in AUD; Stripe converts at checkout for international cards at the live exchange rate.</p>
         </details>
-
-        <details class="faq-item">
-          <summary>Who actually does the work?</summary>
-          <p>James (the founder) leads strategy, sales, and the monthly review calls. Build, design, and posting work is delivered by his team using AI-assisted workflows — same quality, faster turnaround, lower cost than a traditional agency.</p>
-        </details>
       </div>
     </section>
   </main>
@@ -376,6 +447,6 @@
     </div>
   </footer>
 
-  <script src="assets/site.js?v=4"></script>
+  <script src="assets/site.js?v=5"></script>
 </body>
 </html>

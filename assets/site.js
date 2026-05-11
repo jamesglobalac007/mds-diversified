@@ -55,9 +55,32 @@ if (enquiryForm) {
         submitBtn.disabled = false;
         submitBtn.textContent = originalLabel || 'Send';
       }
-      alert("Couldn't send right now. Email james@mdsdiversified.ai and we'll pick it up.");
+      alert("Couldn't send right now. Email sales@mdsdiversified.ai and we'll pick it up.");
     }
   });
+}
+
+// ----- SCROLL-TRIGGERED REVEALS -----
+// Each element with [data-reveal] fades + slides in when it enters the viewport.
+// Uses IntersectionObserver — zero library, near-zero CPU, respects prefers-reduced-motion.
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!prefersReducedMotion) {
+  const revealTargets = document.querySelectorAll('.apple-card, .package-card, .faq-item, .always-inner, .contact-inner, .hero-tagline');
+  revealTargets.forEach((el) => el.setAttribute('data-reveal', ''));
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.setAttribute('data-reveal-in', '');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+    revealTargets.forEach((el) => io.observe(el));
+  } else {
+    // Fallback: just show everything if IntersectionObserver isn't supported
+    revealTargets.forEach((el) => el.setAttribute('data-reveal-in', ''));
+  }
 }
 
 document.querySelectorAll('form[data-fallback-subject]').forEach((form) => {
@@ -71,6 +94,6 @@ document.querySelectorAll('form[data-fallback-subject]').forEach((form) => {
     data.forEach((value, key) => lines.push(`${key}: ${value}`));
     const subject = encodeURIComponent(form.dataset.fallbackSubject || 'MDS enquiry');
     const body = encodeURIComponent(lines.join('\n'));
-    window.location.href = `mailto:james@mdsdiversified.ai?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:sales@mdsdiversified.ai?subject=${subject}&body=${body}`;
   });
 });
