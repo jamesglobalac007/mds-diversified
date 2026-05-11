@@ -68,10 +68,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/site.css?v=38">
-  <!-- Cal.com embed loader (popup booking modal for "Book Strategy Call") -->
+  <!-- Cal.eu embed loader (popup booking modal for "Book Strategy Call") -->
   <script>
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "Cal");
-  Cal("init", "strategy-call", { origin: "https://app.cal.com" });
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.eu/embed/embed.js", "Cal");
+  Cal("init", "strategy-call", { origin: "https://app.cal.eu" });
   Cal.ns["strategy-call"]("ui", { theme: "light", styles: { branding: { brandColor: "#0a84ff" } }, hideEventTypeDetails: false, layout: "month_view" });
   </script>
 </head>
@@ -85,7 +85,7 @@
       <span></span><span></span><span></span>
     </button>
     <nav class="site-nav" data-menu>
-      <button type="button" class="nav-cta" data-cal-namespace="strategy-call" data-cal-link="mdsdiversified/strategy-call" data-cal-config='{"layout":"month_view","theme":"light"}'>Book Strategy Call</button>
+      <button type="button" class="nav-cta" data-cal-namespace="strategy-call" data-cal-link="mdsdiversified/30min" data-cal-config='{"layout":"month_view","theme":"light"}'>Book Strategy Call</button>
     </nav>
   </header>
 
