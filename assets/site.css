@@ -185,6 +185,20 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   margin: 10px auto 0;
   line-height: 1.45;
 }
+.hero-tagline {
+  color: var(--ink-soft);
+  font-size: clamp(1.05rem, 1.45vw, 1.35rem);
+  font-weight: 500;
+  max-width: 720px;
+  margin: 18px auto 0;
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+}
+.hero-tagline strong {
+  font-weight: 800;
+  color: var(--ink);
+  white-space: nowrap;
+}
 
 .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; justify-content: center; }
 
@@ -1884,6 +1898,79 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
 }
 .lead-form .button.primary:hover { background: #000; transform: translateY(-1px); }
 .form-note { margin: 0; font-size: 0.78rem; color: var(--muted); }
+
+/* ----- FAQ ----- */
+.faq {
+  padding: clamp(80px, 12vw, 140px) clamp(20px, 6vw, 80px);
+  background: var(--soft);
+  color: var(--ink);
+}
+.faq-inner {
+  max-width: 880px;
+  margin: 0 auto;
+}
+.faq-eyebrow {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: white;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.faq-title {
+  font-size: clamp(2.2rem, 4.8vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0 0 48px;
+}
+.faq-item {
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+}
+.faq-item:last-of-type {
+  border-bottom: 1px solid var(--line);
+}
+.faq-item summary {
+  cursor: pointer;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  font-weight: 700;
+  color: var(--ink);
+  list-style: none;
+  position: relative;
+  padding-right: 44px;
+  line-height: 1.4;
+  transition: color 0.18s ease;
+}
+.faq-item summary:hover { color: var(--blue); }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-55%);
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1;
+  transition: transform 0.25s ease, color 0.18s ease;
+}
+.faq-item[open] summary::after {
+  content: "−";
+  color: var(--ink);
+}
+.faq-item p {
+  margin: 16px 0 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 760px;
+}
 
 /* ----- FOOTER ----- */
 .site-footer {
