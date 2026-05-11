@@ -199,6 +199,7 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   color: var(--ink);
   white-space: nowrap;
 }
+.hero-tagline .nowrap { white-space: nowrap; }
 
 .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; justify-content: center; }
 
