@@ -67,7 +67,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=41">
+  <link rel="stylesheet" href="assets/site.css?v=42">
 </head>
 <body>
   <header class="site-header">
@@ -75,11 +75,6 @@
       <img src="assets/logo/mds-diversified-horizontal-light.svg" alt="MDS Diversified">
     </a>
     <p class="site-regions" aria-label="Regions">Australia · UAE · America</p>
-    <div class="currency-switcher" role="group" aria-label="Currency">
-      <button type="button" data-currency-switch="AUD" class="is-active">AUD</button>
-      <button type="button" data-currency-switch="AED">AED</button>
-      <button type="button" data-currency-switch="USD">USD</button>
-    </div>
     <button class="menu-button" type="button" data-menu-toggle aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -173,6 +168,11 @@
       <div class="packages-inner">
         <p class="packages-eyebrow">Packages</p>
         <h2 class="packages-title">Choose your package. <span class="grad-text grad-blue">Pay once</span> or <span class="grad-text grad-amber">monthly</span>.</h2>
+        <div class="currency-switcher currency-switcher--light" role="group" aria-label="Currency">
+          <button type="button" data-currency-switch="AUD" class="is-active">AUD</button>
+          <button type="button" data-currency-switch="AED">AED</button>
+          <button type="button" data-currency-switch="USD">USD</button>
+        </div>
 
         <div class="packages-group">
           <p class="packages-group-label">One-off setup</p>
