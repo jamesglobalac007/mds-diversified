@@ -60,6 +60,54 @@ if (enquiryForm) {
   });
 }
 
+// ----- CURRENCY SWITCHER -----
+// Auto-detect visitor country on first visit, manual override persists via localStorage.
+// Display-only — Stripe Payment Links still process in AUD. International cards convert at the
+// customer's bank exchange rate. The displayed AED/USD prices are rounded marketing equivalents.
+const COUNTRY_TO_CURRENCY = { AU: 'AUD', AE: 'AED', US: 'USD' };
+
+function applyCurrency(currency) {
+  const code = currency.toUpperCase();
+  document.querySelectorAll('[data-price-aud]').forEach((el) => {
+    const next = el.dataset[`price${code.charAt(0)}${code.slice(1).toLowerCase()}`];
+    if (next) el.textContent = next;
+  });
+  document.querySelectorAll('[data-currency-switch]').forEach((btn) => {
+    btn.classList.toggle('is-active', btn.dataset.currencySwitch === code);
+  });
+  // GST only applies to AUD customers — hide the "ex GST" pill for AED/USD
+  document.querySelectorAll('.package-price-tax').forEach((el) => {
+    el.style.display = code === 'AUD' ? '' : 'none';
+  });
+  try { localStorage.setItem('mds_currency', code); } catch (_) {}
+}
+
+async function detectCountry() {
+  try {
+    const res = await fetch('https://api.country.is/', { mode: 'cors' });
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data && data.country;
+  } catch (_) {
+    return null;
+  }
+}
+
+(async function initCurrency() {
+  // Manual choice wins over auto-detect
+  let chosen = null;
+  try { chosen = localStorage.getItem('mds_currency'); } catch (_) {}
+  if (chosen && ['AUD', 'AED', 'USD'].includes(chosen)) {
+    applyCurrency(chosen);
+  } else {
+    const country = await detectCountry();
+    applyCurrency(COUNTRY_TO_CURRENCY[country] || 'AUD');
+  }
+  document.querySelectorAll('[data-currency-switch]').forEach((btn) => {
+    btn.addEventListener('click', () => applyCurrency(btn.dataset.currencySwitch));
+  });
+})();
+
 // ----- SCROLL-TRIGGERED REVEALS -----
 // Each element with [data-reveal] fades + slides in when it enters the viewport.
 // Uses IntersectionObserver — zero library, near-zero CPU, respects prefers-reduced-motion.

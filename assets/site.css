@@ -74,6 +74,37 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   transition: transform 0.18s ease, background 0.18s ease;
 }
 .nav-cta:hover { transform: translateY(-1px); background: var(--green); color: var(--ink) !important; }
+.currency-switcher {
+  display: inline-flex;
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  padding: 3px;
+  margin-right: 14px;
+}
+.currency-switcher button {
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.55);
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 5px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.18s ease, background 0.18s ease;
+}
+.currency-switcher button:hover { color: white; }
+.currency-switcher button.is-active {
+  background: white;
+  color: var(--ink);
+}
+@media (max-width: 720px) {
+  .currency-switcher { order: 3; margin: 0; }
+  .currency-switcher button { padding: 4px 8px; font-size: 0.68rem; }
+}
 .menu-button {
   display: none;
   width: 42px; height: 42px;

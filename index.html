@@ -67,7 +67,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=40">
+  <link rel="stylesheet" href="assets/site.css?v=41">
 </head>
 <body>
   <header class="site-header">
@@ -75,6 +75,11 @@
       <img src="assets/logo/mds-diversified-horizontal-light.svg" alt="MDS Diversified">
     </a>
     <p class="site-regions" aria-label="Regions">Australia · UAE · America</p>
+    <div class="currency-switcher" role="group" aria-label="Currency">
+      <button type="button" data-currency-switch="AUD" class="is-active">AUD</button>
+      <button type="button" data-currency-switch="AED">AED</button>
+      <button type="button" data-currency-switch="USD">USD</button>
+    </div>
     <button class="menu-button" type="button" data-menu-toggle aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -175,7 +180,7 @@
             <article class="package-card">
               <p class="package-tag">Setup</p>
               <h3 class="package-name">Launch</h3>
-              <p class="package-price"><span class="package-price-amount">$5,000</span><span class="package-price-suffix">one-off</span><span class="package-price-tax">ex GST</span></p>
+              <p class="package-price"><span class="package-price-amount" data-price-aud="$5,000" data-price-aed="AED 12,500" data-price-usd="$3,500 USD">$5,000</span><span class="package-price-suffix">one-off</span><span class="package-price-tax">ex GST</span></p>
               <p class="package-blurb">Get found and ready to sell.</p>
               <p class="package-desc">A custom marketing website with on-brand copy, clean design, and launch guidance so your site is ready to go live with your chosen hosting provider.</p>
               <p class="package-includes-label">Includes:</p>
@@ -193,7 +198,7 @@
               <span class="package-pill">Most popular</span>
               <p class="package-tag">Setup</p>
               <h3 class="package-name">Lift</h3>
-              <p class="package-price"><span class="package-price-amount grad-text grad-aurora">$7,500</span><span class="package-price-suffix">one-off</span><span class="package-price-tax">ex GST</span></p>
+              <p class="package-price"><span class="package-price-amount grad-text grad-aurora" data-price-aud="$7,500" data-price-aed="AED 18,500" data-price-usd="$5,000 USD">$7,500</span><span class="package-price-suffix">one-off</span><span class="package-price-tax">ex GST</span></p>
               <p class="package-blurb">Get found. Get followed.</p>
               <p class="package-desc">A custom marketing website plus branded social channel setup, so your business looks consistent wherever customers find you.</p>
               <p class="package-includes-label">Includes:</p>
@@ -213,7 +218,7 @@
             <article class="package-card">
               <p class="package-tag">Setup</p>
               <h3 class="package-name">Scale</h3>
-              <p class="package-price"><span class="package-price-amount">$9,500</span><span class="package-price-suffix">one-off</span><span class="package-price-tax">ex GST</span></p>
+              <p class="package-price"><span class="package-price-amount" data-price-aud="$9,500" data-price-aed="AED 23,500" data-price-usd="$6,500 USD">$9,500</span><span class="package-price-suffix">one-off</span><span class="package-price-tax">ex GST</span></p>
               <p class="package-blurb">Get found. Get followed. Get closed.</p>
               <p class="package-desc">A complete marketing and sales setup that connects your website, social presence, lead capture, follow-up, and sales process.</p>
               <p class="package-includes-label">Includes:</p>
@@ -242,9 +247,9 @@
                 <thead>
                   <tr>
                     <th scope="col"></th>
-                    <th scope="col">Launch<br><span class="package-compare-price">$5,000</span></th>
-                    <th scope="col" class="package-compare-popular">Lift<br><span class="package-compare-price">$7,500</span></th>
-                    <th scope="col">Scale<br><span class="package-compare-price">$9,500</span></th>
+                    <th scope="col">Launch<br><span class="package-compare-price" data-price-aud="$5,000" data-price-aed="AED 12,500" data-price-usd="$3,500 USD">$5,000</span></th>
+                    <th scope="col" class="package-compare-popular">Lift<br><span class="package-compare-price" data-price-aud="$7,500" data-price-aed="AED 18,500" data-price-usd="$5,000 USD">$7,500</span></th>
+                    <th scope="col">Scale<br><span class="package-compare-price" data-price-aud="$9,500" data-price-aed="AED 23,500" data-price-usd="$6,500 USD">$9,500</span></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -270,7 +275,7 @@
             <article class="package-card">
               <p class="package-tag">Monthly</p>
               <h3 class="package-name">Steady</h3>
-              <p class="package-price"><span class="package-price-amount">$350</span><span class="package-price-suffix">/ month</span><span class="package-price-tax">ex GST</span></p>
+              <p class="package-price"><span class="package-price-amount" data-price-aud="$350" data-price-aed="AED 850" data-price-usd="$250 USD">$350</span><span class="package-price-suffix">/ month</span><span class="package-price-tax">ex GST</span></p>
               <p class="package-blurb">Keep your business visible.</p>
               <p class="package-desc">A simple monthly content plan to keep your brand active and consistent across your main social channels.</p>
               <p class="package-includes-label">Includes:</p>
@@ -280,14 +285,14 @@
                 <li>Branded image and caption</li>
                 <li>Approval before anything goes live</li>
               </ul>
-              <a class="package-cta" href="https://buy.stripe.com/5kQ9AUchU6VF3a89BM3Ru09" target="_blank" rel="noopener">Subscribe — $350/mo</a>
+              <a class="package-cta" href="https://buy.stripe.com/5kQ9AUchU6VF3a89BM3Ru09" target="_blank" rel="noopener">Subscribe — <span data-price-aud="$350" data-price-aed="AED 850" data-price-usd="$250 USD">$350</span>/mo</a>
             </article>
 
             <article class="package-card package-card--popular">
               <span class="package-pill">Most popular</span>
               <p class="package-tag">Monthly</p>
               <h3 class="package-name">Active</h3>
-              <p class="package-price"><span class="package-price-amount grad-text grad-aurora">$500</span><span class="package-price-suffix">/ month</span><span class="package-price-tax">ex GST</span></p>
+              <p class="package-price"><span class="package-price-amount grad-text grad-aurora" data-price-aud="$500" data-price-aed="AED 1,250" data-price-usd="$350 USD">$500</span><span class="package-price-suffix">/ month</span><span class="package-price-tax">ex GST</span></p>
               <p class="package-blurb">Show up more often.</p>
               <p class="package-desc">A stronger monthly content plan for businesses that want to stay visible, build trust, and keep their audience warm.</p>
               <p class="package-includes-label">Includes:</p>
@@ -297,13 +302,13 @@
                 <li>Mix of branded and photo posts</li>
                 <li>Monthly content review call</li>
               </ul>
-              <a class="package-cta package-cta--primary" href="https://buy.stripe.com/14AdRa3Lo93N5igaFQ3Ru0a" target="_blank" rel="noopener">Subscribe — $500/mo</a>
+              <a class="package-cta package-cta--primary" href="https://buy.stripe.com/14AdRa3Lo93N5igaFQ3Ru0a" target="_blank" rel="noopener">Subscribe — <span data-price-aud="$500" data-price-aed="AED 1,250" data-price-usd="$350 USD">$500</span>/mo</a>
             </article>
 
             <article class="package-card">
               <p class="package-tag">Monthly</p>
               <h3 class="package-name">Always-on</h3>
-              <p class="package-price"><span class="package-price-amount">$1,000</span><span class="package-price-suffix">/ month</span><span class="package-price-tax">ex GST</span></p>
+              <p class="package-price"><span class="package-price-amount" data-price-aud="$1,000" data-price-aed="AED 2,500" data-price-usd="$650 USD">$1,000</span><span class="package-price-suffix">/ month</span><span class="package-price-tax">ex GST</span></p>
               <p class="package-blurb">Stay visible every working day.</p>
               <p class="package-desc">A complete monthly content plan for businesses that want a consistent presence across social media and Google Business.</p>
               <p class="package-includes-label">Includes:</p>
@@ -313,7 +318,7 @@
                 <li>Mix of photo, branded, and carousel posts</li>
                 <li>Founder-led monthly strategy call</li>
               </ul>
-              <a class="package-cta" href="https://buy.stripe.com/aFa9AU6XA93NcKI9BM3Ru0b" target="_blank" rel="noopener">Subscribe — $1,000/mo</a>
+              <a class="package-cta" href="https://buy.stripe.com/aFa9AU6XA93NcKI9BM3Ru0b" target="_blank" rel="noopener">Subscribe — <span data-price-aud="$1,000" data-price-aed="AED 2,500" data-price-usd="$650 USD">$1,000</span>/mo</a>
             </article>
           </div>
         </div>
@@ -441,6 +446,6 @@
     </div>
   </footer>
 
-  <script src="assets/site.js?v=5"></script>
+  <script src="assets/site.js?v=6"></script>
 </body>
 </html>
