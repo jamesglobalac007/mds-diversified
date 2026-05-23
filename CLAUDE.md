@@ -7,7 +7,7 @@ James works from two machines. ALL projects live under `~/MDS/` on both:
 | Machine | Username | Full path |
 |---------|----------|-----------|
 | Mac mini (work) | `jamesglobal` | `/Users/jamesglobal/MDS/` |
-| Mac laptop (home) | `tiffanydrake` | `/Users/tiffanydrake/MDS/` |
+| Mac laptop (home) | `jameso` | `/Users/jameso/MDS/` |
 
 **Always use `~/MDS/` in commands** — this resolves correctly on both machines.
 
