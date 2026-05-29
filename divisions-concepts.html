@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MDS · divisions section concepts</title>
+<style>
+  :root{
+    --bg:#0a0a14; --bg-2:#11111d; --bg-3:#181828;
+    --ink:#fafaff; --ink-2:#a8a8c0; --ink-3:#6c6c88; --line:rgba(255,255,255,0.10);
+    --c1:#00d4ff; --c2:#b5ff3d; --c3:#ff3d9c; --c4:#ffb800; --c5:#7c3dff; --c6:#2dd4bf;
+    --sans:'Inter',system-ui,-apple-system,sans-serif;
+    --mono:ui-monospace,'SF Mono',Menlo,monospace;
+    --serif:'Instrument Serif',Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);padding:48px 24px 90px}
+  .wrap{max-width:1120px;margin:0 auto}
+  .head{text-align:center;margin-bottom:40px}
+  .head .k{font-family:var(--mono);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--c2);margin-bottom:12px}
+  .head h1{font-weight:900;font-size:clamp(26px,4vw,38px);letter-spacing:-0.02em}
+  .head p{color:var(--ink-2);margin-top:12px;font-size:15px}
+  .card{background:var(--bg-2);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-bottom:26px}
+  .meta{padding:16px 22px 20px;border-bottom:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap}
+  .meta .n{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-3)}
+  .meta h3{font-weight:800;font-size:20px;margin-top:6px;letter-spacing:-0.01em}
+  .meta p{color:var(--ink-2);font-size:13px;line-height:1.5;margin-top:6px;max-width:620px}
+  .meta .tag{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--c2);border:1px solid rgba(181,255,61,.3);border-radius:999px;padding:6px 12px;white-space:nowrap}
+  .demo{position:relative}
+
+  /* ---- C1 constellation selector ---- */
+  .net-wrap{position:relative;height:440px;background:radial-gradient(circle at 50% 52%,#13111d,#08080f 75%)}
+  .net-wrap canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:pointer}
+  .net-detail{position:absolute;left:24px;bottom:24px;max-width:300px;z-index:2;pointer-events:none;transition:opacity .25s}
+  .net-detail .dn{font-weight:800;font-size:22px}
+  .net-detail .dc{font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-3);margin-top:4px}
+  .net-detail .dd{color:var(--ink-2);font-size:13px;margin-top:10px;line-height:1.5}
+  .net-hint{position:absolute;right:22px;top:18px;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-3);z-index:2}
+
+  /* ---- C2 editorial expand list ---- */
+  .ed{padding:8px}
+  .ed-row{position:relative;border-bottom:1px solid var(--line);padding:22px 26px;cursor:pointer;overflow:hidden;transition:background .3s}
+  .ed-row:last-child{border-bottom:none}
+  .ed-row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--rc);transform:scaleY(0);transform-origin:top;transition:transform .35s}
+  .ed-row:hover::before{transform:scaleY(1)}
+  .ed-row:hover{background:linear-gradient(90deg,color-mix(in srgb,var(--rc) 9%,transparent),transparent 60%)}
+  .ed-top{display:flex;align-items:baseline;gap:18px}
+  .ed-num{font-family:var(--mono);font-size:12px;color:var(--ink-3);letter-spacing:0.1em}
+  .ed-name{font-weight:900;font-size:clamp(22px,3.4vw,34px);letter-spacing:-0.02em;color:var(--ink);transition:color .3s}
+  .ed-row:hover .ed-name{color:var(--rc)}
+  .ed-cat{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-3)}
+  .ed-body{max-height:0;opacity:0;overflow:hidden;transition:max-height .4s ease,opacity .4s,margin .4s}
+  .ed-row:hover .ed-body{max-height:80px;opacity:1;margin-top:14px}
+  .ed-desc{color:var(--ink-2);font-size:14px}
+  .ed-chips{margin-top:10px;display:flex;gap:7px;flex-wrap:wrap}
+  .ed-chips span{font-family:var(--mono);font-size:10px;color:var(--ink-2);background:var(--bg-3);border:1px solid var(--line);border-radius:7px;padding:5px 9px}
+
+  /* ---- C3 energy cards ---- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:22px}
+  .ecard{position:relative;border:1px solid var(--line);border-top-width:3px;border-radius:16px;overflow:hidden;min-height:180px;background:var(--bg-2);cursor:pointer;transition:border-color .25s,transform .25s}
+  .ecard canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.6;transition:opacity .3s}
+  .ecard:hover{transform:translateY(-4px)}
+  .ecard:hover canvas{opacity:1}
+  .ecard .in{position:relative;z-index:2;padding:18px 18px 20px}
+  .ecard .en{font-weight:800;font-size:18px;color:var(--rc)}
+  .ecard .ec{font-family:var(--mono);font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-3);margin-top:5px}
+  .ecard .ed2{color:var(--ink-2);font-size:12px;line-height:1.5;margin-top:12px}
+
+  /* ---- C4 radial selector ---- */
+  .radial{position:relative;height:460px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 50%,#13111d,#08080f 75%)}
+  .radial-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:230px;text-align:center;z-index:1}
+  .radial-core .rn{font-weight:900;font-size:22px;color:var(--ck,#fff);transition:color .25s}
+  .radial-core .rc{font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-3);margin-top:6px}
+  .radial-core .rd{color:var(--ink-2);font-size:12.5px;margin-top:10px;line-height:1.5;min-height:54px}
+  .chip{position:absolute;left:50%;top:50%;font-family:var(--mono);font-size:11px;letter-spacing:0.06em;color:var(--ink-2);background:var(--bg-2);border:1px solid var(--line);border-top-width:2px;border-top-color:var(--cc);border-radius:10px;padding:9px 13px;cursor:pointer;white-space:nowrap;transition:transform .25s,color .25s,box-shadow .25s}
+  .chip:hover{color:var(--ink);transform:translate(var(--tx),var(--ty)) scale(1.12);box-shadow:0 0 22px -6px var(--cc)}
+  @media(max-width:760px){.cards{grid-template-columns:1fr 1fr}.radial{height:420px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <div class="k">MDS · page two · the divisions</div>
+    <h1>Four ways to show the six divisions</h1>
+    <p>Each lets a visitor pick a division easily (each one becomes its own landing page). Hover / tap to try. Tell me the number you like.</p>
+  </div>
+
+  <div class="card">
+    <div class="meta"><div><div class="n">Concept 01</div><h3>Interactive constellation</h3><p>The same network language as the engine above. Six division nodes you hover to light up and read. Page two feels like one connected system.</p></div><span class="tag">matches engine</span></div>
+    <div class="demo"><div class="net-wrap"><canvas id="netCv"></canvas><div class="net-hint">hover a node</div><div class="net-detail" id="netDetail"></div></div></div>
+  </div>
+
+  <div class="card">
+    <div class="meta"><div><div class="n">Concept 02</div><h3>Editorial expand list</h3><p>Six oversized numbered rows. Hover and the row washes in its colour and opens to show what it does. Bold, magazine-style, dead easy to scan and select.</p></div><span class="tag">bold · editorial</span></div>
+    <div class="demo"><div class="ed" id="edList"></div></div>
+  </div>
+
+  <div class="card">
+    <div class="meta"><div><div class="n">Concept 03</div><h3>Living energy cards</h3><p>A card per division, but each one is alive with a soft particle field in its own colour. Familiar grid, far from SaaS. Hover to energise.</p></div><span class="tag">alive · familiar</span></div>
+    <div class="demo"><div class="cards" id="cardGrid"></div></div>
+  </div>
+
+  <div class="card">
+    <div class="meta"><div><div class="n">Concept 04</div><h3>Radial selector</h3><p>The six divisions ring a centre panel. Hover any to pull its detail into the middle. Playful, orbital, ties to the engine, very easy to select.</p></div><span class="tag">orbital · playful</span></div>
+    <div class="demo"><div class="radial" id="radial"><div class="radial-core" id="radialCore"></div></div></div>
+  </div>
+</div>
+
+<script>
+var PAL=['#00d4ff','#ff3d9c','#b5ff3d','#7c3dff','#ffb800','#2dd4bf'];
+var DIVS=[
+ {n:'01',name:'MDS Reception',cat:'Capture & Answer',col:PAL[0],short:'Reception',desc:'Answers every call and chat, day or night, and books the job.',items:['AI Receptionist','AI Booking','Website / WhatsApp chat']},
+ {n:'02',name:'MDS Recover',cat:'Follow up & Recovery',col:PAL[1],short:'Recover',desc:'Chases the quotes and revives the dead leads. Nothing slips.',items:['Missed lead recovery','Quote follow up','Reactivation']},
+ {n:'03',name:'MDS Reputation',cat:'Reviews & Referrals',col:PAL[2],short:'Reputation',desc:'Turns happy jobs into Google reviews and referrals automatically.',items:['Review engine','Referral system','Call summaries']},
+ {n:'04',name:'MDS Growth',cat:'Content & Growth',col:PAL[3],short:'Growth',desc:'Keeps the marketing running: content, website, local presence.',items:['Social content','Website upgrades','Local growth']},
+ {n:'05',name:'MDS Ops',cat:'Admin & Back Office',col:PAL[4],short:'Ops',desc:'Clears the busywork: reminders, invoices, email drafts, SOPs.',items:['Admin cleanup','Email replies','Training / SOPs']},
+ {n:'06',name:'MDS Research',cat:'Research & SME',col:PAL[5],short:'Research',desc:'On demand research and subject matter expertise, made clear.',items:['Research assistant','Subject matter expert','Report builder']}
+];
+var DPR=Math.min(window.devicePixelRatio||1,2);
+
+/* ---- C1 constellation selector ---- */
+(function(){
+  var cv=document.getElementById('netCv'); var detail=document.getElementById('netDetail');
+  var ctx=cv.getContext('2d'); var W,H,cx,cy,nodes=[],amb=[],hub,t=0,active=-1;
+  var mouse={x:-999,y:-999};
+  function rgba(hex,a){var n=parseInt(hex.slice(1),16);return 'rgba('+((n>>16)&255)+','+((n>>8)&255)+','+(n&255)+','+a+')';}
+  function glow(x,y,r,c,a){var g=ctx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,c);g.addColorStop(1,'rgba(0,0,0,0)');ctx.globalAlpha=a;ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;}
+  function build(){var r=cv.getBoundingClientRect();W=r.width;H=r.height;cv.width=W*DPR;cv.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);cx=W/2;cy=H/2;hub={x:cx,y:cy};nodes=[];var ring=Math.min(W,H)*0.34;for(var i=0;i<6;i++){var a=(i/6)*Math.PI*2-Math.PI/2;nodes.push({bx:cx+Math.cos(a)*ring,by:cy+Math.sin(a)*ring*0.78,x:0,y:0,ph:Math.random()*6,col:PAL[i],i:i});}amb=[];for(var j=0;j<18;j++)amb.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*0.3,vy:(Math.random()-.5)*0.3});}
+  function loop(){t++;ctx.clearRect(0,0,W,H);var i,k;
+    for(i=0;i<nodes.length;i++){var nd=nodes[i];nd.x=nd.bx+Math.sin(t*0.01+nd.ph)*8;nd.y=nd.by+Math.cos(t*0.012+nd.ph)*8;}
+    for(i=0;i<amb.length;i++){var am=amb[i];am.x+=am.vx;am.y+=am.vy;if(am.x<0||am.x>W)am.vx*=-1;if(am.y<0||am.y>H)am.vy*=-1;}
+    for(i=0;i<nodes.length;i++){ctx.strokeStyle=rgba(nodes[i].col,active===i?0.4:0.12);ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(nodes[i].x,nodes[i].y);ctx.lineTo(hub.x,hub.y);ctx.stroke();}
+    for(i=0;i<amb.length;i++)for(k=i+1;k<amb.length;k++){var d=Math.hypot(amb[i].x-amb[k].x,amb[i].y-amb[k].y);if(d<120){ctx.strokeStyle='rgba(150,170,255,'+(1-d/120)*0.10+')';ctx.beginPath();ctx.moveTo(amb[i].x,amb[i].y);ctx.lineTo(amb[k].x,amb[k].y);ctx.stroke();}}
+    glow(hub.x,hub.y,30,'rgba(255,255,255,0.08)',1);ctx.fillStyle='rgba(235,240,255,0.9)';ctx.beginPath();ctx.arc(hub.x,hub.y,3,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='rgba(200,210,255,0.5)';for(i=0;i<amb.length;i++){ctx.beginPath();ctx.arc(amb[i].x,amb[i].y,1.3,0,Math.PI*2);ctx.fill();}
+    active=-1;var best=34;
+    for(i=0;i<nodes.length;i++){var dd=Math.hypot(mouse.x-nodes[i].x,mouse.y-nodes[i].y);if(dd<best){best=dd;active=i;}}
+    for(i=0;i<nodes.length;i++){var n2=nodes[i];var on=active===i;glow(n2.x,n2.y,on?30:15,n2.col,on?0.6:0.4);ctx.fillStyle=n2.col;ctx.beginPath();ctx.arc(n2.x,n2.y,on?6:4,0,Math.PI*2);ctx.fill();
+      ctx.globalAlpha=on?1:0.55;ctx.fillStyle=on?n2.col:'rgba(220,225,245,0.8)';ctx.font='600 11px ui-monospace,Menlo,monospace';ctx.textAlign='center';ctx.fillText(DIVS[i].short.toUpperCase(),n2.x,n2.y-14);ctx.globalAlpha=1;}
+    if(active>=0){var dv=DIVS[active];detail.style.opacity=1;detail.innerHTML='<div class="dn" style="color:'+dv.col+'">'+dv.name+'</div><div class="dc">'+dv.cat+'</div><div class="dd">'+dv.desc+'</div>';}
+    else detail.style.opacity=0.0;
+    requestAnimationFrame(loop);
+  }
+  cv.addEventListener('pointermove',function(e){var r=cv.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top;});
+  cv.addEventListener('pointerleave',function(){mouse.x=-999;mouse.y=-999;});
+  build();window.addEventListener('resize',build);loop();
+})();
+
+/* ---- C2 editorial expand list ---- */
+(function(){
+  var el=document.getElementById('edList');
+  DIVS.forEach(function(d){
+    var row=document.createElement('div');row.className='ed-row';row.style.setProperty('--rc',d.col);
+    var chips=d.items.map(function(it){return '<span>'+it+'</span>';}).join('');
+    row.innerHTML='<div class="ed-top"><span class="ed-num">'+d.n+'</span><span class="ed-name">'+d.name+'</span><span class="ed-cat">'+d.cat+'</span></div><div class="ed-body"><div class="ed-desc">'+d.desc+'</div><div class="ed-chips">'+chips+'</div></div>';
+    el.appendChild(row);
+  });
+})();
+
+/* ---- C3 energy cards ---- */
+(function(){
+  var grid=document.getElementById('cardGrid');
+  DIVS.forEach(function(d){
+    var card=document.createElement('div');card.className='ecard';card.style.setProperty('--rc',d.col);card.style.borderTopColor=d.col;
+    var cv=document.createElement('canvas');
+    card.innerHTML='';card.appendChild(cv);
+    var inner=document.createElement('div');inner.className='in';
+    inner.innerHTML='<div class="en">'+d.name+'</div><div class="ec">'+d.cat+'</div><div class="ed2">'+d.desc+'</div>';
+    card.appendChild(inner);grid.appendChild(card);
+    var ctx=cv.getContext('2d');var W,H,pts=[],hover=false;
+    function build(){var r=card.getBoundingClientRect();W=r.width;H=r.height;cv.width=W*DPR;cv.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);pts=[];for(var i=0;i<10;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*0.25,vy:(Math.random()-.5)*0.25});}
+    function rgba(hex,a){var n=parseInt(hex.slice(1),16);return 'rgba('+((n>>16)&255)+','+((n>>8)&255)+','+(n&255)+','+a+')';}
+    function loop(){ctx.clearRect(0,0,W,H);var sp=hover?1.6:1;for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx*sp;p.y+=p.vy*sp;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}
+      for(i=0;i<pts.length;i++)for(var k=i+1;k<pts.length;k++){var dd=Math.hypot(pts[i].x-pts[k].x,pts[i].y-pts[k].y);if(dd<70){ctx.strokeStyle=rgba(d.col,(1-dd/70)*(hover?0.35:0.18));ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[k].x,pts[k].y);ctx.stroke();}}
+      ctx.fillStyle=rgba(d.col,hover?0.9:0.6);for(i=0;i<pts.length;i++){ctx.beginPath();ctx.arc(pts[i].x,pts[i].y,1.5,0,Math.PI*2);ctx.fill();}
+      requestAnimationFrame(loop);}
+    card.addEventListener('pointerenter',function(){hover=true;});
+    card.addEventListener('pointerleave',function(){hover=false;});
+    build();window.addEventListener('resize',build);loop();
+  });
+})();
+
+/* ---- C4 radial selector ---- */
+(function(){
+  var radial=document.getElementById('radial');var core=document.getElementById('radialCore');
+  function setCore(d){core.style.setProperty('--ck',d.col);core.innerHTML='<div class="rn">'+d.name+'</div><div class="rc">'+d.cat+'</div><div class="rd">'+d.desc+'</div>';}
+  setCore(DIVS[0]);
+  var R=170;
+  DIVS.forEach(function(d,i){
+    var ang=(i/6)*Math.PI*2-Math.PI/2;var tx=Math.cos(ang)*R;var ty=Math.sin(ang)*R*0.92;
+    var chip=document.createElement('div');chip.className='chip';chip.textContent=d.short;
+    chip.style.setProperty('--cc',d.col);chip.style.setProperty('--tx',tx+'px');chip.style.setProperty('--ty',ty+'px');
+    chip.style.transform='translate('+tx+'px,'+ty+'px)';
+    chip.addEventListener('pointerenter',function(){setCore(d);});
+    radial.appendChild(chip);
+  });
+})();
+</script>
+</body>
+</html>
