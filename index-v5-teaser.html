@@ -1145,6 +1145,51 @@ footer a:hover{color:var(--c2)}
   .engine-overlay p{font-size:15px}
 }
 
+/* ── Problem finder (industry → problem → division → lead) ── */
+.finder{position:relative;padding:96px 24px;max-width:1080px;margin:0 auto}
+.finder .section-head{text-align:center;margin-bottom:38px}
+.finder-stage{position:relative;background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid var(--line);border-radius:28px;padding:48px 32px;min-height:430px;overflow:hidden;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.finder-prog{display:flex;gap:8px;justify-content:center;margin-bottom:34px}
+.finder-prog i{width:34px;height:4px;border-radius:2px;background:var(--line-2);transition:background .4s,box-shadow .4s}
+.finder-prog i.on{background:var(--c1);box-shadow:0 0 14px var(--c1)}
+.fstep{display:none}
+.fstep.active{display:block;animation:fstepIn .5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes fstepIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.fstep-q{font-family:var(--mono);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--c2);text-align:center;margin-bottom:10px}
+.fstep h3{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-0.02em;margin-bottom:30px;line-height:1.05}
+.fstep h3 em{font-family:var(--serif);font-style:italic;font-weight:400}
+.fgrid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:760px;margin:0 auto}
+.fpill{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--ink);background:rgba(255,255,255,0.045);border:1px solid var(--line-2);border-radius:100px;padding:13px 22px;min-height:48px;cursor:pointer;transition:transform .2s,border-color .25s,background .25s;opacity:0;transform:translateY(10px);animation:pillIn .5s cubic-bezier(.2,.7,.2,1) forwards}
+.fpill:hover{border-color:var(--c1);background:rgba(0,212,255,0.1)}
+.fpill:focus-visible{outline:2px solid var(--c1);outline-offset:2px}
+.fpill .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:9px;vertical-align:middle;background:var(--pc,var(--c1));box-shadow:0 0 10px var(--pc,var(--c1))}
+@keyframes pillIn{to{opacity:1;transform:none}}
+.fback{display:block;margin:28px auto 0;font-family:var(--mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-3);background:none;border:0;cursor:pointer;transition:color .2s}
+.fback:hover{color:var(--ink)}
+.fresult{text-align:center}
+.fstat{max-width:640px;margin:0 auto 30px;font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.8vw,32px);line-height:1.32;color:var(--ink)}
+.fstat b{font-style:normal;font-family:var(--sans);font-weight:800;color:var(--rc,var(--c1))}
+.fmatch{display:inline-flex;flex-direction:column;align-items:center;gap:5px;background:rgba(255,255,255,0.04);border:1px solid var(--line-2);border-top:3px solid var(--rc,var(--c1));border-radius:18px;padding:22px 32px;margin-bottom:26px;min-width:250px}
+.fmatch .fm-tag{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-3)}
+.fmatch .fm-name{font-size:26px;font-weight:800}
+.fmatch .fm-cat{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-2)}
+.fcta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.fbtn{font-family:var(--sans);font-weight:700;font-size:15px;padding:15px 26px;border-radius:100px;cursor:pointer;transition:transform .2s,box-shadow .3s,opacity .2s;min-height:48px}
+.fbtn:active{transform:translateY(1px)}
+.fbtn-primary{background:var(--c2);color:#06210a;box-shadow:0 8px 30px rgba(181,255,61,0.32)}
+.fbtn-primary:hover{box-shadow:0 10px 40px rgba(181,255,61,0.48)}
+.fbtn-ghost{background:rgba(255,255,255,0.05);border:1px solid var(--line-2);color:var(--ink)}
+.fbtn-ghost:hover{border-color:var(--ink-2)}
+.fform{max-width:430px;margin:28px auto 0;display:none;text-align:left}
+.fform.show{display:block;animation:fstepIn .4s both}
+.fform label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 6px}
+.fform input{width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--line-2);border-radius:12px;padding:13px 16px;color:var(--ink);font-family:var(--sans);font-size:16px;margin-bottom:16px;transition:border-color .2s}
+.fform input:focus{outline:none;border-color:var(--c1)}
+.fform .fbtn-primary{width:100%}
+.ffoot{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-align:center;margin-top:14px}
+@media(max-width:600px){.finder{padding:72px 16px}.finder-stage{padding:36px 18px}.fpill{font-size:14px;padding:12px 18px}}
+@media(prefers-reduced-motion:reduce){.fstep.active,.fpill,.fform.show{animation:none!important;opacity:1!important;transform:none!important}}
+
 </style>
 </head>
 <body>
@@ -1187,6 +1232,57 @@ footer a:hover{color:var(--c2)}
     <span class="beat-chip"><span class="pip"></span><b>6</b> divisions</span>
     <span class="beat-chip"><span class="pip"></span><b>3</b> countries</span>
     <span class="beat-chip"><span class="pip"></span><b>24/7</b> always on</span>
+  </div>
+</section>
+
+<!-- ════════ PROBLEM FINDER ════════ -->
+<section class="finder" id="finder" aria-label="Find your fix">
+  <div class="section-head" data-reveal>
+    <div class="kicker">Find your fix</div>
+    <h2>What's slowing you <em>down?</em></h2>
+    <p>Tell us your industry and what's hurting. We will point you straight to the fix.</p>
+  </div>
+  <div class="finder-stage" data-reveal>
+    <div class="finder-prog"><i class="on"></i><i></i><i></i></div>
+
+    <div class="fstep active" id="fstep1">
+      <div class="fstep-q">Step 1 of 3</div>
+      <h3>What's your <em>industry?</em></h3>
+      <div class="fgrid" id="fIndustries"></div>
+    </div>
+
+    <div class="fstep" id="fstep2">
+      <div class="fstep-q">Step 2 of 3</div>
+      <h3>What's the <em>problem?</em></h3>
+      <div class="fgrid" id="fProblems"></div>
+      <button class="fback" type="button" data-back="1">&larr; Back</button>
+    </div>
+
+    <div class="fstep" id="fstep3">
+      <div class="fstep-q">Here's your fix</div>
+      <div class="fresult">
+        <p class="fstat" id="fStat"></p>
+        <div class="fmatch" id="fMatch">
+          <span class="fm-tag">Routed to</span>
+          <span class="fm-name" id="fmName"></span>
+          <span class="fm-cat" id="fmCat"></span>
+        </div>
+        <div class="fcta-row">
+          <button class="fbtn fbtn-primary" type="button" id="fGetFixed">Get this fixed &rarr;</button>
+          <button class="fbtn fbtn-ghost" type="button" data-back="1">Try another</button>
+        </div>
+        <form class="fform" id="fForm" novalidate>
+          <label for="ffName">Your name</label>
+          <input id="ffName" name="name" autocomplete="name" required>
+          <label for="ffBiz">Business name</label>
+          <input id="ffBiz" name="business" autocomplete="organization">
+          <label for="ffContact">Best number or email</label>
+          <input id="ffContact" name="contact" autocomplete="tel" required>
+          <button type="submit" class="fbtn fbtn-primary">Send to MDS &rarr;</button>
+          <div class="ffoot">No spam. We will show you exactly how it works.</div>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1534,6 +1630,96 @@ footer a:hover{color:var(--c2)}
       requestAnimationFrame(()=>{ dot.style.transform = 'translate(calc(-50% + '+dx+'px), calc(-50% + '+dy+'px)) scale(.3)'; dot.style.opacity='0'; });
       setTimeout(()=>dot.remove(), 900);
     }
+  });
+})();
+</script>
+
+<!-- ════════ PROBLEM FINDER LOGIC ════════ -->
+<script>
+(function(){
+  var stage=document.getElementById('finder'); if(!stage) return;
+  var $=function(id){return document.getElementById(id);};
+
+  var INDUSTRIES=['Trades & Construction','Real Estate','Health & Allied','Automotive','Hospitality','Professional Services','Home Services','Retail'];
+  var DIV={
+    reception:{name:'MDS Reception',cat:'Capture & Answer',color:'#00d4ff'},
+    recover:{name:'MDS Recover',cat:'Follow up & Recovery',color:'#ff3d9c'},
+    reputation:{name:'MDS Reputation',cat:'Reviews & Referrals',color:'#b5ff3d'},
+    growth:{name:'MDS Growth',cat:'Content & Growth',color:'#7c3dff'},
+    ops:{name:'MDS Ops',cat:'Admin & Back Office',color:'#ffb800'},
+    research:{name:'MDS Research',cat:'Research & SME',color:'#2dd4bf'}
+  };
+  var PROBLEMS=[
+    {id:'leads',label:'Missed calls & leads',div:'reception'},
+    {id:'followup',label:'Quotes going cold',div:'recover'},
+    {id:'reviews',label:'Poor reviews & reputation',div:'reputation'},
+    {id:'marketing',label:'Not enough marketing',div:'growth'},
+    {id:'admin',label:'Drowning in admin',div:'ops'},
+    {id:'insight',label:'Need market insight',div:'research'}
+  ];
+  // {ind} is replaced with the chosen industry. Stats are illustrative — confirm or replace with sourced figures.
+  var STAT={
+    leads:'In {ind}, <b>1 in 3</b> calls to small operators go unanswered. Most callers never ring back, they just call the next name on the list.',
+    followup:'<b>Most quotes</b> never get a second follow up, yet a big share of jobs in {ind} are won on the chase, not the first call.',
+    reviews:'Buyers in {ind} pick the business with more, fresher reviews. A thin review profile quietly sends them to a competitor.',
+    marketing:'When marketing goes quiet in {ind}, the pipeline follows <b>60 to 90 days</b> later. Consistency beats intensity.',
+    admin:'Owners in {ind} can lose <b>a day a week</b> to admin, time that should be spent winning and doing the work.',
+    insight:'Decisions made in {ind} without current market data cost more and move slower than they need to.'
+  };
+
+  var state={industry:null,problem:null};
+  var prog=stage.querySelectorAll('.finder-prog i');
+
+  function setStep(n){
+    var steps=stage.querySelectorAll('.fstep');
+    for(var i=0;i<steps.length;i++) steps[i].classList.remove('active');
+    $('fstep'+n).classList.add('active');
+    for(var j=0;j<prog.length;j++) prog[j].classList.toggle('on', j<n);
+  }
+
+  var ig=$('fIndustries');
+  INDUSTRIES.forEach(function(name,i){
+    var b=document.createElement('button');
+    b.className='fpill'; b.type='button'; b.textContent=name; b.style.animationDelay=(i*0.05)+'s';
+    b.addEventListener('click',function(){ state.industry=name; buildProblems(); setStep(2); });
+    ig.appendChild(b);
+  });
+
+  function buildProblems(){
+    var pg=$('fProblems'); pg.innerHTML='';
+    PROBLEMS.forEach(function(p,i){
+      var b=document.createElement('button');
+      b.className='fpill'; b.type='button'; b.style.setProperty('--pc',DIV[p.div].color); b.style.animationDelay=(i*0.05)+'s';
+      b.innerHTML='<span class="dot"></span>'+p.label;
+      b.addEventListener('click',function(){ state.problem=p; showResult(); setStep(3); });
+      pg.appendChild(b);
+    });
+  }
+
+  function showResult(){
+    var p=state.problem, d=DIV[p.div], c=d.color;
+    var s=$('fStat'); s.innerHTML=(STAT[p.id]||'').replace(/{ind}/g,state.industry); s.style.setProperty('--rc',c);
+    $('fMatch').style.setProperty('--rc',c);
+    var nm=$('fmName'); nm.textContent=d.name; nm.style.color=c;
+    $('fmCat').textContent=d.cat;
+    $('fForm').classList.remove('show'); $('fGetFixed').style.display='';
+  }
+
+  var backs=stage.querySelectorAll('[data-back]');
+  for(var k=0;k<backs.length;k++){
+    (function(btn){ btn.addEventListener('click',function(){ setStep(parseInt(btn.getAttribute('data-back'),10)); }); })(backs[k]);
+  }
+
+  $('fGetFixed').addEventListener('click',function(){ $('fForm').classList.add('show'); this.style.display='none'; $('ffName').focus(); });
+
+  $('fForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=$('ffName').value.trim(), biz=$('ffBiz').value.trim(), contact=$('ffContact').value.trim();
+    if(!name || !contact){ if(!name){$('ffName').focus();}else{$('ffContact').focus();} return; }
+    var d=DIV[state.problem.div];
+    var subject='MDS fix: '+state.problem.label+' ('+state.industry+')';
+    var body='Hi James,\n\nIndustry: '+state.industry+'\nProblem: '+state.problem.label+'\nSuggested division: '+d.name+'\n\nName: '+name+'\nBusiness: '+biz+'\nContact: '+contact+'\n\nPlease show me how this works.';
+    window.location.href='mailto:james@mdsdiversified.ai?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
   });
 })();
 </script>
