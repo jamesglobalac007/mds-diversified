@@ -1164,6 +1164,15 @@ footer a:hover{color:var(--c2)}
 .fpill:focus-visible{outline:2px solid var(--c1);outline-offset:2px}
 .fpill .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:9px;vertical-align:middle;background:var(--pc,var(--c1));box-shadow:0 0 10px var(--pc,var(--c1))}
 @keyframes pillIn{to{opacity:1;transform:none}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.finput-wrap{display:flex;gap:10px;max-width:580px;margin:0 auto 8px}
+.finput{flex:1;min-width:0;background:rgba(255,255,255,0.05);border:1px solid var(--line-2);border-radius:100px;padding:14px 22px;color:var(--ink);font-family:var(--sans);font-size:16px;transition:border-color .2s}
+.finput::placeholder{color:var(--ink-3)}
+.finput:focus{outline:none;border-color:var(--c1)}
+.fnext{white-space:nowrap;flex:none}
+.fchips-label{font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-3);text-align:center;margin:24px 0 14px}
+.for-divider{display:flex;align-items:center;gap:14px;max-width:580px;margin:22px auto 18px;color:var(--ink-3);font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase}
+.for-divider::before,.for-divider::after{content:"";flex:1;height:1px;background:var(--line)}
 .fback{display:block;margin:28px auto 0;font-family:var(--mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-3);background:none;border:0;cursor:pointer;transition:color .2s}
 .fback:hover{color:var(--ink)}
 .fresult{text-align:center}
@@ -1248,6 +1257,13 @@ footer a:hover{color:var(--c2)}
     <div class="fstep active" id="fstep1">
       <div class="fstep-q">Step 1 of 3</div>
       <h3>What's your <em>industry?</em></h3>
+      <div class="finput-wrap">
+        <label for="fIndustryInput" class="sr-only">Your industry</label>
+        <input class="finput" id="fIndustryInput" list="fIndustryList" placeholder="Start typing your industry..." autocomplete="off" enterkeyhint="next">
+        <datalist id="fIndustryList"></datalist>
+        <button class="fbtn fbtn-primary fnext" id="fIndNext" type="button">Next &rarr;</button>
+      </div>
+      <div class="fchips-label">Or pick a common one</div>
       <div class="fgrid" id="fIndustries"></div>
     </div>
 
@@ -1255,6 +1271,12 @@ footer a:hover{color:var(--c2)}
       <div class="fstep-q">Step 2 of 3</div>
       <h3>What's the <em>problem?</em></h3>
       <div class="fgrid" id="fProblems"></div>
+      <div class="for-divider">or describe it in your own words</div>
+      <div class="finput-wrap">
+        <label for="fProblemInput" class="sr-only">Describe your issue</label>
+        <input class="finput" id="fProblemInput" placeholder="e.g. we miss calls when we're on the tools..." autocomplete="off" enterkeyhint="go">
+        <button class="fbtn fbtn-primary fnext" id="fProbNext" type="button">Go &rarr;</button>
+      </div>
       <button class="fback" type="button" data-back="1">&larr; Back</button>
     </div>
 
@@ -1269,7 +1291,7 @@ footer a:hover{color:var(--c2)}
         </div>
         <div class="fcta-row">
           <button class="fbtn fbtn-primary" type="button" id="fGetFixed">Get this fixed &rarr;</button>
-          <button class="fbtn fbtn-ghost" type="button" data-back="1">Try another</button>
+          <button class="fbtn fbtn-ghost" type="button" data-back="2">Try another</button>
         </div>
         <form class="fform" id="fForm" novalidate>
           <label for="ffName">Your name</label>
@@ -1640,7 +1662,8 @@ footer a:hover{color:var(--c2)}
   var stage=document.getElementById('finder'); if(!stage) return;
   var $=function(id){return document.getElementById(id);};
 
-  var INDUSTRIES=['Trades & Construction','Real Estate','Health & Allied','Automotive','Hospitality','Professional Services','Home Services','Retail'];
+  var INDUSTRIES=['Trades & Construction','Building & Renovation','Plumbing','Electrical','HVAC & Air Conditioning','Carpentry & Joinery','Painting & Decorating','Roofing','Concreting','Landscaping & Gardens','Real Estate','Property Management','Strata & Body Corporate','Automotive & Mechanical','Auto Detailing','Hospitality & Cafes','Restaurants & Bars','Professional Services','Accounting & Bookkeeping','Legal Services','Consulting','Marketing & Creative','IT & Tech Services','Home Services','Cleaning Services','Pest Control','Removalists & Storage','Fitness & Gyms','Beauty & Salons','Hair & Barber','Retail','eCommerce','Events & Hire','Photography & Video','Transport & Logistics','Manufacturing','Wholesale & Distribution','Pet Services','Florists'];
+  var POPULAR=['Trades & Construction','Real Estate','Automotive & Mechanical','Hospitality & Cafes','Professional Services','Home Services','Retail','Fitness & Gyms'];
   var DIV={
     reception:{name:'MDS Reception',cat:'Capture & Answer',color:'#00d4ff'},
     recover:{name:'MDS Recover',cat:'Follow up & Recovery',color:'#ff3d9c'},
@@ -1664,8 +1687,24 @@ footer a:hover{color:var(--c2)}
     reviews:'Buyers in {ind} pick the business with more, fresher reviews. A thin review profile quietly sends them to a competitor.',
     marketing:'When marketing goes quiet in {ind}, the pipeline follows <b>60 to 90 days</b> later. Consistency beats intensity.',
     admin:'Owners in {ind} can lose <b>a day a week</b> to admin, time that should be spent winning and doing the work.',
-    insight:'Decisions made in {ind} without current market data cost more and move slower than they need to.'
+    insight:'Decisions made in {ind} without current market data cost more and move slower than they need to.',
+    custom:'In {ind}, "<b>{issue}</b>" is exactly the kind of work this division takes off your plate, so you can get back to the job.'
   };
+  // keyword router for free-text issues
+  var ROUTE=[
+    {d:'reception',k:['call','phone','answer','miss','reception','book','enquir','voicemail','after hours','message','tools']},
+    {d:'recover',k:['quote','follow','chase','dead lead','old customer','reactivat','win back','cold','proposal','no reply','ghost']},
+    {d:'reputation',k:['review','reputation','google','star','rating','referral','word of mouth','feedback','testimonial']},
+    {d:'ops',k:['admin','invoic','paperwork','bookkeep','data entry','schedul','roster','back office','inbox','quote send','followup admin']},
+    {d:'research',k:['research','report','insight','competitor','market data','analys','pricing','strategy','trend']},
+    {d:'growth',k:['market','lead','content','seo','social','website','ad','advertis','grow','brand','traffic','sales','more work','more jobs','more customers']}
+  ];
+  function routeText(t){
+    t=(t||'').toLowerCase();
+    for(var i=0;i<ROUTE.length;i++){ for(var j=0;j<ROUTE[i].k.length;j++){ if(t.indexOf(ROUTE[i].k[j])>-1) return ROUTE[i].d; } }
+    return 'growth';
+  }
+  function esc(x){ return (x||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
   var state={industry:null,problem:null};
   var prog=stage.querySelectorAll('.finder-prog i');
@@ -1677,13 +1716,23 @@ footer a:hover{color:var(--c2)}
     for(var j=0;j<prog.length;j++) prog[j].classList.toggle('on', j<n);
   }
 
+  // populate datalist for type-to-search
+  var dl=$('fIndustryList');
+  INDUSTRIES.forEach(function(name){ var o=document.createElement('option'); o.value=name; dl.appendChild(o); });
+  // popular quick-pick chips
   var ig=$('fIndustries');
-  INDUSTRIES.forEach(function(name,i){
+  POPULAR.forEach(function(name,i){
     var b=document.createElement('button');
     b.className='fpill'; b.type='button'; b.textContent=name; b.style.animationDelay=(i*0.05)+'s';
-    b.addEventListener('click',function(){ state.industry=name; buildProblems(); setStep(2); });
+    b.addEventListener('click',function(){ goIndustry(name); });
     ig.appendChild(b);
   });
+  function goIndustry(name){
+    name=(name||'').trim(); if(!name){ $('fIndustryInput').focus(); return; }
+    state.industry=name; $('fIndustryInput').value=name; buildProblems(); setStep(2);
+  }
+  $('fIndNext').addEventListener('click',function(){ goIndustry($('fIndustryInput').value); });
+  $('fIndustryInput').addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); goIndustry(this.value); } });
 
   function buildProblems(){
     var pg=$('fProblems'); pg.innerHTML='';
@@ -1695,10 +1744,17 @@ footer a:hover{color:var(--c2)}
       pg.appendChild(b);
     });
   }
+  function goProblem(text){
+    text=(text||'').trim(); if(!text){ $('fProblemInput').focus(); return; }
+    state.problem={id:'custom',label:text,div:routeText(text)}; showResult(); setStep(3);
+  }
+  $('fProbNext').addEventListener('click',function(){ goProblem($('fProblemInput').value); });
+  $('fProblemInput').addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); goProblem(this.value); } });
 
   function showResult(){
     var p=state.problem, d=DIV[p.div], c=d.color;
-    var s=$('fStat'); s.innerHTML=(STAT[p.id]||'').replace(/{ind}/g,state.industry); s.style.setProperty('--rc',c);
+    var t=(STAT[p.id]||STAT.custom).replace(/{ind}/g,esc(state.industry)).replace(/{issue}/g,esc(p.label));
+    var s=$('fStat'); s.innerHTML=t; s.style.setProperty('--rc',c);
     $('fMatch').style.setProperty('--rc',c);
     var nm=$('fmName'); nm.textContent=d.name; nm.style.color=c;
     $('fmCat').textContent=d.cat;
