@@ -37,6 +37,6 @@
     <!-- Thin accent line under the wordmark -->
     <line x1="2" y1="122" x2="470" y2="122" stroke="#2E75B6" stroke-width="2"/>
     <!-- Tagline -->
-    <text class="tag" x="2" y="148">AI  ·  AUTOMATION  ·  CONSULTING</text>
+    <text class="tag" x="2" y="148">AI  ·  AUTOMATION  ·  GROWTH</text>
   </g>
 </svg>
