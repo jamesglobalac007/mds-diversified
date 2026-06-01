@@ -1040,6 +1040,17 @@ footer a:hover{color:var(--c2)}
 .dd4{--dc:var(--c5);border-top-color:var(--c5)}
 .dd5{--dc:var(--c4);border-top-color:var(--c4)}
 .dd6{--dc:var(--c6);border-top-color:var(--c6)}
+.divcard .dc-chev{display:inline-block;transition:transform .3s}
+.divcard.open .dc-chev{transform:rotate(180deg)}
+.divcard.open .dc-go{opacity:1;transform:none}
+.divcard.open{border-color:var(--dc)}
+.dc-panel{max-height:0;overflow:hidden;opacity:0;padding-top:0;margin-top:0;transition:max-height .45s cubic-bezier(.2,.7,.2,1),opacity .3s,margin .3s,padding .3s}
+.divcard.open .dc-panel{max-height:360px;opacity:1;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.dc-panel .dc-pcopy{color:var(--ink-2);font-size:14px;line-height:1.6}
+.dc-panel .dc-pcta{margin-top:16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.dc-panel .dc-talk{font-family:var(--sans);font-weight:700;font-size:13px;color:var(--dc);background:rgba(255,255,255,0.05);border:1px solid var(--dc);border-radius:100px;padding:10px 18px;cursor:pointer;transition:background .25s,box-shadow .25s}
+.dc-panel .dc-talk:hover{background:rgba(255,255,255,0.1);box-shadow:0 0 16px -4px var(--dc)}
+.dc-panel .dc-coming{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-3)}
 
 /* ── Always-on engine showcase ── */
 .engine{max-width:1280px;margin:0 auto;padding:30px 32px 120px}
@@ -1826,6 +1837,44 @@ footer a:hover{color:var(--c2)}
 
   var nudge=$('fNudge'), group=document.getElementById('group');
   if(nudge && group){ nudge.addEventListener('click',function(){ group.scrollIntoView({behavior:'smooth',block:'start'}); }); }
+})();
+</script>
+
+<!-- ════════ DIVISION CARDS EXPAND ════════ -->
+<script>
+(function(){
+  var grid=document.querySelector('.divisions-grid'); if(!grid) return;
+  var CONTENT={
+    'MDS Reception':'Never miss a call or a job again. Our AI answers every call, chat and message, day or night, qualifies the lead, and books the work straight into your calendar.',
+    'MDS Recover':'Turn cold quotes into booked jobs. We automatically chase every quote, revive dead leads, and win back old customers, so nothing slips through the cracks.',
+    'MDS Reputation':'More 5-star reviews, on autopilot. Every happy job becomes a Google review and a referral, lifting you above the competition.',
+    'MDS Growth':'Keep the pipeline full. Content, local presence and smart ads that keep new enquiries coming in, month after month.',
+    'MDS Ops':'Get your week back. We clear the admin, invoices, reminders and intake, so your time goes on winning and doing the work.',
+    'MDS Research':'Decisions backed by data. On-demand market research and clear, actionable briefs whenever you need to make a call.'
+  };
+  var cards=grid.querySelectorAll('.divcard');
+  Array.prototype.forEach.call(cards,function(card){
+    var h3=card.querySelector('h3'); var name=h3?h3.textContent.trim():'';
+    var copy=CONTENT[name]||''; var short=name.replace('MDS ','');
+    var panel=document.createElement('div'); panel.className='dc-panel';
+    panel.innerHTML='<p class="dc-pcopy">'+copy+'</p><div class="dc-pcta"><button class="dc-talk" type="button">Talk to us about '+short+' &rarr;</button><span class="dc-coming">Full page coming soon</span></div>';
+    card.appendChild(panel);
+    var go=card.querySelector('.dc-go'); if(go) go.innerHTML='Explore <span class="dc-chev">&darr;</span>';
+    card.setAttribute('role','button'); card.setAttribute('tabindex','0'); card.setAttribute('aria-expanded','false');
+    function setOpen(open){
+      card.classList.toggle('open', open);
+      card.setAttribute('aria-expanded', open?'true':'false');
+      panel.style.maxHeight = open ? (panel.scrollHeight + 40) + 'px' : '0px';
+      panel.style.opacity = open ? '1' : '0';
+      panel.style.marginTop = open ? '16px' : '0px';
+      panel.style.paddingTop = open ? '16px' : '0px';
+      panel.style.borderTop = open ? '1px solid var(--line)' : '0';
+    }
+    card.addEventListener('click',function(){ setOpen(!card.classList.contains('open')); });
+    card.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); card.click(); } });
+    var talk=panel.querySelector('.dc-talk');
+    talk.addEventListener('click',function(e){ e.stopPropagation(); var c=document.getElementById('contact'); if(c) c.scrollIntoView({behavior:'smooth',block:'start'}); });
+  });
 })();
 </script>
 </body>
