@@ -1852,12 +1852,17 @@ footer a:hover{color:var(--c2)}
     'MDS Ops':'Get your week back. We clear the admin, invoices, reminders and intake, so your time goes on winning and doing the work.',
     'MDS Research':'Decisions backed by data. On-demand market research and clear, actionable briefs whenever you need to make a call.'
   };
+  var LINKS={ 'MDS Reception':'mds-reception.html' };
   var cards=grid.querySelectorAll('.divcard');
   Array.prototype.forEach.call(cards,function(card){
     var h3=card.querySelector('h3'); var name=h3?h3.textContent.trim():'';
     var copy=CONTENT[name]||''; var short=name.replace('MDS ','');
     var panel=document.createElement('div'); panel.className='dc-panel';
-    panel.innerHTML='<p class="dc-pcopy">'+copy+'</p><div class="dc-pcta"><button class="dc-talk" type="button">Talk to us about '+short+' &rarr;</button><span class="dc-coming">Full page coming soon</span></div>';
+    var link=LINKS[name];
+    var cta = link
+      ? '<a class="dc-talk" href="'+link+'">Explore '+short+' &rarr;</a>'
+      : '<button class="dc-talk" type="button">Talk to us about '+short+' &rarr;</button><span class="dc-coming">Full page coming soon</span>';
+    panel.innerHTML='<p class="dc-pcopy">'+copy+'</p><div class="dc-pcta">'+cta+'</div>';
     card.appendChild(panel);
     var go=card.querySelector('.dc-go'); if(go) go.innerHTML='Explore <span class="dc-chev">&darr;</span>';
     card.setAttribute('role','button'); card.setAttribute('tabindex','0'); card.setAttribute('aria-expanded','false');
@@ -1873,7 +1878,11 @@ footer a:hover{color:var(--c2)}
     card.addEventListener('click',function(){ setOpen(!card.classList.contains('open')); });
     card.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); card.click(); } });
     var talk=panel.querySelector('.dc-talk');
-    talk.addEventListener('click',function(e){ e.stopPropagation(); var c=document.getElementById('contact'); if(c) c.scrollIntoView({behavior:'smooth',block:'start'}); });
+    talk.addEventListener('click',function(e){
+      e.stopPropagation();
+      if(talk.tagName==='A') return; // real link navigates on its own
+      var c=document.getElementById('contact'); if(c) c.scrollIntoView({behavior:'smooth',block:'start'});
+    });
   });
 })();
 </script>
