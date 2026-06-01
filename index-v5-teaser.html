@@ -1196,8 +1196,21 @@ footer a:hover{color:var(--c2)}
 .fform input:focus{outline:none;border-color:var(--c1)}
 .fform .fbtn-primary{width:100%}
 .ffoot{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-align:center;margin-top:14px}
+.ftrust{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);margin-top:14px}
+.fpill.sel{border-color:var(--pc);background:rgba(255,255,255,0.09);box-shadow:inset 0 0 0 1px var(--pc),0 0 16px -4px var(--pc)}
+.fpill.sel .dot{box-shadow:0 0 12px var(--pc)}
+.fseebtn{margin:24px auto 0;display:block}
+.fseebtn[hidden]{display:none}
+.fsrc{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;color:var(--ink-3);margin:-16px auto 28px;max-width:560px}
+.falso-label{font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-3);margin:4px 0 12px}
+.falso{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
+.falso-chip{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:0.06em;color:var(--ink);background:rgba(255,255,255,0.04);border:1px solid var(--line-2);border-radius:100px;padding:8px 16px}
+.falso-chip .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--pc);box-shadow:0 0 8px var(--pc)}
+.fnudge{display:block;margin:30px auto 0;font-family:var(--mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);background:none;border:0;cursor:pointer;transition:color .2s;animation:fnudgeB 2s ease-in-out infinite}
+.fnudge:hover{color:var(--c1)}
+@keyframes fnudgeB{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 @media(max-width:600px){.finder{padding:72px 16px}.finder-stage{padding:36px 18px}.fpill{font-size:14px;padding:12px 18px}}
-@media(prefers-reduced-motion:reduce){.fstep.active,.fpill,.fform.show{animation:none!important;opacity:1!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){.fstep.active,.fpill,.fform.show,.fnudge{animation:none!important;opacity:1!important;transform:none!important}}
 
 </style>
 </head>
@@ -1239,6 +1252,7 @@ footer a:hover{color:var(--c2)}
     <div class="kicker">Find your fix</div>
     <h2>What's slowing you <em>down?</em></h2>
     <p>Tell us your industry and what's hurting. We will point you straight to the fix.</p>
+    <div class="ftrust">Takes 20 seconds · No obligation · A real person follows up</div>
   </div>
   <div class="finder-stage" data-reveal>
     <div class="finder-prog"><i class="on"></i><i></i><i></i></div>
@@ -1257,7 +1271,9 @@ footer a:hover{color:var(--c2)}
     <div class="fstep" id="fstep2">
       <div class="fstep-q">Step 2 of 3</div>
       <h3>What's the <em>problem?</em></h3>
+      <p class="fchips-label" style="margin-top:-14px">Pick all that apply</p>
       <div class="fgrid" id="fProblems"></div>
+      <button class="fbtn fbtn-primary fseebtn" id="fSeeBtn" type="button" hidden>See my fix &rarr;</button>
       <div class="for-divider">or describe it in your own words</div>
       <div class="finput-wrap">
         <label for="fProblemInput" class="sr-only">Describe your issue</label>
@@ -1271,11 +1287,14 @@ footer a:hover{color:var(--c2)}
       <div class="fstep-q">Here's your fix</div>
       <div class="fresult">
         <p class="fstat" id="fStat"></p>
+        <div class="fsrc" id="fSrc"></div>
         <div class="fmatch" id="fMatch">
           <span class="fm-tag">Routed to</span>
           <span class="fm-name" id="fmName"></span>
           <span class="fm-cat" id="fmCat"></span>
         </div>
+        <div class="falso-label" id="fAlsoLabel" style="display:none">Also helps with</div>
+        <div class="falso" id="fAlso" style="display:none"></div>
         <div class="fcta-row">
           <button class="fbtn fbtn-primary" type="button" id="fGetFixed">Get this fixed &rarr;</button>
           <button class="fbtn fbtn-ghost" type="button" data-back="2">Try another</button>
@@ -1293,10 +1312,11 @@ footer a:hover{color:var(--c2)}
       </div>
     </div>
   </div>
+  <button class="fnudge" id="fNudge" type="button">See how it all connects &darr;</button>
 </section>
 
 <!-- ════════ BRAND BEAT ════════ -->
-<section class="beat" data-reveal>
+<section class="beat" id="group" data-reveal>
   <div class="kicker">The group</div>
   <h2>MDS Diversified builds the <em>always on AI</em> that runs the unglamorous but essential half of a business.</h2>
   <div class="beat-chips">
@@ -1677,15 +1697,24 @@ footer a:hover{color:var(--c2)}
     {id:'admin',label:'Drowning in admin',div:'ops'},
     {id:'insight',label:'Need market insight',div:'research'}
   ];
-  // {ind} is replaced with the chosen industry. Stats are illustrative — confirm or replace with sourced figures.
+  // {ind} is replaced with the chosen industry. Numbers are sourced, see SRC below.
   var STAT={
-    leads:'In {ind}, <b>1 in 3</b> calls to small operators go unanswered. Most callers never ring back, they just call the next name on the list.',
-    followup:'<b>Most quotes</b> never get a second follow up, yet a big share of jobs in {ind} are won on the chase, not the first call.',
-    reviews:'Buyers in {ind} pick the business with more, fresher reviews. A thin review profile quietly sends them to a competitor.',
-    marketing:'When marketing goes quiet in {ind}, the pipeline follows <b>60 to 90 days</b> later. Consistency beats intensity.',
-    admin:'Owners in {ind} can lose <b>a day a week</b> to admin, time that should be spent winning and doing the work.',
-    insight:'Decisions made in {ind} without current market data cost more and move slower than they need to.',
+    leads:'In {ind}, every missed call is a job gone. <b>62%</b> of calls to small businesses go unanswered, and <b>85%</b> of those callers never ring back. They just call the next name on the list.',
+    followup:'In {ind}, the fast quote wins. <b>78%</b> of customers buy from the first business that gets back to them, so a slow follow up is a lost job.',
+    reviews:'<b>75%</b> of people read reviews before choosing a local business, and <b>93%</b> use them to judge quality. In {ind}, a thin review profile quietly sends buyers to a competitor.',
+    marketing:'Generating leads is the <b>#1 challenge</b> for most small businesses. In {ind}, quiet marketing today is a quiet pipeline tomorrow.',
+    admin:'The average owner loses around <b>14 hours a week</b> to admin. In {ind}, that is a full working day you could spend winning and doing the work.',
+    insight:'Most operators in {ind} set prices and plans on gut feel, not current market data. That quietly costs margin and momentum.',
     custom:'In {ind}, "<b>{issue}</b>" is exactly the kind of work this division takes off your plate, so you can get back to the job.'
+  };
+  var SRC={
+    leads:'Source: 411 Locals study, 2024',
+    followup:'Source: speed-to-lead research',
+    reviews:'Source: BrightLocal Local Consumer Review Survey, 2024',
+    marketing:'Source: small business lead-generation surveys, 2024-26',
+    admin:'Source: Time Etc small business study',
+    insight:'',
+    custom:''
   };
   // keyword router for free-text issues
   var ROUTE=[
@@ -1703,7 +1732,7 @@ footer a:hover{color:var(--c2)}
   }
   function esc(x){ return (x||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
-  var state={industry:null,problem:null};
+  var state={industry:null,selected:[],problems:[]};
   var prog=stage.querySelectorAll('.finder-prog i');
 
   function setStep(n){
@@ -1724,29 +1753,55 @@ footer a:hover{color:var(--c2)}
   $('fIndustryInput').addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); goIndustry(this.value); } });
 
   function buildProblems(){
-    var pg=$('fProblems'); pg.innerHTML='';
+    var pg=$('fProblems'); pg.innerHTML=''; state.selected=[]; updateSeeBtn();
     PROBLEMS.forEach(function(p,i){
       var b=document.createElement('button');
       b.className='fpill'; b.type='button'; b.style.setProperty('--pc',DIV[p.div].color); b.style.animationDelay=(i*0.05)+'s';
+      b.setAttribute('aria-pressed','false');
       b.innerHTML='<span class="dot"></span>'+p.label;
-      b.addEventListener('click',function(){ state.problem=p; showResult(); setStep(3); });
+      b.addEventListener('click',function(){ toggleProblem(p,b); });
       pg.appendChild(b);
     });
   }
+  function toggleProblem(p,btn){
+    var idx=state.selected.indexOf(p);
+    if(idx>-1){ state.selected.splice(idx,1); btn.classList.remove('sel'); btn.setAttribute('aria-pressed','false'); }
+    else{ state.selected.push(p); btn.classList.add('sel'); btn.setAttribute('aria-pressed','true'); }
+    updateSeeBtn();
+  }
+  function updateSeeBtn(){
+    var n=state.selected.length, b=$('fSeeBtn');
+    b.hidden = (n===0);
+    b.innerHTML = (n>1 ? 'See my '+n+' fixes ' : 'See my fix ')+'&rarr;';
+  }
+  $('fSeeBtn').addEventListener('click',function(){ if(state.selected.length){ state.problems=state.selected.slice(); showResult(); setStep(3); } });
+
   function goProblem(text){
     text=(text||'').trim(); if(!text){ $('fProblemInput').focus(); return; }
-    state.problem={id:'custom',label:text,div:routeText(text)}; showResult(); setStep(3);
+    state.problems=[{id:'custom',label:text,div:routeText(text)}]; showResult(); setStep(3);
   }
   $('fProbNext').addEventListener('click',function(){ goProblem($('fProblemInput').value); });
   $('fProblemInput').addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); goProblem(this.value); } });
 
   function showResult(){
-    var p=state.problem, d=DIV[p.div], c=d.color;
-    var t=(STAT[p.id]||STAT.custom).replace(/{ind}/g,esc(state.industry)).replace(/{issue}/g,esc(p.label));
+    var list=state.problems, primary=list[0], d=DIV[primary.div], c=d.color;
+    var t=(STAT[primary.id]||STAT.custom).replace(/{ind}/g,esc(state.industry)).replace(/{issue}/g,esc(primary.label));
     var s=$('fStat'); s.innerHTML=t; s.style.setProperty('--rc',c);
+    $('fSrc').textContent=SRC[primary.id]||'';
     $('fMatch').style.setProperty('--rc',c);
     var nm=$('fmName'); nm.textContent=d.name; nm.style.color=c;
     $('fmCat').textContent=d.cat;
+    // secondary "also helps with" divisions
+    var also=$('fAlso'); also.innerHTML=''; var seen={}; seen[primary.div]=1;
+    for(var i=1;i<list.length;i++){
+      var pd=list[i].div; if(seen[pd]) continue; seen[pd]=1;
+      var dd=DIV[pd], chip=document.createElement('span');
+      chip.className='falso-chip'; chip.style.setProperty('--pc',dd.color);
+      chip.innerHTML='<span class="dot"></span>'+dd.name;
+      also.appendChild(chip);
+    }
+    var has=also.children.length>0;
+    also.style.display=has?'flex':'none'; $('fAlsoLabel').style.display=has?'block':'none';
     $('fForm').classList.remove('show'); $('fGetFixed').style.display='';
   }
 
@@ -1761,11 +1816,16 @@ footer a:hover{color:var(--c2)}
     e.preventDefault();
     var name=$('ffName').value.trim(), biz=$('ffBiz').value.trim(), contact=$('ffContact').value.trim();
     if(!name || !contact){ if(!name){$('ffName').focus();}else{$('ffContact').focus();} return; }
-    var d=DIV[state.problem.div];
-    var subject='MDS fix: '+state.problem.label+' ('+state.industry+')';
-    var body='Hi James,\n\nIndustry: '+state.industry+'\nProblem: '+state.problem.label+'\nSuggested division: '+d.name+'\n\nName: '+name+'\nBusiness: '+biz+'\nContact: '+contact+'\n\nPlease show me how this works.';
+    var probs=state.problems.map(function(p){return p.label;}).join(', ');
+    var divs=[], seen={};
+    state.problems.forEach(function(p){ if(!seen[p.div]){ seen[p.div]=1; divs.push(DIV[p.div].name); } });
+    var subject='MDS fix: '+probs+' ('+state.industry+')';
+    var body='Hi James,\n\nIndustry: '+state.industry+'\nProblem(s): '+probs+'\nSuggested division(s): '+divs.join(', ')+'\n\nName: '+name+'\nBusiness: '+biz+'\nContact: '+contact+'\n\nPlease show me how this works.';
     window.location.href='mailto:james@mdsdiversified.ai?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
   });
+
+  var nudge=$('fNudge'), group=document.getElementById('group');
+  if(nudge && group){ nudge.addEventListener('click',function(){ group.scrollIntoView({behavior:'smooth',block:'start'}); }); }
 })();
 </script>
 </body>
