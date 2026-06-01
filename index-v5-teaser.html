@@ -1252,8 +1252,6 @@ footer a:hover{color:var(--c2)}
         <datalist id="fIndustryList"></datalist>
         <button class="fbtn fbtn-primary fnext" id="fIndNext" type="button">Next &rarr;</button>
       </div>
-      <div class="fchips-label">Or pick a common one</div>
-      <div class="fgrid" id="fIndustries"></div>
     </div>
 
     <div class="fstep" id="fstep2">
@@ -1663,7 +1661,6 @@ footer a:hover{color:var(--c2)}
   var $=function(id){return document.getElementById(id);};
 
   var INDUSTRIES=['Auto Detailing','Automotive & Mechanical','Beauty & Salons','Building & Renovation','Carpentry & Joinery','Cleaning Services','Concreting','Consulting','eCommerce','Electrical','Events & Hire','Finance & Lending','Fitness & Gyms','Florists','Hair & Barber','Home Services','Hospitality & Cafes','HVAC & Air Conditioning','IT & Tech Services','Landscaping & Gardens','Manufacturing','Marketing & Creative','Mortgage Broking','Painting & Decorating','Pest Control','Pet Services','Photography & Video','Plumbing','Professional Services','Property Management','Real Estate','Removalists & Storage','Restaurants & Bars','Retail','Roofing','Strata & Body Corporate','Trades & Construction','Transport & Logistics','Wholesale & Distribution'];
-  var POPULAR=['Trades & Construction','Real Estate','Automotive & Mechanical','Hospitality & Cafes','Professional Services','Home Services','Retail','Fitness & Gyms'];
   var DIV={
     reception:{name:'MDS Reception',cat:'Capture & Answer',color:'#00d4ff'},
     recover:{name:'MDS Recover',cat:'Follow up & Recovery',color:'#ff3d9c'},
@@ -1719,14 +1716,6 @@ footer a:hover{color:var(--c2)}
   // populate datalist for type-to-search
   var dl=$('fIndustryList');
   INDUSTRIES.forEach(function(name){ var o=document.createElement('option'); o.value=name; dl.appendChild(o); });
-  // popular quick-pick chips
-  var ig=$('fIndustries');
-  POPULAR.forEach(function(name,i){
-    var b=document.createElement('button');
-    b.className='fpill'; b.type='button'; b.textContent=name; b.style.animationDelay=(i*0.05)+'s';
-    b.addEventListener('click',function(){ goIndustry(name); });
-    ig.appendChild(b);
-  });
   function goIndustry(name){
     name=(name||'').trim(); if(!name){ $('fIndustryInput').focus(); return; }
     state.industry=name; $('fIndustryInput').value=name; buildProblems(); setStep(2);
