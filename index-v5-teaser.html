@@ -1852,7 +1852,14 @@ footer a:hover{color:var(--c2)}
     'MDS Ops':'Get your week back. We clear the admin, invoices, reminders and intake, so your time goes on winning and doing the work.',
     'MDS Research':'Decisions backed by data. On-demand market research and clear, actionable briefs whenever you need to make a call.'
   };
-  var LINKS={ 'MDS Reception':'mds-reception.html' };
+  var LINKS={
+    'MDS Reception':'mds-reception.html',
+    'MDS Recover':'mds-recover.html',
+    'MDS Reputation':'mds-reputation.html',
+    'MDS Growth':'mds-growth.html',
+    'MDS Ops':'mds-ops.html',
+    'MDS Research':'mds-research.html'
+  };
   var cards=grid.querySelectorAll('.divcard');
   Array.prototype.forEach.call(cards,function(card){
     var h3=card.querySelector('h3'); var name=h3?h3.textContent.trim():'';
