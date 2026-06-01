@@ -70,8 +70,8 @@ nav{
   display:flex;align-items:center;justify-content:space-between;
   padding:18px 32px;
 }
-nav .brand-logo{height:52px;width:auto;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.4))}
-@media (max-width:780px){nav .brand-logo{height:38px}}
+nav .brand-logo{height:72px;width:auto;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.4))}
+@media (max-width:780px){nav .brand-logo{height:52px}}
 /* Old text brand kept as fallback only */
 nav .brand{font-family:var(--serif);font-size:24px;font-style:italic;font-weight:400;letter-spacing:-0.02em;display:none}
 nav .brand b{font-style:normal;font-family:var(--sans);font-weight:900;font-size:14px;letter-spacing:0.18em;margin-right:8px;color:var(--c2)}
@@ -1190,10 +1190,14 @@ footer a:hover{color:var(--c2)}
 .fresult{text-align:center}
 .fstat{max-width:640px;margin:0 auto 30px;font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.8vw,32px);line-height:1.32;color:var(--ink)}
 .fstat b{font-style:normal;font-family:var(--sans);font-weight:800;color:var(--rc,var(--c1))}
-.fmatch{display:inline-flex;flex-direction:column;align-items:center;gap:5px;background:rgba(255,255,255,0.04);border:1px solid var(--line-2);border-top:3px solid var(--rc,var(--c1));border-radius:18px;padding:22px 32px;margin-bottom:26px;min-width:250px}
+.fmatch{display:inline-flex;flex-direction:column;align-items:center;gap:5px;text-decoration:none;cursor:pointer;background:color-mix(in srgb,var(--rc,var(--c1)) 10%,transparent);border:1px solid color-mix(in srgb,var(--rc,var(--c1)) 45%,transparent);border-top:3px solid var(--rc,var(--c1));border-radius:18px;padding:22px 32px;margin-bottom:18px;min-width:250px;transition:transform .2s,box-shadow .25s,background .25s}
+.fmatch:hover{transform:translateY(-4px);background:color-mix(in srgb,var(--rc,var(--c1)) 16%,transparent);box-shadow:0 14px 38px -10px var(--rc,var(--c1))}
 .fmatch .fm-tag{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-3)}
 .fmatch .fm-name{font-size:26px;font-weight:800}
 .fmatch .fm-cat{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-2)}
+.fmatch .fm-go{margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--rc,var(--c1))}
+.fmsg{max-width:480px;margin:0 auto 26px;font-family:var(--sans);font-size:15px;line-height:1.5;color:var(--ink-2)}
+.fmsg b{color:var(--rc,var(--c1));font-weight:700}
 .fcta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .fbtn{font-family:var(--sans);font-weight:700;font-size:15px;padding:15px 26px;border-radius:100px;cursor:pointer;transition:transform .2s,box-shadow .3s,opacity .2s;min-height:48px}
 .fbtn:active{transform:translateY(1px)}
@@ -1300,13 +1304,15 @@ footer a:hover{color:var(--c2)}
       <div class="fresult">
         <p class="fstat" id="fStat"></p>
         <div class="fsrc" id="fSrc"></div>
-        <div class="fmatch" id="fMatch">
+        <a class="fmatch" id="fMatch" href="#">
           <span class="fm-tag">Routed to</span>
           <span class="fm-name" id="fmName"></span>
           <span class="fm-cat" id="fmCat"></span>
-        </div>
+          <span class="fm-go">See the page &rarr;</span>
+        </a>
         <div class="falso-label" id="fAlsoLabel" style="display:none">Also helps with</div>
         <div class="falso" id="fAlso" style="display:none"></div>
+        <p class="fmsg" id="fMsg"></p>
         <div class="fcta-row">
           <button class="fbtn fbtn-primary" type="button" id="fGetFixed">Get this fixed &rarr;</button>
           <button class="fbtn fbtn-ghost" type="button" data-back="2">Try another</button>
@@ -1677,12 +1683,12 @@ footer a:hover{color:var(--c2)}
 
   var INDUSTRIES=['Auto Detailing','Automotive & Mechanical','Beauty & Salons','Building & Renovation','Carpentry & Joinery','Cleaning Services','Concreting','Consulting','eCommerce','Electrical','Events & Hire','Finance & Lending','Fitness & Gyms','Florists','Hair & Barber','Home Services','Hospitality & Cafes','HVAC & Air Conditioning','IT & Tech Services','Landscaping & Gardens','Manufacturing','Marketing & Creative','Mortgage Broking','Painting & Decorating','Pest Control','Pet Services','Photography & Video','Plumbing','Professional Services','Property Management','Real Estate','Removalists & Storage','Restaurants & Bars','Retail','Roofing','Strata & Body Corporate','Trades & Construction','Transport & Logistics','Wholesale & Distribution'];
   var DIV={
-    reception:{name:'MDS Reception',cat:'Capture & Answer',color:'#00d4ff'},
-    recover:{name:'MDS Recover',cat:'Follow up & Recovery',color:'#ff3d9c'},
-    reputation:{name:'MDS Reputation',cat:'Reviews & Referrals',color:'#b5ff3d'},
-    growth:{name:'MDS Growth',cat:'Content & Growth',color:'#7c3dff'},
-    ops:{name:'MDS Ops',cat:'Admin & Back Office',color:'#ffb800'},
-    research:{name:'MDS Research',cat:'Research & SME',color:'#2dd4bf'}
+    reception:{name:'MDS Reception',cat:'Capture & Answer',color:'#00d4ff',page:'mds-reception.html'},
+    recover:{name:'MDS Recover',cat:'Follow up & Recovery',color:'#ff3d9c',page:'mds-recover.html'},
+    reputation:{name:'MDS Reputation',cat:'Reviews & Referrals',color:'#b5ff3d',page:'mds-reputation.html'},
+    growth:{name:'MDS Growth',cat:'Content & Growth',color:'#7c3dff',page:'mds-growth.html'},
+    ops:{name:'MDS Ops',cat:'Admin & Back Office',color:'#ffb800',page:'mds-ops.html'},
+    research:{name:'MDS Research',cat:'Research & SME',color:'#2dd4bf',page:'mds-research.html'}
   };
   var PROBLEMS=[
     {id:'leads',label:'Missed calls & leads',div:'reception'},
@@ -1704,9 +1710,9 @@ footer a:hover{color:var(--c2)}
   };
   var SRC={
     leads:'Source: 411 Locals study, 2024',
-    followup:'Source: speed-to-lead research',
+    followup:'Source: speed to lead research',
     reviews:'Source: BrightLocal Local Consumer Review Survey, 2024',
-    marketing:'Source: small business lead-generation surveys, 2024-26',
+    marketing:'Source: small business lead generation surveys, 2024 to 2026',
     admin:'Source: Time Etc small business study',
     insight:'',
     custom:''
@@ -1783,7 +1789,7 @@ footer a:hover{color:var(--c2)}
     var t=(STAT[primary.id]||STAT.custom).replace(/{ind}/g,esc(state.industry)).replace(/{issue}/g,esc(primary.label));
     var s=$('fStat'); s.innerHTML=t; s.style.setProperty('--rc',c);
     $('fSrc').textContent=SRC[primary.id]||'';
-    $('fMatch').style.setProperty('--rc',c);
+    var fm=$('fMatch'); fm.style.setProperty('--rc',c); if(d.page) fm.href=d.page;
     var nm=$('fmName'); nm.textContent=d.name; nm.style.color=c;
     $('fmCat').textContent=d.cat;
     // secondary "also helps with" divisions
@@ -1797,6 +1803,8 @@ footer a:hover{color:var(--c2)}
     }
     var has=also.children.length>0;
     also.style.display=has?'flex':'none'; $('fAlsoLabel').style.display=has?'block':'none';
+    var msg=$('fMsg'); msg.style.setProperty('--rc',c);
+    msg.innerHTML='Speak with our <b>'+esc(d.name)+'</b> division, ready to help.';
     $('fForm').classList.remove('show'); $('fGetFixed').style.display='';
   }
 
@@ -1834,7 +1842,7 @@ footer a:hover{color:var(--c2)}
     'MDS Reputation':'More 5-star reviews, on autopilot. Every happy job becomes a Google review and a referral, lifting you above the competition.',
     'MDS Growth':'Keep the pipeline full. Content, local presence and smart ads that keep new enquiries coming in, month after month.',
     'MDS Ops':'Get your week back. We clear the admin, invoices, reminders and intake, so your time goes on winning and doing the work.',
-    'MDS Research':'Decisions backed by data. On-demand market research and clear, actionable briefs whenever you need to make a call.'
+    'MDS Research':'Decisions backed by data. On demand market research and clear, actionable briefs whenever you need to make a call.'
   };
   var LINKS={
     'MDS Reception':'mds-reception.html',
