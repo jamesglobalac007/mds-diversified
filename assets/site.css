@@ -2100,7 +2100,7 @@ h1, h2, h3, p, blockquote { margin-top: 0; }
   gap: 24px;
 }
 .site-footer .footer-brand { flex: 1; display: flex; align-items: center; }
-.site-footer .footer-logo { width: 220px; filter: none; display: block; }
+.site-footer .footer-logo { width: 300px; max-width: 70vw; filter: none; display: block; }
 .site-footer .footer-regions {
   flex: 0 0 auto;
   margin: 0;
