@@ -54,7 +54,7 @@ nav .back:hover{color:var(--c1)}
 .hero h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--c1)}
 .hero .lede{color:var(--ink-2);font-size:19px;line-height:1.6;max-width:520px;margin:22px 0 0}
 .hero .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-.hero .microtrust{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-2);margin-top:20px}
+.hero .microtrust{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);margin-top:20px}
 @media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:34px}}
 
 /* phone call mock */
@@ -213,7 +213,7 @@ footer .cpy{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
     <h2>One number. <em>Up and to the right.</em></h2>
     <p class="sub">Marketing that does not go quiet the moment you get busy, because it runs whether you do or not.</p>
     
-    <p class="inds-note">A live voice demo is coming soon. Want to hear it now? <a href="#start" style="color:var(--c1)">Book a quick call.</a></p>
+    <p class="inds-note">Want to hear it live? <a href="#start" style="color:var(--c1)">Book a quick call.</a></p>
   </div>
 </section>
 
@@ -272,10 +272,9 @@ footer .cpy{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
       <input id="lName" name="name" autocomplete="name" required>
       <label for="lBiz">Business name</label>
       <input id="lBiz" name="business" autocomplete="organization">
-      <label for="lContact">Best number or email</label>
-      <input id="lContact" name="contact" autocomplete="tel" required>
+      <label for="lContact">Mobile number</label>
+      <input id="lContact" name="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="Best number to reach you" required>
       <button type="submit" class="btn btn-primary">Send to MDS Growth &rarr;</button>
-      <div class="ffoot">No spam. A real person follows up, usually same day.</div>
     </form>
   </div>
 </section>
@@ -297,10 +296,10 @@ footer .cpy{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
     e.preventDefault();
     var name=document.getElementById('lName').value.trim();
     var biz=document.getElementById('lBiz').value.trim();
-    var contact=document.getElementById('lContact').value.trim();
-    if(!name||!contact){ (name?document.getElementById('lContact'):document.getElementById('lName')).focus(); return; }
+    var mobile=document.getElementById('lContact').value.trim();
+    if(!name||!mobile){ (name?document.getElementById('lContact'):document.getElementById('lName')).focus(); return; }
     var subject='MDS Growth enquiry';
-    var body='Hi James,\n\nI want to keep my pipeline full with MDS Growth.\n\nName: '+name+'\nBusiness: '+biz+'\nContact: '+contact+'\n\nPlease show me how it works.';
+    var body='Hi James,\n\nI want to keep my pipeline full with MDS Growth.\n\nName: '+name+'\nBusiness: '+biz+'\nMobile: '+mobile+'\n\nPlease show me how it works.';
     window.location.href='mailto:james@mdsdiversified.ai?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
   });
 })();
