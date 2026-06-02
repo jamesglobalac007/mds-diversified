@@ -1122,6 +1122,9 @@ footer a:hover{color:var(--c2)}
 .cf-input::placeholder{color:var(--ink-3)}
 .cf-input:focus{outline:none;border-color:var(--c1)}
 .cf-area{resize:vertical;min-height:88px}
+.cf-select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23a8a8c0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");background-repeat:no-repeat;background-position:right 18px center;padding-right:44px}
+.cf-select:invalid{color:var(--ink-3)}
+.cf-select option{color:#0a0a14;background:#fff}
 .contact-form .hello-btn{justify-content:center;margin-top:6px;border:0;cursor:pointer;width:100%}
 .cf-foot{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;color:var(--ink-3);text-align:center;margin-top:2px}
 .cf-thanks{max-width:480px;margin:0 auto;background:rgba(181,255,61,0.1);border:1px solid rgba(181,255,61,0.4);border-radius:16px;padding:24px;color:var(--ink);font-size:17px;line-height:1.5}
@@ -1485,7 +1488,14 @@ footer a:hover{color:var(--c2)}
     <form class="contact-form" id="contactForm" novalidate>
       <input class="cf-input" id="cfName" name="name" placeholder="Your name" autocomplete="name" required>
       <input class="cf-input" id="cfBiz" name="business" placeholder="Business name" autocomplete="organization">
-      <input class="cf-input" id="cfContact" name="contact" placeholder="Best email or phone" required>
+      <input class="cf-input" id="cfEmail" name="email" type="email" placeholder="Email" autocomplete="email">
+      <input class="cf-input" id="cfMobile" name="mobile" type="tel" placeholder="Mobile number" autocomplete="tel">
+      <select class="cf-input cf-select" id="cfRegion" name="region" aria-label="Where are you based?">
+        <option value="" disabled selected>Where are you based?</option>
+        <option value="Australia">Australia</option>
+        <option value="United States">United States</option>
+        <option value="UAE">UAE</option>
+      </select>
       <textarea class="cf-input cf-area" id="cfMsg" name="message" rows="3" placeholder="What do you need a hand with?"></textarea>
       <button class="hello-btn" type="submit" id="cfSubmit">Start a conversation</button>
       <div class="cf-foot">No spam. A real person replies, usually same day.</div>
@@ -1684,13 +1694,17 @@ footer a:hover{color:var(--c2)}
   f.addEventListener('submit', function(e){
     e.preventDefault();
     var name = document.getElementById('cfName').value.trim();
-    var contact = document.getElementById('cfContact').value.trim();
-    if(!name || !contact){ (name ? document.getElementById('cfContact') : document.getElementById('cfName')).focus(); return; }
+    var email = document.getElementById('cfEmail').value.trim();
+    var mobile = document.getElementById('cfMobile').value.trim();
+    if(!name){ document.getElementById('cfName').focus(); return; }
+    if(!email && !mobile){ document.getElementById('cfMobile').focus(); return; }
     var btn = document.getElementById('cfSubmit'); btn.disabled = true; btn.textContent = 'Sending';
     var payload = {
       name: name,
       business: document.getElementById('cfBiz').value.trim(),
-      contact: contact,
+      email: email,
+      mobile: mobile,
+      region: document.getElementById('cfRegion').value,
       message: document.getElementById('cfMsg').value.trim(),
       _subject: 'New enquiry via mdsdiversified.ai'
     };
@@ -1702,7 +1716,7 @@ footer a:hover{color:var(--c2)}
       f.hidden = true; document.getElementById('cfThanks').hidden = false;
     }).catch(function(){
       btn.disabled = false; btn.textContent = 'Start a conversation';
-      window.location.href = 'mailto:james@mdsdiversified.ai?subject=' + encodeURIComponent('Hello MDS') + '&body=' + encodeURIComponent('Name: ' + name + '\nBusiness: ' + payload.business + '\nContact: ' + contact + '\n\n' + payload.message);
+      window.location.href = 'mailto:james@mdsdiversified.ai?subject=' + encodeURIComponent('Hello MDS') + '&body=' + encodeURIComponent('Name: ' + name + '\nBusiness: ' + payload.business + '\nEmail: ' + email + '\nMobile: ' + mobile + '\nRegion: ' + payload.region + '\n\n' + payload.message);
     });
   });
 })();
