@@ -1347,8 +1347,8 @@ footer a:hover{color:var(--c2)}
           <input id="ffName" name="name" autocomplete="name" required>
           <label for="ffBiz">Business name</label>
           <input id="ffBiz" name="business" autocomplete="organization">
-          <label for="ffContact">Best number or email</label>
-          <input id="ffContact" name="contact" autocomplete="tel" required>
+          <label for="ffContact">Mobile number</label>
+          <input id="ffContact" name="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="Best number to reach you" required>
           <button type="submit" class="fbtn fbtn-primary">Send to MDS &rarr;</button>
           <div class="ffoot">No spam. We will show you exactly how it works.</div>
         </form>
@@ -1926,13 +1926,13 @@ footer a:hover{color:var(--c2)}
 
   $('fForm').addEventListener('submit',function(e){
     e.preventDefault();
-    var name=$('ffName').value.trim(), biz=$('ffBiz').value.trim(), contact=$('ffContact').value.trim();
-    if(!name || !contact){ if(!name){$('ffName').focus();}else{$('ffContact').focus();} return; }
+    var name=$('ffName').value.trim(), biz=$('ffBiz').value.trim(), mobile=$('ffContact').value.trim();
+    if(!name || !mobile){ if(!name){$('ffName').focus();}else{$('ffContact').focus();} return; }
     var probs=state.problems.map(function(p){return p.label;}).join(', ');
     var divs=[], seen={};
     state.problems.forEach(function(p){ if(!seen[p.div]){ seen[p.div]=1; divs.push(DIV[p.div].name); } });
     var subject='MDS fix: '+probs+' ('+state.industry+')';
-    var body='Hi James,\n\nIndustry: '+state.industry+'\nProblem(s): '+probs+'\nSuggested division(s): '+divs.join(', ')+'\n\nName: '+name+'\nBusiness: '+biz+'\nContact: '+contact+'\n\nPlease show me how this works.';
+    var body='Hi James,\n\nIndustry: '+state.industry+'\nProblem(s): '+probs+'\nSuggested division(s): '+divs.join(', ')+'\n\nName: '+name+'\nBusiness: '+biz+'\nMobile: '+mobile+'\n\nPlease show me how this works.';
     window.location.href='mailto:james@mdsdiversified.ai?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
   });
 
