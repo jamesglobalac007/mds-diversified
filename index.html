@@ -1,451 +1,1889 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MDS Diversified | Marketing and sales — done for you.</title>
-  <meta name="description" content="Every business needs two things: marketing that creates leads and a sales team that closes them. MDS handles both — founder-led, modern tools, AI-assisted delivery.">
-  <meta name="keywords" content="sales conversion, marketing support, lead generation, cold calling, sales tools, sales coaching, MDS Diversified">
-  <meta name="author" content="MDS Diversified">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="MDS Diversified">
-  <meta property="og:title" content="Marketing and Sales designed to create Revenue">
-  <meta property="og:description" content="Marketing that attracts. Sales that convert. We do both — Australia, UAE, America.">
-  <meta property="og:image" content="https://mdsdiversified.ai/assets/images/hero.jpg">
-  <meta property="og:image:width" content="1920">
-  <meta property="og:image:height" content="1080">
-  <meta property="og:url" content="https://mdsdiversified.ai/">
-  <meta property="og:locale" content="en_AU">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MDS Diversified — Marketing & Sales">
-  <meta name="twitter:description" content="Marketing that attracts. Sales that convert. We do both.">
-  <meta name="twitter:image" content="https://mdsdiversified.ai/assets/images/hero.jpg">
-  <link rel="icon" type="image/png" href="assets/logo/mds-diversified-monogram.png">
-  <link rel="apple-touch-icon" href="assets/logo/mds-diversified-square-400.png">
-  <link rel="canonical" href="https://mdsdiversified.ai/">
-  <!-- Structured data: ProfessionalService + FAQ for Google rich results -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://mdsdiversified.ai/#org",
-        "name": "MDS Diversified",
-        "legalName": "MDS Diversified Pty Ltd",
-        "url": "https://mdsdiversified.ai",
-        "logo": "https://mdsdiversified.ai/assets/logo/mds-diversified-monogram.png",
-        "image": "https://mdsdiversified.ai/assets/logo/mds-diversified-horizontal-stripe.png",
-        "description": "Marketing and sales setup, done for you. Custom marketing websites, branded social channels, lead capture, sales pipeline support, and ongoing content delivery.",
-        "telephone": "+61406718007",
-        "email": "sales@mdsdiversified.ai",
-        "priceRange": "$350-$9500",
-        "address": {"@type": "PostalAddress", "addressCountry": "AU"},
-        "areaServed": [
-          {"@type": "Country", "name": "Australia"},
-          {"@type": "Country", "name": "United Arab Emirates"},
-          {"@type": "Country", "name": "United States"}
-        ],
-        "taxID": "ABN 48 668 195 819",
-        "currenciesAccepted": "AUD"
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {"@type": "Question", "name": "What if I'm not happy with the work?", "acceptedAnswer": {"@type": "Answer", "text": "If we haven't started yet, full refund within 7 days of purchase. Once work has begun we keep iterating until you sign off — at no extra cost. Monthly plans cancel any time at the end of the current billed month."}},
-          {"@type": "Question", "name": "I already have a website. Do I need a new one?", "acceptedAnswer": {"@type": "Answer", "text": "Maybe not. The Launch package replaces an existing site; otherwise we audit yours first and recommend the most cost-effective path."}},
-          {"@type": "Question", "name": "How long does the build take?", "acceptedAnswer": {"@type": "Answer", "text": "Build starts within 48 hours of payment. Launch typically goes live in around two weeks. Lift takes two to three weeks. Scale takes three to four weeks."}},
-          {"@type": "Question", "name": "Can I cancel my monthly content plan any time?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Cancel from your Stripe customer portal in one click. Cancellation takes effect at the end of the current billed month."}},
-          {"@type": "Question", "name": "What's included in sales pipeline support?", "acceptedAnswer": {"@type": "Answer", "text": "Lead capture form, automated follow-up email and SMS sequence, integration with your existing CRM, call scripts, and a founder-led monthly pipeline review."}},
-          {"@type": "Question", "name": "Are your invoices GST-compliant?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every Stripe receipt itemises the 10% GST separately. Stripe Tax adds GST automatically at checkout."}},
-          {"@type": "Question", "name": "Do you work with international clients?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — Australia, UAE, and the United States. Pricing is in AUD; Stripe converts at checkout for international cards."}}
-        ]
-      }
-    ]
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=42">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>MDS DIVERSIFIED · your business, engineered for revenue</title>
+<meta name="description" content="MDS Diversified is the always on AI engine for ambitious founders. Six AI divisions that answer, follow up, market and run the back office, across Australia, the UAE and America." />
+<link rel="icon" type="image/png" href="assets/logo/mds-diversified-monogram.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ════════════════════════════════════════════════════════════════════════
+   MDS DIVERSIFIED, v5 PLAYGROUND
+   Vibrant, click-and-play interactive teaser. Bright accents on dark base.
+   Every section asks the visitor to do something with their mouse.
+   ════════════════════════════════════════════════════════════════════════ */
+:root{
+  --bg:#0a0a14;
+  --bg-2:#11111d;
+  --bg-3:#181828;
+  --ink:#fafaff;
+  --ink-2:#c6c6d8;
+  --ink-3:#9494ac;
+  --line:rgba(255,255,255,0.08);
+  --line-2:rgba(255,255,255,0.18);
+
+  --c1:#00d4ff;   /* electric blue */
+  --c2:#b5ff3d;   /* acid lime */
+  --c3:#ff3d9c;   /* hot pink */
+  --c4:#ffb800;   /* amber */
+  --c5:#7c3dff;   /* purple */
+  --c6:#2dd4bf;   /* teal */
+
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --mono:'Space Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  background:var(--bg);color:var(--ink);font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;line-height:1.4;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img,svg{display:block;max-width:100%}
+::selection{background:var(--c2);color:#000}
+
+/* ── Layout helpers ─────────────────────────────────────────────────── */
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+
+/* ── Cursor follower ────────────────────────────────────────────────── */
+.cursor{
+  position:fixed;top:0;left:0;width:24px;height:24px;border-radius:50%;
+  border:1.5px solid var(--c2);pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%) scale(1);
+  transition:transform .25s cubic-bezier(.2,.9,.3,1.2),background .15s,border-color .15s;
+  mix-blend-mode:difference;
+}
+.cursor.tap{transform:translate(-50%,-50%) scale(2.4);background:var(--c2);border-color:var(--c2)}
+.cursor.drag{transform:translate(-50%,-50%) scale(2.8);border-radius:20%;background:var(--c3);border-color:var(--c3)}
+@media (max-width:780px){.cursor{display:none}}
+
+/* ── Nav ─────────────────────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 32px;
+}
+nav .brand-logo{height:72px;width:auto;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.4))}
+@media (max-width:780px){nav .brand-logo{height:52px}}
+/* Old text brand kept as fallback only */
+nav .brand{font-family:var(--serif);font-size:24px;font-style:italic;font-weight:400;letter-spacing:-0.02em;display:none}
+nav .brand b{font-style:normal;font-family:var(--sans);font-weight:900;font-size:14px;letter-spacing:0.18em;margin-right:8px;color:var(--c2)}
+nav .pill{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;
+  border:1px solid var(--line-2);padding:8px 14px;border-radius:999px;color:var(--ink-2);
+}
+nav .pill::before{
+  content:"";width:7px;height:7px;border-radius:50%;background:var(--c2);
+  box-shadow:0 0 10px var(--c2);animation:blink 1.4s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ════════════════════════════════════════════════════════════════════════
+   HERO  ───────────────────────────────────────────────────────────────────
+   Massive headline. Click anywhere on the hero to "begin" → triggers the
+   reveal of the rest of the page (everything stays interactive though).
+   ════════════════════════════════════════════════════════════════════════ */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;
+  padding:140px 32px 80px;overflow:hidden;cursor:pointer;
+}
+.hero-bg{
+  position:absolute;inset:-10%;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(0,212,255,0.34), transparent 45%),
+    radial-gradient(circle at 82% 35%, rgba(255,61,156,0.30), transparent 45%),
+    radial-gradient(circle at 55% 80%, rgba(181,255,61,0.28), transparent 50%),
+    radial-gradient(circle at 25% 80%, rgba(124,61,255,0.30), transparent 45%);
+  filter:blur(40px);
+  animation:bg-drift 22s ease-in-out infinite alternate;
+}
+@keyframes bg-drift{
+  0%   { transform:translate(0,0) scale(1); }
+  100% { transform:translate(-6%,-3%) scale(1.1); }
+}
+.hero-grain{
+  position:absolute;inset:0;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:14px;
+  font-family:var(--mono);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;
+  color:var(--ink-2);margin-bottom:32px;
+}
+.hero-eyebrow b{color:var(--c2);font-weight:700}
+.hero h1{
+  font-family:var(--sans);font-weight:900;font-size:clamp(58px,11.5vw,180px);
+  line-height:0.86;letter-spacing:-0.035em;text-transform:uppercase;
+  max-width:14ch;margin-bottom:36px;
+}
+.hero h1 em{
+  font-family:var(--serif);font-weight:400;font-style:italic;
+  background:linear-gradient(135deg,var(--c1),var(--c3) 50%,var(--c2));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  letter-spacing:-0.02em;
+}
+.hero p.lede{
+  font-size:clamp(18px,1.4vw,22px);max-width:580px;color:var(--ink-2);margin-bottom:48px;
+}
+.hero p.lede b{color:var(--ink)}
+.hero-tap{
+  display:inline-flex;align-items:center;gap:18px;
+  font-family:var(--mono);font-size:13px;letter-spacing:0.24em;text-transform:uppercase;
+  color:var(--c2);
+}
+.hero-tap .ring{
+  width:54px;height:54px;border-radius:50%;border:1.5px solid var(--c2);
+  display:inline-flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.hero-tap .ring::before{
+  content:"";position:absolute;inset:-3px;border-radius:50%;border:1.5px solid var(--c2);
+  opacity:.5;animation:tap-pulse 1.8s ease-out infinite;
+}
+.hero-tap .ring::after{
+  content:"▶";font-family:var(--sans);font-size:18px;color:var(--c2);margin-left:3px;
+}
+@keyframes tap-pulse{
+  0%   { transform:scale(1);   opacity:.55; }
+  100% { transform:scale(1.65); opacity:0; }
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   PICK YOUR PATH  ────────────────────────────────────────────────────────
+   Three huge clickable tiles. Click → tile expands, others fade away,
+   detail content slides in. Click X to close. Pure CSS state via input
+   radios so it works without JS too.
+   ════════════════════════════════════════════════════════════════════════ */
+.section-head{
+  padding:120px 32px 40px;text-align:center;
+}
+.section-head .kicker{
+  font-family:var(--mono);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--c2);margin-bottom:18px;
+  display:inline-flex;align-items:center;gap:10px;
+}
+.section-head .kicker::before{content:"";width:30px;height:1px;background:var(--c2)}
+.section-head h2{
+  font-family:var(--sans);font-weight:900;font-size:clamp(40px,6vw,82px);
+  line-height:0.92;letter-spacing:-0.025em;max-width:14ch;margin:0 auto 20px;
+}
+.section-head h2 em{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--c2),var(--c1));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.section-head p{font-size:18px;color:var(--ink-2);max-width:560px;margin:0 auto 12px}
+.section-head p b{color:var(--ink)}
+
+.tiles{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+  max-width:1280px;margin:0 auto;padding:0 32px 120px;
+}
+.tile{
+  position:relative;border-radius:24px;padding:36px;height:520px;
+  overflow:hidden;cursor:pointer;
+  border:1px solid var(--line-2);
+  background:var(--bg-2);
+  display:flex;flex-direction:column;justify-content:space-between;
+  transition:transform .35s cubic-bezier(.2,.9,.3,1.2), border-color .25s;
+}
+.tile:hover{transform:translateY(-8px);border-color:var(--line-2)}
+.tile .tile-bg{
+  position:absolute;inset:0;opacity:.85;transition:opacity .35s;
+  background:
+    radial-gradient(circle at 30% 20%, var(--tile-c1, var(--c1)) 0%, transparent 55%),
+    radial-gradient(circle at 80% 80%, var(--tile-c2, var(--c5)) 0%, transparent 60%);
+  filter:blur(36px);
+}
+.tile:hover .tile-bg{opacity:1}
+.tile.t-marketing{--tile-c1:rgba(0,212,255,.7);--tile-c2:rgba(124,61,255,.65)}
+.tile.t-sales    {--tile-c1:rgba(255,61,156,.7);--tile-c2:rgba(255,184,0,.55)}
+.tile.t-always   {--tile-c1:rgba(181,255,61,.6);--tile-c2:rgba(0,212,255,.55)}
+.tile-num{
+  font-family:var(--mono);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;
+  color:rgba(255,255,255,0.6);z-index:2;position:relative;
+}
+.tile-num b{color:#fff}
+.tile h3{
+  font-family:var(--sans);font-weight:900;font-size:48px;line-height:0.92;letter-spacing:-0.025em;
+  text-transform:uppercase;z-index:2;position:relative;margin:auto 0 16px;
+}
+.tile h3 em{font-family:var(--serif);font-style:italic;font-weight:400;color:#fff}
+.tile p{
+  font-size:15px;color:rgba(255,255,255,0.85);max-width:30ch;z-index:2;position:relative;
+}
+.tile .cta{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#fff;
+  z-index:2;position:relative;margin-top:24px;
+}
+.tile .cta .arrow{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.12);
+  transition:background .2s, transform .2s;
+}
+.tile:hover .cta .arrow{background:#fff;color:#000;transform:translateX(4px)}
+/* Live counter inside tile */
+.tile .live{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:10px;letter-spacing:0.24em;text-transform:uppercase;
+  color:rgba(255,255,255,0.7);z-index:2;position:relative;
+}
+.tile .live::before{
+  content:"";width:7px;height:7px;border-radius:50%;background:#fff;
+  box-shadow:0 0 8px #fff;animation:blink 1.4s ease-in-out infinite;
+}
+
+/* Tile expanded view */
+.tile-overlay{
+  position:fixed;inset:0;z-index:200;
+  display:none;
+  background:var(--bg-2);
+}
+.tile-overlay.open{display:block;animation:fade-in .35s ease both}
+@keyframes fade-in{from{opacity:0}to{opacity:1}}
+.tile-overlay .close{
+  position:absolute;top:24px;right:24px;
+  width:48px;height:48px;border-radius:50%;border:1px solid var(--line-2);
+  display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;
+  background:rgba(255,255,255,0.06);transition:background .15s,transform .15s;
+}
+.tile-overlay .close:hover{background:rgba(255,255,255,0.15);transform:rotate(90deg)}
+.tile-overlay-inner{
+  position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px;
+  padding:80px 60px;overflow:hidden;
+}
+.tile-overlay-bg{
+  position:absolute;inset:-10%;opacity:.85;filter:blur(48px);
+  background:
+    radial-gradient(circle at 25% 30%, var(--ov-c1, var(--c1)) 0%, transparent 55%),
+    radial-gradient(circle at 75% 70%, var(--ov-c2, var(--c5)) 0%, transparent 60%);
+}
+.tile-overlay[data-c="marketing"]{--ov-c1:rgba(0,212,255,.6);--ov-c2:rgba(124,61,255,.55)}
+.tile-overlay[data-c="sales"]    {--ov-c1:rgba(255,61,156,.6);--ov-c2:rgba(255,184,0,.45)}
+.tile-overlay[data-c="always"]   {--ov-c1:rgba(181,255,61,.5);--ov-c2:rgba(0,212,255,.45)}
+.tile-overlay-copy{position:relative;z-index:2}
+.tile-overlay h3{
+  font-family:var(--sans);font-weight:900;font-size:clamp(48px,7vw,108px);line-height:.9;letter-spacing:-0.025em;
+  text-transform:uppercase;margin-bottom:24px;
+}
+.tile-overlay h3 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--c2)}
+.tile-overlay p{font-size:18px;color:var(--ink-2);max-width:48ch;margin-bottom:32px;line-height:1.55}
+.tile-overlay p b{color:var(--ink)}
+.tile-overlay ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.tile-overlay ul li{
+  display:flex;gap:14px;align-items:flex-start;font-size:15px;color:var(--ink-2);
+}
+.tile-overlay ul li svg{flex-shrink:0;margin-top:3px;color:var(--c2)}
+.tile-overlay ul li b{color:var(--ink);font-weight:600}
+.tile-overlay-art{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;height:100%;min-height:480px}
+.art-circle{
+  width:380px;height:380px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, rgba(255,255,255,0.6), transparent 35%), conic-gradient(from 0deg, var(--c1), var(--c3), var(--c2), var(--c4), var(--c1));
+  animation:art-spin 20s linear infinite;
+  box-shadow:0 0 100px rgba(0,212,255,.4);
+}
+.tile-overlay[data-c="sales"]    .art-circle{background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), transparent 35%), conic-gradient(from 0deg, var(--c3), var(--c4), var(--c1), var(--c3))}
+.tile-overlay[data-c="always"]   .art-circle{background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), transparent 35%), conic-gradient(from 0deg, var(--c2), var(--c1), var(--c5), var(--c2))}
+@keyframes art-spin{to{transform:rotate(360deg)}}
+
+/* ════════════════════════════════════════════════════════════════════════
+   IGNITE THE ENGINE  ────────────────────────────────────────────────────
+   Single big START button. Click it once → entire dashboard panel comes
+   alive: modules light up in sequence, counters spin up from 0, the
+   activity feed populates and keeps scrolling. One click, big payoff.
+   ════════════════════════════════════════════════════════════════════════ */
+.build{
+  background:var(--bg-2);
+  padding:120px 32px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  position:relative;overflow:hidden;
+}
+.build::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(0,212,255,0.05), transparent 60%);
+  pointer-events:none;
+}
+.build-inner{position:relative;z-index:2;max-width:1180px;margin:0 auto}
+.build .top{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;margin-bottom:48px}
+.build h2{
+  font-family:var(--sans);font-weight:900;font-size:clamp(38px,5.5vw,72px);
+  line-height:0.95;letter-spacing:-0.025em;max-width:14ch;
+}
+.build h2 em{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--c2),var(--c1));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.build .top p{color:var(--ink-2);font-size:15px;max-width:34ch}
+.build .top p b{color:var(--ink)}
+
+/* Dashboard panel */
+.console{
+  position:relative;
+  border-radius:24px;
+  background:linear-gradient(180deg,var(--bg-3),var(--bg-2));
+  border:1px solid var(--line-2);
+  overflow:hidden;
+  box-shadow:
+    0 1px 3px   rgba(0,0,0,0.10),
+    0 8px 20px  rgba(0,0,0,0.30),
+    0 24px 60px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.console-header{
+  display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;
+  padding:18px 24px;border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,0.02);
+}
+.console-dots{display:inline-flex;gap:6px}
+.console-dots span{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,0.18)}
+.console-title{
+  font-family:var(--mono);font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--ink-2);
+}
+.console-status{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:var(--ink-3);
+}
+.console-status::before{
+  content:"";width:8px;height:8px;border-radius:50%;background:var(--ink-3);
+}
+.console.running .console-status{color:var(--c2)}
+.console.running .console-status::before{background:var(--c2);box-shadow:0 0 8px var(--c2);animation:blink 1.4s ease-in-out infinite}
+
+/* Counter strip */
+.counters{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line);
+  border-bottom:1px solid var(--line);
+}
+.counters > div{
+  padding:24px;background:var(--bg-3);
+}
+.counters .lbl{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px;
+}
+.counters .val{
+  font-family:var(--sans);font-weight:900;font-size:42px;letter-spacing:-0.025em;color:var(--ink);
+  font-variant-numeric:tabular-nums;line-height:1;
+  filter:saturate(0.4);transition:filter 1s, color 1s;
+}
+.counters .val small{font-size:18px;color:var(--ink-2);font-weight:600;margin-left:4px}
+.console.running .counters .val{filter:saturate(1)}
+.console.running .counters .c1 .val{color:var(--c1)}
+.console.running .counters .c2 .val{color:var(--c2)}
+.console.running .counters .c3 .val{color:var(--c4)}
+
+/* Main grid: feed left, modules right */
+.console-grid{
+  display:grid;grid-template-columns:1.2fr 1fr;gap:1px;
+  background:var(--line);
+}
+.console-grid > div{background:var(--bg-3);padding:24px;min-height:280px}
+.feed-head,
+.modules-head{
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--mono);font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:var(--ink-3);margin-bottom:18px;
+}
+.feed-list{display:flex;flex-direction:column;gap:10px}
+.feed-row{
+  display:grid;grid-template-columns:60px 1fr auto;gap:14px;align-items:center;
+  padding:10px 0;border-bottom:1px solid var(--line);
+  opacity:0;transform:translateX(-12px);
+  transition:opacity .35s ease-out, transform .35s ease-out;
+}
+.feed-row.in{opacity:1;transform:none}
+.feed-row .t{font-family:var(--mono);font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.feed-row .msg{font-size:13px;color:var(--ink-2)}
+.feed-row .msg b{color:var(--ink);font-weight:600}
+.feed-row .tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;
+  padding:4px 8px;border-radius:999px;color:var(--c1);
+  background:rgba(0,212,255,.10);border:1px solid rgba(0,212,255,.35);
+}
+.feed-row .tag.acid{color:var(--c2);background:rgba(181,255,61,.10);border-color:rgba(181,255,61,.35)}
+.feed-row .tag.pink{color:var(--c3);background:rgba(255,61,156,.10);border-color:rgba(255,61,156,.35)}
+.feed-row .tag.amber{color:var(--c4);background:rgba(255,184,0,.10);border-color:rgba(255,184,0,.35)}
+
+/* Modules grid */
+.modules{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.module{
+  position:relative;padding:18px;border-radius:14px;border:1px solid var(--line);
+  background:var(--bg-2);overflow:hidden;
+  filter:saturate(0.2) brightness(0.7);
+  transition:filter .8s, transform .15s, border-color .15s;
+}
+.module:hover{transform:translateY(-2px);border-color:var(--line-2)}
+.console.running .module{filter:saturate(1) brightness(1)}
+.module-glow{
+  position:absolute;inset:-30%;opacity:0;filter:blur(28px);
+  transition:opacity 1s;
+}
+.console.running .module-glow{opacity:.6}
+.module.m-mk  .module-glow{background:radial-gradient(circle at 30% 30%, var(--c1), transparent 60%)}
+.module.m-sl  .module-glow{background:radial-gradient(circle at 30% 30%, var(--c3), transparent 60%)}
+.module.m-ao  .module-glow{background:radial-gradient(circle at 30% 30%, var(--c2), transparent 60%)}
+.module.m-rp  .module-glow{background:radial-gradient(circle at 30% 30%, var(--c4), transparent 60%)}
+.module-row{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2}
+.module-name{font-family:var(--mono);font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-2)}
+.module-pulse{width:7px;height:7px;border-radius:50%;background:var(--ink-3);transition:background .8s,box-shadow .8s}
+.console.running .m-mk .module-pulse{background:var(--c1);box-shadow:0 0 8px var(--c1);animation:blink 1.4s ease-in-out infinite}
+.console.running .m-sl .module-pulse{background:var(--c3);box-shadow:0 0 8px var(--c3);animation:blink 1.4s ease-in-out infinite .35s}
+.console.running .m-ao .module-pulse{background:var(--c2);box-shadow:0 0 8px var(--c2);animation:blink 1.4s ease-in-out infinite .7s}
+.console.running .m-rp .module-pulse{background:var(--c4);box-shadow:0 0 8px var(--c4);animation:blink 1.4s ease-in-out infinite 1.05s}
+.module-val{
+  font-family:var(--sans);font-weight:900;font-size:28px;letter-spacing:-0.025em;color:var(--ink);
+  font-variant-numeric:tabular-nums;position:relative;z-index:2;margin-top:10px;
+}
+.module-val small{font-size:13px;color:var(--ink-2);font-weight:600;margin-left:3px}
+.module-desc{
+  font-family:var(--mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-3);margin-top:4px;position:relative;z-index:2;
+}
+
+/* The START button overlay (covers the panel until clicked) */
+.start-overlay{
+  position:absolute;inset:0;z-index:20;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;
+  background:rgba(10,10,20,0.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  cursor:pointer;
+  transition:opacity .6s ease-out, transform .6s ease-out;
+}
+.start-overlay.gone{opacity:0;pointer-events:none;transform:scale(1.08)}
+.ignite-btn{
+  width:140px;height:140px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, rgba(255,255,255,0.4), transparent 50%), linear-gradient(135deg,var(--c2),#5fff8f);
+  color:#0a0a14;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;font-weight:700;line-height:1;
+  box-shadow:
+    0 0 0 0   rgba(181,255,61,0.6),
+    0 14px 0  #0a0a14,
+    0 20px 60px rgba(181,255,61,0.45);
+  transition:transform .15s, box-shadow .2s;
+  position:relative;
+}
+.ignite-btn::before,
+.ignite-btn::after{
+  content:"";position:absolute;inset:-6px;border-radius:50%;
+  border:1.5px solid rgba(181,255,61,0.55);
+  animation:ignite-pulse 2.2s ease-out infinite;
+}
+.ignite-btn::after{animation-delay:1.1s}
+@keyframes ignite-pulse{
+  0%   { transform:scale(.9);  opacity:.9; }
+  100% { transform:scale(1.5); opacity:0; }
+}
+.ignite-btn svg{margin-bottom:8px}
+.ignite-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:
+    0 0 0 0   rgba(181,255,61,0.7),
+    0 17px 0  #0a0a14,
+    0 30px 80px rgba(181,255,61,0.7);
+}
+.ignite-btn:active{transform:translateY(6px);box-shadow:0 6px 0 #0a0a14,0 8px 20px rgba(181,255,61,0.4)}
+.ignite-label{
+  font-family:var(--mono);font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--ink-2);
+  text-align:center;max-width:36ch;
+}
+.ignite-label b{color:var(--c2)}
+
+@keyframes engine-pulse{
+  0%,100% { box-shadow:0 0 0 0 rgba(181,255,61,0.5); }
+  50%     { box-shadow:0 0 0 12px rgba(181,255,61,0); }
+}
+
+@media (max-width:880px){
+  .counters{grid-template-columns:1fr 1fr}
+  .counters > div:nth-child(3){grid-column:span 2}
+  .console-grid{grid-template-columns:1fr}
+  .modules{grid-template-columns:1fr 1fr}
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   REGIONS  ───────────────────────────────────────────────────────────────
+   Three clickable city cards. Click each to "tune in" to live activity.
+   ════════════════════════════════════════════════════════════════════════ */
+.regions{padding:120px 32px;text-align:center}
+.regions-inner{max-width:1180px;margin:0 auto}
+.regions h2{
+  font-family:var(--sans);font-weight:900;font-size:clamp(40px,6vw,82px);line-height:.92;letter-spacing:-0.025em;
+  text-transform:uppercase;margin-bottom:18px;
+}
+.regions h2 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--c2)}
+.regions > p{color:var(--ink-2);max-width:540px;margin:0 auto 60px;font-size:16px}
+.cities{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.city{
+  position:relative;border-radius:24px;padding:32px;height:340px;
+  background:var(--bg-2);border:1px solid var(--line-2);cursor:pointer;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:space-between;text-align:left;
+  transition:border-color .25s,transform .25s;
+}
+.city:hover{transform:translateY(-6px);border-color:var(--line-2)}
+.city .city-bg{
+  position:absolute;inset:0;opacity:.4;filter:blur(40px);transition:opacity .3s;
+  background:radial-gradient(circle at 30% 30%, var(--city-c), transparent 60%);
+}
+.city.active .city-bg{opacity:.85}
+.city.syd{--city-c:rgba(0,212,255,.7)}
+.city.dxb{--city-c:rgba(255,184,0,.7)}
+.city.nyc{--city-c:rgba(255,61,156,.7)}
+.city .name{
+  font-family:var(--sans);font-weight:900;font-size:42px;letter-spacing:-0.02em;text-transform:uppercase;z-index:2;position:relative;
+}
+.city .name em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--c2);font-size:18px;display:block;text-transform:none;letter-spacing:0;margin-top:4px}
+.city .meta{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(255,255,255,0.7);z-index:2;position:relative;
+}
+.city .clock{
+  font-family:var(--mono);font-size:32px;font-weight:700;letter-spacing:0;color:#fff;z-index:2;position:relative;
+  font-variant-numeric:tabular-nums;
+}
+.city .live-pip{
+  display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:9px;letter-spacing:0.26em;color:var(--c2);z-index:2;position:relative;
+  text-transform:uppercase;
+}
+.city .live-pip::before{
+  content:"";width:7px;height:7px;border-radius:50%;background:var(--c2);box-shadow:0 0 8px var(--c2);animation:blink 1.4s ease-in-out infinite;
+}
+/* Activated state reveal — when a city is clicked, slide in a small
+   "what's happening here" blurb. Single key animation per the skill.    */
+.city-detail{
+  position:absolute;left:0;right:0;bottom:0;z-index:3;
+  padding:20px 24px;
+  background:linear-gradient(180deg,rgba(10,10,20,0.0),rgba(10,10,20,0.85));
+  font-family:var(--mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#fff;
+  transform:translateY(120%);transition:transform .35s cubic-bezier(.2,.9,.3,1.2);
+  pointer-events:none;
+}
+.city-detail b{display:block;color:var(--c2);font-weight:700;margin-bottom:6px;letter-spacing:0.18em}
+.city-detail small{display:block;color:var(--ink-2);font-size:9px;letter-spacing:0.2em;margin-top:6px;text-transform:none}
+.city.active .city-detail{transform:translateY(0)}
+
+/* ════════════════════════════════════════════════════════════════════════
+   CTA — Massive "start the build" button.
+   ════════════════════════════════════════════════════════════════════════ */
+.cta-section{
+  padding:140px 32px 160px;text-align:center;position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:"";position:absolute;inset:0;opacity:.5;
+  background:
+    radial-gradient(circle at 30% 50%, rgba(181,255,61,0.25), transparent 50%),
+    radial-gradient(circle at 70% 50%, rgba(255,61,156,0.25), transparent 50%);
+  filter:blur(60px);
+}
+.cta-section-inner{position:relative;z-index:2}
+.cta-section h2{
+  font-family:var(--sans);font-weight:900;font-size:clamp(48px,8.5vw,140px);
+  line-height:.86;letter-spacing:-0.035em;text-transform:uppercase;max-width:14ch;margin:0 auto 36px;
+}
+.cta-section h2 em{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--c2),var(--c1));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.cta-section p{color:var(--ink-2);font-size:18px;max-width:520px;margin:0 auto 48px}
+.start-btn{
+  display:inline-flex;align-items:center;gap:18px;
+  padding:24px 48px;
+  font-family:var(--sans);font-weight:900;font-size:18px;letter-spacing:0.12em;text-transform:uppercase;color:#0a0a14;
+  background:linear-gradient(135deg,var(--c2),#5fff8f);
+  border-radius:999px;
+  box-shadow:0 16px 60px rgba(181,255,61,0.45);
+  transition:transform .2s, box-shadow .2s;
+}
+.start-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 24px 80px rgba(181,255,61,0.7)}
+.start-btn:active{transform:translateY(0) scale(.98)}
+.start-btn::after{content:"→";font-size:24px}
+
+/* ════════════════════════════════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════════════════════════════════ */
+footer{
+  padding:60px 32px 40px;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:1fr auto auto;gap:40px;align-items:center;
+  font-family:var(--mono);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-3);
+}
+footer .brand-logo{height:64px;width:auto;opacity:.9}
+footer .brand{font-family:var(--serif);font-style:italic;font-size:22px;letter-spacing:0;color:var(--ink);text-transform:none;display:none}
+footer a{transition:color .15s}
+footer a:hover{color:var(--c2)}
+
+/* ════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════════════════════════ */
+@media (max-width:880px){
+  nav{padding:16px 20px}
+  nav .pill{padding:6px 10px;font-size:9px}
+  .hero{padding:120px 20px 60px}
+  .tiles{grid-template-columns:1fr;padding:0 20px 80px}
+  .tile-inner{height:380px}
+  .tile-face{padding:24px;height:380px}
+  .tile-face.back{padding:0}
+  .tile-back-content{padding:24px}
+  .tile h3,
+  .tile-face.front h3{font-size:36px}
+  .tile-back-headline{font-size:28px}
+  .build{padding:80px 20px}
+  .build .top{grid-template-columns:1fr;gap:24px}
+  .workspace{height:340px}
+  .regions{padding:80px 20px}
+  .cities{grid-template-columns:1fr;gap:16px}
+  .city{height:auto;padding:24px}
+  .tile-overlay-inner{grid-template-columns:1fr;gap:24px;padding:80px 24px 60px}
+  .tile-overlay-art{display:none}
+  footer{grid-template-columns:1fr;gap:18px;padding:40px 20px 30px}
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   3D LAYER — adds depth + mouse-tracked tilt to interactive elements
+   ════════════════════════════════════════════════════════════════════════ */
+/* Hero gets perspective context */
+.hero{perspective:1400px;perspective-origin:50% 30%}
+
+/* The 3D shape that hovers in the corner of the hero */
+.hero-3d{
+  position:absolute;top:50%;right:6%;width:300px;height:300px;
+  z-index:2;pointer-events:none;
+  perspective:900px;
+  display:none;
+}
+@media (min-width:1100px){.hero-3d{display:block;transform:translateY(-50%)}}
+.hero-3d .cube{
+  position:absolute;inset:0;
+  transform-style:preserve-3d;
+  animation:cube-spin 18s linear infinite;
+  will-change:transform;
+}
+.hero-3d .cube .face{
+  position:absolute;top:50%;left:50%;
+  width:180px;height:180px;
+  transform-origin:center;
+  border-radius:18px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:11px;letter-spacing:0.28em;text-transform:uppercase;
+  color:#0a0a14;font-weight:700;
+  box-shadow:0 0 40px rgba(0,0,0,0.4) inset, 0 0 0 1px rgba(255,255,255,0.18) inset;
+}
+.hero-3d .cube .face.f1{background:linear-gradient(135deg,#fff,#f5f5f3) /* logo face */;   transform:translate(-50%,-50%) rotateY(0deg)   translateZ(90px);overflow:hidden}
+.hero-3d .cube .face.f1 img{width:64%;height:auto;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.15))}
+.hero-3d .cube .face.f2{background:linear-gradient(135deg,var(--c3),var(--c4));   transform:translate(-50%,-50%) rotateY(90deg)  translateZ(90px)}
+.hero-3d .cube .face.f3{background:linear-gradient(135deg,var(--c2),var(--c1));   transform:translate(-50%,-50%) rotateY(180deg) translateZ(90px)}
+.hero-3d .cube .face.f4{background:linear-gradient(135deg,var(--c4),var(--c3));   transform:translate(-50%,-50%) rotateY(-90deg) translateZ(90px)}
+.hero-3d .cube .face.f5{background:linear-gradient(135deg,var(--c5),var(--c2));   transform:translate(-50%,-50%) rotateX(90deg)  translateZ(90px)}
+.hero-3d .cube .face.f6{background:linear-gradient(135deg,var(--c2),var(--c4));   transform:translate(-50%,-50%) rotateX(-90deg) translateZ(90px)}
+@keyframes cube-spin{
+  0%   { transform:rotateX(-20deg) rotateY(0deg)   rotateZ(0deg); }
+  100% { transform:rotateX(-20deg) rotateY(360deg) rotateZ(360deg); }
+}
+.hero-3d .cube-glow{
+  position:absolute;top:50%;left:50%;width:260px;height:260px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(181,255,61,0.5), transparent 60%);
+  filter:blur(40px);
+  transform:translate(-50%,-50%);
+  animation:cube-glow-pulse 3.5s ease-in-out infinite;
+}
+@keyframes cube-glow-pulse{
+  0%,100% { opacity:.6; transform:translate(-50%,-50%) scale(1);    }
+  50%     { opacity:1;  transform:translate(-50%,-50%) scale(1.12); }
+}
+
+/* 3D mouse-tracked tilt on tiles + slow auto-flip showing campaign back-side
+   The tile becomes a 3D-rotating card. .tile-inner is the rotating element.
+   .tile-face.front and .tile-face.back are the two sides. Pause on hover,
+   instant flip on click.                                                     */
+.tiles{perspective:1400px}
+.tile{
+  position:relative;
+  transform-style:preserve-3d;
+  border:0;background:transparent;padding:0;
+  border-radius:24px;
+  /* Outer tilt holder, JS sets perspective tilt */
+  transition:transform .15s ease-out;
+}
+/* Per ui-ux-pro-max skill: no infinite decorative rotation. Each card now
+   flips ONCE on first scroll-into-view, sits on the back for 4s, returns.
+   Subsequent flips are user-triggered: hover OR keyboard focus OR a
+   one-click manual flip via the .is-flipped class.                       */
+.tile-inner{
+  position:relative;
+  width:100%;height:520px;
+  transform-style:preserve-3d;
+  transform:rotateY(0deg);
+  transition:transform 1.4s cubic-bezier(.7,0,.3,1);
+  will-change:transform;
+}
+.tile.is-flipped .tile-inner,
+.tile:hover .tile-inner,
+.tile:focus-visible .tile-inner{transform:rotateY(180deg)}
+/* When card has the .reveal-shown class (from IntersectionObserver),
+   the entry-reveal flip stays applied for its duration via inline JS. */
+
+/* 4-level elevation shadows for dimensional depth per skill guidance */
+.tile-face{
+  box-shadow:
+    0 1px 3px  rgba(0,0,0,0.10),
+    0 4px 12px rgba(0,0,0,0.20),
+    0 16px 40px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.tile:hover .tile-face{
+  box-shadow:
+    0 1px 3px   rgba(0,0,0,0.10),
+    0 6px 18px  rgba(0,0,0,0.25),
+    0 22px 60px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+}
+/* Visible focus state for keyboard navigation */
+.tile:focus-visible{outline:2px solid var(--c2);outline-offset:6px}
+.tile{cursor:pointer}
+
+/* Hover hint on the front, replaces the old infinite-blink chip */
+.flip-hint{
+  position:absolute;top:24px;right:24px;z-index:3;
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;
+  color:rgba(255,255,255,0.65);
+  padding:6px 10px;border-radius:999px;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,0.10);
+  opacity:.65;
+  transition:opacity .25s, color .25s, border-color .25s;
+  pointer-events:none;
+}
+.tile:hover .flip-hint{opacity:1;color:var(--c2);border-color:rgba(181,255,61,0.4)}
+.flip-hint svg{flex-shrink:0}
+
+.tile-face{
+  position:absolute;inset:0;
+  border-radius:24px;
+  padding:36px;
+  height:520px;
+  overflow:hidden;
+  border:1px solid var(--line-2);
+  background:var(--bg-2);
+  display:flex;flex-direction:column;justify-content:space-between;
+  -webkit-backface-visibility:hidden;backface-visibility:hidden;
+}
+.tile-face.back{transform:rotateY(180deg);padding:0}
+.tile-face.front .tile-num,
+.tile-face.front h3,
+.tile-face.front p,
+.tile-face.front .cta{position:relative;z-index:2;transform:translateZ(0)}
+
+/* Back face: per-engine abstract gradient + subtle line pattern.
+   No photos. Pure type + gradient + texture. Premium and on-brand.       */
+.tile-face.back{background:var(--bg-3)}
+.t-marketing .tile-face.back{
+  background:
+    radial-gradient(circle at 15% 20%, rgba(0,212,255,0.85) 0%, transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(124,61,255,0.75) 0%, transparent 60%),
+    linear-gradient(135deg,#0a0a14,#1a0d28);
+}
+.t-sales .tile-face.back{
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,61,156,0.85) 0%, transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,184,0,0.70) 0%, transparent 60%),
+    linear-gradient(135deg,#0a0a14,#28030d);
+}
+.t-always .tile-face.back{
+  background:
+    radial-gradient(circle at 15% 20%, rgba(181,255,61,0.78) 0%, transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(0,212,255,0.65) 0%, transparent 60%),
+    linear-gradient(135deg,#0a0a14,#0a2018);
+}
+/* Diagonal line texture overlay for depth */
+.tile-back-tint{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    repeating-linear-gradient(135deg,
+      rgba(255,255,255,0.04) 0 1px,
+      transparent 1px 14px);
+  mix-blend-mode:overlay;
+  opacity:0.7;
+}
+/* Big ghost numeral in the corner */
+.tile-back-num{
+  position:absolute;top:-30px;right:-10px;
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:280px;line-height:0.85;letter-spacing:-0.04em;
+  color:rgba(255,255,255,0.08);
+  pointer-events:none;
+  z-index:1;
+}
+.tile-back-mask{
+  position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(10,10,20,0.18) 0%,
+    transparent 35%,
+    transparent 65%,
+    rgba(10,10,20,0.55) 100%);
+}
+.tile-back-content{
+  position:absolute;inset:0;padding:32px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  color:#fff;z-index:2;
+}
+.tile-back-tag{
+  display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
+  font-family:var(--mono);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;
+  padding:8px 14px;border-radius:999px;
+  background:rgba(255,255,255,0.12);backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,0.18);
+}
+.tile-back-tag::before{
+  content:"";width:7px;height:7px;border-radius:50%;background:var(--c2);
+  box-shadow:0 0 8px var(--c2);
+}
+.tile-back-meta{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;
+  color:rgba(255,255,255,0.7);margin-bottom:14px;
+}
+.tile-back-headline{
+  font-family:var(--sans);font-weight:900;font-size:34px;line-height:0.95;letter-spacing:-0.02em;text-transform:uppercase;
+  margin-bottom:18px;
+}
+.tile-back-headline em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--c2)}
+.tile-back-stats{
+  display:flex;gap:16px;flex-wrap:wrap;margin-top:6px;
+}
+.tile-back-stats span{
+  display:inline-flex;flex-direction:column;
+  font-family:var(--mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(255,255,255,0.65);
+}
+.tile-back-stats span b{
+  display:block;font-family:var(--sans);font-weight:900;font-size:24px;letter-spacing:-0.01em;color:#fff;
+  margin-bottom:2px;
+}
+.tile-back-stats span.acid b{color:var(--c2)}
+.tile-back-stats span.pink b{color:var(--c3)}
+.tile-back-stats span.cyan b{color:var(--c1)}
+
+/* Re-hoist content over the tile-bg layer on the front */
+.tile-face.front .tile-bg{position:absolute;inset:0;z-index:1}
+.tile-face.front .tile-num,
+.tile-face.front h3,
+.tile-face.front p,
+.tile-face.front .cta{z-index:2}
+
+/* 3D depth on the bricks */
+.tray{perspective:600px}
+.brick{
+  transform-style:preserve-3d;
+  box-shadow:
+    0 6px 0 rgba(0,0,0,0.35),
+    0 8px 18px rgba(0,0,0,0.30),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+  transform:translateY(0);
+  transition:transform .15s, box-shadow .15s, opacity .25s;
+}
+.brick:hover{
+  transform:translateY(-4px) rotateX(-8deg) rotateY(-2deg);
+  box-shadow:
+    0 10px 0 rgba(0,0,0,0.35),
+    0 14px 28px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.5);
+}
+.brick:active{
+  transform:translateY(2px);
+  box-shadow:
+    0 2px 0 rgba(0,0,0,0.35),
+    0 4px 10px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+/* 3D depth on the city cards */
+.cities{perspective:1400px}
+.city{transform-style:preserve-3d;will-change:transform;transition:transform .15s ease-out, border-color .25s}
+.city .name,
+.city .meta,
+.city .clock,
+.city .live-pip{transform:translateZ(28px)}
+
+/* 3D depth on the START button */
+.start-btn{
+  transform-style:preserve-3d;
+  box-shadow:
+    0 10px 0 #0a0a14,
+    0 16px 40px rgba(181,255,61,0.5),
+    inset 0 2px 0 rgba(255,255,255,0.5);
+}
+.start-btn:hover{
+  transform:translateY(-4px);
+  box-shadow:
+    0 14px 0 #0a0a14,
+    0 24px 60px rgba(181,255,61,0.7),
+    inset 0 2px 0 rgba(255,255,255,0.6);
+}
+.start-btn:active{
+  transform:translateY(4px);
+  box-shadow:
+    0 4px 0 #0a0a14,
+    0 8px 16px rgba(181,255,61,0.4),
+    inset 0 2px 0 rgba(255,255,255,0.5);
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   AI SERVICES — 18 services grouped into 5 colour-coded categories
+   ════════════════════════════════════════════════════════════════════════ */
+.services-sec{padding:120px 32px;border-top:1px solid var(--line);position:relative}
+.services-inner{max-width:1280px;margin:0 auto}
+.svc-cat{margin-bottom:44px}
+.svc-cat:last-child{margin-bottom:0}
+.svc-cat-head{
+  display:flex;align-items:baseline;gap:14px;margin-bottom:18px;flex-wrap:wrap;
+  padding-bottom:12px;border-bottom:1px solid var(--line);
+}
+.svc-cat-head .n{
+  font-family:var(--mono);font-size:11px;letter-spacing:0.24em;color:var(--ink-3);
+}
+.svc-cat-head h3{
+  font-family:var(--sans);font-weight:900;font-size:clamp(22px,2.6vw,30px);letter-spacing:-0.02em;
+}
+.svc-cat-head .sub{
+  font-family:var(--serif);font-style:italic;font-size:18px;color:var(--ink-2);
+}
+.svc-cat.cc1 h3,.svc-cat.cc1 .svc-card .dot{color:var(--c1)}
+.svc-cat.cc2 h3,.svc-cat.cc2 .svc-card .dot{color:var(--c3)}
+.svc-cat.cc3 h3,.svc-cat.cc3 .svc-card .dot{color:var(--c2)}
+.svc-cat.cc4 h3,.svc-cat.cc4 .svc-card .dot{color:var(--c5)}
+.svc-cat.cc5 h3,.svc-cat.cc5 .svc-card .dot{color:var(--c4)}
+.svc-cat.cc1 .svc-cat-head{border-color:rgba(0,212,255,0.25)}
+.svc-cat.cc2 .svc-cat-head{border-color:rgba(255,61,156,0.25)}
+.svc-cat.cc3 .svc-cat-head{border-color:rgba(181,255,61,0.25)}
+.svc-cat.cc4 .svc-cat-head{border-color:rgba(124,61,255,0.25)}
+.svc-cat.cc5 .svc-cat-head{border-color:rgba(255,184,0,0.25)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.svc-card{
+  background:var(--bg-2);border:1px solid var(--line);border-radius:16px;padding:20px 20px 22px;
+  transition:transform .15s ease-out, border-color .2s, box-shadow .2s;cursor:default;position:relative;overflow:hidden;
+}
+.svc-cat.cc1 .svc-card:hover{border-color:rgba(0,212,255,0.5);box-shadow:0 10px 30px rgba(0,212,255,0.12)}
+.svc-cat.cc2 .svc-card:hover{border-color:rgba(255,61,156,0.5);box-shadow:0 10px 30px rgba(255,61,156,0.12)}
+.svc-cat.cc3 .svc-card:hover{border-color:rgba(181,255,61,0.5);box-shadow:0 10px 30px rgba(181,255,61,0.12)}
+.svc-cat.cc4 .svc-card:hover{border-color:rgba(124,61,255,0.5);box-shadow:0 10px 30px rgba(124,61,255,0.12)}
+.svc-cat.cc5 .svc-card:hover{border-color:rgba(255,184,0,0.5);box-shadow:0 10px 30px rgba(255,184,0,0.12)}
+.svc-card:hover{transform:translateY(-4px)}
+.svc-card .dot{
+  display:inline-block;width:8px;height:8px;border-radius:50%;background:currentColor;
+  box-shadow:0 0 10px currentColor;margin-bottom:14px;
+}
+.svc-card h4{
+  font-family:var(--sans);font-weight:800;font-size:16px;letter-spacing:-0.01em;margin-bottom:8px;color:var(--ink);
+}
+.svc-card p{font-size:13px;color:var(--ink-2);line-height:1.5}
+@media (max-width:880px){
+  .services-sec{padding:80px 20px}
+  .svc-grid{grid-template-columns:1fr}
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   PARENT SHOWCASE (rebuilt below-hero) — brand beat · divisions bento ·
+   always on engine · where we operate · soft contact. Sells nothing.
+   ════════════════════════════════════════════════════════════════════════ */
+
+/* scroll reveal */
+[data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+[data-reveal].is-revealed{opacity:1;transform:none}
+
+/* ── Brand beat ── */
+.beat{max-width:1080px;margin:0 auto;padding:150px 32px 30px;text-align:center;position:relative}
+.beat .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--c2);margin-bottom:18px;display:inline-flex;align-items:center;gap:10px}
+.beat .kicker::before,.beat .kicker::after{content:"";width:26px;height:1px;background:var(--c2)}
+.beat h2{font-family:var(--sans);font-weight:800;font-size:clamp(30px,5vw,60px);line-height:1.06;letter-spacing:-0.03em;max-width:20ch;margin:0 auto}
+.beat h2 em{font-family:var(--serif);font-style:italic;font-weight:400;background:linear-gradient(135deg,var(--c1),var(--c5));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.beat .beat-sub{color:var(--ink-2);font-size:18px;line-height:1.65;max-width:600px;margin:26px auto 0}
+.beat .beat-sub b{color:var(--ink)}
+.beat-chips{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.beat-chip{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--line);border-radius:999px;padding:10px 16px;display:inline-flex;align-items:center;gap:9px}
+.beat-chip b{color:var(--ink);font-weight:700}
+.beat-chip .pip{width:7px;height:7px;border-radius:50%;background:var(--c2);box-shadow:0 0 8px var(--c2)}
+
+/* ── Divisions bento ── */
+.divisions{max-width:1280px;margin:0 auto;padding:70px 32px 110px}
+.divisions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.divcard{position:relative;background:var(--bg-2);border:1px solid var(--line);border-top-width:3px;border-radius:18px;padding:26px 24px 24px;overflow:hidden;cursor:pointer;transition:border-color .25s,box-shadow .25s,transform .25s}
+.divcard::before{content:"";position:absolute;inset:0;opacity:0;transition:opacity .3s;background:radial-gradient(circle at 50% -10%,var(--dc),transparent 65%);pointer-events:none}
+.divcard:hover{border-color:var(--dc);box-shadow:0 18px 50px rgba(0,0,0,.45);transform:translateY(-6px)}
+.divcard:hover::before{opacity:.10}
+.divcard .dc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.divcard .dc-num{font-family:var(--mono);font-size:11px;letter-spacing:0.24em;color:var(--ink-3)}
+.divcard .dc-dot{width:10px;height:10px;border-radius:50%;background:var(--dc);box-shadow:0 0 12px var(--dc)}
+.divcard h3{font-family:var(--sans);font-weight:900;font-size:23px;letter-spacing:-0.02em;color:var(--dc)}
+.divcard .dc-cat{font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-3);margin-top:6px}
+.divcard .dc-desc{color:var(--ink-2);font-size:14px;line-height:1.55;margin-top:14px}
+.divcard .dc-list{margin-top:16px;display:flex;flex-wrap:wrap;gap:7px}
+.divcard .dc-list span{font-family:var(--mono);font-size:10px;letter-spacing:0.02em;color:var(--dc);background:color-mix(in srgb,var(--dc) 12%,transparent);border:1px solid color-mix(in srgb,var(--dc) 45%,transparent);border-radius:7px;padding:5px 9px}
+.divcard .dc-foot{margin-top:20px;display:flex;align-items:center;justify-content:space-between}
+.divcard .dc-go{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--dc);opacity:0;transform:translateX(-6px);transition:opacity .25s,transform .25s}
+.divcard:hover .dc-go{opacity:1;transform:none}
+.divcard .dc-soon{font-family:var(--mono);font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-3)}
+.divcard .dc-flag{position:absolute;top:0;right:0;font-family:var(--mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#0a0a14;background:var(--dc);padding:5px 12px;border-bottom-left-radius:12px;font-weight:700}
+.dd1{--dc:var(--c1);border-top-color:var(--c1)}
+.dd2{--dc:var(--c3);border-top-color:var(--c3)}
+.dd3{--dc:var(--c2);border-top-color:var(--c2)}
+.dd4{--dc:var(--c5);border-top-color:var(--c5)}
+.dd5{--dc:var(--c4);border-top-color:var(--c4)}
+.dd6{--dc:var(--c6);border-top-color:var(--c6)}
+.divcard .dc-chev{display:inline-block;transition:transform .3s}
+.divcard.open .dc-chev{transform:rotate(180deg)}
+.divcard.open .dc-go{opacity:1;transform:none}
+.divcard.open{border-color:var(--dc)}
+.dc-panel{max-height:0;overflow:hidden;opacity:0;padding-top:0;margin-top:0;transition:max-height .45s cubic-bezier(.2,.7,.2,1),opacity .3s,margin .3s,padding .3s}
+.divcard.open .dc-panel{max-height:360px;opacity:1;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.dc-panel .dc-pcopy{color:var(--ink-2);font-size:14px;line-height:1.6}
+.dc-panel .dc-pcta{margin-top:16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.dc-panel .dc-talk{font-family:var(--sans);font-weight:700;font-size:13px;color:var(--dc);background:rgba(255,255,255,0.05);border:1px solid var(--dc);border-radius:100px;padding:10px 18px;cursor:pointer;transition:background .25s,box-shadow .25s}
+.dc-panel .dc-talk:hover{background:rgba(255,255,255,0.1);box-shadow:0 0 16px -4px var(--dc)}
+.dc-panel .dc-coming{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-3)}
+
+/* ── Always-on engine showcase ── */
+.engine{max-width:1280px;margin:0 auto;padding:30px 32px 120px}
+.engine-head-out{text-align:center;margin-bottom:40px}
+.engine-head-out .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--c2);margin-bottom:16px;display:inline-flex;align-items:center;gap:10px}
+.engine-head-out .kicker::before,.engine-head-out .kicker::after{content:"";width:26px;height:1px;background:var(--c2)}
+.engine-head-out h2{font-family:var(--sans);font-weight:900;font-size:clamp(30px,4.6vw,52px);letter-spacing:-0.03em;line-height:1}
+.engine-head-out h2 em{font-family:var(--serif);font-style:italic;font-weight:400;background:linear-gradient(135deg,var(--c2),var(--c1));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.engine-head-out p{color:var(--ink-2);font-size:17px;line-height:1.6;max-width:560px;margin:18px auto 0}
+.engine-panel{background:var(--bg-2);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.epanel-bar{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid var(--line)}
+.epanel-bar .title{font-family:var(--mono);font-size:12px;letter-spacing:0.14em;color:var(--ink-2)}
+.epanel-bar .live{font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--c2);display:inline-flex;align-items:center;gap:8px}
+.epanel-bar .live .pip{width:8px;height:8px;border-radius:50%;background:var(--c2);box-shadow:0 0 10px var(--c2);animation:epip 2s ease-in-out infinite}
+@keyframes epip{0%,100%{opacity:1}50%{opacity:.25}}
+.epanel-grid{display:grid;grid-template-columns:1.05fr .95fr}
+.efeed{padding:22px;border-right:1px solid var(--line);min-height:360px}
+.efeed .ef-head{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-3);margin-bottom:14px}
+.ef-list{display:flex;flex-direction:column;gap:8px}
+.ef-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:11px 13px;background:var(--bg-3);border:1px solid var(--line);border-radius:10px;opacity:0;transform:translateY(8px);transition:opacity .45s,transform .45s}
+.ef-row.in{opacity:1;transform:none}
+.ef-row .t{font-family:var(--mono);font-size:10px;color:var(--ink-3);white-space:nowrap}
+.ef-row .msg{font-size:13px;color:var(--ink-2)}
+.ef-row .msg b{color:var(--ink)}
+.ef-row .tag{font-family:var(--mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:6px;white-space:nowrap}
+.tag-c1{color:var(--c1);background:rgba(0,212,255,.12)}
+.tag-c2{color:var(--c2);background:rgba(181,255,61,.12)}
+.tag-c3{color:var(--c3);background:rgba(255,61,156,.12)}
+.tag-c4{color:var(--c4);background:rgba(255,184,0,.12)}
+.tag-c5{color:var(--c5);background:rgba(124,61,255,.12)}
+.tag-c6{color:var(--c6);background:rgba(45,212,191,.12)}
+.eorb{position:relative;min-height:360px;display:flex;align-items:center;justify-content:center}
+.eorb-ring{position:absolute;width:78%;aspect-ratio:1;border-radius:50%;border:1px dashed var(--line)}
+.eorb-ring.r2{width:54%;border-style:solid;border-color:rgba(255,255,255,.05)}
+.eorb-core{position:relative;z-index:3;width:92px;height:92px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%,#2a2a45,#11111d);border:1px solid var(--line-2);box-shadow:0 0 50px rgba(0,212,255,.22)}
+.eorb-core img{width:42px;height:auto}
+.eorb-core::after{content:"";position:absolute;inset:-10px;border-radius:50%;border:1px solid rgba(0,212,255,.25);animation:orbpulse 3s ease-in-out infinite}
+@keyframes orbpulse{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.18);opacity:0}}
+.enode{position:absolute;z-index:2;width:58px;height:58px;border-radius:15px;background:var(--bg-3);border:1px solid var(--line);border-top-width:2px;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--mono);font-size:8.5px;letter-spacing:0.06em;text-transform:uppercase;line-height:1.25;color:var(--ink-2);transform:translate(-50%,-50%);transition:border-color .3s}
+.enode b{color:var(--ink)}
+.enode.n1{left:50%;top:13%;--dc:var(--c1);border-top-color:var(--c1)}
+.enode.n2{left:83%;top:32%;--dc:var(--c3);border-top-color:var(--c3)}
+.enode.n3{left:83%;top:68%;--dc:var(--c2);border-top-color:var(--c2)}
+.enode.n4{left:50%;top:87%;--dc:var(--c5);border-top-color:var(--c5)}
+.enode.n5{left:17%;top:68%;--dc:var(--c4);border-top-color:var(--c4)}
+.enode.n6{left:17%;top:32%;--dc:var(--c6);border-top-color:var(--c6)}
+.enode.lit{border-color:var(--dc);color:var(--ink);box-shadow:0 0 22px -4px var(--dc)}
+
+/* ── Soft contact ── */
+.contact{max-width:1080px;margin:0 auto;padding:40px 32px 60px;text-align:center;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:0;opacity:.4;background:radial-gradient(circle at 30% 50%,rgba(0,212,255,.18),transparent 55%),radial-gradient(circle at 70% 50%,rgba(124,61,255,.18),transparent 55%);filter:blur(60px)}
+.contact-inner{position:relative;z-index:2}
+.contact .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--c2);margin-bottom:18px;display:inline-flex;align-items:center;gap:10px}
+.contact .kicker::before,.contact .kicker::after{content:"";width:26px;height:1px;background:var(--c2)}
+.contact h2{font-family:var(--sans);font-weight:900;font-size:clamp(36px,6vw,76px);line-height:.96;letter-spacing:-0.03em;max-width:16ch;margin:0 auto}
+.contact h2 em{font-family:var(--serif);font-style:italic;font-weight:400;background:linear-gradient(135deg,var(--c2),var(--c1));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.contact p{color:var(--ink-2);font-size:18px;max-width:520px;margin:24px auto 36px;line-height:1.6}
+.hello-btn{display:inline-flex;align-items:center;gap:14px;padding:20px 40px;font-family:var(--sans);font-weight:900;font-size:17px;letter-spacing:0.08em;text-transform:uppercase;color:#0a0a14;background:linear-gradient(135deg,var(--c2),#5fff8f);border-radius:999px;box-shadow:0 16px 50px rgba(181,255,61,0.4);transition:transform .2s,box-shadow .2s}
+.hello-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 24px 70px rgba(181,255,61,0.6)}
+.hello-btn:active{transform:translateY(0) scale(.98)}
+.hello-btn::after{content:"→";font-size:22px}
+.contact .contact-mail{display:block;margin-top:22px;font-family:var(--mono);font-size:12px;letter-spacing:0.12em;color:var(--ink-3)}
+.contact .contact-mail a{color:var(--ink-2);transition:color .15s}
+.contact .contact-mail a:hover{color:var(--c2)}
+
+@media (max-width:980px){
+  .divisions-grid{grid-template-columns:repeat(2,1fr)}
+  .epanel-grid{grid-template-columns:1fr}
+  .efeed{border-right:none;border-bottom:1px solid var(--line);min-height:0}
+  .eorb{min-height:300px}
+}
+@media (max-width:620px){
+  .divisions-grid{grid-template-columns:1fr}
+  .beat{padding:110px 20px 20px}
+}
+@media (prefers-reduced-motion: reduce){
+  [data-reveal]{opacity:1 !important;transform:none !important}
+  .ef-row{opacity:1 !important;transform:none !important}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+}
+
+/* ── THE ENGINE: full-bleed animated energy core ── */
+.engine-stage{position:relative;width:100%;height:100vh;min-height:680px;max-height:920px;overflow:hidden;background:radial-gradient(circle at 50% 58%,#16101f,#06060d 72%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+#engineCanvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y}
+.engine-overlay{position:absolute;top:0;left:0;right:0;padding:64px 32px 0;text-align:center;z-index:2;pointer-events:none}
+.engine-overlay .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--c2);margin-bottom:16px;display:inline-flex;align-items:center;gap:10px}
+.engine-overlay .kicker::before,.engine-overlay .kicker::after{content:"";width:26px;height:1px;background:var(--c2)}
+.engine-overlay h2{font-family:var(--sans);font-weight:900;font-size:clamp(34px,5.6vw,76px);letter-spacing:-0.03em;line-height:0.94}
+.engine-overlay h2 em{font-family:var(--serif);font-style:italic;font-weight:400;background:linear-gradient(135deg,var(--c1),var(--c5));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.engine-overlay p{color:var(--ink-2);font-size:17px;line-height:1.6;max-width:520px;margin:18px auto 0}
+.engine-ticker{position:absolute;left:0;right:0;bottom:92px;z-index:2;text-align:center;font-family:var(--mono);font-size:16px;letter-spacing:0.03em;color:var(--ink);min-height:22px;padding:0 24px;pointer-events:none;transition:opacity .4s}
+.engine-ticker b{color:var(--ink)}
+.engine-ticker .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:10px;vertical-align:middle;box-shadow:0 0 12px currentColor;background:currentColor}
+.engine-legend{position:absolute;left:0;right:0;bottom:40px;z-index:2;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;padding:0 24px;pointer-events:none}
+.engine-legend span{font-family:var(--mono);font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:#fff;display:inline-flex;align-items:center;gap:8px}
+.engine-legend span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lc);box-shadow:0 0 8px var(--lc)}
+@media (max-width:880px){
+  .engine-stage{height:auto;min-height:600px}
+  .engine-overlay{padding-top:48px}
+  .engine-overlay p{font-size:15px}
+}
+
+/* ── Problem finder (industry → problem → division → lead) ── */
+.finder{position:relative;padding:96px 24px;max-width:1080px;margin:0 auto}
+.finder .section-head{text-align:center;margin-bottom:38px}
+.finder-stage{position:relative;background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid var(--line);border-radius:28px;padding:48px 32px;min-height:430px;overflow:hidden;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.finder-prog{display:flex;gap:8px;justify-content:center;margin-bottom:34px}
+.finder-prog i{width:34px;height:4px;border-radius:2px;background:var(--line-2);transition:background .4s,box-shadow .4s}
+.finder-prog i.on{background:var(--c1);box-shadow:0 0 14px var(--c1)}
+.fstep{display:none}
+.fstep.active{display:block;animation:fstepIn .5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes fstepIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.fstep-q{font-family:var(--mono);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--c2);text-align:center;margin-bottom:10px}
+.fstep h3{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-0.02em;margin-bottom:30px;line-height:1.05}
+.fstep h3 em{font-family:var(--serif);font-style:italic;font-weight:400}
+.fgrid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:760px;margin:0 auto}
+.fpill{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--ink);background:rgba(255,255,255,0.045);border:1px solid var(--line-2);border-radius:100px;padding:13px 22px;min-height:48px;cursor:pointer;transition:transform .2s,border-color .25s,background .25s;opacity:0;transform:translateY(10px);animation:pillIn .5s cubic-bezier(.2,.7,.2,1) forwards}
+.fpill:hover{border-color:var(--c1);background:rgba(0,212,255,0.1)}
+.fpill:focus-visible{outline:2px solid var(--c1);outline-offset:2px}
+.fpill .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:9px;vertical-align:middle;background:var(--pc,var(--c1));box-shadow:0 0 10px var(--pc,var(--c1))}
+@keyframes pillIn{to{opacity:1;transform:none}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.finput-wrap{display:flex;gap:10px;max-width:580px;margin:0 auto 8px}
+.finput{flex:1;min-width:0;background:rgba(0,212,255,0.08);border:1.5px solid rgba(0,212,255,0.55);border-radius:100px;padding:14px 22px;color:var(--ink);font-family:var(--sans);font-size:16px;box-shadow:0 0 18px rgba(0,212,255,0.18);transition:border-color .2s,box-shadow .2s,background .2s}
+.finput::placeholder{color:rgba(0,212,255,0.7)}
+.finput:focus{outline:none;border-color:var(--c1);background:rgba(0,212,255,0.12);box-shadow:0 0 24px rgba(0,212,255,0.32)}
+.fnext{white-space:nowrap;flex:none}
+.fchips-label{font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-3);text-align:center;margin:24px 0 14px}
+.for-divider{display:flex;align-items:center;gap:14px;max-width:580px;margin:22px auto 18px;color:var(--ink-3);font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase}
+.for-divider::before,.for-divider::after{content:"";flex:1;height:1px;background:var(--line)}
+.fback{display:block;margin:28px auto 0;font-family:var(--mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-3);background:none;border:0;cursor:pointer;transition:color .2s}
+.fback:hover{color:var(--ink)}
+.fresult{text-align:center}
+.fstat{max-width:640px;margin:0 auto 30px;font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.8vw,32px);line-height:1.32;color:var(--ink)}
+.fstat b{font-style:normal;font-family:var(--sans);font-weight:800;color:var(--rc,var(--c1))}
+.fmatch{display:inline-flex;flex-direction:column;align-items:center;gap:5px;text-decoration:none;cursor:pointer;background:color-mix(in srgb,var(--rc,var(--c1)) 10%,transparent);border:1px solid color-mix(in srgb,var(--rc,var(--c1)) 45%,transparent);border-top:3px solid var(--rc,var(--c1));border-radius:18px;padding:22px 32px;margin-bottom:18px;min-width:250px;transition:transform .2s,box-shadow .25s,background .25s}
+.fmatch:hover{transform:translateY(-4px);background:color-mix(in srgb,var(--rc,var(--c1)) 16%,transparent);box-shadow:0 14px 38px -10px var(--rc,var(--c1))}
+.fmatch .fm-tag{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-3)}
+.fmatch .fm-name{font-size:26px;font-weight:800}
+.fmatch .fm-cat{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-2)}
+.fmatch .fm-go{margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--rc,var(--c1))}
+.fmsg{max-width:480px;margin:0 auto 26px;font-family:var(--sans);font-size:15px;line-height:1.5;color:var(--ink-2)}
+.fmsg b{color:var(--rc,var(--c1));font-weight:700}
+.fcta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.fbtn{font-family:var(--sans);font-weight:700;font-size:15px;padding:15px 26px;border-radius:100px;cursor:pointer;transition:transform .2s,box-shadow .3s,opacity .2s;min-height:48px}
+.fbtn:active{transform:translateY(1px)}
+.fbtn-primary{background:var(--c2);color:#06210a;box-shadow:0 8px 30px rgba(181,255,61,0.32)}
+.fbtn-primary:hover{box-shadow:0 10px 40px rgba(181,255,61,0.48)}
+.fbtn-ghost{background:rgba(255,255,255,0.05);border:1px solid var(--line-2);color:var(--ink)}
+.fbtn-ghost:hover{border-color:var(--ink-2)}
+.fform{max-width:430px;margin:28px auto 0;display:none;text-align:left}
+.fform.show{display:block;animation:fstepIn .4s both}
+.fform label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 6px}
+.fform input{width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--line-2);border-radius:12px;padding:13px 16px;color:var(--ink);font-family:var(--sans);font-size:16px;margin-bottom:16px;transition:border-color .2s}
+.fform input:focus{outline:none;border-color:var(--c1)}
+.fform .fbtn-primary{width:100%}
+.ffoot{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-align:center;margin-top:14px}
+.ftrust{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);margin-top:14px}
+.fpill.sel{border-color:var(--pc);background:rgba(255,255,255,0.09);box-shadow:inset 0 0 0 1px var(--pc),0 0 16px -4px var(--pc)}
+.fpill.sel .dot{box-shadow:0 0 12px var(--pc)}
+.fseebtn{margin:24px auto 0;display:block}
+.fseebtn[hidden]{display:none}
+.fsrc{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;color:var(--ink-3);margin:-16px auto 28px;max-width:560px}
+.falso-label{font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-3);margin:4px 0 12px}
+.falso{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
+.falso-chip{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:0.06em;color:var(--ink);background:rgba(255,255,255,0.04);border:1px solid var(--line-2);border-radius:100px;padding:8px 16px}
+.falso-chip .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--pc);box-shadow:0 0 8px var(--pc)}
+.fnudge{display:block;margin:30px auto 0;font-family:var(--mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);background:none;border:0;cursor:pointer;transition:color .2s;animation:fnudgeB 2s ease-in-out infinite}
+.fnudge:hover{color:var(--c1)}
+@keyframes fnudgeB{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+@media(max-width:600px){.finder{padding:72px 16px}.finder-stage{padding:36px 18px}.fpill{font-size:14px;padding:12px 18px}}
+@media(prefers-reduced-motion:reduce){.fstep.active,.fpill,.fform.show,.fnudge{animation:none!important;opacity:1!important;transform:none!important}}
+
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="MDS Diversified home">
-      <img src="assets/logo/mds-diversified-horizontal-light.svg" alt="MDS Diversified">
-    </a>
-    <p class="site-regions" aria-label="Regions">Australia · UAE · America</p>
-    <button class="menu-button" type="button" data-menu-toggle aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="site-nav" data-menu>
-      <a class="nav-cta" href="https://cal.eu/mdsdiversified/30min" target="_blank" rel="noopener">Book Strategy Call</a>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero-section">
-      <div class="hero-copy">
-        <h1><span class="grad-text grad-blue">Marketing</span> and <span class="grad-text grad-green">Sales</span> designed to create <span class="grad-text grad-amber">Revenue</span></h1>
-        <p class="hero-tagline">Used by businesses across Australia, UAE, and America, <span class="nowrap">your build starts in <strong>48&nbsp;hours</strong>.</span></p>
-      </div>
-      <a class="hero-scroll" href="#launch" aria-label="Scroll to next section">
-        <span></span>
-      </a>
-    </section>
+<div class="cursor" id="cursor"></div>
 
-    <section class="apple-card apple-card--light" id="launch" aria-label="Launch — website">
-      <div class="apple-card-inner">
-        <div class="apple-card-tile apple-card-tile--copy">
-          <h2 class="apple-card-headline">A website that <span class="grad-text grad-blue">pulls leads in</span>.</h2>
-          <p class="apple-card-subhead">Custom marketing sites built to support your sales team, convert enquiries, and go live without the tech headache.</p>
-        </div>
-        <div class="apple-card-tile apple-card-tile--image apple-card-tile--launch">
-          <div class="apple-tile-text">
-            <p class="apple-tile-eyebrow">Introducing</p>
-            <h3 class="apple-tile-headline">Marketing that <span class="grad-text grad-aurora">attracts</span>.</h3>
-          </div>
-          <div class="apple-tile-visual">
-            <img src="assets/images/launch-hero.png" alt="Cinematic automotive product photograph" />
-          </div>
-        </div>
-      </div>
-    </section>
+<nav>
+  <a href="#" class="brand-link" aria-label="MDS Diversified, home">
+    <img class="brand-logo" src="assets/logo/mds-diversified-horizontal-light.svg" alt="MDS Diversified">
+  </a>
+</nav>
 
-    <section class="apple-card apple-card--light" id="lift" aria-label="Lift — website + socials">
-      <div class="apple-card-inner">
-        <div class="apple-card-tile apple-card-tile--copy">
-          <h2 class="apple-card-headline">Show up <span class="grad-text grad-aurora">where your customers</span> already are.</h2>
-          <p class="apple-card-subhead">Your social channels set up across LinkedIn, Facebook, Instagram, TikTok, and YouTube, with branded profile and cover assets plus your first month's posting calendar.</p>
-        </div>
-        <div class="apple-card-tile apple-card-tile--image apple-card-tile--lift">
-          <div class="apple-tile-text">
-            <p class="apple-tile-eyebrow">Now showing</p>
-            <h3 class="apple-tile-headline">Show up <span class="grad-text grad-amber">everywhere</span>.</h3>
-          </div>
-          <div class="apple-tile-visual">
-            <img src="assets/images/lift-hero.png" alt="Real estate marketing post" />
-          </div>
-          <div class="apple-tile-share">
-            <p class="apple-stage-share-label">Posted to</p>
-            <ul class="social-tiles" aria-label="Channels">
-              <li class="social-tile social-tile--linkedin" aria-label="LinkedIn"><span>in</span></li>
-              <li class="social-tile social-tile--facebook" aria-label="Facebook"><span>f</span></li>
-              <li class="social-tile social-tile--instagram" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></svg>
-              </li>
-              <li class="social-tile social-tile--tiktok" aria-label="TikTok">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v10.5a2.5 2.5 0 1 1-2.5-2.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M14 3c.4 2.4 2.2 4 4.6 4.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
-              </li>
-              <li class="social-tile social-tile--youtube" aria-label="YouTube">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="9.5,7.5 17,12 9.5,16.5" fill="currentColor"/></svg>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="apple-card apple-card--light" id="scale" aria-label="Scale — website + socials + sales conversion">
-      <div class="apple-card-inner">
-        <div class="apple-card-tile apple-card-tile--copy">
-          <h2 class="apple-card-headline">Find them. Follow up. <span class="grad-text grad-green">Close the deal</span>.</h2>
-          <p class="apple-card-subhead">We work with your existing systems to build a simple lead and sales process, including lead capture, automated follow-up, pipeline support, call scripts, and a founder-led monthly review.</p>
-        </div>
-        <div class="apple-card-tile apple-card-tile--image apple-card-tile--scale">
-          <div class="apple-tile-text">
-            <p class="apple-tile-eyebrow">Live pipeline</p>
-            <h3 class="apple-tile-headline">Leads that <span class="grad-text grad-blue">convert</span>.</h3>
-          </div>
-          <div class="apple-tile-visual">
-            <img src="assets/images/scale-hero.png" alt="CRM dashboard with leads, pipeline, and revenue charts" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="packages" id="packages" aria-label="Packages">
-      <div class="packages-inner">
-        <p class="packages-eyebrow">Packages</p>
-        <h2 class="packages-title">Choose your package. <span class="grad-text grad-blue">Pay once</span> or <span class="grad-text grad-amber">monthly</span>.</h2>
-        <div class="currency-switcher currency-switcher--light" role="group" aria-label="Currency">
-          <button type="button" data-currency-switch="AUD" class="is-active">AUD</button>
-          <button type="button" data-currency-switch="AED">AED</button>
-          <button type="button" data-currency-switch="USD">USD</button>
-        </div>
-
-        <div class="packages-group">
-          <p class="packages-group-label">One-off setup</p>
-          <div class="packages-grid">
-            <article class="package-card">
-              <p class="package-tag">Setup</p>
-              <h3 class="package-name">Launch</h3>
-              <p class="package-price"><span class="package-price-amount" data-price-aud="$5,000" data-price-aed="AED 12,500" data-price-usd="$3,500 USD">$5,000</span><span class="package-price-suffix">one-off</span><span class="package-price-tax">ex GST</span></p>
-              <p class="package-blurb">Get found and ready to sell.</p>
-              <p class="package-desc">A custom marketing website with on-brand copy, clean design, and launch guidance so your site is ready to go live with your chosen hosting provider.</p>
-              <p class="package-includes-label">Includes:</p>
-              <ul class="package-list">
-                <li>Custom marketing website</li>
-                <li>On-brand copy and design</li>
-                <li>Launch guidance</li>
-                <li>Handover for your hosting provider</li>
-              </ul>
-              <a class="package-cta" href="https://buy.stripe.com/5kQeVe5TwcfZ6mkeW63Ru06" target="_blank" rel="noopener">Get Launch</a>
-              <p class="package-fineprint"><a href="terms.html#scope">What's included and what's not &rarr;</a></p>
-            </article>
-
-            <article class="package-card package-card--popular">
-              <span class="package-pill">Most popular</span>
-              <p class="package-tag">Setup</p>
-              <h3 class="package-name">Lift</h3>
-              <p class="package-price"><span class="package-price-amount grad-text grad-aurora" data-price-aud="$7,500" data-price-aed="AED 18,500" data-price-usd="$5,000 USD">$7,500</span><span class="package-price-suffix">one-off</span><span class="package-price-tax">ex GST</span></p>
-              <p class="package-blurb">Get found. Get followed.</p>
-              <p class="package-desc">A custom marketing website plus branded social channel setup, so your business looks consistent wherever customers find you.</p>
-              <p class="package-includes-label">Includes:</p>
-              <ul class="package-list">
-                <li>Custom marketing website</li>
-                <li>On-brand copy and design</li>
-                <li>Launch guidance</li>
-                <li>Handover for your hosting provider</li>
-                <li>Social channels set up across LinkedIn, Facebook, Instagram, TikTok, and YouTube</li>
-                <li>Branded profile and cover assets</li>
-                <li>First-month posting calendar</li>
-              </ul>
-              <a class="package-cta package-cta--primary" href="https://buy.stripe.com/7sY6oI3Loa7R9ywg0a3Ru07" target="_blank" rel="noopener">Get Lift</a>
-              <p class="package-fineprint"><a href="terms.html#scope">What's included and what's not &rarr;</a></p>
-            </article>
-
-            <article class="package-card">
-              <p class="package-tag">Setup</p>
-              <h3 class="package-name">Scale</h3>
-              <p class="package-price"><span class="package-price-amount" data-price-aud="$9,500" data-price-aed="AED 23,500" data-price-usd="$6,500 USD">$9,500</span><span class="package-price-suffix">one-off</span><span class="package-price-tax">ex GST</span></p>
-              <p class="package-blurb">Get found. Get followed. Get closed.</p>
-              <p class="package-desc">A complete marketing and sales setup that connects your website, social presence, lead capture, follow-up, and sales process.</p>
-              <p class="package-includes-label">Includes:</p>
-              <ul class="package-list">
-                <li>Custom marketing website</li>
-                <li>On-brand copy and design</li>
-                <li>Launch guidance</li>
-                <li>Handover for your hosting provider</li>
-                <li>Social channels set up across LinkedIn, Facebook, Instagram, TikTok, and YouTube</li>
-                <li>Branded profile and cover assets</li>
-                <li>First-month posting calendar</li>
-                <li>Lead capture and automated follow-up sequence</li>
-                <li>Sales pipeline support</li>
-                <li>Sales scripts</li>
-                <li>Founder-led monthly review</li>
-              </ul>
-              <a class="package-cta" href="https://buy.stripe.com/8x2fZi0zca7R12001c3Ru08" target="_blank" rel="noopener">Get Scale</a>
-              <p class="package-fineprint"><a href="terms.html#scope">What's included and what's not &rarr;</a></p>
-            </article>
-          </div>
-
-          <details class="package-compare">
-            <summary>Compare what's included &rarr;</summary>
-            <div class="package-compare-table-wrap">
-              <table class="package-compare-table">
-                <thead>
-                  <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Launch<br><span class="package-compare-price" data-price-aud="$5,000" data-price-aed="AED 12,500" data-price-usd="$3,500 USD">$5,000</span></th>
-                    <th scope="col" class="package-compare-popular">Lift<br><span class="package-compare-price" data-price-aud="$7,500" data-price-aed="AED 18,500" data-price-usd="$5,000 USD">$7,500</span></th>
-                    <th scope="col">Scale<br><span class="package-compare-price" data-price-aud="$9,500" data-price-aed="AED 23,500" data-price-usd="$6,500 USD">$9,500</span></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><th scope="row">Custom marketing website</th><td>&check;</td><td>&check;</td><td>&check;</td></tr>
-                  <tr><th scope="row">On-brand copy &amp; design</th><td>&check;</td><td>&check;</td><td>&check;</td></tr>
-                  <tr><th scope="row">Launch guidance &amp; hosting handover</th><td>&check;</td><td>&check;</td><td>&check;</td></tr>
-                  <tr><th scope="row">Social channels set up (LI, FB, IG, TikTok, YouTube)</th><td>&mdash;</td><td>&check;</td><td>&check;</td></tr>
-                  <tr><th scope="row">Branded profile &amp; cover assets</th><td>&mdash;</td><td>&check;</td><td>&check;</td></tr>
-                  <tr><th scope="row">First-month posting calendar</th><td>&mdash;</td><td>&check;</td><td>&check;</td></tr>
-                  <tr><th scope="row">Lead capture form &amp; automated follow-up</th><td>&mdash;</td><td>&mdash;</td><td>&check;</td></tr>
-                  <tr><th scope="row">Sales pipeline support &amp; CRM setup</th><td>&mdash;</td><td>&mdash;</td><td>&check;</td></tr>
-                  <tr><th scope="row">Sales scripts tailored to your audience</th><td>&mdash;</td><td>&mdash;</td><td>&check;</td></tr>
-                  <tr><th scope="row">Founder-led monthly review</th><td>&mdash;</td><td>&mdash;</td><td>&check;</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </details>
-        </div>
-
-        <div class="packages-group" id="monthly">
-          <p class="packages-group-label">Ongoing content</p>
-          <div class="packages-grid">
-            <article class="package-card">
-              <p class="package-tag">Monthly</p>
-              <h3 class="package-name">Steady</h3>
-              <p class="package-price"><span class="package-price-amount" data-price-aud="$350" data-price-aed="AED 850" data-price-usd="$250 USD">$350</span><span class="package-price-suffix">/ month</span><span class="package-price-tax">ex GST</span></p>
-              <p class="package-blurb">Keep your business visible.</p>
-              <p class="package-desc">A simple monthly content plan to keep your brand active and consistent across your main social channels.</p>
-              <p class="package-includes-label">Includes:</p>
-              <ul class="package-list">
-                <li>1 post per week</li>
-                <li>LinkedIn, Facebook, and Instagram</li>
-                <li>Branded image and caption</li>
-                <li>Approval before anything goes live</li>
-              </ul>
-              <a class="package-cta" href="https://buy.stripe.com/5kQ9AUchU6VF3a89BM3Ru09" target="_blank" rel="noopener">Subscribe — <span data-price-aud="$350" data-price-aed="AED 850" data-price-usd="$250 USD">$350</span>/mo</a>
-            </article>
-
-            <article class="package-card package-card--popular">
-              <span class="package-pill">Most popular</span>
-              <p class="package-tag">Monthly</p>
-              <h3 class="package-name">Active</h3>
-              <p class="package-price"><span class="package-price-amount grad-text grad-aurora" data-price-aud="$500" data-price-aed="AED 1,250" data-price-usd="$350 USD">$500</span><span class="package-price-suffix">/ month</span><span class="package-price-tax">ex GST</span></p>
-              <p class="package-blurb">Show up more often.</p>
-              <p class="package-desc">A stronger monthly content plan for businesses that want to stay visible, build trust, and keep their audience warm.</p>
-              <p class="package-includes-label">Includes:</p>
-              <ul class="package-list">
-                <li>2 posts per week</li>
-                <li>LinkedIn, Facebook, and Instagram</li>
-                <li>Mix of branded and photo posts</li>
-                <li>Monthly content review call</li>
-              </ul>
-              <a class="package-cta package-cta--primary" href="https://buy.stripe.com/14AdRa3Lo93N5igaFQ3Ru0a" target="_blank" rel="noopener">Subscribe — <span data-price-aud="$500" data-price-aed="AED 1,250" data-price-usd="$350 USD">$500</span>/mo</a>
-            </article>
-
-            <article class="package-card">
-              <p class="package-tag">Monthly</p>
-              <h3 class="package-name">Always-on</h3>
-              <p class="package-price"><span class="package-price-amount" data-price-aud="$1,000" data-price-aed="AED 2,500" data-price-usd="$650 USD">$1,000</span><span class="package-price-suffix">/ month</span><span class="package-price-tax">ex GST</span></p>
-              <p class="package-blurb">Stay visible every working day.</p>
-              <p class="package-desc">A complete monthly content plan for businesses that want a consistent presence across social media and Google Business.</p>
-              <p class="package-includes-label">Includes:</p>
-              <ul class="package-list">
-                <li>5+ posts per week, 7 days a week</li>
-                <li>LinkedIn, Facebook, Instagram, and Google Business</li>
-                <li>Mix of photo, branded, and carousel posts</li>
-                <li>Founder-led monthly strategy call</li>
-              </ul>
-              <a class="package-cta" href="https://buy.stripe.com/aFa9AU6XA93NcKI9BM3Ru0b" target="_blank" rel="noopener">Subscribe — <span data-price-aud="$1,000" data-price-aed="AED 2,500" data-price-usd="$650 USD">$1,000</span>/mo</a>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="always-on" aria-label="Always on">
-      <div class="always-inner">
-        <h2 class="always-word">We are <span class="grad-text grad-aurora">always on</span>.</h2>
-        <p class="always-sub">Typical response time: <strong style="white-space:nowrap;">30&nbsp;minutes</strong>. Your build and marketing <span style="white-space:nowrap;">start within <strong>48&nbsp;hours</strong></span>.</p>
-      </div>
-    </section>
-
-    <section class="contact-block contact-portal" id="contact">
-      <div class="contact-inner contact-inner-stack">
-        <div class="contact-copy">
-          <p class="contact-eyebrow">Get started</p>
-          <div class="contact-options contact-options--horizontal">
-            <button type="button" class="contact-option" data-topic="Marketing">Need help with marketing</button>
-            <button type="button" class="contact-option" data-topic="Sales">Need help with sales</button>
-            <button type="button" class="contact-option" data-topic="Both">Need help with both</button>
-          </div>
-          <form class="enquiry-form" id="enquiry-form" action="https://formsubmit.co/ajax/sales@mdsdiversified.ai" method="POST" hidden>
-            <p class="enquiry-tag" data-enquiry-tag>You picked: <strong></strong></p>
-            <input type="hidden" name="topic" data-enquiry-topic value="">
-            <input type="hidden" name="_subject" data-enquiry-subject value="MDS enquiry">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <label>
-              Name
-              <input type="text" name="name" placeholder="Your name" required>
-            </label>
-            <label>
-              Email
-              <input type="email" name="email" placeholder="you@business.com" required>
-            </label>
-            <label>
-              Mobile
-              <input type="tel" name="mobile" placeholder="04xx xxx xxx" required>
-            </label>
-            <label>
-              When are you free for a call?
-              <input type="text" name="when" placeholder="e.g. Tue/Thu mornings AEST" required>
-            </label>
-            <button class="button primary full" type="submit">Send</button>
-            <p class="form-note">We reply within one business day.</p>
-          </form>
-          <div class="enquiry-success" id="enquiry-success" hidden>
-            <h3>Thanks — got it.</h3>
-            <p>James will be in touch on the number you gave us.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="faq" id="faq" aria-label="Frequently asked questions">
-      <div class="faq-inner">
-        <p class="faq-eyebrow">FAQ</p>
-        <h2 class="faq-title">Things people ask before they buy.</h2>
-
-        <details class="faq-item">
-          <summary>What if I'm not happy with the work?</summary>
-          <p>If we haven't started yet, full refund within 7 days of purchase. Once work has begun we keep iterating until you sign off — at no extra cost. Monthly plans cancel any time at the end of the current billed month, no pro-rata refunds (per our Terms).</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>I already have a website. Do I need a new one?</summary>
-          <p>Maybe not. The Launch package replaces an existing site; otherwise we audit yours first and recommend the most cost-effective path. You only pay for what you actually need.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>How long does the build take?</summary>
-          <p>Build starts within 48 hours of payment. Launch typically goes live in around two weeks. Lift takes two to three weeks (extra time for branded social setup). Scale takes three to four weeks (lead capture and sales process layered on top).</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can I cancel my monthly content plan any time?</summary>
-          <p>Yes. Cancel from your Stripe customer portal in one click — the link arrives in every receipt. Cancellation takes effect at the end of the current billed month so you keep what you've paid for, with no surprise charges.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What's included in "sales pipeline support"?</summary>
-          <p>Lead capture form, automated follow-up email and SMS sequence, integration with your existing CRM (or recommendation if you don't have one), call scripts tailored to your audience, and a founder-led monthly pipeline review with James.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Are your invoices GST-compliant?</summary>
-          <p>Yes. Every Stripe receipt itemises the 10% GST separately and we are registered for Australian GST. Stripe Tax adds GST automatically at checkout — your receipt is BAS-ready out of the box.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Do you work with international clients?</summary>
-          <p>Yes — Australia, UAE, and the United States. Pricing on the site is in AUD; Stripe converts at checkout for international cards at the live exchange rate.</p>
-        </details>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-top">
-      <a class="footer-brand" href="index.html" aria-label="MDS Diversified home">
-        <img class="footer-logo" src="assets/logo/mds-diversified-horizontal-light.svg" alt="MDS Diversified">
-      </a>
-      <p class="footer-regions">Australia · UAE · America</p>
-      <span class="footer-spacer" aria-hidden="true"></span>
+<!-- ════════ HERO ════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grain"></div>
+  <!-- ════ Floating 3D cube ════ -->
+  <div class="hero-3d" id="hero3d" aria-hidden="true">
+    <div class="cube-glow"></div>
+    <div class="cube" id="heroCube">
+      <span class="face f1"><img src="assets/logo/mds-diversified-monogram.png" alt=""></span>
+      <span class="face f2">Delight the<br>customer</span>
+      <span class="face f3">Integrity</span>
+      <span class="face f4">Quality<br>service</span>
+      <span class="face f5">Long term<br>partners</span>
+      <span class="face f6">Always on</span>
     </div>
-    <nav class="footer-socials" aria-label="Social channels">
-      <a class="social-tile social-tile--linkedin" href="#" aria-label="LinkedIn" target="_blank" rel="noopener"><span>in</span></a>
-      <a class="social-tile social-tile--facebook" href="#" aria-label="Facebook" target="_blank" rel="noopener"><span>f</span></a>
-      <a class="social-tile social-tile--instagram" href="#" aria-label="Instagram" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></svg>
-      </a>
-      <a class="social-tile social-tile--tiktok" href="#" aria-label="TikTok" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v10.5a2.5 2.5 0 1 1-2.5-2.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M14 3c.4 2.4 2.2 4 4.6 4.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
-      </a>
-      <a class="social-tile social-tile--youtube" href="#" aria-label="YouTube" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="9.5,7.5 17,12 9.5,16.5" fill="currentColor"/></svg>
-      </a>
-    </nav>
-    <div class="footer-bottom">
-      <p class="footer-copyright">© 2026 MDS Diversified Pty Ltd · ABN 48 668 195 819</p>
-      <nav class="footer-legal" aria-label="Legal">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms &amp; Conditions</a>
-      </nav>
-    </div>
-  </footer>
+  </div>
+  <div class="hero-inner">
+    <h1>Your<br>business,<br><em>engineered</em><br>for revenue.</h1>
+    <p class="lede">MDS Diversified brings <b>AI into your business</b>, the simple way. We streamline the busywork and supercharge the growth, so it runs faster, leaner, and around the clock.</p>
+  </div>
+</section>
 
-  <script src="assets/site.js?v=6"></script>
+<!-- ════════ PROBLEM FINDER ════════ -->
+<section class="finder" id="finder" aria-label="Find your fix">
+  <div class="section-head" data-reveal>
+    <div class="kicker">Find your fix</div>
+    <h2>What's slowing you <em>down?</em></h2>
+    <p>Tell us your industry and what's hurting. We will point you straight to the fix.</p>
+    <div class="ftrust">Takes 20 seconds · No obligation · A real person follows up</div>
+  </div>
+  <div class="finder-stage" data-reveal>
+    <div class="finder-prog"><i class="on"></i><i></i><i></i></div>
+
+    <div class="fstep active" id="fstep1">
+      <div class="fstep-q">Step 1 of 3</div>
+      <h3>What's your <em>industry?</em></h3>
+      <div class="finput-wrap">
+        <label for="fIndustryInput" class="sr-only">Your industry</label>
+        <input class="finput" id="fIndustryInput" list="fIndustryList" placeholder="Select industry" autocomplete="off" enterkeyhint="next">
+        <datalist id="fIndustryList"></datalist>
+        <button class="fbtn fbtn-primary fnext" id="fIndNext" type="button">Next &rarr;</button>
+      </div>
+    </div>
+
+    <div class="fstep" id="fstep2">
+      <div class="fstep-q">Step 2 of 3</div>
+      <h3>What's the <em>problem?</em></h3>
+      <p class="fchips-label" style="margin-top:-14px">Pick all that apply</p>
+      <div class="fgrid" id="fProblems"></div>
+      <button class="fbtn fbtn-primary fseebtn" id="fSeeBtn" type="button" hidden>See my fix &rarr;</button>
+      <div class="for-divider">or describe it in your own words</div>
+      <div class="finput-wrap">
+        <label for="fProblemInput" class="sr-only">Describe your issue</label>
+        <input class="finput" id="fProblemInput" placeholder="e.g. we miss calls when we're on the tools..." autocomplete="off" enterkeyhint="go">
+        <button class="fbtn fbtn-primary fnext" id="fProbNext" type="button">Go &rarr;</button>
+      </div>
+      <button class="fback" type="button" data-back="1">&larr; Back</button>
+    </div>
+
+    <div class="fstep" id="fstep3">
+      <div class="fstep-q">Here's your fix</div>
+      <div class="fresult">
+        <p class="fstat" id="fStat"></p>
+        <div class="fsrc" id="fSrc"></div>
+        <a class="fmatch" id="fMatch" href="#">
+          <span class="fm-tag">Routed to</span>
+          <span class="fm-name" id="fmName"></span>
+          <span class="fm-cat" id="fmCat"></span>
+          <span class="fm-go">See the page &rarr;</span>
+        </a>
+        <div class="falso-label" id="fAlsoLabel" style="display:none">Also helps with</div>
+        <div class="falso" id="fAlso" style="display:none"></div>
+        <p class="fmsg" id="fMsg"></p>
+        <div class="fcta-row">
+          <button class="fbtn fbtn-primary" type="button" id="fGetFixed">Get this fixed &rarr;</button>
+          <button class="fbtn fbtn-ghost" type="button" data-back="2">Try another</button>
+        </div>
+        <form class="fform" id="fForm" novalidate>
+          <label for="ffName">Your name</label>
+          <input id="ffName" name="name" autocomplete="name" required>
+          <label for="ffBiz">Business name</label>
+          <input id="ffBiz" name="business" autocomplete="organization">
+          <label for="ffContact">Best number or email</label>
+          <input id="ffContact" name="contact" autocomplete="tel" required>
+          <button type="submit" class="fbtn fbtn-primary">Send to MDS &rarr;</button>
+          <div class="ffoot">No spam. We will show you exactly how it works.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <button class="fnudge" id="fNudge" type="button">See how it all connects &darr;</button>
+</section>
+
+<!-- ════════ BRAND BEAT ════════ -->
+<section class="beat" id="group" data-reveal>
+  <div class="kicker">The group</div>
+  <h2>MDS Diversified builds the <em>always on AI</em> that runs the unglamorous but essential half of a business.</h2>
+  <div class="beat-chips">
+    <span class="beat-chip"><span class="pip"></span><b>6</b> divisions</span>
+    <span class="beat-chip"><span class="pip"></span><b>3</b> countries</span>
+    <span class="beat-chip"><span class="pip"></span><b>24/7</b> always on</span>
+  </div>
+</section>
+
+<!-- ════════ THE SIX DIVISIONS ════════ -->
+<section class="divisions" id="divisions">
+  <div class="section-head" style="text-align:center;padding:0 0 44px" data-reveal>
+    <div class="kicker">The divisions</div>
+    <h2>Six divisions.<br><em>One always on engine.</em></h2>
+    <p>Each division runs a focused slice of the work, and powers its own dedicated pages for your industry. Pick the ones that fit, layer up as you grow.</p>
+  </div>
+
+  <div class="divisions-grid">
+    <article class="divcard dd1" data-reveal aria-label="MDS Reception division">
+      <div class="dc-top"><span class="dc-num">01</span><span class="dc-dot"></span></div>
+      <h3>MDS Reception</h3>
+      <div class="dc-cat">Capture &amp; Answer</div>
+      <p class="dc-desc">Answers every call, chat and message, day or night. Qualifies the lead and books the job before it walks.</p>
+      <div class="dc-list"><span>AI Receptionist</span><span>AI Booking</span><span>Website / WhatsApp chat</span></div>
+      <div class="dc-foot"><span class="dc-go">Explore →</span></div>
+    </article>
+
+    <article class="divcard dd2" data-reveal aria-label="MDS Recover division">
+      <div class="dc-top"><span class="dc-num">02</span><span class="dc-dot"></span></div>
+      <h3>MDS Recover</h3>
+      <div class="dc-cat">Follow up &amp; Recovery</div>
+      <p class="dc-desc">Chases the quotes, revives the dead leads, reactivates old customers. Nothing slips through the cracks.</p>
+      <div class="dc-list"><span>Missed lead recovery</span><span>Quote follow up</span><span>Reactivation</span></div>
+      <div class="dc-foot"><span class="dc-go">Explore →</span></div>
+    </article>
+
+    <article class="divcard dd3" data-reveal aria-label="MDS Reputation division">
+      <div class="dc-top"><span class="dc-num">03</span><span class="dc-dot"></span></div>
+      <h3>MDS Reputation</h3>
+      <div class="dc-cat">Reviews &amp; Referrals</div>
+      <p class="dc-desc">Turns happy jobs into Google reviews and referrals on autopilot, and flags anything unhappy fast.</p>
+      <div class="dc-list"><span>Review engine</span><span>Referral system</span><span>Call summaries</span></div>
+      <div class="dc-foot"><span class="dc-go">Explore →</span></div>
+    </article>
+
+    <article class="divcard dd4" data-reveal aria-label="MDS Growth division">
+      <div class="dc-top"><span class="dc-num">04</span><span class="dc-dot"></span></div>
+      <h3>MDS Growth</h3>
+      <div class="dc-cat">Content &amp; Growth</div>
+      <p class="dc-desc">Keeps the marketing running: content, website, local presence and ads, all pointing at the same number.</p>
+      <div class="dc-list"><span>Social content</span><span>Website upgrades</span><span>Local growth</span></div>
+      <div class="dc-foot"><span class="dc-go">Explore →</span></div>
+    </article>
+
+    <article class="divcard dd5" data-reveal aria-label="MDS Ops division">
+      <div class="dc-top"><span class="dc-num">05</span><span class="dc-dot"></span></div>
+      <h3>MDS Ops</h3>
+      <div class="dc-cat">Admin &amp; Back Office</div>
+      <p class="dc-desc">Clears the busywork: reminders, invoices, intake forms, email drafts and the SOPs no one gets around to.</p>
+      <div class="dc-list"><span>Admin cleanup</span><span>Email replies</span><span>Training / SOPs</span></div>
+      <div class="dc-foot"><span class="dc-go">Explore →</span></div>
+    </article>
+
+    <article class="divcard dd6" data-reveal aria-label="MDS Research division">
+      <div class="dc-top"><span class="dc-num">06</span><span class="dc-dot"></span></div>
+      <h3>MDS Research</h3>
+      <div class="dc-cat">Research &amp; SME</div>
+      <p class="dc-desc">On demand research and subject matter expertise, turned into clear briefs you can act on.</p>
+      <div class="dc-list"><span>Research assistant</span><span>Subject matter expert</span><span>Report builder</span></div>
+      <div class="dc-foot"><span class="dc-go">Explore →</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- ════════ THE ENGINE (animated energy core) ════════ -->
+<section class="engine-stage" id="engine" aria-label="The always on engine">
+  <canvas id="engineCanvas" aria-hidden="true"></canvas>
+  <div class="engine-overlay" data-reveal>
+    <div class="kicker">The engine</div>
+    <h2>One core.<br><em>Always running.</em></h2>
+    <p>Every division draws from one always on engine. While you sleep it answers, follows up, asks, posts, tidies and researches. Watch it run.</p>
+  </div>
+  <div class="engine-ticker" id="engineTicker" aria-live="polite"></div>
+  <div class="engine-legend" aria-hidden="true">
+    <span style="--lc:var(--c1)">Reception</span>
+    <span style="--lc:var(--c3)">Recover</span>
+    <span style="--lc:var(--c2)">Reputation</span>
+    <span style="--lc:var(--c5)">Growth</span>
+    <span style="--lc:var(--c4)">Ops</span>
+    <span style="--lc:var(--c6)">Research</span>
+  </div>
+</section>
+
+<!-- ════════ WHERE WE OPERATE ════════ -->
+<section class="regions" id="regions">
+  <div class="regions-inner">
+    <div class="kicker" style="font-family:var(--mono);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--c2);margin-bottom:18px;display:inline-flex;align-items:center;gap:10px" data-reveal><span style="width:30px;height:1px;background:var(--c2)"></span>Where we operate</div>
+    <h2 data-reveal>Three countries.<br><em>Active and servicing customers.</em></h2>
+
+    <div class="cities">
+      <article class="city syd" data-tz="Australia/Sydney" data-tag="AEST" tabindex="0" data-reveal>
+        <div class="city-bg"></div>
+        <div class="meta">01 · Asia Pacific</div>
+        <div><div class="name">Australia<em>Sydney</em></div></div>
+        <div><div class="clock" data-clk>--:--</div><div class="live-pip">On now</div></div>
+        <div class="city-detail"><b>Sydney</b>Founder led, 30 minute response window<small>Where the engine is built and tuned</small></div>
+      </article>
+
+      <article class="city dxb" data-tz="Asia/Dubai" data-tag="GST" tabindex="0" data-reveal>
+        <div class="city-bg"></div>
+        <div class="meta">02 · Middle East</div>
+        <div><div class="name">UAE<em>Dubai</em></div></div>
+        <div><div class="clock" data-clk>--:--</div><div class="live-pip">On now</div></div>
+        <div class="city-detail"><b>Dubai</b>Time shifted coverage across the region<small>Quiet hours here are business hours there</small></div>
+      </article>
+
+      <article class="city nyc" data-tz="America/Chicago" data-tag="CST" tabindex="0" data-reveal>
+        <div class="city-bg"></div>
+        <div class="meta">03 · North America</div>
+        <div><div class="name">America<em>Texas</em></div></div>
+        <div><div class="clock" data-clk>--:--</div><div class="live-pip">On now</div></div>
+        <div class="city-detail"><b>Texas</b>Time shift coverage of AU accounts<small>The clock keeps moving, so does the work</small></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ GET IN TOUCH ════════ -->
+<section class="contact" id="contact">
+  <div class="contact-inner" data-reveal>
+    <div class="kicker">Get in touch</div>
+    <h2>Want the engine <em>running for you?</em></h2>
+    <p>No pitch, no pressure. Tell us about your business and we will show you which divisions fit. That is the whole conversation.</p>
+    <a class="hello-btn" id="helloBtn" href="mailto:james@mdsdiversified.ai?subject=Hello%20MDS&body=Hi%20James,%0A%0AA%20bit%20about%20my%20business:%0A%0AWhat%20we%20do:%20%0AWhere%20we%20are%20stuck:%20%0ABest%20way%20to%20reach%20me:%20%0A%0AThanks">Start a conversation</a>
+  </div>
+</section>
+
+<footer>
+  <img class="brand-logo" src="assets/logo/mds-diversified-horizontal-light.svg" alt="MDS Diversified">
+  <span>© 2026 · v5 teaser · AU · UAE · USA</span>
+</footer>
+
+<script>
+/* Division + city cards lift on hover via CSS (translateY). The old 3D
+   rotateX/rotateY tilt was removed: rotating a text layer in 3D forces the
+   browser to rasterise then transform the bitmap, blurring the type. */
+
+/* ── Hero cube reactive parallax ── */
+(function(){
+  const hero  = document.getElementById('hero');
+  const stage = document.getElementById('hero3d');
+  if (!hero || !stage) return;
+  let tx=0,ty=0,rx=0,ry=0;
+  hero.addEventListener('mousemove', e => {
+    const r = hero.getBoundingClientRect();
+    const nx = (e.clientX-r.left)/r.width  - 0.5;
+    const ny = (e.clientY-r.top)/r.height - 0.5;
+    tx = ny*18; ty = -nx*22;
+  });
+  function loop(){
+    rx += (tx-rx)*0.08; ry += (ty-ry)*0.08;
+    stage.style.transform = 'translateY(-50%) rotateX('+rx.toFixed(2)+'deg) rotateY('+ry.toFixed(2)+'deg)';
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+/* ── Cursor follower ── */
+(function(){
+  const c = document.getElementById('cursor');
+  if (!c) return;
+  let x=window.innerWidth/2, y=window.innerHeight/2, tx=x, ty=y;
+  window.addEventListener('mousemove', e => { tx=e.clientX; ty=e.clientY; });
+  function loop(){
+    x += (tx-x)*0.22; y += (ty-y)*0.22;
+    c.style.transform = 'translate('+x+'px,'+y+'px) translate(-50%,-50%)';
+    requestAnimationFrame(loop);
+  }
+  loop();
+  const tapTargets = 'a, button, .divcard, .city, .hello-btn, .hero';
+  document.querySelectorAll(tapTargets).forEach(el => {
+    el.addEventListener('mouseenter', () => c.classList.add('tap'));
+    el.addEventListener('mouseleave', () => c.classList.remove('tap'));
+  });
+})();
+
+/* ── Scroll reveal ── */
+(function(){
+  const els = document.querySelectorAll('[data-reveal]');
+  if (!els.length) return;
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(el=>el.classList.add('is-revealed')); return;
+  }
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if (en.isIntersecting){ en.target.classList.add('is-revealed'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+  els.forEach(el=>io.observe(el));
+})();
+
+/* ── The engine: constellation network (canvas) ── */
+(function(){
+  var cv=document.getElementById('engineCanvas');
+  var stage=document.getElementById('engine');
+  var ticker=document.getElementById('engineTicker');
+  if(!cv||!stage) return;
+  var ctx=cv.getContext('2d');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var PAL=['#00d4ff','#ff3d9c','#b5ff3d','#7c3dff','#ffb800','#2dd4bf'];
+  var LABELS=['Reception','Recover','Reputation','Growth','Ops','Research'];
+  var ACTIONS=['answered a call and booked the job','followed up a quote from 3 days ago','requested a Google review','published the weekly post','cleared the invoice reminders','compiled a market brief'];
+  var DPR=Math.min(window.devicePixelRatio||1,2);
+  var W=0,H=0,cx=0,cy=0,t=0,running=false;
+  var hub={x:0,y:0},divs=[],amb=[],signals=[];
+  var mouse={x:0,y:0,active:false};
+  function rgba(hex,a){var n=parseInt(hex.slice(1),16);return 'rgba('+((n>>16)&255)+','+((n>>8)&255)+','+(n&255)+','+a+')';}
+  function glow(x,y,r,color,a){var g=ctx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,color);g.addColorStop(1,'rgba(0,0,0,0)');ctx.globalAlpha=a;ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;}
+  function build(){
+    var r=cv.getBoundingClientRect(); W=r.width; H=r.height;
+    cv.width=Math.floor(W*DPR); cv.height=Math.floor(H*DPR); ctx.setTransform(DPR,0,0,DPR,0,0);
+    cx=W/2; cy=H*0.55; hub.x=cx; hub.y=cy;
+    divs=[]; var ring=Math.min(W,H)*0.30;
+    for(var i=0;i<6;i++){var ang=(i/6)*Math.PI*2; divs.push({x:cx+Math.cos(ang)*ring,y:cy+Math.sin(ang)*ring*0.7,vx:(Math.random()-.5)*0.22,vy:(Math.random()-.5)*0.22,col:PAL[i],pulse:0});}
+    amb=[]; var n=Math.max(14,Math.min(48,Math.floor(W*H/26000)));
+    for(var j=0;j<n;j++) amb.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*0.3,vy:(Math.random()-.5)*0.3});
+  }
+  function moveNode(n){
+    n.x+=n.vx; n.y+=n.vy;
+    if(mouse.active){var dx=mouse.x-n.x,dy=mouse.y-n.y,d=Math.hypot(dx,dy);if(d<170&&d>1){n.x+=dx/d*0.5;n.y+=dy/d*0.5;}}
+    if(n.x<0||n.x>W)n.vx*=-1; if(n.y<0||n.y>H)n.vy*=-1;
+    n.x=Math.max(0,Math.min(W,n.x)); n.y=Math.max(0,Math.min(H,n.y));
+  }
+  var D=165;
+  function frame(){
+    if(!running) return; t++;
+    ctx.clearRect(0,0,W,H);
+    if(mouse.active){ hub.x+=(cx+(mouse.x-cx)*0.10-hub.x)*0.04; hub.y+=(cy+(mouse.y-cy)*0.10-hub.y)*0.04; }
+    else { hub.x+=(cx-hub.x)*0.03; hub.y+=(cy-hub.y)*0.03; }
+    var i,k;
+    for(i=0;i<divs.length;i++) moveNode(divs[i]);
+    for(i=0;i<amb.length;i++) moveNode(amb[i]);
+    for(i=0;i<divs.length;i++){ var dd=divs[i]; ctx.strokeStyle=rgba(dd.col,0.26); ctx.lineWidth=1.5; ctx.beginPath(); ctx.moveTo(dd.x,dd.y); ctx.lineTo(hub.x,hub.y); ctx.stroke(); }
+    var all=divs.concat(amb);
+    for(i=0;i<all.length;i++) for(k=i+1;k<all.length;k++){ var a=all[i],b=all[k]; var ds=Math.hypot(a.x-b.x,a.y-b.y); if(ds<D){ ctx.strokeStyle='rgba(190,208,255,'+(1-ds/D)*0.36+')'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); } }
+    for(i=signals.length-1;i>=0;i--){ var sg=signals[i]; sg.p+=0.02; if(sg.p>=1){signals.splice(i,1);continue;} var x=sg.from.x+(sg.to.x-sg.from.x)*sg.p, y=sg.from.y+(sg.to.y-sg.from.y)*sg.p; glow(x,y,11,sg.col,0.92); ctx.fillStyle=sg.col; ctx.beginPath(); ctx.arc(x,y,2.2,0,Math.PI*2); ctx.fill(); }
+    glow(hub.x,hub.y,72,'rgba(255,255,255,0.15)',1); glow(hub.x,hub.y,32,'rgba(205,218,255,0.6)',1);
+    ctx.fillStyle='rgba(235,240,255,0.95)'; ctx.beginPath(); ctx.arc(hub.x,hub.y,8,0,Math.PI*2); ctx.fill();
+    for(i=0;i<divs.length;i++){ var nd=divs[i]; if(nd.pulse>0)nd.pulse-=0.02; glow(nd.x,nd.y,18+nd.pulse*32,nd.col,0.62+nd.pulse*0.4); ctx.fillStyle=nd.col; ctx.beginPath(); ctx.arc(nd.x,nd.y,4.4+nd.pulse*2,0,Math.PI*2); ctx.fill(); }
+    ctx.fillStyle='rgba(212,224,255,0.74)';
+    for(i=0;i<amb.length;i++){ ctx.beginPath(); ctx.arc(amb[i].x,amb[i].y,1.4,0,Math.PI*2); ctx.fill(); }
+    requestAnimationFrame(frame);
+  }
+  var evt=0,timer=null;
+  function fireEvent(){
+    var i=evt%6; evt++;
+    if(divs[i]){ divs[i].pulse=1; signals.push({from:divs[i],to:hub,p:0,col:divs[i].col}); (function(idx){ setTimeout(function(){ if(divs[idx]) signals.push({from:hub,to:divs[idx],p:0,col:divs[idx].col}); },700); })(i); }
+    if(ticker){ ticker.innerHTML='<span class="dot" style="color:'+PAL[i]+'"></span><b>'+LABELS[i]+'</b> '+ACTIONS[i]; }
+  }
+  function staticDraw(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<divs.length;i++){ var dd=divs[i]; ctx.strokeStyle=rgba(dd.col,0.12); ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(dd.x,dd.y); ctx.lineTo(hub.x,hub.y); ctx.stroke(); glow(dd.x,dd.y,14,dd.col,0.5); ctx.fillStyle=dd.col; ctx.beginPath(); ctx.arc(dd.x,dd.y,3.4,0,Math.PI*2); ctx.fill(); }
+    glow(hub.x,hub.y,64,'rgba(255,255,255,0.14)',1); ctx.fillStyle='rgba(235,240,255,0.95)'; ctx.beginPath(); ctx.arc(hub.x,hub.y,8,0,Math.PI*2); ctx.fill();
+    fireEvent();
+  }
+  function start(){ if(running) return; if(reduce){ staticDraw(); return; } running=true; frame(); fireEvent(); timer=setInterval(fireEvent,2600); }
+  function stop(){ running=false; if(timer){ clearInterval(timer); timer=null; } }
+  build();
+  window.addEventListener('resize', function(){ build(); if(reduce) staticDraw(); });
+  cv.addEventListener('pointermove', function(e){ var r=cv.getBoundingClientRect(); mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top; mouse.active=true; });
+  cv.addEventListener('pointerleave', function(){ mouse.active=false; });
+  if(!('IntersectionObserver' in window)){ start(); return; }
+  var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting) start(); else stop(); }); },{threshold:0.1});
+  io.observe(stage);
+})();
+
+/* ── City clocks ── */
+(function(){
+  const cities = document.querySelectorAll('.city');
+  function tick(){
+    cities.forEach(c => {
+      const tz = c.getAttribute('data-tz');
+      const tag = c.getAttribute('data-tag') || '';
+      let fmt;
+      try {
+        fmt = new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour12:false, hour:'2-digit', minute:'2-digit' });
+      } catch (_) {
+        fmt = new Intl.DateTimeFormat('en-GB', { hour12:false, hour:'2-digit', minute:'2-digit' });
+      }
+      const t = fmt.format(new Date());
+      const clk = c.querySelector('[data-clk]');
+      if (clk) clk.textContent = t + (tag ? ' ' + tag : '');
+    });
+  }
+  tick();
+  setInterval(tick, 30 * 1000);
+})();
+
+/* ── City card click → active state ── */
+(function(){
+  document.querySelectorAll('.city').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.city.active').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+    });
+  });
+})();
+
+/* ── Hero click → scroll into the page ── */
+(function(){
+  const hero = document.getElementById('hero');
+  if (!hero) return;
+  hero.addEventListener('click', e => {
+    if (e.target.closest('a, button')) return;
+    const t = document.getElementById('divisions') || document.querySelector('.beat');
+    if (t) t.scrollIntoView({ behavior:'smooth', block:'start' });
+  });
+})();
+
+/* ── Hello button → gentle confetti (delight, not a sale) ── */
+(function(){
+  const btn = document.getElementById('helloBtn');
+  if (!btn) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  btn.addEventListener('click', e => {
+    const colors = ['#00d4ff','#b5ff3d','#ff3d9c','#ffb800','#7c3dff','#2dd4bf'];
+    const n = 22;
+    for (let i=0;i<n;i++){
+      const dot = document.createElement('span');
+      const angle = (i/n)*Math.PI*2, dist = 90 + Math.random()*70;
+      const dx = Math.cos(angle)*dist, dy = Math.sin(angle)*dist;
+      dot.style.cssText = 'position:fixed;left:'+e.clientX+'px;top:'+e.clientY+'px;width:8px;height:8px;border-radius:50%;background:'+colors[i%colors.length]+';pointer-events:none;z-index:9000;box-shadow:0 0 10px '+colors[i%colors.length]+';transform:translate(-50%,-50%);transition:transform 800ms cubic-bezier(.2,.9,.3,1.2), opacity 800ms ease-out;';
+      document.body.appendChild(dot);
+      requestAnimationFrame(()=>{ dot.style.transform = 'translate(calc(-50% + '+dx+'px), calc(-50% + '+dy+'px)) scale(.3)'; dot.style.opacity='0'; });
+      setTimeout(()=>dot.remove(), 900);
+    }
+  });
+})();
+</script>
+
+<!-- ════════ PROBLEM FINDER LOGIC ════════ -->
+<script>
+(function(){
+  var stage=document.getElementById('finder'); if(!stage) return;
+  var $=function(id){return document.getElementById(id);};
+
+  var INDUSTRIES=['Auto Detailing','Automotive & Mechanical','Beauty & Salons','Building & Renovation','Carpentry & Joinery','Cleaning Services','Concreting','Consulting','eCommerce','Electrical','Events & Hire','Finance & Lending','Fitness & Gyms','Florists','Hair & Barber','Home Services','Hospitality & Cafes','HVAC & Air Conditioning','IT & Tech Services','Landscaping & Gardens','Manufacturing','Marketing & Creative','Mortgage Broking','Painting & Decorating','Pest Control','Pet Services','Photography & Video','Plumbing','Professional Services','Property Management','Real Estate','Removalists & Storage','Restaurants & Bars','Retail','Roofing','Strata & Body Corporate','Trades & Construction','Transport & Logistics','Wholesale & Distribution'];
+  var DIV={
+    reception:{name:'MDS Reception',cat:'Capture & Answer',color:'#00d4ff',page:'mds-reception.html'},
+    recover:{name:'MDS Recover',cat:'Follow up & Recovery',color:'#ff3d9c',page:'mds-recover.html'},
+    reputation:{name:'MDS Reputation',cat:'Reviews & Referrals',color:'#b5ff3d',page:'mds-reputation.html'},
+    growth:{name:'MDS Growth',cat:'Content & Growth',color:'#7c3dff',page:'mds-growth.html'},
+    ops:{name:'MDS Ops',cat:'Admin & Back Office',color:'#ffb800',page:'mds-ops.html'},
+    research:{name:'MDS Research',cat:'Research & SME',color:'#2dd4bf',page:'mds-research.html'}
+  };
+  var PROBLEMS=[
+    {id:'leads',label:'Missed calls & leads',div:'reception'},
+    {id:'followup',label:'Quotes going cold',div:'recover'},
+    {id:'reviews',label:'Poor reviews & reputation',div:'reputation'},
+    {id:'marketing',label:'Not enough marketing',div:'growth'},
+    {id:'admin',label:'Drowning in admin',div:'ops'},
+    {id:'insight',label:'Need market insight',div:'research'}
+  ];
+  // {ind} is replaced with the chosen industry. Numbers are sourced, see SRC below.
+  var STAT={
+    leads:'In {ind}, every missed call is a job gone. <b>62%</b> of calls to small businesses go unanswered, and <b>85%</b> of those callers never ring back. They just call the next name on the list.',
+    followup:'In {ind}, the fast quote wins. <b>78%</b> of customers buy from the first business that gets back to them, so a slow follow up is a lost job.',
+    reviews:'<b>75%</b> of people read reviews before choosing a local business, and <b>93%</b> use them to judge quality. In {ind}, a thin review profile quietly sends buyers to a competitor.',
+    marketing:'Generating leads is the <b>#1 challenge</b> for most small businesses. In {ind}, quiet marketing today is a quiet pipeline tomorrow.',
+    admin:'The average owner loses around <b>14 hours a week</b> to admin. In {ind}, that is a full working day you could spend winning and doing the work.',
+    insight:'Most operators in {ind} set prices and plans on gut feel, not current market data. That quietly costs margin and momentum.',
+    custom:'In {ind}, "<b>{issue}</b>" is exactly the kind of work this division takes off your plate, so you can get back to the job.'
+  };
+  var SRC={
+    leads:'Source: 411 Locals study, 2024',
+    followup:'Source: speed to lead research',
+    reviews:'Source: BrightLocal Local Consumer Review Survey, 2024',
+    marketing:'Source: small business lead generation surveys, 2024 to 2026',
+    admin:'Source: Time Etc small business study',
+    insight:'',
+    custom:''
+  };
+  // keyword router for free-text issues
+  var ROUTE=[
+    {d:'reception',k:['call','phone','answer','miss','reception','book','enquir','voicemail','after hours','message','tools']},
+    {d:'recover',k:['quote','follow','chase','dead lead','old customer','reactivat','win back','cold','proposal','no reply','ghost']},
+    {d:'reputation',k:['review','reputation','google','star','rating','referral','word of mouth','feedback','testimonial']},
+    {d:'ops',k:['admin','invoic','paperwork','bookkeep','data entry','schedul','roster','back office','inbox','quote send','followup admin']},
+    {d:'research',k:['research','report','insight','competitor','market data','analys','pricing','strategy','trend']},
+    {d:'growth',k:['market','lead','content','seo','social','website','ad','advertis','grow','brand','traffic','sales','more work','more jobs','more customers']}
+  ];
+  function routeText(t){
+    t=(t||'').toLowerCase();
+    for(var i=0;i<ROUTE.length;i++){ for(var j=0;j<ROUTE[i].k.length;j++){ if(t.indexOf(ROUTE[i].k[j])>-1) return ROUTE[i].d; } }
+    return 'growth';
+  }
+  function esc(x){ return (x||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  var state={industry:null,selected:[],problems:[]};
+  var prog=stage.querySelectorAll('.finder-prog i');
+
+  function setStep(n){
+    var steps=stage.querySelectorAll('.fstep');
+    for(var i=0;i<steps.length;i++) steps[i].classList.remove('active');
+    $('fstep'+n).classList.add('active');
+    for(var j=0;j<prog.length;j++) prog[j].classList.toggle('on', j<n);
+  }
+
+  // populate datalist for type-to-search
+  var dl=$('fIndustryList');
+  INDUSTRIES.forEach(function(name){ var o=document.createElement('option'); o.value=name; dl.appendChild(o); });
+  function goIndustry(name){
+    name=(name||'').trim(); if(!name){ $('fIndustryInput').focus(); return; }
+    state.industry=name; $('fIndustryInput').value=name; buildProblems(); setStep(2);
+  }
+  $('fIndNext').addEventListener('click',function(){ goIndustry($('fIndustryInput').value); });
+  $('fIndustryInput').addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); goIndustry(this.value); } });
+
+  function buildProblems(){
+    var pg=$('fProblems'); pg.innerHTML=''; state.selected=[]; updateSeeBtn();
+    PROBLEMS.forEach(function(p,i){
+      var b=document.createElement('button');
+      b.className='fpill'; b.type='button'; b.style.setProperty('--pc',DIV[p.div].color); b.style.animationDelay=(i*0.05)+'s';
+      b.setAttribute('aria-pressed','false');
+      b.innerHTML='<span class="dot"></span>'+p.label;
+      b.addEventListener('click',function(){ toggleProblem(p,b); });
+      pg.appendChild(b);
+    });
+  }
+  function toggleProblem(p,btn){
+    var idx=state.selected.indexOf(p);
+    if(idx>-1){ state.selected.splice(idx,1); btn.classList.remove('sel'); btn.setAttribute('aria-pressed','false'); }
+    else{ state.selected.push(p); btn.classList.add('sel'); btn.setAttribute('aria-pressed','true'); }
+    updateSeeBtn();
+  }
+  function updateSeeBtn(){
+    var n=state.selected.length, b=$('fSeeBtn');
+    b.hidden = (n===0);
+    b.innerHTML = (n>1 ? 'See my '+n+' fixes ' : 'See my fix ')+'&rarr;';
+  }
+  $('fSeeBtn').addEventListener('click',function(){ if(state.selected.length){ state.problems=state.selected.slice(); showResult(); setStep(3); } });
+
+  function goProblem(text){
+    text=(text||'').trim(); if(!text){ $('fProblemInput').focus(); return; }
+    state.problems=[{id:'custom',label:text,div:routeText(text)}]; showResult(); setStep(3);
+  }
+  $('fProbNext').addEventListener('click',function(){ goProblem($('fProblemInput').value); });
+  $('fProblemInput').addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); goProblem(this.value); } });
+
+  function showResult(){
+    var list=state.problems, primary=list[0], d=DIV[primary.div], c=d.color;
+    var t=(STAT[primary.id]||STAT.custom).replace(/{ind}/g,esc(state.industry)).replace(/{issue}/g,esc(primary.label));
+    var s=$('fStat'); s.innerHTML=t; s.style.setProperty('--rc',c);
+    $('fSrc').textContent=SRC[primary.id]||'';
+    var fm=$('fMatch'); fm.style.setProperty('--rc',c); if(d.page) fm.href=d.page;
+    var nm=$('fmName'); nm.textContent=d.name; nm.style.color=c;
+    $('fmCat').textContent=d.cat;
+    // secondary "also helps with" divisions
+    var also=$('fAlso'); also.innerHTML=''; var seen={}; seen[primary.div]=1;
+    for(var i=1;i<list.length;i++){
+      var pd=list[i].div; if(seen[pd]) continue; seen[pd]=1;
+      var dd=DIV[pd], chip=document.createElement('span');
+      chip.className='falso-chip'; chip.style.setProperty('--pc',dd.color);
+      chip.innerHTML='<span class="dot"></span>'+dd.name;
+      also.appendChild(chip);
+    }
+    var has=also.children.length>0;
+    also.style.display=has?'flex':'none'; $('fAlsoLabel').style.display=has?'block':'none';
+    var msg=$('fMsg'); msg.style.setProperty('--rc',c);
+    msg.innerHTML='Speak with our <b>'+esc(d.name)+'</b> division, ready to help.';
+    $('fForm').classList.remove('show'); $('fGetFixed').style.display='';
+  }
+
+  var backs=stage.querySelectorAll('[data-back]');
+  for(var k=0;k<backs.length;k++){
+    (function(btn){ btn.addEventListener('click',function(){ setStep(parseInt(btn.getAttribute('data-back'),10)); }); })(backs[k]);
+  }
+
+  $('fGetFixed').addEventListener('click',function(){ $('fForm').classList.add('show'); this.style.display='none'; $('ffName').focus(); });
+
+  $('fForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=$('ffName').value.trim(), biz=$('ffBiz').value.trim(), contact=$('ffContact').value.trim();
+    if(!name || !contact){ if(!name){$('ffName').focus();}else{$('ffContact').focus();} return; }
+    var probs=state.problems.map(function(p){return p.label;}).join(', ');
+    var divs=[], seen={};
+    state.problems.forEach(function(p){ if(!seen[p.div]){ seen[p.div]=1; divs.push(DIV[p.div].name); } });
+    var subject='MDS fix: '+probs+' ('+state.industry+')';
+    var body='Hi James,\n\nIndustry: '+state.industry+'\nProblem(s): '+probs+'\nSuggested division(s): '+divs.join(', ')+'\n\nName: '+name+'\nBusiness: '+biz+'\nContact: '+contact+'\n\nPlease show me how this works.';
+    window.location.href='mailto:james@mdsdiversified.ai?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  });
+
+  var nudge=$('fNudge'), group=document.getElementById('group');
+  if(nudge && group){ nudge.addEventListener('click',function(){ group.scrollIntoView({behavior:'smooth',block:'start'}); }); }
+})();
+</script>
+
+<!-- ════════ DIVISION CARDS EXPAND ════════ -->
+<script>
+(function(){
+  var grid=document.querySelector('.divisions-grid'); if(!grid) return;
+  var CONTENT={
+    'MDS Reception':'Never miss a call or a job again. Our AI answers every call, chat and message, day or night, qualifies the lead, and books the work straight into your calendar.',
+    'MDS Recover':'Turn cold quotes into booked jobs. We automatically chase every quote, revive dead leads, and win back old customers, so nothing slips through the cracks.',
+    'MDS Reputation':'More 5-star reviews, on autopilot. Every happy job becomes a Google review and a referral, lifting you above the competition.',
+    'MDS Growth':'Keep the pipeline full. Content, local presence and smart ads that keep new enquiries coming in, month after month.',
+    'MDS Ops':'Get your week back. We clear the admin, invoices, reminders and intake, so your time goes on winning and doing the work.',
+    'MDS Research':'Decisions backed by data. On demand market research and clear, actionable briefs whenever you need to make a call.'
+  };
+  var LINKS={
+    'MDS Reception':'mds-reception.html',
+    'MDS Recover':'mds-recover.html',
+    'MDS Reputation':'mds-reputation.html',
+    'MDS Growth':'mds-growth.html',
+    'MDS Ops':'mds-ops.html',
+    'MDS Research':'mds-research.html'
+  };
+  var cards=grid.querySelectorAll('.divcard');
+  Array.prototype.forEach.call(cards,function(card){
+    var h3=card.querySelector('h3'); var name=h3?h3.textContent.trim():'';
+    var copy=CONTENT[name]||''; var short=name.replace('MDS ','');
+    var panel=document.createElement('div'); panel.className='dc-panel';
+    var link=LINKS[name];
+    var cta = link
+      ? '<a class="dc-talk" href="'+link+'">Explore '+short+' &rarr;</a>'
+      : '<button class="dc-talk" type="button">Talk to us about '+short+' &rarr;</button><span class="dc-coming">Full page coming soon</span>';
+    panel.innerHTML='<p class="dc-pcopy">'+copy+'</p><div class="dc-pcta">'+cta+'</div>';
+    card.appendChild(panel);
+    var go=card.querySelector('.dc-go'); if(go) go.innerHTML='Explore <span class="dc-chev">&darr;</span>';
+    card.setAttribute('role','button'); card.setAttribute('tabindex','0'); card.setAttribute('aria-expanded','false');
+    function setOpen(open){
+      card.classList.toggle('open', open);
+      card.setAttribute('aria-expanded', open?'true':'false');
+      panel.style.maxHeight = open ? (panel.scrollHeight + 40) + 'px' : '0px';
+      panel.style.opacity = open ? '1' : '0';
+      panel.style.marginTop = open ? '16px' : '0px';
+      panel.style.paddingTop = open ? '16px' : '0px';
+      panel.style.borderTop = open ? '1px solid var(--line)' : '0';
+    }
+    card.addEventListener('click',function(){ setOpen(!card.classList.contains('open')); });
+    card.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); card.click(); } });
+    var talk=panel.querySelector('.dc-talk');
+    talk.addEventListener('click',function(e){
+      e.stopPropagation();
+      if(talk.tagName==='A') return; // real link navigates on its own
+      var c=document.getElementById('contact'); if(c) c.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+})();
+</script>
 </body>
 </html>
