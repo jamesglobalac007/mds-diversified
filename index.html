@@ -661,7 +661,7 @@ footer a:hover{color:var(--c2)}
   display:none;
 }
 @media (min-width:1100px){.hero-3d{display:block;transform:translateY(-50%)}}
-@media (max-width:880px){.hero{flex-direction:column;justify-content:center}.hero-3d{display:block;position:relative;top:auto;right:auto;transform:none;width:100%;height:220px;margin:0 0 6px}}
+@media (max-width:880px){.hero{flex-direction:column;justify-content:center}.hero-3d{display:block;position:relative;top:auto;right:auto;transform:scale(0.46);transform-origin:center;width:100%;height:128px;margin:0 0 2px}}
 .hero-3d .cube{
   position:absolute;inset:0;
   transform-style:preserve-3d;
@@ -1510,6 +1510,7 @@ footer a:hover{color:var(--c2)}
   const hero  = document.getElementById('hero');
   const stage = document.getElementById('hero3d');
   if (!hero || !stage) return;
+  if (!window.matchMedia('(min-width: 1100px)').matches) return; // desktop only; on mobile CSS handles the cube
   let tx=0,ty=0,rx=0,ry=0;
   hero.addEventListener('mousemove', e => {
     const r = hero.getBoundingClientRect();
@@ -1519,7 +1520,7 @@ footer a:hover{color:var(--c2)}
   });
   function loop(){
     rx += (tx-rx)*0.08; ry += (ty-ry)*0.08;
-    stage.style.transform = 'translateY(-50%) rotateX('+rx.toFixed(2)+'deg) rotateY('+ry.toFixed(2)+'deg)';
+    stage.style.transform = 'translateY(-50%) scale(1.18) rotateX('+rx.toFixed(2)+'deg) rotateY('+ry.toFixed(2)+'deg)';
     requestAnimationFrame(loop);
   }
   loop();
