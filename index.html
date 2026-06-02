@@ -1116,6 +1116,14 @@ footer a:hover{color:var(--c2)}
 .contact .contact-mail{display:block;margin-top:22px;font-family:var(--mono);font-size:12px;letter-spacing:0.12em;color:var(--ink-3)}
 .contact .contact-mail a{color:var(--ink-2);transition:color .15s}
 .contact .contact-mail a:hover{color:var(--c2)}
+.contact-form{max-width:480px;margin:0 auto;display:flex;flex-direction:column;gap:12px;text-align:left}
+.cf-input{width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--line-2);border-radius:14px;padding:14px 18px;color:var(--ink);font-family:var(--sans);font-size:16px;transition:border-color .2s}
+.cf-input::placeholder{color:var(--ink-3)}
+.cf-input:focus{outline:none;border-color:var(--c1)}
+.cf-area{resize:vertical;min-height:88px}
+.contact-form .hello-btn{justify-content:center;margin-top:6px;border:0;cursor:pointer;width:100%}
+.cf-foot{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;color:var(--ink-3);text-align:center;margin-top:2px}
+.cf-thanks{max-width:480px;margin:0 auto;background:rgba(181,255,61,0.1);border:1px solid rgba(181,255,61,0.4);border-radius:16px;padding:24px;color:var(--ink);font-size:17px;line-height:1.5}
 
 @media (max-width:980px){
   .divisions-grid{grid-template-columns:repeat(2,1fr)}
@@ -1468,7 +1476,15 @@ footer a:hover{color:var(--c2)}
     <div class="kicker">Get in touch</div>
     <h2>Want the engine <em>running for you?</em></h2>
     <p>No pitch, no pressure. Tell us about your business and we will show you which divisions fit. That is the whole conversation.</p>
-    <a class="hello-btn" id="helloBtn" href="mailto:james@mdsdiversified.ai?subject=Hello%20MDS&body=Hi%20James,%0A%0AA%20bit%20about%20my%20business:%0A%0AWhat%20we%20do:%20%0AWhere%20we%20are%20stuck:%20%0ABest%20way%20to%20reach%20me:%20%0A%0AThanks">Start a conversation</a>
+    <form class="contact-form" id="contactForm" novalidate>
+      <input class="cf-input" id="cfName" name="name" placeholder="Your name" autocomplete="name" required>
+      <input class="cf-input" id="cfBiz" name="business" placeholder="Business name" autocomplete="organization">
+      <input class="cf-input" id="cfContact" name="contact" placeholder="Best email or phone" required>
+      <textarea class="cf-input cf-area" id="cfMsg" name="message" rows="3" placeholder="What do you need a hand with?"></textarea>
+      <button class="hello-btn" type="submit" id="cfSubmit">Start a conversation</button>
+      <div class="cf-foot">No spam. A real person replies, usually same day.</div>
+    </form>
+    <div class="cf-thanks" id="cfThanks" hidden>Thanks, we have got it. A real person will be in touch shortly.</div>
   </div>
 </section>
 
@@ -1655,9 +1671,38 @@ footer a:hover{color:var(--c2)}
   });
 })();
 
-/* ── Hello button → gentle confetti (delight, not a sale) ── */
+/* ── Contact form → submit on-page via FormSubmit, then thank-you ── */
 (function(){
-  const btn = document.getElementById('helloBtn');
+  var f = document.getElementById('contactForm'); if(!f) return;
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('cfName').value.trim();
+    var contact = document.getElementById('cfContact').value.trim();
+    if(!name || !contact){ (name ? document.getElementById('cfContact') : document.getElementById('cfName')).focus(); return; }
+    var btn = document.getElementById('cfSubmit'); btn.disabled = true; btn.textContent = 'Sending';
+    var payload = {
+      name: name,
+      business: document.getElementById('cfBiz').value.trim(),
+      contact: contact,
+      message: document.getElementById('cfMsg').value.trim(),
+      _subject: 'New enquiry via mdsdiversified.ai'
+    };
+    fetch('https://formsubmit.co/ajax/james@mdsdiversified.ai', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function(r){ return r.json(); }).then(function(){
+      f.hidden = true; document.getElementById('cfThanks').hidden = false;
+    }).catch(function(){
+      btn.disabled = false; btn.textContent = 'Start a conversation';
+      window.location.href = 'mailto:james@mdsdiversified.ai?subject=' + encodeURIComponent('Hello MDS') + '&body=' + encodeURIComponent('Name: ' + name + '\nBusiness: ' + payload.business + '\nContact: ' + contact + '\n\n' + payload.message);
+    });
+  });
+})();
+
+/* ── Submit button → gentle confetti (delight, not a sale) ── */
+(function(){
+  const btn = document.getElementById('cfSubmit');
   if (!btn) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   btn.addEventListener('click', e => {
