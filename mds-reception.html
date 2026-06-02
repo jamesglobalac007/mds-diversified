@@ -317,8 +317,8 @@ footer .cpy{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
       <input id="lName" name="name" autocomplete="name" required>
       <label for="lBiz">Business name</label>
       <input id="lBiz" name="business" autocomplete="organization">
-      <label for="lContact">Best number or email</label>
-      <input id="lContact" name="contact" autocomplete="tel" required>
+      <label for="lContact">Mobile number</label>
+      <input id="lContact" name="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="Best number to reach you" required>
       <button type="submit" class="btn btn-primary">Send to MDS Reception &rarr;</button>
       <div class="ffoot">No spam. A real person follows up, usually same day.</div>
     </form>
@@ -342,10 +342,10 @@ footer .cpy{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
     e.preventDefault();
     var name=document.getElementById('lName').value.trim();
     var biz=document.getElementById('lBiz').value.trim();
-    var contact=document.getElementById('lContact').value.trim();
-    if(!name||!contact){ (name?document.getElementById('lContact'):document.getElementById('lName')).focus(); return; }
+    var mobile=document.getElementById('lContact').value.trim();
+    if(!name||!mobile){ (name?document.getElementById('lContact'):document.getElementById('lName')).focus(); return; }
     var subject='MDS Reception enquiry';
-    var body='Hi James,\n\nI want to never miss a call again with MDS Reception.\n\nName: '+name+'\nBusiness: '+biz+'\nContact: '+contact+'\n\nPlease show me how it works.';
+    var body='Hi James,\n\nI want to never miss a call again with MDS Reception.\n\nName: '+name+'\nBusiness: '+biz+'\nMobile: '+mobile+'\n\nPlease show me how it works.';
     window.location.href='mailto:james@mdsdiversified.ai?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
   });
 })();
