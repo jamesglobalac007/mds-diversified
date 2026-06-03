@@ -26,14 +26,14 @@ into the dated batch folder
 
 Rename to something descriptive like `transport-fleet-depot.jpg`.
 
-### 4b. None of the stock works → use AI
-- Open https://gemini.google.com (free, covered by your Google AI Pro / Flow sub)
-- Type a descriptive prompt:
+### 4b. None of the stock works → use AI (higgsfield, in Claude)
+- Ask Claude to generate via the **higgsfield MCP** (`generate_image`) — no website, it runs right here in Claude.
+- Give a descriptive prompt, e.g.:
   > "Photorealistic Australian truck depot at golden hour. Right-hand drive Kenworth prime movers, eucalyptus trees, hi-vis worker, no readable text or signage. Wide-angle aerial."
-- Generate
-- **Drag the image directly from Gemini into the Finder window** for the dated batch folder
-  *(no need to "Save" first — drag from browser → Finder works)*
+- Claude returns the image; save it into the dated batch folder
+  (`~/MDS/tracknow-site/social-assets/_raw/<client>/YYYY-MM-DD/`)
 - Rename to something descriptive
+- (higgsfield also does video via `generate_video` if a post needs a clip)
 
 ### 5. Done
 Image is on disk in `~/MDS/tracknow-site/social-assets/_raw/<client>/YYYY-MM-DD/<descriptive-name>.png`.
@@ -42,7 +42,7 @@ Ready for the next stage (branding card → caption → push to social-hub).
 
 ---
 
-## Tips for AI prompt quality (when using Gemini)
+## Tips for AI prompt quality (when using higgsfield)
 
 Always include in the prompt:
 - **"Australian"** or **"Aussie"** — without it you get American trucks/scenes
@@ -67,7 +67,8 @@ Always include in the prompt:
 
 - **Stock search:** `~/MDS/_sync/find-images.py "<category>" [--client <slug>]`
   - Default client: `tracknow` — pass `--client <slug>` to override
-- **Credentials:** `~/.mds/credentials.json` (Unsplash + Pexels keys, plus Gemini API for future automation)
+- **Credentials:** `~/.mds/credentials.json` (Unsplash + Pexels keys)
+- **AI generation:** higgsfield MCP (`generate_image` / `generate_video`) — connected in Claude, no separate sub
 - **Categories config:** edit `CATEGORIES` dict in `find-images.py` to add new presets
 - **Output folder:** `~/MDS/tracknow-site/social-assets/_raw/<client>/YYYY-MM-DD/`
 - **Candidates from search:** `~/MDS/tracknow-site/social-assets/_raw/_candidates/<client>/`

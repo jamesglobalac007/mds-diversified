@@ -289,9 +289,9 @@ Anything not in the list is sent freeform to both APIs. Edit the `CATEGORIES` di
 
 ### Fallback to AI generation
 
-If stock doesn't deliver (no Aussie feel, wrong vehicle type, etc.), open Gemini chat (https://gemini.google.com — covered by James's Google AI Pro / Flow sub) with a descriptive prompt. James drags the result straight into the dated `_raw/<client>/<date>/` folder. Then we proceed.
+If stock doesn't deliver (no Aussie feel, wrong vehicle type, etc.), generate via the **higgsfield MCP** (`generate_image`, or `generate_video` for clips) — it runs inside Claude, no website, no separate sub. Save the result straight into the dated `_raw/<client>/<date>/` folder. Then we proceed.
 
-**Don't pay for AI generation APIs unless James opts in** — Gemini and ChatGPT subscriptions cover the chat UI for free; their respective APIs are separately billed.
+**Generation lives in higgsfield now** — the old Gemini / Google Flow fallback was cancelled 3 Jun 2026. Don't reach for gemini.google.com or any Google AI image tool; use the higgsfield MCP.
 
 ### Repeatable prompt → action mapping for Claude
 
@@ -299,7 +299,7 @@ If stock doesn't deliver (no Aussie feel, wrong vehicle type, etc.), open Gemini
 |-----------|-------------|
 | *"find me a [category] image"* | `find-images.py "<category>"` |
 | *"image for [client]: [thing]"* | `find-images.py "<thing>" --client <client-slug>` |
-| *"none of the stock works"* | Provide a Gemini prompt + open `gemini.google.com` |
+| *"none of the stock works"* | Generate via higgsfield MCP (`generate_image`) |
 | *"that one's the winner — file [N]"* | Move from `_candidates/` into `_raw/<client>/<date>/`, ask if they want it branded |
 
 Full doctrine in `~/MDS/mds-diversified/scripts/IMAGE-WORKFLOW.md`.
