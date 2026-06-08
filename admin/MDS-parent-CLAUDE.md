@@ -37,7 +37,7 @@ If you don't know the exact folder name for a project, **ask James** — do not 
 | "radius" / "NDIS" / "SDA" | `radius-ndis-sda-platform` | `~/MDS/radius-ndis-sda-platform/` | `jamesglobalac007/radius-ndis-sda-platform` | https://radius-ndis-sda-platform.onrender.com |
 | "sb" / "s&b empire" / "sb empire portal" | `sb-empire-portal` | `~/MDS/sb-empire-portal/` | `jamesglobalac007/sb-empire-portal` | https://sb-empire-portal.onrender.com |
 | "sbp sandbox" / "sb empire test" / "sb empire sandbox" | `sandbox-sb-empire` | `~/MDS/sandbox-sb-empire/` | `jamesglobalac007/sandbox-sb-empire` | https://sandbox-sb-empire.onrender.com (test twin of sb-empire-portal) |
-| "mds invoices" / "invoice portal" / "mds billing" | `mds-invoices` | `~/MDS/mds-invoices/` | `jamesglobalac007/mds-invoices` | *(deploy on Render pending)* |
+| "mds invoices" / "invoice portal" / "mds billing" | `mds-invoices` | `~/MDS/mds-invoices/` | `jamesglobalac007/mds-invoices` | https://mds-invoices.onrender.com |
 | "tracknow site" / "the tracknow site" | `tracknow-site` | `~/MDS/tracknow-site/` | `jamesglobalac007/tracknow-site` | https://tracknow-site.onrender.com |
 | "tracknow portal" / "the portal" | `tracknow-portal` | `~/MDS/tracknow-portal/` | `jamesglobalac007/tracknow-portal` | https://tracknow-portal.onrender.com |
 | "tracknow sandbox" / "tracknow test" / "sandbox tracknow" | `sandbox-tracknow` | `~/MDS/sandbox-tracknow/` | `jamesglobalac007/sandbox-tracknow` | https://sandbox-tracknow.onrender.com (test twin of tracknow-portal) |
