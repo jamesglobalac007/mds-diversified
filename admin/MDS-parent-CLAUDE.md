@@ -2,6 +2,10 @@
 
 This is the **parent-folder entry point** for all MDS client and internal projects. It is loaded when Claude Code is started from `~/MDS/` itself (rather than from inside a specific project folder).
 
+## ⛔ NO GUESSING — VERIFY, DON'T ASSUME
+
+When you don't know something, **find out** — read the file, run the command, check the artifact, hit the API. Never guess, assume, or answer from memory when a tool can give the real answer. "I think" / "it should" / "probably" / "I can't find it" are red flags: stop and actually check before acting or reporting. If something genuinely can't be verified, say so plainly or ask — do not paper over the gap with a confident guess. A wrong confident answer costs James far more than the few seconds it takes to verify.
+
 ## ⛔ FILE PATH RULES — READ THIS FIRST
 
 James works from two machines. ALL projects live under `~/MDS/` on both:
