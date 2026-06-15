@@ -131,4 +131,20 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    # Top-level failure alert: any unexpected crash (e.g. a malformed post,
+    # osascript missing, a code bug) still surfaces a notification + log line
+    # instead of dying silently and leaving James thinking the monitor ran.
+    try:
+        main()
+    except Exception as e:  # noqa: BLE001 — last-resort catch-all is the point
+        import traceback
+
+        try:
+            notify("TrackNow monitor — crashed", f"{type(e).__name__}: {e}")
+        except Exception:
+            pass
+        try:
+            log(f"CRASH {type(e).__name__}: {e}\n{traceback.format_exc()}")
+        except Exception:
+            pass
+        raise
