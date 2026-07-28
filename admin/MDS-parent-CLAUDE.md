@@ -310,6 +310,55 @@ Full doctrine in `~/MDS/mds-diversified/scripts/IMAGE-WORKFLOW.md`.
 
 ---
 
+## 🚗 DRIVE IT YOURSELF — never hand James manual work (HARD RULE)
+
+**James's job is to decide. Claude's job is to drive.** If Claude is about
+to ask James to click through a third-party platform, paste prompts into
+another Claude, or manually copy data between systems — STOP. That is
+almost always Claude giving up too early.
+
+### Cost of getting this wrong
+
+29 Jul 2026: Claude declared Make.com unreachable after testing only the
+in-app browser (which has no logins). It never tried James's real Chrome,
+and never checked whether Make had an API. **Both worked first time.**
+That mistake cost James two full days of pasting prompts into a browser
+Claude, one prompt at a time, for work Claude could do itself in minutes.
+
+### Before EVER saying a platform can't be automated, try all four
+
+1. **James's real Chrome** — `mcp__claude-in-chrome__*`. It is already
+   logged into Make, monday, DocuSeal, Stripe, Render, GitHub. Start with
+   `list_connected_browsers`, then `navigate`. The in-app browser
+   (`mcp__Claude_Browser__*`) has NO logins — it getting refused proves
+   **nothing** about whether the platform is reachable.
+2. **A REST API + token.** Most SaaS has one. Generate the token IN Chrome
+   (Claude can drive that too), store it under `~/MDS/.credentials/`
+   (chmod 600, outside every git repo), then work from the terminal.
+   Terminal beats clicking: structured data, no timeouts, no stale tabs.
+3. **The platform's own MCP connector** — check `/mcp` and the registry.
+4. **Only then** ask James — and say exactly which of 1-3 failed and why.
+
+### Known-good access (already set up)
+
+| Platform | How Claude reaches it |
+|---|---|
+| Make.com | API token — `~/MDS/.credentials/make.json` (zone `eu1`, team 1580477) |
+| monday.com | MCP connector, direct GraphQL |
+| DocuSeal / Stripe / Render / GitHub | James's real Chrome; DocuSeal + Stripe also have API tokens available |
+
+### Related rules
+
+- Never say "I can't find it" without trying the file → Render/GitHub in
+  Chrome → writing the answer back. (Already in `mds-diversified/CLAUDE.md`.)
+- Before changing config in a system James can't see, audit the FULL
+  dependency set first and hand over ONE complete block — never piecemeal
+  discoveries. See `feedback_audit_before_proposing_changes`.
+- When a platform's own module is broken, prove it in a throwaway sandbox
+  and route around it. Don't make James absorb the failures.
+
+---
+
 ## 🔑 Common references
 
 - **GitHub username:** `jamesglobalac007`
