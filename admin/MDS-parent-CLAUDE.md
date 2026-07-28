@@ -317,6 +317,21 @@ to ask James to click through a third-party platform, paste prompts into
 another Claude, or manually copy data between systems — STOP. That is
 almost always Claude giving up too early.
 
+### STEP ZERO of every build — establish access BEFORE building
+
+James has hit "I'm unable to connect, so you'll have to do it manually"
+about half a dozen times. It is never to be discovered mid-build again.
+
+**Before writing a single line of any build that touches an external
+system, list every system involved and prove Claude can reach each one.**
+Report it as a table — system, how it's reached, verified yes/no. Anything
+not verified gets solved FIRST (token, Chrome, connector), while James is
+still at the keyboard and before any work depends on it.
+
+Discovering an access problem halfway through a build is the expensive
+failure mode: it strands work in progress and turns James into the
+integration layer.
+
 ### Cost of getting this wrong
 
 29 Jul 2026: Claude declared Make.com unreachable after testing only the
