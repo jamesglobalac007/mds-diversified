@@ -6,6 +6,32 @@ This is the **parent-folder entry point** for all MDS client and internal projec
 
 When you don't know something, **find out** — read the file, run the command, check the artifact, hit the API. Never guess, assume, or answer from memory when a tool can give the real answer. "I think" / "it should" / "probably" / "I can't find it" are red flags: stop and actually check before acting or reporting. If something genuinely can't be verified, say so plainly or ask — do not paper over the gap with a confident guess. A wrong confident answer costs James far more than the few seconds it takes to verify.
 
+## ⛔ TIMEZONE — WE ARE AEST, NEVER UTC (HARD RULE)
+
+**Every MDS / TrackNow portal, board, schedule, invoice, agreement and
+timestamp operates in Australian Eastern Standard Time (AEST, UTC+10,
+`Australia/Brisbane` — no daylight saving).** James's business is in
+Australia. NEVER let dates or times default to UTC.
+
+Where UTC silently creeps in and MUST be corrected:
+- **Portal server code runs on Render in UTC.** Any `new Date()` used for a
+  customer-facing date (`toLocaleDateString`, `getFullYear`, `getMonth`, a
+  "today"/"issued"/"valid until"/invoice date, a month boundary) rolls a day
+  early after ~10am AEST. ALWAYS pass `{ timeZone: 'Australia/Brisbane' }` to
+  `toLocaleDateString`/`toLocaleString`, and derive year/month/day parts in
+  AEST — not from raw `new Date()`. Internal storage stamps (`toISOString()`
+  audit logs, `createdAt`) stay UTC — that is fine; only DISPLAY and
+  BILLING-BOUNDARY dates must be AEST.
+- **Make scenarios**: the org is already on `Australia/Sydney` (tzId 34) so
+  `now`/`formatDate` are AU. Keep it AU. For anything date-boundary sensitive
+  (e.g. a monthly "1st of the month" run or a "last calendar month" filter),
+  compute the boundary in AEST explicitly, e.g.
+  `formatDate(now; "YYYY-MM-DD"; "Australia/Brisbane")`.
+- **Stripe billing anchors** ("1st of next month") must be figured in AEST.
+
+When you write ANY new date logic for these portals, default to AEST. If a
+variable is named `_nowAEST` it must actually BE AEST, not a bare `new Date()`.
+
 ## ⛔ FILE PATH RULES — READ THIS FIRST
 
 James works from two machines. ALL projects live under `~/MDS/` on both:
