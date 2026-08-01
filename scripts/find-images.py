@@ -253,7 +253,7 @@ def main() -> None:
 
     preview = write_preview(results, user_input, chosen_query, out_dir)
     print(f"\nPreview: {preview}")
-    subprocess.Popen(["open", str(preview)])
+    subprocess.Popen(["open", "-a", "Google Chrome", str(preview)])
 
 
 if __name__ == "__main__":
