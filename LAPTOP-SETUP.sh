@@ -27,6 +27,9 @@ repos=(
   "https://github.com/jamesglobalac007/tracknow-site.git"
   "https://github.com/jamesglobalac007/mds-social-hub.git|social-hub"
   "https://github.com/jamesglobalac007/mds-content.git"
+  "https://github.com/jamesglobalac007/cev-desk.git"
+  "https://github.com/jamesglobalac007/cev-ibkr.git"
+  "https://github.com/jamesglobalac007/mds-skills.git|_skills"
 )
 
 for entry in "${repos[@]}"; do
@@ -67,6 +70,14 @@ if [ -f "$CANONICAL" ]; then
   echo "[OK] Updated ~/MDS/AGENTS.md from canonical source"
 else
   echo "[SKIP] Canonical file not found at $CANONICAL — pull mds-diversified first"
+fi
+echo ""
+
+echo "=== Installing skills into ~/.claude/skills ==="
+if [ -f ~/MDS/_skills/install.sh ]; then
+  bash ~/MDS/_skills/install.sh
+else
+  echo "[SKIP] ~/MDS/_skills/install.sh not found"
 fi
 echo ""
 
