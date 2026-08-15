@@ -89,9 +89,9 @@ cp "$GLOBAL_MD" "$GLOBAL_MD.bak-$(date +%Y%m%d-%H%M%S)"
 
 BLOCK_BODY=$(cat <<'BLOCK'
 
-# THIS MACHINE — CEV GLOBAL TRADING
+# THIS MACHINE — VANTAGE (GLOBAL TRADING)
 
-This laptop and this Claude account exist for one job: the **CEV global trading portal**.
+This laptop and this Claude account exist for one job: **Vantage**, the global trading portal.
 Assume every session is trading work unless James says otherwise. Other MDS work can
 happen here, it is just not the default.
 
@@ -99,7 +99,7 @@ happen here, it is just not the default.
 
 | Folder | What it is |
 |---|---|
-| `~/MDS/cev-desk` | The CEV global trading portal, follow-the-sun multi-asset desk. Sandbox: sandbox-cev-desk.onrender.com |
+| `~/MDS/cev-desk` | **Vantage** — the global trading portal, follow-the-sun multi-asset desk. Renamed 16 Aug 2026; the repo/service/hostname keep their cev-desk names on purpose (identity, not branding). Sandbox: sandbox-cev-desk.onrender.com |
 | `~/MDS/cev-ibkr` | The live trading engine that drives the Hetzner VPS `cev-engine` at 46.224.54.167 |
 | `~/Obsidian/MDS Vault/40 Trading/` | The trading second brain. Read before any trade action, every time. |
 | `~/MDS` | Everything else. Never work outside this folder. |
